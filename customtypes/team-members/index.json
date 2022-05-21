@@ -1,0 +1,51 @@
+{
+  "id": "team-members",
+  "label": "Team Members",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "member-role": {
+        "type": "Text",
+        "config": {
+          "label": "Role",
+          "placeholder": "Sales Specialist"
+        }
+      },
+      "member-image": {
+        "type": "Image",
+        "config": {
+          "label": "Image",
+          "constraint": {
+            "height": 650,
+            "width": 320
+          },
+          "thumbnails": []
+        }
+      },
+      "member-name": {
+        "type": "Text",
+        "config": {
+          "label": "Name",
+          "placeholder": "John Smith"
+        }
+      },
+      "member-description": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Description",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "strong,em,list-item"
+        }
+      },
+      "member-email": {
+        "type": "Text",
+        "config": {
+          "label": "Email",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}

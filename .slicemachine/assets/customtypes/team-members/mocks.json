@@ -1,0 +1,26 @@
+{
+  "id": "90fae02a-9ab4-471d-b035-d4bda8c26294",
+  "uid": "est-sunt-in",
+  "type": "team-members",
+  "data": {
+    "member-role": "harness B2B users",
+    "member-image": {
+      "dimensions": {
+        "width": 320,
+        "height": 650
+      },
+      "alt": "Placeholder image",
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89?w=320&h=650&fit=crop"
+    },
+    "member-name": "reintermediate seamless infrastructures",
+    "member-description": [
+      {
+        "type": "paragraph",
+        "text": "Veniam qui incididunt id Lorem do et. Commodo consectetur officia ipsum incididunt nulla anim.",
+        "spans": []
+      }
+    ],
+    "member-email": "incubate impactful technologies"
+  }
+}

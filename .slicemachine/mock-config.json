@@ -1,0 +1,12 @@
+{
+  "_cts": {
+    "team-members": {
+      "member-description": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      }
+    }
+  }
+}
