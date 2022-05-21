@@ -7,6 +7,36 @@
           "blocks": 1
         }
       }
+    },
+    "our-team": {},
+    "page": {},
+    "home": {}
+  },
+  "slices": {
+    "OurTeam": {
+      "default": {
+        "primary": {
+          "subhead": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 1
+            }
+          }
+        },
+        "items": {
+          "Bio": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "TeamMember": {
+      "default": {
+        "primary": {}
+      }
     }
   }
 }
