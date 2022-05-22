@@ -1,21 +1,26 @@
-import React from 'react'
-import { PrismicRichText } from '@prismicio/react'
+import React from "react";
+import { PrismicText } from "@prismicio/react";
+import Image from "next/image";
+import Link from "next/link";
 
 const TeamMember = ({ slice }) => (
-  <section>
-    <span className="title">
-      {
-        slice.primary.title ?
-        <PrismicRichText field={slice.primary.title}/>
-        : <h2>Template slice, update me!</h2>
-      }
-    </span>
-    {
-      slice.primary.description ?
-      <PrismicRichText field={slice.primary.description}/>
-      : <p>start by editing this slice from inside Slice Machine!</p>
-    }
-  </section>
-)
+  <div className="teamMember">
+    {slice.primary.position ? (
+      <h4>
+        <PrismicText field={slice.primary.title} />
+      </h4>
+    ) : null}
+    {slice.primary.image ? (
+      <Image src={slice.primary.image.url} alt={slice.primary.image.alt} />
+    ) : (
+      ""
+    )}
+    <h3>{slice.primary.name}</h3>
+    <p>{slice.primary.bio ? <PrismicText field={slice.primary.bio} /> : ""}</p>
+    {slice.primary.email ? (
+      <Link href={`mailto:${slice.primary.email}`}>contact</Link>
+    ) : null}
+  </div>
+);
 
-export default TeamMember
+export default TeamMember;

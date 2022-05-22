@@ -1,10 +1,6 @@
 * {
   box-sizing: border-box;
-}
-
-html, body {
   margin: 0;
-  padding: 0;
 }
 
 html {
@@ -17,6 +13,7 @@ html {
 
 h1, h2, h3 {
   font-family: 'Cormorant Garamond', serif;
+  font-variant-numeric: lining-nums;
 }
 
 h1 {
@@ -25,9 +22,29 @@ h1 {
   font-kerning: normal;
   letter-spacing: -.002em;
   color: var(--light);
-  font-size: 6.8rem;
+  font-size: 8rem;
+  line-height: 95%;
+  margin-top: 1rem;
+}
+
+h4 {
+  letter-spacing: .07em;
 }
 
 h4, h5, h5, a, p {
   font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--tan);
+}
+
+header {
+  background: var(--maroon);
+  color: var(--light);
+  padding-left: 4rem;
+}
+
+footer {
+  background: var(--maroon);
+  color: var(--light);
 }

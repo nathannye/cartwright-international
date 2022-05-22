@@ -1,6 +1,251 @@
 {
   "slices": {
     "components": {
+      "header_home": {
+        "library": "slices",
+        "id": "header_home",
+        "name": "HeaderHome",
+        "description": "HeaderHome",
+        "model": {
+          "id": "header_home",
+          "type": "SharedSlice",
+          "name": "HeaderHome",
+          "description": "HeaderHome",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "HeaderHome",
+              "primary": {
+                "header-image": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Header Image",
+                    "constraint": {
+                      "width": 1400,
+                      "height": 600
+                    },
+                    "thumbnails": []
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "header_home",
+            "items": [],
+            "primary": {
+              "header-image": {
+                "dimensions": {
+                  "width": 1400,
+                  "height": 600
+                },
+                "alt": "Placeholder image",
+                "copyright": null,
+                "url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72?w=1400&h=600&fit=crop"
+              }
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      },
+      "header_standard": {
+        "library": "slices",
+        "id": "header_standard",
+        "name": "HeaderStandard",
+        "description": "HeaderStandard",
+        "model": {
+          "id": "header_standard",
+          "type": "SharedSlice",
+          "name": "HeaderStandard",
+          "description": "HeaderStandard",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "HeaderStandard",
+              "primary": {
+                "headline": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Headline",
+                    "placeholder": "Please type a headline here"
+                  }
+                },
+                "subhead": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Subhead",
+                    "placeholder": "Please type a subhead here"
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "header_standard",
+            "items": [],
+            "primary": {
+              "headline": "iterate user-centric synergies",
+              "subhead": "brand synergistic synergies"
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      },
+      "image_slider": {
+        "library": "slices",
+        "id": "image_slider",
+        "name": "ImageSlider",
+        "description": "ImageSlider",
+        "model": {
+          "id": "image_slider",
+          "type": "SharedSlice",
+          "name": "ImageSlider",
+          "description": "ImageSlider",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "ImageSlider",
+              "primary": {},
+              "items": {
+                "image": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Carousel Image",
+                    "constraint": {
+                      "width": 400,
+                      "height": 600
+                    },
+                    "thumbnails": []
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "image_slider",
+            "items": [
+              {
+                "image": {
+                  "dimensions": {
+                    "width": 400,
+                    "height": 600
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72?w=400&h=600&fit=crop"
+                }
+              },
+              {
+                "image": {
+                  "dimensions": {
+                    "width": 400,
+                    "height": 600
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1494173853739-c21f58b16055?w=400&h=600&fit=crop"
+                }
+              }
+            ],
+            "primary": {}
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      },
+      "service": {
+        "library": "slices",
+        "id": "service",
+        "name": "Service",
+        "description": "Service",
+        "model": {
+          "id": "service",
+          "type": "SharedSlice",
+          "name": "Service",
+          "description": "Service",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "Service",
+              "primary": {
+                "service-title": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Service Title",
+                    "placeholder": ""
+                  }
+                },
+                "short-service-description": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Short Service Description",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "service",
+            "items": [],
+            "primary": {
+              "service-title": "harness bricks-and-clicks web services",
+              "short-service-description": "repurpose virtual solutions"
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      },
       "team_member": {
         "library": "slices",
         "id": "team_member",

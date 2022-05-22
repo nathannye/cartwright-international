@@ -10,7 +10,8 @@
     },
     "our-team": {},
     "page": {},
-    "home": {}
+    "home": {},
+    "what-we-do": {}
   },
   "slices": {
     "OurTeam": {
@@ -34,6 +35,27 @@
       }
     },
     "TeamMember": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "HeaderStandard": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "Service": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "ImageSlider": {
+      "default": {
+        "primary": {},
+        "items": {}
+      }
+    },
+    "HeaderHome": {
       "default": {
         "primary": {}
       }
