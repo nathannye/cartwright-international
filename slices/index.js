@@ -2,22 +2,25 @@
 
 import HeaderHome from './HeaderHome';
 import HeaderStandard from './HeaderStandard';
-import ImageSlider from './ImageSlider';
+import ImgCarousel from './ImgCarousel';
 import Service from './Service';
 import TeamMember from './TeamMember';
+import VerticalListSmall from './VerticalListSmall';
 
 export {
 	HeaderHome,
 	HeaderStandard,
-	ImageSlider,
+	ImgCarousel,
 	Service,
 	TeamMember,
+	VerticalListSmall,
 };
 
 export const components = {
 	header_home: HeaderHome,
 	header_standard: HeaderStandard,
-	image_slider: ImageSlider,
+	img_carousel: ImgCarousel,
 	service: Service,
 	team_member: TeamMember,
+	vertical_list_small: VerticalListSmall,
 };

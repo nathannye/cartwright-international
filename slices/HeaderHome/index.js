@@ -1,31 +1,21 @@
-import React from 'react'
-import { PrismicRichText } from '@prismicio/react'
+import React from "react";
+import { PrismicRichText } from "@prismicio/react";
+import Image from "next/image";
 
 const HeaderHome = ({ slice }) => (
-  <section>
-    <span className="title">
-      {
-        slice.primary.title ?
-        <PrismicRichText field={slice.primary.title}/>
-        : <h2>Template slice, update me!</h2>
-      }
-    </span>
-    {
-      slice.primary.description ?
-      <PrismicRichText field={slice.primary.description}/>
-      : <p>start by editing this slice from inside Slice Machine!</p>
-    }
-    <style jsx>{`
-        section {
-          max-width: 600px;
-          margin: 4em auto;
-          text-align: center;
-        }
-        .title {
-          color: #8592e0;
-        }
-    `}</style>
-  </section>
-)
+  <header id="headerLarge">
+    <div id="companyNameContainer">
+      <span>
+        <h1>cartwright</h1>
+        <blockquote>
+          A sales training and consulting agency with a vision to make sales
+          teams a true driver of business
+        </blockquote>
+      </span>
+      <h1>international</h1>
+    </div>
+    <img src="https://picsum.photos/1600/600" alt="thing" />
+  </header>
+);
 
-export default HeaderHome
+export default HeaderHome;

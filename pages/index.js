@@ -1,4 +1,7 @@
 import Head from "next/head";
+import HeaderHome from "../slices/HeaderHome";
+import ImgCarousel from "../slices/ImgCarousel";
+import VerticalListSmall from "../slices/VerticalListSmall";
 
 export default function Home() {
   return (
@@ -6,7 +9,9 @@ export default function Home() {
       <Head>
         <title>Cartwright International</title>
       </Head>
-      <h1>cartwright International</h1>
+      <HeaderHome />
+      <VerticalListSmall />
+      <ImgCarousel />
     </div>
   );
 }

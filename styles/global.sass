@@ -6,12 +6,34 @@ html
     --maroon: #7B0E26
     --tan: #DFB596
     --light: #F7F5F3
+    --dark: #5D5152
+    --unit: 12.5%
     font-size: 87.5%
-    background: var(--maroon)
+    --colOne: calc(var(--unit) - 1rem)
+    --colTwo: calc((var(--unit) * 2) - 1rem)
+    --colThree: calc((var(--unit) * 3) - 1rem)
+    --colFour: calc((var(--unit) * 4) - 1rem)
+    --colFive: calc((var(--unit) * 5) - 1rem)
+    --colSix: calc((var(--unit) * 6) - 1rem)
+    --colSeven: calc((var(--unit) * 7) - 1rem)
+    --colEight: calc((var(--unit) * 8) - 1rem)
+    color: black
 
-h1, h2, h3
+h1, h2, h3, blockquote
     font-family: 'Cormorant Garamond', serif
     font-variant-numeric: lining-nums
+
+a
+    color: var(--maroon)
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400
+    text-transform: uppercase
+
+blockquote
+    font-size: clamp(1.3rem, calc(1.3rem + ((1vw - 0.25rem) * 0.2679)), 1.6rem)
+    text-transform: uppercase
+    text-indent: 3.5rem
+    width: var(--colTwo)
 
 h1
     text-transform: uppercase
@@ -19,25 +41,104 @@ h1
     font-kerning: normal
     letter-spacing: -.002em
     color: var(--light)
-    font-size: 8rem
-    line-height: 95%
+    font-size: clamp(3rem, calc(3rem + ((1vw - 0.25rem) * 6.25)), 10rem)
+    line-height: 89%
     margin-top: 1rem
 
-h4
+h2
     letter-spacing: .07em
+    font-size: 1rem
+    color: var(--maroon)
+    text-transform: uppercase
+    font-family: 'IBM Plex Sans', sans-serif
 
-h4, h5, h5, a, p
-    font-family: 'IBM Plex Sans', sans-serif;
+h4, h5, h5
+    font-family: 'IBM Plex Sans', sans-serif
     font-weight: 400
     text-transform: uppercase
-    color: var(--tan)
+
+p
+    font-family: 'IBM Plex Sans', sans-serif
+    color: var(--dark)
 
 header
     background: var(--maroon)
     color: var(--light)
-    padding-left: 4rem
 
 footer
     background: var(--maroon)
     color: var(--light)
+
+section
+    margin-bottom: 18rem
     
+// Components
+
+header#headerLarge
+    background: var(--maroon)
+    height: 10vh
+
+    #companyNameContainer
+        display: flex
+        flex-direction: column
+        width: var(--colEight)
+        padding-right: 2rem
+
+        span
+            display: flex
+            align-items: center
+
+    img
+        object-fit: cover
+        width: var(--colEight)
+        padding-right: 2rem
+        height: 75%
+
+    h1
+        col: 100vh
+
+    h1:last-child
+        align-self: flex-end
+
+.verticalListSmall
+    width: var(--colFive)
+
+    span.verticalListHeading
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+
+    .verticalListEntries
+        display: flex
+        justify-content: space-between
+
+        div.listEntry
+            display: flex
+            justify-content: space-between
+            align-items: flex-start
+            width: 100%
+
+.imageCarousel
+    width: var(--colSeven)
+    margin-left: auto
+    overflow: hidden
+
+    .draggerContainer
+        display: inline-flex
+
+        & > div
+            width: var(--colThree)
+            height: 55vh
+            object-fit: cover
+            overflow: hidden
+
+            img
+                width: 100%
+                height: 100%
+                transform: scale(1.2)
+
+        &:not(:last-child)
+            margin-right: 2rem
+    
+
+     

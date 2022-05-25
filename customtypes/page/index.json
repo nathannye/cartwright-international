@@ -18,6 +18,35 @@
           "label": "Subhead",
           "placeholder": ""
         }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "header_home": {
+              "type": "SharedSlice"
+            },
+            "team_member": {
+              "type": "SharedSlice"
+            },
+            "image_slider": {
+              "type": "SharedSlice"
+            },
+            "service": {
+              "type": "SharedSlice"
+            },
+            "service_entry_small": {
+              "type": "SharedSlice"
+            },
+            "image_carousel": {
+              "type": "SharedSlice"
+            },
+            "header_standard": {
+              "type": "SharedSlice"
+            }
+          }
+        }
       }
     }
   }

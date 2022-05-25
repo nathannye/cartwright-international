@@ -50,7 +50,7 @@
                 },
                 "alt": "Placeholder image",
                 "copyright": null,
-                "url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72?w=1400&h=600&fit=crop"
+                "url": "https://images.unsplash.com/photo-1606248897732-2c5ffe759c04?w=1400&h=600&fit=crop"
               }
             }
           }
@@ -106,8 +106,8 @@
             "slice_type": "header_standard",
             "items": [],
             "primary": {
-              "headline": "iterate user-centric synergies",
-              "subhead": "brand synergistic synergies"
+              "headline": "maximize sexy systems",
+              "subhead": "enhance proactive interfaces"
             }
           }
         },
@@ -117,37 +117,42 @@
         },
         "screenshotPaths": {}
       },
-      "image_slider": {
+      "img_carousel": {
         "library": "slices",
-        "id": "image_slider",
-        "name": "ImageSlider",
-        "description": "ImageSlider",
+        "id": "img_carousel",
+        "name": "ImgCarousel",
+        "description": "ImgCarousel",
         "model": {
-          "id": "image_slider",
+          "id": "img_carousel",
           "type": "SharedSlice",
-          "name": "ImageSlider",
-          "description": "ImageSlider",
+          "name": "ImgCarousel",
+          "description": "ImgCarousel",
           "variations": [
             {
               "id": "default",
               "name": "Default",
               "docURL": "...",
               "version": "sktwi1xtmkfgx8626",
-              "description": "ImageSlider",
-              "primary": {},
-              "items": {
-                "image": {
-                  "type": "Image",
+              "description": "ImgCarousel",
+              "primary": {
+                "title": {
+                  "type": "StructuredText",
                   "config": {
-                    "label": "Carousel Image",
-                    "constraint": {
-                      "width": 400,
-                      "height": 600
-                    },
-                    "thumbnails": []
+                    "single": "heading1",
+                    "label": "Title",
+                    "placeholder": "This is where it all begins..."
+                  }
+                },
+                "description": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "paragraph",
+                    "label": "Description",
+                    "placeholder": "A nice description of your feature"
                   }
                 }
               },
+              "items": {},
               "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
             }
           ]
@@ -156,32 +161,24 @@
           "default": {
             "variation": "default",
             "name": "Default",
-            "slice_type": "image_slider",
-            "items": [
-              {
-                "image": {
-                  "dimensions": {
-                    "width": 400,
-                    "height": 600
-                  },
-                  "alt": "Placeholder image",
-                  "copyright": null,
-                  "url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72?w=400&h=600&fit=crop"
+            "slice_type": "img_carousel",
+            "items": [],
+            "primary": {
+              "title": [
+                {
+                  "type": "heading1",
+                  "text": "Incubate strategic users",
+                  "spans": []
                 }
-              },
-              {
-                "image": {
-                  "dimensions": {
-                    "width": 400,
-                    "height": 600
-                  },
-                  "alt": "Placeholder image",
-                  "copyright": null,
-                  "url": "https://images.unsplash.com/photo-1494173853739-c21f58b16055?w=400&h=600&fit=crop"
+              ],
+              "description": [
+                {
+                  "type": "paragraph",
+                  "text": "Excepteur et ipsum adipisicing amet ad qui in quis culpa esse incididunt duis proident quis et. Labore pariatur exercitation reprehenderit cillum esse adipisicing esse commodo in elit.",
+                  "spans": []
                 }
-              }
-            ],
-            "primary": {}
+              ]
+            }
           }
         },
         "meta": {
@@ -235,8 +232,8 @@
             "slice_type": "service",
             "items": [],
             "primary": {
-              "service-title": "harness bricks-and-clicks web services",
-              "short-service-description": "repurpose virtual solutions"
+              "service-title": "scale back-end e-commerce",
+              "short-service-description": "transform efficient e-business"
             }
           }
         },
@@ -316,10 +313,10 @@
             "slice_type": "team_member",
             "items": [],
             "primary": {
-              "name": "reintermediate bleeding-edge methodologies",
-              "bio": "facilitate real-time e-services",
-              "email": "architect clicks-and-mortar supply-chains",
-              "position": "iterate 24/365 users",
+              "name": "whiteboard customized e-tailers",
+              "bio": "seize integrated e-tailers",
+              "email": "brand robust eyeballs",
+              "position": "maximize distributed channels",
               "image": {
                 "dimensions": {
                   "width": 300,
@@ -327,7 +324,101 @@
                 },
                 "alt": "Placeholder image",
                 "copyright": null,
-                "url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=300&h=500&fit=crop"
+                "url": "https://images.unsplash.com/photo-1531771686035-25f47595c87a?w=300&h=500&fit=crop"
+              }
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      },
+      "vertical_list_small": {
+        "library": "slices",
+        "id": "vertical_list_small",
+        "name": "VerticalListSmall",
+        "description": "VerticalListSmall",
+        "model": {
+          "id": "vertical_list_small",
+          "type": "SharedSlice",
+          "name": "VerticalListSmall",
+          "description": "VerticalListSmall",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "VerticalListSmall",
+              "primary": {
+                "sectionTitle": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Section Title",
+                    "placeholder": ""
+                  }
+                },
+                "hasLink": {
+                  "type": "Boolean",
+                  "config": {
+                    "label": "Has Link",
+                    "placeholder_false": "false",
+                    "placeholder_true": "true",
+                    "default_value": false
+                  }
+                },
+                "pageLink": {
+                  "type": "Link",
+                  "config": {
+                    "label": "Page Link",
+                    "placeholder": "",
+                    "select": null
+                  }
+                }
+              },
+              "items": {
+                "entryTitle": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Entry Title",
+                    "placeholder": ""
+                  }
+                },
+                "entryDescription": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Entry Description",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "vertical_list_small",
+            "items": [
+              {
+                "entryTitle": "strategize granular supply-chains",
+                "entryDescription": "redefine transparent solutions"
+              },
+              {
+                "entryTitle": "enable transparent infrastructures",
+                "entryDescription": "unleash transparent bandwidth"
+              }
+            ],
+            "primary": {
+              "sectionTitle": "utilize plug-and-play networks",
+              "hasLink": true,
+              "pageLink": {
+                "link_type": "Web",
+                "url": "https://slicemachine.dev"
               }
             }
           }

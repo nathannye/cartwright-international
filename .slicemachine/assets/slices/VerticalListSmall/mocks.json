@@ -1,0 +1,25 @@
+[
+  {
+    "variation": "default",
+    "name": "Default",
+    "slice_type": "vertical_list_small",
+    "items": [
+      {
+        "entryTitle": "strategize granular supply-chains",
+        "entryDescription": "redefine transparent solutions"
+      },
+      {
+        "entryTitle": "enable transparent infrastructures",
+        "entryDescription": "unleash transparent bandwidth"
+      }
+    ],
+    "primary": {
+      "sectionTitle": "utilize plug-and-play networks",
+      "hasLink": true,
+      "pageLink": {
+        "link_type": "Web",
+        "url": "https://slicemachine.dev"
+      }
+    }
+  }
+]
