@@ -6,12 +6,13 @@ const VerticalListSmall = ({ slice }) => (
   <section className="verticalListSmall">
     <span className="verticalListHeading">
       <h2>what we do</h2>
-      <Link href="/" className="internalLink">
+      {/* <Link href="/" className="internalLink">
         <a>link here</a>
-      </Link>
+      </Link> */}
     </span>
     <div className="verticalListEntries">
       <div className="listEntry">
+        <span className="entryLineTop"></span>
         <h3>Sales Consulting</h3>
         <p>
           description, Helping you gain traction in your market and defining a

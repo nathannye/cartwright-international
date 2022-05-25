@@ -31,7 +31,8 @@ a
     text-decoration: none
 
     &.internalLink
-        font-weight: 200
+        display: inline-block
+        margin-top: calc(var(--gutter) /2)
 
 blockquote
     font-size: clamp(1.3rem, calc(1.3rem + ((1vw - 0.25rem) * 0.2679)), 1.6rem)
@@ -78,8 +79,6 @@ header
 
 footer
     background: var(--maroon)
-    color: var(--light)
-
 section
     margin-bottom: 18rem
     
@@ -120,21 +119,26 @@ header#headerLarge
         height: 55%
 
     h1
-        col: 100vh
+        width: 100vh
 
     h1:last-child
-        align-self: flex-end
+        text-indent: calc(var(--colOne)/2)
 
     blockquote
         width: var(--colTwo)
         color: var(--tan)
         margin-left: calc(var(--gutter) * 2)
-        // text-indent: 3.5rem
 
 // Vertical List Small
 .verticalListSmall
     width: 100%
     margin-left: var(--colOne)
+
+    span.entryLineTop
+        height: .5px
+        width: 100%
+        background: var(--maroon)
+        margin-bottom: calc(var(--gutter)/2)
 
     span.verticalListHeading
         display: flex
@@ -219,6 +223,7 @@ header#headerLarge
 .quoteLarge
     margin-left: auto
     margin-right: auto
+    width: var(--colSix)
 
     blockquote
         font-size: clamp(1.75rem, calc(1.75rem + ((1vw - 0.25rem) * 1.1161)), 3rem)
@@ -256,11 +261,19 @@ header#headerLarge
 
         .frameworkEntry
 
-            &:nth-of-type(2)
+            &:nth-of-type(even)
                 
+                .frameworkText
+                    margin-right: var(--gutter)
+
+            &:nth-of-type(odd)
+                
+                .frameworkText
+                    margin-left: var(--gutter)
 
         .frameworkText
             width: var(--colTwo)
+
     
     .quoteLarge
         width: var(--colFive)

@@ -17,9 +17,9 @@ const TeamMember = ({ slice }) => (
     )}
     <h3>{slice.primary.name}</h3>
     <p>{slice.primary.bio ? <PrismicText field={slice.primary.bio} /> : ""}</p>
-    {slice.primary.email ? (
+    {/* {slice.primary.email ? (
       <Link href={`mailto:${slice.primary.email}`}>contact</Link>
-    ) : null}
+    ) : null} */}
   </div>
 );
 

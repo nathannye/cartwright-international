@@ -35,7 +35,8 @@ a {
 }
 
 a.internalLink {
-  font-weight: 200;
+  display: inline-block;
+  margin-top: calc(var(--gutter) /2);
 }
 
 blockquote {
@@ -89,7 +90,6 @@ header {
 
 footer {
   background: var(--maroon);
-  color: var(--light);
 }
 
 section {
@@ -135,11 +135,11 @@ header#headerLarge img {
 }
 
 header#headerLarge h1 {
-  col: 100vh;
+  width: 100vh;
 }
 
 header#headerLarge h1:last-child {
-  align-self: flex-end;
+  text-indent: calc(var(--colOne)/2);
 }
 
 header#headerLarge blockquote {
@@ -151,6 +151,13 @@ header#headerLarge blockquote {
 .verticalListSmall {
   width: 100%;
   margin-left: var(--colOne);
+}
+
+.verticalListSmall span.entryLineTop {
+  height: .5px;
+  width: 100%;
+  background: var(--maroon);
+  margin-bottom: calc(var(--gutter)/2);
 }
 
 .verticalListSmall span.verticalListHeading {
@@ -252,6 +259,7 @@ header#headerLarge blockquote {
 .quoteLarge {
   margin-left: auto;
   margin-right: auto;
+  width: var(--colSix);
 }
 
 .quoteLarge blockquote {
@@ -275,6 +283,12 @@ header#headerLarge blockquote {
   .imageCarousel .draggerContainer > div {
     width: var(--widthThree);
     height: 70vh;
+  }
+  #ourFramework .frameworkEntry:nth-of-type(even) .frameworkText {
+    margin-right: var(--gutter);
+  }
+  #ourFramework .frameworkEntry:nth-of-type(odd) .frameworkText {
+    margin-left: var(--gutter);
   }
   #ourFramework .frameworkText {
     width: var(--colTwo);
