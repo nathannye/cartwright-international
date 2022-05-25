@@ -1,5 +1,11 @@
 {
   "slices": {
-    "ImgCarousel": {}
+    "ImgCarousel": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "OurFramework": {},
+    "Quote": {}
   }
 }

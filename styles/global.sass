@@ -4,20 +4,20 @@
 
 html
     --maroon: #7B0E26
-    --tan: #DFB596
+    --tan: #ffcca7
     --light: #F7F5F3
-    --dark: #5D5152
+    --dark: #474444
     --unit: 12.5%
+    --gutter: 2rem
     font-size: 87.5%
-    --colOne: calc(var(--unit) - 1rem)
-    --colTwo: calc((var(--unit) * 2) - 1rem)
-    --colThree: calc((var(--unit) * 3) - 1rem)
-    --colFour: calc((var(--unit) * 4) - 1rem)
-    --colFive: calc((var(--unit) * 5) - 1rem)
-    --colSix: calc((var(--unit) * 6) - 1rem)
-    --colSeven: calc((var(--unit) * 7) - 1rem)
-    --colEight: calc((var(--unit) * 8) - 1rem)
-    color: black
+    --colOne: var(--unit)
+    --colTwo: calc(var(--unit) * 2)
+    --colThree: calc(var(--unit) * 3)
+    --colFour: calc(var(--unit) * 4)
+    --colFive: calc(var(--unit) * 5)
+    --colSix: calc(var(--unit) * 6 )
+    --colSeven: calc(var(--unit) * 7)
+    --colEight: calc(var(--unit) * 8)
 
 h1, h2, h3, blockquote
     font-family: 'Cormorant Garamond', serif
@@ -28,12 +28,14 @@ a
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 400
     text-transform: uppercase
+    text-decoration: none
+
+    &.internalLink
+        font-weight: 200
 
 blockquote
     font-size: clamp(1.3rem, calc(1.3rem + ((1vw - 0.25rem) * 0.2679)), 1.6rem)
     text-transform: uppercase
-    text-indent: 3.5rem
-    width: var(--colTwo)
 
 h1
     text-transform: uppercase
@@ -49,8 +51,15 @@ h2
     letter-spacing: .07em
     font-size: 1rem
     color: var(--maroon)
+    margin-bottom: 2rem
     text-transform: uppercase
     font-family: 'IBM Plex Sans', sans-serif
+
+h3
+    font-size: clamp(1.9rem, calc(1.9rem + ((1vw - 0.25rem) * 0.3125)), 2.25rem)
+    letter-spacing: -.02em
+    font-weight: 500
+    color: var(--maroon)
 
 h4, h5, h5
     font-family: 'IBM Plex Sans', sans-serif
@@ -60,10 +69,12 @@ h4, h5, h5
 p
     font-family: 'IBM Plex Sans', sans-serif
     color: var(--dark)
+    font-size: 1.15rem
 
 header
-    background: var(--maroon)
+    // background: var(--maroon)
     color: var(--light)
+    margin-bottom: 9rem
 
 footer
     background: var(--maroon)
@@ -72,11 +83,19 @@ footer
 section
     margin-bottom: 18rem
     
-// Components
+// COMPONENTS
 
+// Navbar
+#navbar
+    display: none
+
+// Header Homepage 
 header#headerLarge
     background: var(--maroon)
-    height: 10vh
+    height: 102vh
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
 
     #companyNameContainer
         display: flex
@@ -87,12 +106,18 @@ header#headerLarge
         span
             display: flex
             align-items: center
+            flex-wrap: wrap-reverse
+            width: 100%
+
+            blockquote
+                width: 100%
+                max-width: 500px
 
     img
         object-fit: cover
         width: var(--colEight)
         padding-right: 2rem
-        height: 75%
+        height: 55%
 
     h1
         col: 100vh
@@ -100,8 +125,16 @@ header#headerLarge
     h1:last-child
         align-self: flex-end
 
+    blockquote
+        width: var(--colTwo)
+        color: var(--tan)
+        margin-left: calc(var(--gutter) * 2)
+        // text-indent: 3.5rem
+
+// Vertical List Small
 .verticalListSmall
-    width: var(--colFive)
+    width: 100%
+    margin-left: var(--colOne)
 
     span.verticalListHeading
         display: flex
@@ -116,29 +149,118 @@ header#headerLarge
             display: flex
             justify-content: space-between
             align-items: flex-start
+            flex-wrap: wrap
             width: 100%
 
-.imageCarousel
-    width: var(--colSeven)
-    margin-left: auto
+            h3
+                margin-right: var(--gutter)
+
+            p
+                max-width: var(--colFive)
+
+// Image Carousel
+.imageCarousel  
+    width: var(--colEight)
     overflow: hidden
+    margin-left: auto
 
     .draggerContainer
         display: inline-flex
 
         & > div
-            width: var(--colThree)
-            height: 55vh
+            width: var(--colOne)
+            min-width: 160px
+            height: 40vh
+            min-height: 350px
             object-fit: cover
             overflow: hidden
 
             img
-                width: 100%
                 height: 100%
                 transform: scale(1.2)
 
-        &:not(:last-child)
-            margin-right: 2rem
-    
+            &:not(:last-child)
+                margin-right: 2rem
 
-     
+#ourFramework
+    width: var(--colSix)
+    margin-left: auto
+    margin-right: auto
+
+    .frameworkEntry
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+
+        &:nth-of-type(2)
+            flex-direction: row-reverse
+
+    .frameworkCard
+        background: var(--maroon)
+        width: 300px
+        height: 450px
+        position: relative
+
+        .cardInfo
+            display: flex
+            position: absolute
+            bottom: 2rem
+            justify-content: space-between
+            width: 100%
+            padding: 0 2rem
+            align-items: center
+
+            h3
+                color: var(--tan)
+
+    .frameworkText
+        margin-top: 1rem
+
+.quoteLarge
+    margin-left: auto
+    margin-right: auto
+
+    blockquote
+        font-size: clamp(1.75rem, calc(1.75rem + ((1vw - 0.25rem) * 1.1161)), 3rem)
+        color: var(--dark)
+        
+
+// Applies to anything above 768px
+@media only screen and (min-width: 768px)
+
+    header#headerLarge
+        height: 140vh
+
+        img
+            height: 55%
+
+        // #companyNameContainer
+
+        //     span
+
+        //         blockquote
+
+    .verticalListSmall
+        width: var(--colFive)
+
+    .imageCarousel
+        width: var(--colSeven)
+
+        .draggerContainer
+
+            & > div
+                width: var(--widthThree)
+                height: 70vh
+
+    #ourFramework
+
+        .frameworkEntry
+
+            &:nth-of-type(2)
+                
+
+        .frameworkText
+            width: var(--colTwo)
+    
+    .quoteLarge
+        width: var(--colFive)

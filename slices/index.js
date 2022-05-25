@@ -3,7 +3,8 @@
 import HeaderHome from './HeaderHome';
 import HeaderStandard from './HeaderStandard';
 import ImgCarousel from './ImgCarousel';
-import Service from './Service';
+import OurFramework from './OurFramework';
+import Quote from './Quote';
 import TeamMember from './TeamMember';
 import VerticalListSmall from './VerticalListSmall';
 
@@ -11,7 +12,8 @@ export {
 	HeaderHome,
 	HeaderStandard,
 	ImgCarousel,
-	Service,
+	OurFramework,
+	Quote,
 	TeamMember,
 	VerticalListSmall,
 };
@@ -20,7 +22,8 @@ export const components = {
 	header_home: HeaderHome,
 	header_standard: HeaderStandard,
 	img_carousel: ImgCarousel,
-	service: Service,
+	our_framework: OurFramework,
+	quote: Quote,
 	team_member: TeamMember,
 	vertical_list_small: VerticalListSmall,
 };

@@ -134,6 +134,120 @@
               "docURL": "...",
               "version": "sktwi1xtmkfgx8626",
               "description": "ImgCarousel",
+              "primary": {},
+              "items": {
+                "image": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Image",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "img_carousel",
+            "items": [
+              {
+                "image": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468?w=900&h=500&fit=crop"
+                }
+              },
+              {
+                "image": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89?w=900&h=500&fit=crop"
+                }
+              },
+              {
+                "image": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1587614295999-6c1c13675117?w=900&h=500&fit=crop"
+                }
+              },
+              {
+                "image": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468?w=900&h=500&fit=crop"
+                }
+              },
+              {
+                "image": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1587614295999-6c1c13675117?w=900&h=500&fit=crop"
+                }
+              },
+              {
+                "image": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=900&h=500&fit=crop"
+                }
+              }
+            ],
+            "primary": {}
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      },
+      "our_framework": {
+        "library": "slices",
+        "id": "our_framework",
+        "name": "OurFramework",
+        "description": "OurFramework",
+        "model": {
+          "id": "our_framework",
+          "type": "SharedSlice",
+          "name": "OurFramework",
+          "description": "OurFramework",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "OurFramework",
               "primary": {
                 "title": {
                   "type": "StructuredText",
@@ -161,20 +275,20 @@
           "default": {
             "variation": "default",
             "name": "Default",
-            "slice_type": "img_carousel",
+            "slice_type": "our_framework",
             "items": [],
             "primary": {
               "title": [
                 {
                   "type": "heading1",
-                  "text": "Incubate strategic users",
+                  "text": "Cultivate compelling e-tailers",
                   "spans": []
                 }
               ],
               "description": [
                 {
                   "type": "paragraph",
-                  "text": "Excepteur et ipsum adipisicing amet ad qui in quis culpa esse incididunt duis proident quis et. Labore pariatur exercitation reprehenderit cillum esse adipisicing esse commodo in elit.",
+                  "text": "Sit nostrud dolore cupidatat consequat mollit excepteur elit occaecat excepteur.",
                   "spans": []
                 }
               ]
@@ -187,36 +301,38 @@
         },
         "screenshotPaths": {}
       },
-      "service": {
+      "quote": {
         "library": "slices",
-        "id": "service",
-        "name": "Service",
-        "description": "Service",
+        "id": "quote",
+        "name": "Quote",
+        "description": "Quote",
         "model": {
-          "id": "service",
+          "id": "quote",
           "type": "SharedSlice",
-          "name": "Service",
-          "description": "Service",
+          "name": "Quote",
+          "description": "Quote",
           "variations": [
             {
               "id": "default",
               "name": "Default",
               "docURL": "...",
               "version": "sktwi1xtmkfgx8626",
-              "description": "Service",
+              "description": "Quote",
               "primary": {
-                "service-title": {
-                  "type": "Text",
+                "title": {
+                  "type": "StructuredText",
                   "config": {
-                    "label": "Service Title",
-                    "placeholder": ""
+                    "single": "heading1",
+                    "label": "Title",
+                    "placeholder": "This is where it all begins..."
                   }
                 },
-                "short-service-description": {
-                  "type": "Text",
+                "description": {
+                  "type": "StructuredText",
                   "config": {
-                    "label": "Short Service Description",
-                    "placeholder": ""
+                    "single": "paragraph",
+                    "label": "Description",
+                    "placeholder": "A nice description of your feature"
                   }
                 }
               },
@@ -229,11 +345,23 @@
           "default": {
             "variation": "default",
             "name": "Default",
-            "slice_type": "service",
+            "slice_type": "quote",
             "items": [],
             "primary": {
-              "service-title": "scale back-end e-commerce",
-              "short-service-description": "transform efficient e-business"
+              "title": [
+                {
+                  "type": "heading1",
+                  "text": "Deploy cross-media eyeballs",
+                  "spans": []
+                }
+              ],
+              "description": [
+                {
+                  "type": "paragraph",
+                  "text": "Excepteur cupidatat dolore sit.",
+                  "spans": []
+                }
+              ]
             }
           }
         },
