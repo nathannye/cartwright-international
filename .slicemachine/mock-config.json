@@ -2,10 +2,18 @@
   "slices": {
     "ImgCarousel": {
       "default": {
-        "primary": {}
+        "items": {}
       }
     },
-    "OurFramework": {},
-    "Quote": {}
+    "VerticalListSmall": {
+      "default": {
+        "primary": {},
+        "items": {}
+      }
+    }
+  },
+  "_cts": {
+    "page": {},
+    "homepage": {}
   }
 }

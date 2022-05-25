@@ -34,6 +34,11 @@ a
         display: inline-block
         margin-top: calc(var(--gutter) /2)
 
+    &.secondaryLink
+        text-transform: none
+        text-decoration: underline
+    
+
 blockquote
     font-size: clamp(1.3rem, calc(1.3rem + ((1vw - 0.25rem) * 0.2679)), 1.6rem)
     text-transform: uppercase
@@ -70,15 +75,19 @@ h4, h5, h5
 p
     font-family: 'IBM Plex Sans', sans-serif
     color: var(--dark)
+    letter-spacing: -.022em
     font-size: 1.15rem
 
 header
-    // background: var(--maroon)
     color: var(--light)
     margin-bottom: 9rem
 
 footer
     background: var(--maroon)
+
+    *
+        color: var(--light)
+
 section
     margin-bottom: 18rem
     
@@ -119,7 +128,7 @@ header#headerLarge
         height: 55%
 
     h1
-        width: 100vh
+        margin: 0
 
     h1:last-child
         text-indent: calc(var(--colOne)/2)
@@ -273,7 +282,6 @@ header#headerLarge
 
         .frameworkText
             width: var(--colTwo)
-
     
     .quoteLarge
         width: var(--colFive)

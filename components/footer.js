@@ -1,19 +1,14 @@
 import Link from "next/link";
 
 function Footer() {
-  // var year = new Date().getFullYear;
-
   return (
     <footer>
       <h1>Let’s make it happen, drop us a line</h1>
-      <h2>contact stuff</h2>
       <div className="bottomSplit">
-        <div>
-          {/* <Link>
-            <a>Privacy Policy</a>
-          </Link> */}
-          {/* {`© ${year}`} */}
-        </div>
+        <Link href="/">
+          <a className="secondaryLink">Privacy Policy</a>
+        </Link>
+        <p> © {new Date().getFullYear()} Cartwright International</p>
       </div>
     </footer>
   );

@@ -39,6 +39,11 @@ a.internalLink {
   margin-top: calc(var(--gutter) /2);
 }
 
+a.secondaryLink {
+  text-transform: none;
+  text-decoration: underline;
+}
+
 blockquote {
   font-size: clamp(1.3rem, calc(1.3rem + ((1vw - 0.25rem) * 0.2679)), 1.6rem);
   text-transform: uppercase;
@@ -80,6 +85,7 @@ h4, h5, h5 {
 p {
   font-family: 'IBM Plex Sans', sans-serif;
   color: var(--dark);
+  letter-spacing: -.022em;
   font-size: 1.15rem;
 }
 
@@ -90,6 +96,10 @@ header {
 
 footer {
   background: var(--maroon);
+}
+
+footer * {
+  color: var(--light);
 }
 
 section {
@@ -135,7 +145,7 @@ header#headerLarge img {
 }
 
 header#headerLarge h1 {
-  width: 100vh;
+  margin: 0;
 }
 
 header#headerLarge h1:last-child {

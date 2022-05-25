@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const TeamMember = ({ slice }) => (
   <div className="teamMember">
-    {slice.primary.position ? (
+    {/* {slice.primary.position ? (
       <h4>
         <PrismicText field={slice.primary.title} />
       </h4>
@@ -16,7 +16,7 @@ const TeamMember = ({ slice }) => (
       ""
     )}
     <h3>{slice.primary.name}</h3>
-    <p>{slice.primary.bio ? <PrismicText field={slice.primary.bio} /> : ""}</p>
+    <p>{slice.primary.bio ? <PrismicText field={slice.primary.bio} /> : ""}</p> */}
     {/* {slice.primary.email ? (
       <Link href={`mailto:${slice.primary.email}`}>contact</Link>
     ) : null} */}

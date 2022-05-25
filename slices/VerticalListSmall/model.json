@@ -11,14 +11,14 @@
       "version": "sktwi1xtmkfgx8626",
       "description": "VerticalListSmall",
       "primary": {
-        "sectionTitle": {
+        "section-title": {
           "type": "Text",
           "config": {
             "label": "Section Title",
             "placeholder": ""
           }
         },
-        "hasLink": {
+        "has-link": {
           "type": "Boolean",
           "config": {
             "label": "Has Link",
@@ -27,7 +27,7 @@
             "default_value": false
           }
         },
-        "pageLink": {
+        "page-link": {
           "type": "Link",
           "config": {
             "label": "Page Link",
@@ -37,14 +37,14 @@
         }
       },
       "items": {
-        "entryTitle": {
+        "entry-title": {
           "type": "Text",
           "config": {
             "label": "Entry Title",
             "placeholder": ""
           }
         },
-        "entryDescription": {
+        "entry-description": {
           "type": "Text",
           "config": {
             "label": "Entry Description",

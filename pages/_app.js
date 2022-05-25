@@ -1,6 +1,6 @@
 import "../styles/global.css";
-import Footer from "../components/footer";
-import Navbar from "../components/navbar";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 import Link from "next/link";
 import { PrismicProvider } from "@prismicio/react";
 import { PrismicPreview } from "@prismicio/next";

@@ -10,7 +10,7 @@ const Quote = ({ slice }) => (
       sales game. with connections and expertise from manufacturing to market
       structures. we get down to business, and execute. period.
     </blockquote>
-    <Link>
+    <Link href="/">
       <a className="internalLink">link here</a>
     </Link>
   </section>
