@@ -3,6 +3,7 @@ import { components } from "../slices";
 
 import { SliceZone } from "@prismicio/react";
 import Head from "next/head";
+import Loader from "../components/Loader";
 
 const Homepage = ({ page }) => {
   return (
@@ -16,7 +17,7 @@ const Homepage = ({ page }) => {
         name="viewport"
         content="initial-scale=1.0, width=device-width"
       ></meta>
-
+      <Loader />
       <SliceZone slices={page.data.slices} components={components} />
     </Head>
   );
