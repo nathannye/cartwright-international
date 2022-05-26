@@ -11,20 +11,26 @@
       "version": "sktwi1xtmkfgx8626",
       "description": "Quote",
       "primary": {
-        "title": {
-          "type": "StructuredText",
+        "heading": {
+          "type": "Text",
           "config": {
-            "single": "heading1",
-            "label": "Title",
-            "placeholder": "This is where it all begins..."
+            "label": "Heading",
+            "placeholder": ""
           }
         },
-        "description": {
-          "type": "StructuredText",
+        "quote": {
+          "type": "Text",
           "config": {
-            "single": "paragraph",
-            "label": "Description",
-            "placeholder": "A nice description of your feature"
+            "label": "Text",
+            "placeholder": ""
+          }
+        },
+        "link": {
+          "type": "Link",
+          "config": {
+            "label": "Link",
+            "placeholder": "",
+            "select": null
           }
         }
       },

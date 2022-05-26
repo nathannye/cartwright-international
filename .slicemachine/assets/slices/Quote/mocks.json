@@ -5,20 +5,12 @@
     "slice_type": "quote",
     "items": [],
     "primary": {
-      "title": [
-        {
-          "type": "heading1",
-          "text": "Leverage granular communities",
-          "spans": []
-        }
-      ],
-      "description": [
-        {
-          "type": "paragraph",
-          "text": "Minim irure reprehenderit elit velit nisi et dolor reprehenderit culpa irure et nisi. Voluptate consectetur amet proident minim est culpa reprehenderit aliqua in consequat. Non sit sint quis.",
-          "spans": []
-        }
-      ]
+      "heading": "cultivate impactful markets",
+      "quote": "empower granular content",
+      "link": {
+        "link_type": "Web",
+        "url": "https://prismic.io"
+      }
     }
   }
 ]

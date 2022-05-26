@@ -1,29 +1,19 @@
 import React from "react";
-import { PrismicText } from "@prismicio/react";
-import Link from "next/link";
+// import { PrismicText } from "@prismicio/react";s
 
 const VerticalListSmall = ({ slice }) => (
   <section className="verticalListSmall">
     <span className="verticalListHeading">
-      <h2>
-        <PrismicText field={slice.primary["section-title"]} />
-      </h2>
-      {/* <Link href="/" className="internalLink">
-        <a>link here</a>
-      </Link> */}
+      <h2>{slice.primary.title}</h2>
     </span>
     <div className="verticalListEntries">
-      {slice?.items?.map((item, i) => (
+      {slice.items.map((item) => {
         <div className="listEntry">
           <span className="entryLineTop"></span>
-          <h3>
-            <PrismicText field={i["entry-title"]} />
-          </h3>
-          <p>
-            <PrismicText field={i["entry-description"]} />
-          </p>
-        </div>
-      ))}
+          <h3>{slice.items.heading}</h3>
+          <p>{slice.items.description}</p>
+        </div>;
+      })}
     </div>
   </section>
 );

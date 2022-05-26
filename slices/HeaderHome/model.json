@@ -21,6 +21,13 @@
             },
             "thumbnails": []
           }
+        },
+        "small-paragraph": {
+          "type": "Text",
+          "config": {
+            "label": "Quote Text",
+            "placeholder": ""
+          }
         }
       },
       "items": {},

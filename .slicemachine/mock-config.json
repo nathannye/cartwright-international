@@ -1,19 +1,30 @@
 {
   "slices": {
-    "ImgCarousel": {
-      "default": {
-        "items": {}
-      }
-    },
     "VerticalListSmall": {
       "default": {
         "primary": {},
         "items": {}
       }
+    },
+    "Quote": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "HeaderHome": {
+      "default": {
+        "primary": {}
+      }
     }
   },
   "_cts": {
-    "page": {},
-    "homepage": {}
+    "privacy-policy": {
+      "policy": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      }
+    }
   }
 }

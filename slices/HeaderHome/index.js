@@ -7,14 +7,14 @@ const HeaderHome = ({ slice }) => (
     <div id="companyNameContainer">
       <span>
         <h1>cartwright</h1>
-        <blockquote>
-          A sales training and consulting agency with a vision to make sales
-          teams a true driver of business
-        </blockquote>
+        <blockquote>{slice.primary["small-paragraph"]}</blockquote>
       </span>
       <h1>international</h1>
     </div>
-    <img src="https://picsum.photos/1600/600" alt="thing" />
+    <img
+      src={slice.primary["header-image"].url}
+      alt={slice.primary["header-image"].alt}
+    />
   </header>
 );
 

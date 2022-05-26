@@ -1,23 +1,20 @@
-import Head from "next/head";
-import HeaderHome from "../slices/HeaderHome";
-import ImgCarousel from "../slices/ImgCarousel";
-import OurFramework from "../slices/OurFramework";
-import Quote from "../slices/Quote";
-import Footer from "../components/Footer";
-import VerticalListSmall from "../slices/VerticalListSmall";
+import { createClient } from "../prismicio";
+import { components } from "../slices/";
 
-export default function Home() {
-  return (
-    <div>
-      <Head>
-        <title>Cartwright International</title>
-      </Head>
-      <HeaderHome />
-      <VerticalListSmall />
-      <ImgCarousel />
-      <OurFramework />
-      <Quote />
-      {/* <Footer /> */}
-    </div>
-  );
+import { SliceZone } from "@prismicio/react";
+
+const Homepage = ({ page }) => {
+  return <SliceZone slices={page.data.slices} components={components} />;
+};
+
+export async function getStaticProps({ previewData }) {
+  const client = createClient({ previewData });
+
+  const page = await client.getSingle("homepage");
+
+  return {
+    props: { page },
+  };
 }
+
+export default Homepage;

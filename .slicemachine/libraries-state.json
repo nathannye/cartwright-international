@@ -29,6 +29,13 @@
                     },
                     "thumbnails": []
                   }
+                },
+                "small-paragraph": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Quote Text",
+                    "placeholder": ""
+                  }
                 }
               },
               "items": {},
@@ -50,8 +57,9 @@
                 },
                 "alt": "Placeholder image",
                 "copyright": null,
-                "url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89?w=1400&h=600&fit=crop"
-              }
+                "url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db?w=1400&h=600&fit=crop"
+              },
+              "small-paragraph": "innovate robust mindshare"
             }
           }
         },
@@ -106,8 +114,8 @@
             "slice_type": "header_standard",
             "items": [],
             "primary": {
-              "headline": "monetize revolutionary blockchains",
-              "subhead": "envisioneer interactive infrastructures"
+              "headline": "morph web-enabled functionalities",
+              "subhead": "monetize value-added content"
             }
           }
         },
@@ -166,7 +174,7 @@
                   },
                   "alt": "Placeholder image",
                   "copyright": null,
-                  "url": "https://images.unsplash.com/photo-1560762484-813fc97650a0?w=400&h=600&fit=crop"
+                  "url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=600&fit=crop"
                 }
               },
               {
@@ -177,7 +185,18 @@
                   },
                   "alt": "Placeholder image",
                   "copyright": null,
-                  "url": "https://images.unsplash.com/photo-1531771686035-25f47595c87a?w=400&h=600&fit=crop"
+                  "url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db?w=400&h=600&fit=crop"
+                }
+              },
+              {
+                "image": {
+                  "dimensions": {
+                    "width": 400,
+                    "height": 600
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab?w=400&h=600&fit=crop"
                 }
               },
               {
@@ -189,17 +208,6 @@
                   "alt": "Placeholder image",
                   "copyright": null,
                   "url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=400&h=600&fit=crop"
-                }
-              },
-              {
-                "image": {
-                  "dimensions": {
-                    "width": 400,
-                    "height": 600
-                  },
-                  "alt": "Placeholder image",
-                  "copyright": null,
-                  "url": "https://images.unsplash.com/photo-1587905069134-008460d7a636?w=400&h=600&fit=crop"
                 }
               }
             ],
@@ -262,14 +270,14 @@
               "title": [
                 {
                   "type": "heading1",
-                  "text": "Incubate killer vortals",
+                  "text": "Incubate strategic mindshare",
                   "spans": []
                 }
               ],
               "description": [
                 {
                   "type": "paragraph",
-                  "text": "Aliquip do eiusmod esse sunt exercitation reprehenderit officia reprehenderit. Eu consectetur Lorem ipsum irure consequat incididunt et veniam incididunt eu minim eiusmod quis reprehenderit. Dolor labore anim laborum enim culpa veniam veniam laboris ipsum.",
+                  "text": "Aliqua laborum incididunt aliquip anim eiusmod excepteur proident excepteur ut eiusmod reprehenderit ipsum. Nisi Lorem eiusmod adipisicing aliquip magna. Elit ex esse aute aliquip nisi.",
                   "spans": []
                 }
               ]
@@ -300,20 +308,26 @@
               "version": "sktwi1xtmkfgx8626",
               "description": "Quote",
               "primary": {
-                "title": {
-                  "type": "StructuredText",
+                "heading": {
+                  "type": "Text",
                   "config": {
-                    "single": "heading1",
-                    "label": "Title",
-                    "placeholder": "This is where it all begins..."
+                    "label": "Heading",
+                    "placeholder": ""
                   }
                 },
-                "description": {
-                  "type": "StructuredText",
+                "quote": {
+                  "type": "Text",
                   "config": {
-                    "single": "paragraph",
-                    "label": "Description",
-                    "placeholder": "A nice description of your feature"
+                    "label": "Text",
+                    "placeholder": ""
+                  }
+                },
+                "link": {
+                  "type": "Link",
+                  "config": {
+                    "label": "Link",
+                    "placeholder": "",
+                    "select": null
                   }
                 }
               },
@@ -329,20 +343,12 @@
             "slice_type": "quote",
             "items": [],
             "primary": {
-              "title": [
-                {
-                  "type": "heading1",
-                  "text": "Leverage granular communities",
-                  "spans": []
-                }
-              ],
-              "description": [
-                {
-                  "type": "paragraph",
-                  "text": "Minim irure reprehenderit elit velit nisi et dolor reprehenderit culpa irure et nisi. Voluptate consectetur amet proident minim est culpa reprehenderit aliqua in consequat. Non sit sint quis.",
-                  "spans": []
-                }
-              ]
+              "heading": "cultivate impactful markets",
+              "quote": "empower granular content",
+              "link": {
+                "link_type": "Web",
+                "url": "https://prismic.io"
+              }
             }
           }
         },
@@ -422,10 +428,10 @@
             "slice_type": "team_member",
             "items": [],
             "primary": {
-              "name": "cultivate proactive vortals",
-              "bio": "maximize e-business schemas",
-              "email": "disintermediate cross-platform ROI",
-              "position": "repurpose dynamic infrastructures",
+              "name": "envisioneer frictionless ROI",
+              "bio": "integrate vertical paradigms",
+              "email": "implement holistic synergies",
+              "position": "reintermediate out-of-the-box vortals",
               "image": {
                 "dimensions": {
                   "width": 300,
@@ -433,7 +439,7 @@
                 },
                 "alt": "Placeholder image",
                 "copyright": null,
-                "url": "https://images.unsplash.com/photo-1531771686035-25f47595c87a?w=300&h=500&fit=crop"
+                "url": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=300&h=500&fit=crop"
               }
             }
           }
@@ -462,43 +468,26 @@
               "version": "sktwi1xtmkfgx8626",
               "description": "VerticalListSmall",
               "primary": {
-                "section-title": {
+                "title": {
                   "type": "Text",
                   "config": {
                     "label": "Section Title",
                     "placeholder": ""
                   }
-                },
-                "has-link": {
-                  "type": "Boolean",
-                  "config": {
-                    "label": "Has Link",
-                    "placeholder_false": "false",
-                    "placeholder_true": "true",
-                    "default_value": false
-                  }
-                },
-                "page-link": {
-                  "type": "Link",
-                  "config": {
-                    "label": "Page Link",
-                    "placeholder": "",
-                    "select": null
-                  }
                 }
               },
               "items": {
-                "entry-title": {
+                "heading": {
                   "type": "Text",
                   "config": {
-                    "label": "Entry Title",
+                    "label": "Row Heading",
                     "placeholder": ""
                   }
                 },
-                "entry-description": {
+                "description": {
                   "type": "Text",
                   "config": {
-                    "label": "Entry Description",
+                    "label": "Row Description",
                     "placeholder": ""
                   }
                 }
@@ -514,33 +503,16 @@
             "slice_type": "vertical_list_small",
             "items": [
               {
-                "entry-title": "morph real-time partnerships",
-                "entry-description": "embrace clicks-and-mortar e-services"
+                "heading": "utilize B2B e-services",
+                "description": "productize global applications"
               },
               {
-                "entry-title": "synergize robust systems",
-                "entry-description": "disintermediate sexy networks"
-              },
-              {
-                "entry-title": "syndicate seamless models",
-                "entry-description": "whiteboard real-time architectures"
-              },
-              {
-                "entry-title": "harness interactive vortals",
-                "entry-description": "mesh wireless initiatives"
-              },
-              {
-                "entry-title": "leverage collaborative networks",
-                "entry-description": "transition value-added e-commerce"
+                "heading": "embrace seamless niches",
+                "description": "visualize frictionless e-markets"
               }
             ],
             "primary": {
-              "section-title": "expedite extensible e-services",
-              "has-link": true,
-              "page-link": {
-                "link_type": "Web",
-                "url": "http://google.com"
-              }
+              "title": "implement seamless systems"
             }
           }
         },

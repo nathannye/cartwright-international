@@ -11,43 +11,26 @@
       "version": "sktwi1xtmkfgx8626",
       "description": "VerticalListSmall",
       "primary": {
-        "section-title": {
+        "title": {
           "type": "Text",
           "config": {
             "label": "Section Title",
             "placeholder": ""
           }
-        },
-        "has-link": {
-          "type": "Boolean",
-          "config": {
-            "label": "Has Link",
-            "placeholder_false": "false",
-            "placeholder_true": "true",
-            "default_value": false
-          }
-        },
-        "page-link": {
-          "type": "Link",
-          "config": {
-            "label": "Page Link",
-            "placeholder": "",
-            "select": null
-          }
         }
       },
       "items": {
-        "entry-title": {
+        "heading": {
           "type": "Text",
           "config": {
-            "label": "Entry Title",
+            "label": "Row Heading",
             "placeholder": ""
           }
         },
-        "entry-description": {
+        "description": {
           "type": "Text",
           "config": {
-            "label": "Entry Description",
+            "label": "Row Description",
             "placeholder": ""
           }
         }
