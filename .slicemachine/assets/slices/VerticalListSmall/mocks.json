@@ -5,16 +5,50 @@
     "slice_type": "vertical_list_small",
     "items": [
       {
-        "heading": "utilize B2B e-services",
-        "description": "productize global applications"
+        "heading": "embrace cutting-edge niches",
+        "description": "e-enable bricks-and-clicks deliverables"
       },
       {
-        "heading": "embrace seamless niches",
-        "description": "visualize frictionless e-markets"
+        "heading": "extend efficient convergence",
+        "description": "incentivize distributed channels"
+      },
+      {
+        "heading": "maximize visionary applications",
+        "description": "streamline front-end action-items"
+      },
+      {
+        "heading": "exploit clicks-and-mortar communities",
+        "description": "reintermediate collaborative relationships"
       }
     ],
     "primary": {
-      "title": "implement seamless systems"
+      "title": "matrix impactful metrics"
+    }
+  },
+  {
+    "variation": "verticalListWithDescription",
+    "name": "VerticalListWithDescription",
+    "slice_type": "vertical_list_small",
+    "items": [
+      {
+        "heading": "matrix world-class partnerships"
+      },
+      {
+        "heading": "disintermediate efficient synergies"
+      },
+      {
+        "heading": "productize global systems"
+      },
+      {
+        "heading": "streamline granular relationships"
+      },
+      {
+        "heading": "extend turn-key e-services"
+      }
+    ],
+    "primary": {
+      "title": "matrix robust action-items",
+      "description": "transition open-source users"
     }
   }
 ]

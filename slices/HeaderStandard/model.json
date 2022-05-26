@@ -11,18 +11,18 @@
       "version": "sktwi1xtmkfgx8626",
       "description": "HeaderStandard",
       "primary": {
-        "headline": {
-          "type": "Text",
-          "config": {
-            "label": "Headline",
-            "placeholder": "Please type a headline here"
-          }
-        },
         "subhead": {
           "type": "Text",
           "config": {
             "label": "Subhead",
             "placeholder": "Please type a subhead here"
+          }
+        },
+        "headline": {
+          "type": "Text",
+          "config": {
+            "label": "Headline",
+            "placeholder": "Please type a headline here"
           }
         }
       },

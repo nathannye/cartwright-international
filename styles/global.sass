@@ -18,6 +18,7 @@ html
     --colSix: calc(var(--unit) * 6 )
     --colSeven: calc(var(--unit) * 7)
     --colEight: calc(var(--unit) * 8)
+    min-height: 100vh
 
 h1, h2, h3, blockquote
     font-family: 'Cormorant Garamond', serif
@@ -27,11 +28,11 @@ a
     color: var(--maroon)
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 400
+    display: inline-block
     text-transform: uppercase
     text-decoration: none
 
     &.internalLink
-        display: inline-block
         margin-top: calc(var(--gutter) /2)
 
     &.secondaryLink
@@ -51,7 +52,6 @@ h1
     color: var(--light)
     font-size: clamp(3rem, calc(3rem + ((1vw - 0.25rem) * 6.25)), 10rem)
     line-height: 89%
-    margin-top: 1rem
 
 h2
     letter-spacing: .07em
@@ -84,9 +84,23 @@ header
 
 footer
     background: var(--maroon)
+    padding: 3rem 4rem
 
     *
         color: var(--light)
+
+        &:not(:last-child)
+            margin-bottom: .5rem
+
+    .topSplit   
+        display: flex
+        justify-content: space-between
+
+        h1
+            max-width: var(--colFour)
+
+    .bottomSplit
+        margin-top: 9rem
 
 section
     margin-bottom: 18rem
@@ -96,6 +110,20 @@ section
 // Navbar
 #navbar
     display: none
+
+header.headerStandard
+    // min-height: 112vh
+    background: var(--maroon)
+    padding-top: 10rem
+    padding-left: 4rem
+    display: flex
+    flex-direction: column
+    justify-content: center
+    padding-bottom: 10rem
+
+    h2
+        color: var(--tan)
+
 
 // Header Homepage 
 header#headerLarge
@@ -124,7 +152,7 @@ header#headerLarge
     img
         object-fit: cover
         width: var(--colEight)
-        padding-right: 2rem
+        padding-right: 4rem
         height: 55%
 
     h1
@@ -242,17 +270,23 @@ header#headerLarge
 // Applies to anything above 768px
 @media only screen and (min-width: 768px)
 
+    header.headerStandard
+
+        h1
+            width: var(--colSix)
+
     header#headerLarge
         height: 140vh
 
         img
             height: 55%
 
-        // #companyNameContainer
+    footer
 
-        //     span
+        .topSplit
 
-        //         blockquote
+            h1
+                max-width: var(--colFour)
 
     .verticalListSmall
         width: var(--colFive)

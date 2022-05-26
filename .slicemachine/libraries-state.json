@@ -87,18 +87,18 @@
               "version": "sktwi1xtmkfgx8626",
               "description": "HeaderStandard",
               "primary": {
-                "headline": {
-                  "type": "Text",
-                  "config": {
-                    "label": "Headline",
-                    "placeholder": "Please type a headline here"
-                  }
-                },
                 "subhead": {
                   "type": "Text",
                   "config": {
                     "label": "Subhead",
                     "placeholder": "Please type a subhead here"
+                  }
+                },
+                "headline": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Headline",
+                    "placeholder": "Please type a headline here"
                   }
                 }
               },
@@ -114,8 +114,8 @@
             "slice_type": "header_standard",
             "items": [],
             "primary": {
-              "headline": "morph web-enabled functionalities",
-              "subhead": "monetize value-added content"
+              "subhead": "disintermediate wireless models",
+              "headline": "morph revolutionary e-markets"
             }
           }
         },
@@ -239,23 +239,36 @@
               "description": "OurFramework",
               "primary": {
                 "title": {
-                  "type": "StructuredText",
+                  "type": "Text",
                   "config": {
-                    "single": "heading1",
                     "label": "Title",
-                    "placeholder": "This is where it all begins..."
-                  }
-                },
-                "description": {
-                  "type": "StructuredText",
-                  "config": {
-                    "single": "paragraph",
-                    "label": "Description",
-                    "placeholder": "A nice description of your feature"
+                    "placeholder": ""
                   }
                 }
               },
-              "items": {},
+              "items": {
+                "step-title": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Step Title",
+                    "placeholder": ""
+                  }
+                },
+                "step-heading": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Step Heading",
+                    "placeholder": ""
+                  }
+                },
+                "step-description": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Step Description",
+                    "placeholder": ""
+                  }
+                }
+              },
               "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
             }
           ]
@@ -265,22 +278,40 @@
             "variation": "default",
             "name": "Default",
             "slice_type": "our_framework",
-            "items": [],
+            "items": [
+              {
+                "step-title": "enable transparent deliverables",
+                "step-heading": "scale one-to-one partnerships",
+                "step-description": "redefine web-enabled web-readiness"
+              },
+              {
+                "step-title": "grow compelling deliverables",
+                "step-heading": "seize integrated mindshare",
+                "step-description": "deliver interactive communities"
+              },
+              {
+                "step-title": "incubate strategic supply-chains",
+                "step-heading": "integrate distributed e-commerce",
+                "step-description": "enable real-time models"
+              },
+              {
+                "step-title": "synergize value-added vortals",
+                "step-heading": "deliver web-enabled synergies",
+                "step-description": "cultivate B2B action-items"
+              },
+              {
+                "step-title": "enable one-to-one markets",
+                "step-heading": "generate bleeding-edge systems",
+                "step-description": "scale virtual deliverables"
+              },
+              {
+                "step-title": "envisioneer end-to-end relationships",
+                "step-heading": "synthesize granular niches",
+                "step-description": "target seamless e-business"
+              }
+            ],
             "primary": {
-              "title": [
-                {
-                  "type": "heading1",
-                  "text": "Incubate strategic mindshare",
-                  "spans": []
-                }
-              ],
-              "description": [
-                {
-                  "type": "paragraph",
-                  "text": "Aliqua laborum incididunt aliquip anim eiusmod excepteur proident excepteur ut eiusmod reprehenderit ipsum. Nisi Lorem eiusmod adipisicing aliquip magna. Elit ex esse aute aliquip nisi.",
-                  "spans": []
-                }
-              ]
+              "title": "innovate front-end infomediaries"
             }
           }
         },
@@ -493,6 +524,39 @@
                 }
               },
               "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            },
+            {
+              "id": "verticalListWithDescription",
+              "name": "VerticalListWithDescription",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "VerticalListSmall",
+              "primary": {
+                "title": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Section Title",
+                    "placeholder": ""
+                  }
+                },
+                "description": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Section Description",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "items": {
+                "heading": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Row Heading",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
             }
           ]
         },
@@ -503,16 +567,50 @@
             "slice_type": "vertical_list_small",
             "items": [
               {
-                "heading": "utilize B2B e-services",
-                "description": "productize global applications"
+                "heading": "embrace cutting-edge niches",
+                "description": "e-enable bricks-and-clicks deliverables"
               },
               {
-                "heading": "embrace seamless niches",
-                "description": "visualize frictionless e-markets"
+                "heading": "extend efficient convergence",
+                "description": "incentivize distributed channels"
+              },
+              {
+                "heading": "maximize visionary applications",
+                "description": "streamline front-end action-items"
+              },
+              {
+                "heading": "exploit clicks-and-mortar communities",
+                "description": "reintermediate collaborative relationships"
               }
             ],
             "primary": {
-              "title": "implement seamless systems"
+              "title": "matrix impactful metrics"
+            }
+          },
+          "verticalListWithDescription": {
+            "variation": "verticalListWithDescription",
+            "name": "VerticalListWithDescription",
+            "slice_type": "vertical_list_small",
+            "items": [
+              {
+                "heading": "matrix world-class partnerships"
+              },
+              {
+                "heading": "disintermediate efficient synergies"
+              },
+              {
+                "heading": "productize global systems"
+              },
+              {
+                "heading": "streamline granular relationships"
+              },
+              {
+                "heading": "extend turn-key e-services"
+              }
+            ],
+            "primary": {
+              "title": "matrix robust action-items",
+              "description": "transition open-source users"
             }
           }
         },

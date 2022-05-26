@@ -4,6 +4,10 @@
       "default": {
         "primary": {},
         "items": {}
+      },
+      "verticalListWithDescription": {
+        "items": {},
+        "primary": {}
       }
     },
     "Quote": {
@@ -15,7 +19,13 @@
       "default": {
         "primary": {}
       }
-    }
+    },
+    "OurFramework": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "HeaderStandard": {}
   },
   "_cts": {
     "privacy-policy": {
@@ -25,6 +35,7 @@
           "blocks": 1
         }
       }
-    }
+    },
+    "what-we-do": {}
   }
 }

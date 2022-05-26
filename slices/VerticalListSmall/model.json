@@ -36,6 +36,39 @@
         }
       },
       "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    },
+    {
+      "id": "verticalListWithDescription",
+      "name": "VerticalListWithDescription",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "VerticalListSmall",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Section Title",
+            "placeholder": ""
+          }
+        },
+        "description": {
+          "type": "Text",
+          "config": {
+            "label": "Section Description",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Row Heading",
+            "placeholder": ""
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
     }
   ]
 }

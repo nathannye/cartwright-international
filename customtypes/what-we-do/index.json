@@ -1,0 +1,24 @@
+{
+  "id": "what-we-do",
+  "label": "What We Do",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "quote": {
+              "type": "SharedSlice"
+            },
+            "header_standard": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}
