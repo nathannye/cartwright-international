@@ -196,10 +196,11 @@ header#headerLarge blockquote {
 }
 
 .verticalListSmall span.entryLineTop {
-  height: .5px;
+  height: 1px;
   width: 100%;
+  opacity: .25;
   background: var(--maroon);
-  margin-bottom: calc(var(--gutter)/2);
+  margin-bottom: .75rem;
 }
 
 .verticalListSmall span.verticalListHeading {
@@ -227,6 +228,10 @@ header#headerLarge blockquote {
 
 .verticalListSmall .verticalListEntries div.listEntry p {
   max-width: var(--colFive);
+}
+
+.verticalListSmall .verticalListEntries div.listEntry:not(:last-child) {
+  margin-bottom: 2.5rem;
 }
 
 .imageCarousel {

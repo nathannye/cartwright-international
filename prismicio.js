@@ -12,6 +12,8 @@ export function linkResolver(doc) {
       return "/";
     case "what-we-do":
       return "/what-we-do";
+    case "our-team":
+      return "/our-team";
     default:
       return null;
   }

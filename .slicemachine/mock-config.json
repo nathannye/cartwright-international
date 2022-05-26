@@ -25,7 +25,12 @@
         "primary": {}
       }
     },
-    "HeaderStandard": {}
+    "HeaderStandard": {},
+    "TeamMember": {
+      "default": {
+        "primary": {}
+      }
+    }
   },
   "_cts": {
     "privacy-policy": {
@@ -36,6 +41,7 @@
         }
       }
     },
-    "what-we-do": {}
+    "what-we-do": {},
+    "our-team": {}
   }
 }

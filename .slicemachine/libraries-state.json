@@ -406,48 +406,45 @@
               "docURL": "...",
               "version": "sktwi1xtmkfgx8626",
               "description": "TeamMember",
-              "primary": {
+              "primary": {},
+              "items": {
                 "name": {
                   "type": "Text",
                   "config": {
                     "label": "Name",
-                    "placeholder": "John Smith"
+                    "placeholder": ""
                   }
                 },
                 "bio": {
                   "type": "Text",
                   "config": {
                     "label": "Bio",
-                    "placeholder": "A little about you…"
+                    "placeholder": ""
                   }
                 },
                 "email": {
                   "type": "Text",
                   "config": {
                     "label": "Email",
-                    "placeholder": "email@example.com"
+                    "placeholder": ""
                   }
                 },
                 "position": {
                   "type": "Text",
                   "config": {
                     "label": "Position",
-                    "placeholder": "Slaes Expert"
+                    "placeholder": ""
                   }
                 },
                 "image": {
                   "type": "Image",
                   "config": {
                     "label": "Image",
-                    "constraint": {
-                      "width": 300,
-                      "height": 500
-                    },
+                    "constraint": {},
                     "thumbnails": []
                   }
                 }
               },
-              "items": {},
               "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
             }
           ]
@@ -457,22 +454,99 @@
             "variation": "default",
             "name": "Default",
             "slice_type": "team_member",
-            "items": [],
-            "primary": {
-              "name": "envisioneer frictionless ROI",
-              "bio": "integrate vertical paradigms",
-              "email": "implement holistic synergies",
-              "position": "reintermediate out-of-the-box vortals",
-              "image": {
-                "dimensions": {
-                  "width": 300,
-                  "height": 500
-                },
-                "alt": "Placeholder image",
-                "copyright": null,
-                "url": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=300&h=500&fit=crop"
+            "items": [
+              {
+                "name": "evolve clicks-and-mortar ROI",
+                "bio": "unleash cross-platform schemas",
+                "email": "recontextualize out-of-the-box experiences",
+                "position": "recontextualize out-of-the-box metrics",
+                "image": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68?w=900&h=500&fit=crop"
+                }
+              },
+              {
+                "name": "generate efficient initiatives",
+                "bio": "generate B2C channels",
+                "email": "utilize frictionless initiatives",
+                "position": "strategize bricks-and-clicks applications",
+                "image": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68?w=900&h=500&fit=crop"
+                }
+              },
+              {
+                "name": "envisioneer clicks-and-mortar e-markets",
+                "bio": "repurpose seamless relationships",
+                "email": "synthesize innovative mindshare",
+                "position": "enable best-of-breed solutions",
+                "image": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1587653915936-5623ea0b949a?w=900&h=500&fit=crop"
+                }
+              },
+              {
+                "name": "morph best-of-breed models",
+                "bio": "deploy granular communities",
+                "email": "cultivate revolutionary mindshare",
+                "position": "implement bricks-and-clicks web services",
+                "image": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=900&h=500&fit=crop"
+                }
+              },
+              {
+                "name": "empower front-end action-items",
+                "bio": "embrace sticky functionalities",
+                "email": "disintermediate front-end metrics",
+                "position": "incubate 24/7 web services",
+                "image": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=900&h=500&fit=crop"
+                }
+              },
+              {
+                "name": "synergize mission-critical metrics",
+                "bio": "integrate viral markets",
+                "email": "benchmark revolutionary eyeballs",
+                "position": "facilitate leading-edge relationships",
+                "image": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1547082299-de196ea013d6?w=900&h=500&fit=crop"
+                }
               }
-            }
+            ],
+            "primary": {}
           }
         },
         "meta": {

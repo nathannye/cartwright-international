@@ -10,13 +10,13 @@ function VerticalListSmall({ slice }) {
       <div className="verticalListEntries">
         <p>{slice.primary.description}</p>
         <div>
-          {slice.items.map((item) => {
-            <div className="listEntry">
+          {slice.items.map((item) => (
+            <div className="listEntry" key={item.description}>
               <span className="entryLineTop"></span>
-              <h3>{slice.items.heading}</h3>
-              <p>{slice.items.description}</p>
-            </div>;
-          })}
+              <h3>{item.heading}</h3>
+              <p>{item.description}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

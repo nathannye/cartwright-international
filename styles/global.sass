@@ -172,10 +172,11 @@ header#headerLarge
     margin-left: var(--colOne)
 
     span.entryLineTop
-        height: .5px
+        height: 1px
         width: 100%
+        opacity: .25
         background: var(--maroon)
-        margin-bottom: calc(var(--gutter)/2)
+        margin-bottom: .75rem
 
     span.verticalListHeading
         display: flex
@@ -198,6 +199,14 @@ header#headerLarge
 
             p
                 max-width: var(--colFive)
+
+            &:not(:last-child)
+                margin-bottom: 2.5rem
+
+.teamMemberEntry
+
+    .teamMemberText
+
 
 // Image Carousel
 .imageCarousel  
