@@ -1,0 +1,70 @@
+[
+  {
+    "variation": "default",
+    "name": "Default",
+    "slice_type": "team_member",
+    "items": [
+      {
+        "name": "drive frictionless mindshare",
+        "bio": "aggregate viral architectures",
+        "email": "matrix holistic applications",
+        "position": "orchestrate 24/365 applications",
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=900&h=500&fit=crop"
+        }
+      },
+      {
+        "name": "grow cross-media vortals",
+        "bio": "repurpose synergistic deliverables",
+        "email": "deliver cross-platform users",
+        "position": "harness intuitive ROI",
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1600861194802-a2b11076bc51?w=900&h=500&fit=crop"
+        }
+      },
+      {
+        "name": "enhance scalable markets",
+        "bio": "extend real-time infomediaries",
+        "email": "brand scalable metrics",
+        "position": "redefine one-to-one synergies",
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=900&h=500&fit=crop"
+        }
+      },
+      {
+        "name": "deploy integrated applications",
+        "bio": "cultivate rich vortals",
+        "email": "disintermediate efficient eyeballs",
+        "position": "utilize open-source infomediaries",
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68?w=900&h=500&fit=crop"
+        }
+      }
+    ],
+    "primary": {}
+  }
+]

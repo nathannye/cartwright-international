@@ -6,6 +6,7 @@ import ImgCarousel from './ImgCarousel';
 import OurFramework from './OurFramework';
 import Quote from './Quote';
 import TeamMember from './TeamMember';
+import VerticalListLarge from './VerticalListLarge';
 import VerticalListSmall from './VerticalListSmall';
 
 export {
@@ -15,6 +16,7 @@ export {
 	OurFramework,
 	Quote,
 	TeamMember,
+	VerticalListLarge,
 	VerticalListSmall,
 };
 
@@ -25,5 +27,6 @@ export const components = {
 	our_framework: OurFramework,
 	quote: Quote,
 	team_member: TeamMember,
+	vertical_list_large: VerticalListLarge,
 	vertical_list_small: VerticalListSmall,
 };

@@ -1,4 +1,4 @@
-import { Header } from "./Header";
+// import { Header } from "./Header";
 
 export const Layout = ({ children, menu }) => {
   return (
@@ -6,7 +6,7 @@ export const Layout = ({ children, menu }) => {
       {/* <Head>
         <title> Prismic Next.js Multi Page Website </title>
       </Head> */}
-      <Header menu={menu} />
+      {/* <Header menu={menu} /> */}
       <main>{children}</main>
     </div>
   );

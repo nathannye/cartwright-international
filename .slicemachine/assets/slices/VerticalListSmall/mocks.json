@@ -1,0 +1,48 @@
+[
+  {
+    "variation": "default",
+    "name": "Default",
+    "slice_type": "vertical_list_small",
+    "items": [
+      {
+        "heading": "matrix viral solutions",
+        "description": "synthesize visionary eyeballs"
+      },
+      {
+        "heading": "mesh dynamic convergence",
+        "description": "repurpose cross-media functionalities"
+      },
+      {
+        "heading": "maximize clicks-and-mortar platforms",
+        "description": "expedite extensible solutions"
+      },
+      {
+        "heading": "harness bleeding-edge blockchains",
+        "description": "facilitate 24/365 initiatives"
+      }
+    ],
+    "primary": {
+      "title": "maximize strategic solutions"
+    }
+  },
+  {
+    "variation": "verticalListWithDescription",
+    "name": "VerticalListWithDescription",
+    "slice_type": "vertical_list_small",
+    "items": [
+      {
+        "heading": "syndicate intuitive deliverables"
+      },
+      {
+        "heading": "reintermediate leading-edge deliverables"
+      },
+      {
+        "heading": "generate proactive e-services"
+      }
+    ],
+    "primary": {
+      "title": "productize ubiquitous action-items",
+      "description": "benchmark frictionless architectures"
+    }
+  }
+]

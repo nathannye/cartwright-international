@@ -1,29 +1,29 @@
 {
-  "id": "contact-us",
-  "label": "Contact Us",
+  "id": "footer",
+  "label": "Footer",
   "repeatable": false,
   "status": true,
   "json": {
     "Main": {
-      "phone-number": {
+      "heading": {
         "type": "Text",
         "config": {
-          "label": "Phone Number",
+          "label": "Heading",
           "placeholder": ""
         }
       },
-      "email": {
+      "email-field-heading": {
         "type": "Text",
         "config": {
-          "label": "Email",
+          "label": "Email Field Heading",
           "placeholder": ""
         }
       },
-      "slices": {
-        "type": "Slices",
-        "fieldset": "Slice Zone",
+      "email-field-placeholder": {
+        "type": "Text",
         "config": {
-          "choices": {}
+          "label": "Email Field Placeholder",
+          "placeholder": ""
         }
       }
     }

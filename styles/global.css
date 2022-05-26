@@ -4,13 +4,13 @@
 }
 
 html {
+  font-size: 87.5%;
   --maroon: #7B0E26;
   --tan: #ffcca7;
   --light: #F7F5F3;
   --dark: #474444;
   --unit: 12.5%;
   --gutter: 2rem;
-  font-size: 87.5%;
   --colOne: var(--unit);
   --colTwo: calc(var(--unit) * 2);
   --colThree: calc(var(--unit) * 3);
@@ -39,12 +39,26 @@ a {
 }
 
 a.internalLink {
-  margin-top: calc(var(--gutter) /2);
+  margin-top: 1rem;
 }
 
 a.secondaryLink {
-  text-transform: none;
+  text-transform: uppercase;
   text-decoration: underline;
+  margin-top: 1rem;
+  display: inline-block;
+}
+
+ul {
+  padding-left: 0;
+}
+
+ul li {
+  line-height: 1.5;
+}
+
+ul li:first-child {
+  margin-top: .5rem;
 }
 
 blockquote {
@@ -62,12 +76,12 @@ h1 {
   line-height: 89%;
 }
 
-h2 {
-  letter-spacing: .07em;
-  font-size: 1rem;
+h2, label {
+  letter-spacing: .12em;
+  font-size: clamp(0.9rem, calc(0.9rem + ((1vw - 0.25rem) * 0.0893)), 1rem);
   font-weight: 600;
   color: var(--maroon);
-  margin-bottom: 4rem;
+  margin-bottom: var(--gutter);
   text-transform: uppercase;
   font-family: 'IBM Plex Sans', sans-serif;
 }
@@ -80,17 +94,32 @@ h3 {
   margin-bottom: .5rem;
 }
 
+h4 {
+  color: var(--dark);
+  opacity: .65;
+  font-size: 1.05rem;
+  letter-spacing: -.02em;
+}
+
 h4, h5, h5 {
   font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 400;
-  text-transform: uppercase;
 }
 
-p {
+p, li, ul {
   font-family: 'IBM Plex Sans', sans-serif;
   color: var(--dark);
   letter-spacing: -.022em;
   font-size: 1.15rem;
+  font-weight: 400;
+}
+
+::placeholder {
+  color: var(--light);
+  font-family: 'IBM Plex Sans', sans-serif;
+  letter-spacing: -.022em;
+  font-size: 1.15rem;
+  font-weight: 300;
 }
 
 header {
@@ -100,7 +129,7 @@ header {
 
 footer {
   background: var(--maroon);
-  padding: 3rem 4rem;
+  padding: 3rem var(--gutter);
 }
 
 footer * {
@@ -113,11 +142,28 @@ footer *:not(:last-child) {
 
 footer .topSplit {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
-footer .topSplit h1 {
-  max-width: var(--colFour);
+footer .topSplit #emailFormContainer {
+  margin-top: var(--gutter);
+}
+
+footer .topSplit #emailFormContainer input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  margin-top: 1rem;
+}
+
+footer .topSplit #emailFormContainer span.lineBottom {
+  height: 1px;
+  display: block;
+  width: 100%;
+  opacity: 1;
+  background: var(--light);
+  margin-top: .75rem;
 }
 
 footer .bottomSplit {
@@ -147,7 +193,7 @@ span.lineTop {
   left: 0;
   z-index: 20;
   width: 100vw;
-  padding: 2rem 4rem;
+  padding: 1.25rem var(--gutter);
 }
 
 #navbar .logo {
@@ -211,7 +257,7 @@ span.lineTop {
 header.headerStandard {
   background: var(--maroon);
   padding-top: 10rem;
-  padding-left: 4rem;
+  padding-left: var(--gutter);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -275,7 +321,7 @@ header#headerLarge blockquote {
   width: 100vw;
   z-index: 30;
   height: 100vh;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -302,19 +348,25 @@ header#headerLarge blockquote {
 }
 
 #loader #loaderLogos {
-  z-index: 32;
-  position: relative;
+  z-index: 33;
   display: grid;
 }
 
-#loader #loaderLogos div {
+#loader #loaderLogos svg {
   grid-column: 1;
+  display: block;
+  width: 9.5rem;
   grid-row: 1;
+}
+
+#loader #loaderLogos svg#logoOutline {
+  transform: translateY(0.7rem);
 }
 
 .verticalListSmall {
   width: 100%;
   margin-left: var(--colOne);
+  padding-right: var(--gutter);
 }
 
 .verticalListSmall span.verticalListHeading {
@@ -325,11 +377,22 @@ header#headerLarge blockquote {
 
 .verticalListSmall .verticalListEntries {
   display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
   justify-content: space-between;
 }
 
 .verticalListSmall .verticalListEntries > div {
-  width: 100%;
+  width: 60%;
+  flex-grow: 1;
+}
+
+.verticalListSmall .verticalListEntries > p {
+  width: 40%;
+  max-width: 510px;
+  min-width: 310px;
+  margin-bottom: var(--gutter);
+  padding-right: var(--gutter);
 }
 
 .verticalListSmall .verticalListEntries div.listEntry {
@@ -350,6 +413,40 @@ header#headerLarge blockquote {
 
 .verticalListSmall .verticalListEntries div.listEntry:not(:last-child) {
   margin-bottom: 2.5rem;
+}
+
+.verticalListLarge {
+  margin-left: var(--gutter);
+  margin-right: var(--gutter);
+}
+
+.verticalListLarge div.largeListEntry {
+  width: 100%;
+}
+
+.verticalListLarge div.largeListEntry > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.verticalListLarge div.largeListEntry > div h3 {
+  flex-grow: 1;
+  min-width: 300px;
+  max-width: 650px;
+  margin-right: var(--gutter);
+}
+
+.verticalListLarge div.largeListEntry > div > div {
+  width: var(--colFour);
+  max-width: 650px;
+  min-width: 340px;
+  flex-grow: 1;
+}
+
+.verticalListLarge div.largeListEntry > div > div h4 {
+  width: 100%;
 }
 
 .imageCarousel {
@@ -396,6 +493,10 @@ header#headerLarge blockquote {
   flex-direction: row-reverse;
 }
 
+#ourFramework .frameworkEntry:not(:last-child) {
+  margin-bottom: 9rem;
+}
+
 #ourFramework .frameworkCard {
   background: var(--maroon);
   width: 300px;
@@ -433,12 +534,58 @@ header#headerLarge blockquote {
   color: var(--dark);
 }
 
+#teamMembers {
+  display: flex;
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#teamMembers svg {
+  position: absolute;
+  visibility: hidden;
+}
+
+#teamMembers .col {
+  width: var(--colTwo);
+  display: flex;
+  min-width: 240px;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+#teamMembers .teamMemberEntry h4 {
+  margin-bottom: 1rem;
+}
+
+#teamMembers .teamMemberEntry div.imageContainer {
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+}
+
+#teamMembers .teamMemberEntry img {
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+  filter: url(#filter);
+  transform: scale(1.5);
+}
+
+#teamMembers .teamMemberEntry:not(:last-child) {
+  margin-bottom: 7rem;
+}
+
 @media only screen and (min-width: 768px) {
+  html {
+    --gutter: 3rem;
+  }
   #mobileNavMenu {
     display: none;
   }
   #navbar {
-    padding: 1rem 4rem;
+    padding: 1rem var(--gutter);
   }
   #navbar > nav {
     display: flex;
@@ -448,6 +595,9 @@ header#headerLarge blockquote {
   }
   #navbar #hamburgerBtn {
     display: none;
+  }
+  header.headerStandard {
+    padding-left: var(--gutter);
   }
   header.headerStandard h1 {
     width: var(--colSix);
@@ -461,8 +611,11 @@ header#headerLarge blockquote {
   footer .topSplit h1 {
     max-width: var(--colFour);
   }
+  footer .topSplit #emailFormContainer {
+    margin-top: 0;
+  }
   .verticalListSmall {
-    width: var(--colFour);
+    width: var(--colSeven);
   }
   .imageCarousel {
     width: var(--colSeven);
@@ -482,5 +635,21 @@ header#headerLarge blockquote {
   }
   .quoteLarge {
     width: var(--colFive);
+  }
+  #teamMembers {
+    margin-left: var(--gutter);
+    margin-right: var(--gutter);
+  }
+  #teamMembers .col {
+    max-width: 360px;
+  }
+  #teamMembers .col:first-of-type {
+    margin-right: var(--colOne);
+  }
+  #teamMembers .col:last-child {
+    margin-top: 16rem;
+  }
+  #teamMembers .col .teamMemberEntry div.imageContainer {
+    height: 500px;
   }
 }

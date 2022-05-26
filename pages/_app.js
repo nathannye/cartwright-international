@@ -5,6 +5,7 @@ import Link from "next/link";
 import { PrismicProvider } from "@prismicio/react";
 import { PrismicPreview } from "@prismicio/next";
 import { linkResolver, repositoryName } from "../prismicio";
+import { VerticalListLarge } from "../slices";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -19,6 +20,7 @@ function MyApp({ Component, pageProps }) {
       <PrismicPreview repositoryName={repositoryName}>
         <Navbar />
         <Component {...pageProps} />
+        <VerticalListLarge />
         <Footer />
       </PrismicPreview>
     </PrismicProvider>

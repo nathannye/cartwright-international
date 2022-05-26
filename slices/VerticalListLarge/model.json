@@ -1,0 +1,42 @@
+{
+  "id": "vertical_list_large",
+  "type": "SharedSlice",
+  "name": "VerticalListLarge",
+  "description": "VerticalListLarge",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "VerticalListLarge",
+      "primary": {},
+      "items": {
+        "entry-title": {
+          "type": "Text",
+          "config": {
+            "label": "Entry Title",
+            "placeholder": ""
+          }
+        },
+        "entry-description": {
+          "type": "Text",
+          "config": {
+            "label": "Entry Description",
+            "placeholder": ""
+          }
+        },
+        "entry-bullet-list": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Entry Bullet List",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "list-item"
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

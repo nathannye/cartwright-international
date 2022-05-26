@@ -1,0 +1,21 @@
+{
+  "_cts": {
+    "contact-us": {},
+    "footer": {}
+  },
+  "slices": {
+    "VerticalListLarge": {
+      "default": {
+        "items": {
+          "entry-bullet-list": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        },
+        "primary": {}
+      }
+    }
+  }
+}
