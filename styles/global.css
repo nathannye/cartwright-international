@@ -20,6 +20,7 @@ html {
   --colSeven: calc(var(--unit) * 7);
   --colEight: calc(var(--unit) * 8);
   min-height: 100vh;
+  background: var(--light);
 }
 
 h1, h2, h3, blockquote {
@@ -30,7 +31,8 @@ h1, h2, h3, blockquote {
 a {
   color: var(--maroon);
   font-family: 'IBM Plex Sans', sans-serif;
-  font-weight: 400;
+  font-weight: 500;
+  font-size: .9rem;
   display: inline-block;
   text-transform: uppercase;
   text-decoration: none;
@@ -63,8 +65,9 @@ h1 {
 h2 {
   letter-spacing: .07em;
   font-size: 1rem;
+  font-weight: 600;
   color: var(--maroon);
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   text-transform: uppercase;
   font-family: 'IBM Plex Sans', sans-serif;
 }
@@ -74,6 +77,7 @@ h3 {
   letter-spacing: -.02em;
   font-weight: 500;
   color: var(--maroon);
+  margin-bottom: .5rem;
 }
 
 h4, h5, h5 {
@@ -125,7 +129,47 @@ section {
 }
 
 #navbar {
-  display: none;
+  color: var(--light);
+  background: var(--light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  padding: 1rem 4rem;
+}
+
+#navbar #logo {
+  width: 3.75rem;
+}
+
+#mobileNavMenu {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: var(--light);
+  width: 100vw;
+  height: 100vh;
+  padding-bottom: 6rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  display: flex;
+  align-items: flex-end;
+}
+
+#mobileNavMenu nav {
+  display: flex;
+  flex-direction: column;
+}
+
+#mobileNavMenu nav a {
+  font-size: inherit;
+  text-transform: capitalize;
+  font-weight: inherit;
+  font-family: inherit;
 }
 
 header.headerStandard {
@@ -214,6 +258,10 @@ header#headerLarge blockquote {
   justify-content: space-between;
 }
 
+.verticalListSmall .verticalListEntries > div {
+  width: 100%;
+}
+
 .verticalListSmall .verticalListEntries div.listEntry {
   display: flex;
   justify-content: space-between;
@@ -297,6 +345,7 @@ header#headerLarge blockquote {
 
 #ourFramework .frameworkCard .cardInfo h3 {
   color: var(--tan);
+  margin-bottom: 0;
 }
 
 #ourFramework .frameworkText {
@@ -315,6 +364,12 @@ header#headerLarge blockquote {
 }
 
 @media only screen and (min-width: 768px) {
+  #mobileNavMenu {
+    display: none;
+  }
+  #navbar nav a:not(:last-child) {
+    margin-right: 1rem;
+  }
   header.headerStandard h1 {
     width: var(--colSix);
   }
@@ -328,7 +383,7 @@ header#headerLarge blockquote {
     max-width: var(--colFour);
   }
   .verticalListSmall {
-    width: var(--colFive);
+    width: var(--colFour);
   }
   .imageCarousel {
     width: var(--colSeven);

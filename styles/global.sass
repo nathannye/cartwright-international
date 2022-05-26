@@ -19,6 +19,7 @@ html
     --colSeven: calc(var(--unit) * 7)
     --colEight: calc(var(--unit) * 8)
     min-height: 100vh
+    background: var(--light)
 
 h1, h2, h3, blockquote
     font-family: 'Cormorant Garamond', serif
@@ -27,7 +28,8 @@ h1, h2, h3, blockquote
 a
     color: var(--maroon)
     font-family: 'IBM Plex Sans', sans-serif;
-    font-weight: 400
+    font-weight: 500
+    font-size: .9rem
     display: inline-block
     text-transform: uppercase
     text-decoration: none
@@ -56,8 +58,9 @@ h1
 h2
     letter-spacing: .07em
     font-size: 1rem
+    font-weight: 600
     color: var(--maroon)
-    margin-bottom: 2rem
+    margin-bottom: 4rem
     text-transform: uppercase
     font-family: 'IBM Plex Sans', sans-serif
 
@@ -66,6 +69,7 @@ h3
     letter-spacing: -.02em
     font-weight: 500
     color: var(--maroon)
+    margin-bottom: .5rem
 
 h4, h5, h5
     font-family: 'IBM Plex Sans', sans-serif
@@ -109,7 +113,44 @@ section
 
 // Navbar
 #navbar
-    display: none
+    color: var(--light)
+    background: var(--light)
+    display: flex
+    align-items: center
+    justify-content: space-between
+    position: fixed
+    top: 0
+    left: 0
+    width: 100vw
+    padding: 1rem 4rem
+
+    #logo
+        width: 3.75rem
+
+#mobileNavMenu
+    display: block
+    position: fixed
+    top: 0
+    left: 0
+    background: var(--light)
+    width: 100vw
+    height: 100vh
+    padding-bottom: 6rem
+    padding-left: 2rem
+    padding-right: 2rem
+    display: flex
+    align-items: flex-end
+
+    nav
+        display: flex
+        flex-direction: column
+
+        a
+            font-size: inherit
+            text-transform: capitalize
+            font-weight: inherit
+            font-family: inherit
+
 
 header.headerStandard
     // min-height: 112vh
@@ -187,6 +228,9 @@ header#headerLarge
         display: flex
         justify-content: space-between
 
+        & > div
+            width: 100%
+
         div.listEntry
             display: flex
             justify-content: space-between
@@ -262,6 +306,7 @@ header#headerLarge
 
             h3
                 color: var(--tan)
+                margin-bottom: 0
 
     .frameworkText
         margin-top: 1rem
@@ -278,6 +323,16 @@ header#headerLarge
 
 // Applies to anything above 768px
 @media only screen and (min-width: 768px)
+
+    #mobileNavMenu
+        display: none
+
+    #navbar
+
+        nav
+
+            a:not(:last-child)
+                margin-right: 1rem
 
     header.headerStandard
 
@@ -298,7 +353,7 @@ header#headerLarge
                 max-width: var(--colFour)
 
     .verticalListSmall
-        width: var(--colFive)
+        width: var(--colFour)
 
     .imageCarousel
         width: var(--colSeven)

@@ -1,4 +1,5 @@
 import React from "react";
+import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
 // import { PrismicText } from "@prismicio/react";s
 
 function VerticalListSmall({ slice }) {
