@@ -1,7 +1,12 @@
 {
   "_cts": {
     "contact-us": {},
-    "footer": {}
+    "footer": {},
+    "webpage": {},
+    "navigation": {
+      "items": {}
+    },
+    "menu": {}
   },
   "slices": {
     "VerticalListLarge": {

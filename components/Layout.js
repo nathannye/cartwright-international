@@ -1,12 +1,12 @@
-// import { Header } from "./Header";
+import { Navbar } from "./Navbar";
 
 export const Layout = ({ children, menu }) => {
   return (
-    <div className="text-neutral-700 antialiased">
+    <div>
       {/* <Head>
         <title> Prismic Next.js Multi Page Website </title>
       </Head> */}
-      {/* <Header menu={menu} /> */}
+      <Navbar menu={menu} />
       <main>{children}</main>
     </div>
   );

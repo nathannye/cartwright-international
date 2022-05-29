@@ -1,28 +1,28 @@
 {
-  "id": "navigation",
-  "label": "Navigation",
+  "id": "menu",
+  "label": "Menu",
   "repeatable": false,
   "status": true,
   "json": {
     "Main": {
-      "group": {
+      "menu-links": {
         "type": "Group",
         "config": {
-          "label": "Group",
+          "label": "Menu Links",
           "fields": {
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "Label",
+                "placeholder": ""
+              }
+            },
             "link": {
               "type": "Link",
               "config": {
                 "label": "Link",
                 "placeholder": "",
                 "select": null
-              }
-            },
-            "link-name": {
-              "type": "Text",
-              "config": {
-                "label": "Link Name",
-                "placeholder": ""
               }
             }
           }

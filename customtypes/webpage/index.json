@@ -12,6 +12,20 @@
           "placeholder": ""
         }
       },
+      "page-description": {
+        "type": "Text",
+        "config": {
+          "label": "Page Description",
+          "placeholder": ""
+        }
+      },
+      "page-title": {
+        "type": "Text",
+        "config": {
+          "label": "Page Title",
+          "placeholder": "Appears in the tab on a web browser"
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
@@ -36,6 +50,9 @@
               "type": "SharedSlice"
             },
             "vertical_list_small": {
+              "type": "SharedSlice"
+            },
+            "vertical_list_large": {
               "type": "SharedSlice"
             }
           }

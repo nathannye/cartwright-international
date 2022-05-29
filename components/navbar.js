@@ -3,7 +3,7 @@ import Link from "next/link";
 import { PrismicProvider } from "@prismicio/react";
 import colors from "../utils/colors";
 
-const Navbar = ({ data }) => {
+const Navbar = ({ menu }) => {
   return (
     <>
       <div id="navbar">
@@ -128,14 +128,13 @@ const Navbar = ({ data }) => {
           </g>
         </svg>
         <nav>
-          <a href="">thing</a>
-          <a href="">thing</a>
-          <a href="">thing</a>
-          <a href="">thing</a>
+          {menu.items.map((link) => {
+            <Link key={link.label} href={link.link}>
+              <a>{link.label}</a>
+            </Link>;
+          })}
         </nav>
-        <div id="hamburgerBtn">
-
-        </div>
+        <div id="hamburgerBtn"></div>
       </div>
       <div id="mobileNavMenu">
         <nav>
@@ -294,13 +293,13 @@ const Navbar = ({ data }) => {
   );
 };
 
-export async function getStaticProps({ previewData }) {
-  const client = createClient({ previewData });
+// export async function getStaticProps({ previewData }) {
+//   const client = createClient({ previewData });
 
-  const data = await client.getSingle("navigation");
-  return {
-    props: { data },
-  };
-}
+//   const data = await client.getSingle("navigation");
+//   return {
+//     props: { data },
+//   };
+// }
 
 export default Navbar;
