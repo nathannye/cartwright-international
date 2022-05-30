@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { EmailForm } from "../components/EmailForm";
 
-export const Footer = ({ contact }) => {
+const Footer = ({ contact }) => {
   return (
     <footer>
       <div className="topSplit">
@@ -32,12 +32,14 @@ export const Footer = ({ contact }) => {
   );
 };
 
-export async function getStaticProps({ previewData }) {
-  const client = createClient({ previewData });
+// export async function getStaticProps({ previewData }) {
+//   const client = createClient({ previewData });
 
-  // const contact = await client.getSingle("contact-us");
+//   const contact = await client.getSingle("contact-us");
 
-  return {
-    props: { contact },
-  };
-}
+//   return {
+//     props: { contact },
+//   };
+// }
+
+export default Footer;

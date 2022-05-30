@@ -2,7 +2,7 @@ import Link from "next/link";
 import { PrismicLink, PrismicText } from "@prismicio/react";
 import * as prismicH from "@prismicio/helpers";
 
-export const Navbar = ({ menu }) => {
+const Navbar = ({ menu }) => {
   return (
     <>
       <div id="navbar">
@@ -297,3 +297,5 @@ export const Navbar = ({ menu }) => {
     </>
   );
 };
+
+export default Navbar;

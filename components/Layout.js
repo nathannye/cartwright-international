@@ -1,6 +1,6 @@
 import Head from "next/head";
-import { Navbar } from "./Navbar";
-import { Footer } from "./Footer";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
 import { linkResolver } from "../prismicio";
 
