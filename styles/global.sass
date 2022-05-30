@@ -18,6 +18,7 @@ html
     --colSix: calc(var(--unit) * 6 )
     --colSeven: calc(var(--unit) * 7)
     --colEight: calc(var(--unit) * 8)
+    --powerEase: all .24s cubic-bezier(.67,0,.35,.98)
     min-height: 100vh
     background: var(--light)
 
@@ -114,6 +115,9 @@ footer
     background: var(--maroon)
     padding: 3rem var(--gutter)
 
+    &.noFooter
+        display: none
+
     *
         color: var(--light)
 
@@ -125,24 +129,49 @@ footer
         flex-wrap: wrap
         justify-content: space-between
 
-        #emailFormContainer
-            margin-top: var(--gutter)
-    
-            input
-                width: 100%
-                background: transparent
-                border: none
-                margin-top: 1rem
+    #emailFormContainer
+        margin-top: var(--gutter)
 
-            span.lineBottom
-                height: 1px
-                display: block
-                width: 100%
-                opacity: 1
-                background: var(--light)
-                margin-top: .75rem
+        form
+            position: relative
+
+        input#emailField
+            width: 100%
+            background: transparent
+            border: none
+            margin-top: 1rem
+            -moz-appearance: none
+            -webkit-appearance: none
+            appearance: none
+
+            &:focus
+                font-weight: 600
+
+        input[type="submit"]
+            background: url("../assets/emailArrow.svg")
+            background-repeat: no-repeat
+            background-size: 20px
+            border: none
+            cursor: pointer
+            position: absolute
+            right: 0
+            bottom: 1px
+            width: 42px
+            background-position: 100% 0
+            transition: var(--powerEase)
+
+            &:hover
+                background-position: 65% 0
+                transition: var(--powerEase)
+
+        span.lineBottom
+            height: 1px
+            display: block
+            width: 100%
+            opacity: 1
+            background: var(--light)
+            margin-top: .75rem
                 
-
     .bottomSplit
         margin-top: 9rem
 
@@ -259,11 +288,17 @@ header#headerLarge
                 width: 100%
                 max-width: 500px
 
-    img
-        object-fit: cover
-        width: var(--colEight)
-        padding-right: 4rem
+    div.imageContainer
+        overflow: hidden
         height: 55%
+        margin-right: var(--gutter)
+
+        img
+            filter: url("#filter")
+            height: 100%
+            width: 100%
+            transform: scale(1.1)
+            object-fit: cover
 
     h1
         margin: 0
@@ -399,11 +434,17 @@ header#headerLarge
     overflow: hidden
     margin-left: auto
 
+    &:hover #carouselCursor
+        transition: transform .25s ease-in-out, opacity .25s ease-in-out
+        transform: scale(1.2) translate(-50%, -50%)
+        opacity: 1
+
     .draggerContainer
         display: inline-flex
+        align-items: flex-start
 
         & > div
-            width: var(--colOne)
+            // width: var(--colOne)
             min-width: 160px
             height: 40vh
             min-height: 350px
@@ -416,6 +457,37 @@ header#headerLarge
 
             &:not(:last-child)
                 margin-right: 2rem
+
+#carouselCursor
+    width: 120px
+    height: 120px
+    position: absolute
+    background: var(--maroon)
+    border-radius: 60px
+    z-index: 102
+    display: none
+    pointer-events: none
+    transform: translate(-50%, -50%) scale(.6)
+    opacity: 0
+    transition: transform .25s ease-in-out, opacity .25s ease-in-out
+
+    &:after
+        content: 'DRAG'
+        font-weight: 600
+        text-align: center
+        margin: 0
+        font-family: 'IBM Plex Sans', sans-serif
+        font-size: 1rem
+        position: absolute
+        width: 100%
+        height: 100%
+        top: 0
+        bottom: 0
+        transform: translateY(25%)
+        margin-top: auto
+        margin-bottom: auto
+        color: var(--light)
+
 
 #ourFramework
     width: var(--colSix)
@@ -503,7 +575,23 @@ header#headerLarge
             margin-bottom: 7rem
 
 #meetUsPage
-    
+    background: var(--maroon)
+    padding-top: 10rem
+    min-height: 100vh
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+    h1
+        margin-left: var(--gutter)
+
+    main a:not(footer a)
+        color: var(--tan)
+        font-weight: inherit
+        font-size: inherit
+        font-family: inherit
+        letter-spacing: inherit 
+
 
 // Applies to anything above 768px
 @media only screen and (min-width: 768px)
@@ -545,8 +633,9 @@ header#headerLarge
             h1
                 max-width: var(--colFour)
 
-            #emailFormContainer
-                margin-top: 0
+        #emailFormContainer
+            margin-top: 0
+            width: var(--colTwo)
 
     .verticalListSmall
         width: var(--colSeven)
@@ -557,7 +646,7 @@ header#headerLarge
         .draggerContainer
 
             & > div
-                width: var(--widthThree)
+                width: var(--colFour)
                 height: 70vh
 
     #ourFramework
@@ -597,3 +686,8 @@ header#headerLarge
 
                 div.imageContainer
                     height: 500px
+
+@media (hover: hover)
+
+    #carouselCursor
+        display: block

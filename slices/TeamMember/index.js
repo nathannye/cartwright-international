@@ -15,7 +15,7 @@ const TeamMember = ({ slice }) => {
           height="140%"
           filterUnits="objectBoundingBox"
           primitiveUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
           <feTurbulence
             type="turbulence"

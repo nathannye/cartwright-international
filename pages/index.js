@@ -2,7 +2,6 @@ import { createClient } from "../prismicio";
 import { components } from "../slices";
 import { SliceZone } from "@prismicio/react";
 import Head from "next/head";
-import { Loader } from "../components/Loader";
 import { Layout } from "../components/Layout";
 
 const Index = ({ page, menu }) => {
@@ -21,7 +20,6 @@ const Index = ({ page, menu }) => {
           content="initial-scale=1.0, width=device-width"
         ></meta>
       </Head>
-      {/* <Loader /> */}
       <SliceZone slices={page.data.slices} components={components} />
     </Layout>
   );

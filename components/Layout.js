@@ -1,8 +1,10 @@
 import Head from "next/head";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
+import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
+import { linkResolver } from "../prismicio";
 
-export const Layout = ({ children, menu }) => {
+export const Layout = ({ children, menu, footer }) => {
   return (
     <div>
       <Head>
@@ -14,3 +16,9 @@ export const Layout = ({ children, menu }) => {
     </div>
   );
 };
+
+// export const linkResolver = (doc) => {
+//   if (doc.type === "contact-us") {
+//     footer = "hasNone";
+//   }
+// };
