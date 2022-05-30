@@ -7,9 +7,9 @@ import { linkResolver } from "../prismicio";
 export const Layout = ({ children, menu, footer }) => {
   return (
     <div>
-      <Head>
+      {/* <Head>
         <title>thing thingy</title>
-      </Head>
+      </Head> */}
       <Navbar menu={menu} />
       <main>{children}</main>
       <Footer />
