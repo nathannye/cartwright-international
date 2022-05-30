@@ -1,13 +1,17 @@
 import { SliceZone } from "@prismicio/react";
+import { Layout } from "../components/Layout";
 import * as prismicH from "@prismicio/helpers";
 
 import { createClient, linkResolver } from "../prismicio";
 import { components } from "../slices";
-import { Layout } from "../components/Layout";
+import Head from "next/head";
 
-const Page = ({ menu, slices }) => {
+const Page = ({ slices, menu }) => {
   return (
     <Layout menu={menu}>
+      <Head>
+        <title>this thing</title>
+      </Head>
       <SliceZone slices={slices} components={components} />
     </Layout>
   );
@@ -27,13 +31,14 @@ export async function getStaticProps({ params, previewData }) {
   };
 }
 
-export async function getStaticPaths() {
-  const client = createClient();
+export async function getStaticPaths({ params, previewData }) {
+  const client = createClient({ previewData });
 
   const pages = await client.getAllByType("webpage");
 
   return {
-    paths: pages.map((page) => prismicH.asLink(page, linkResolver)),
+    // paths: pages.map((p) => prismicH.asLink(p, linkResolver)),
+    paths: pages.map((p) => prismicH.asLink(p, linkResolver)),
     fallback: false,
   };
 }

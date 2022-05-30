@@ -6,7 +6,9 @@
     "navigation": {
       "items": {}
     },
-    "menu": {}
+    "menu": {
+      "menuLinks": {}
+    }
   },
   "slices": {
     "VerticalListLarge": {

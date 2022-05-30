@@ -1,9 +1,8 @@
-import { linkResolver, repositoryName } from "../prismicio";
 import Link from "next/link";
-import { PrismicProvider } from "@prismicio/react";
-import colors from "../utils/colors";
+import { PrismicLink, PrismicText } from "@prismicio/react";
+import * as prismicH from "@prismicio/helpers";
 
-const Navbar = ({ menu }) => {
+export const Navbar = ({ menu }) => {
   return (
     <>
       <div id="navbar">
@@ -128,11 +127,17 @@ const Navbar = ({ menu }) => {
           </g>
         </svg>
         <nav>
-          {menu.items.map((link) => {
-            <Link key={link.label} href={link.link}>
-              <a>{link.label}</a>
-            </Link>;
-          })}
+          {menu.data?.menuLinks.map((menuLink) => (
+            // <Link href={menuLink.link} key={menuLink.link}>
+            //   <a>{menuLink.label}</a>
+            // </Link>
+            <PrismicLink
+              field={menuLink.link}
+              key={prismicH.asText(menuLink.label)}
+            >
+              <PrismicText field={menuLink.label} />
+            </PrismicLink>
+          ))}
         </nav>
         <div id="hamburgerBtn"></div>
       </div>
@@ -292,14 +297,3 @@ const Navbar = ({ menu }) => {
     </>
   );
 };
-
-// export async function getStaticProps({ previewData }) {
-//   const client = createClient({ previewData });
-
-//   const data = await client.getSingle("navigation");
-//   return {
-//     props: { data },
-//   };
-// }
-
-export default Navbar;

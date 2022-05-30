@@ -1,36 +1,41 @@
 import { createClient } from "../prismicio";
 import { components } from "../slices";
-
 import { SliceZone } from "@prismicio/react";
 import Head from "next/head";
-import Loader from "../components/Loader";
+import { Loader } from "../components/Loader";
+import { Layout } from "../components/Layout";
 
-const Homepage = ({ page }) => {
+const Index = ({ page, menu }) => {
   return (
-    <Head>
-      <title>Cartwright International | Excellence Defined by Experience</title>
-      <meta
-        name="description"
-        content="A sales consulting agency with a framework for success based on actively understanding your businesses objectives."
-      />
-      <meta
-        name="viewport"
-        content="initial-scale=1.0, width=device-width"
-      ></meta>
-      <Loader />
+    <Layout menu={menu}>
+      <Head>
+        <title>
+          Cartwright International | Excellence Defined by Experience
+        </title>
+        <meta
+          name="description"
+          content="A sales consulting agency with a framework for success based on actively understanding your businesses objectives."
+        />
+        <meta
+          name="viewport"
+          content="initial-scale=1.0, width=device-width"
+        ></meta>
+      </Head>
+      {/* <Loader /> */}
       <SliceZone slices={page.data.slices} components={components} />
-    </Head>
+    </Layout>
   );
 };
+
+export default Index;
 
 export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData });
 
-  const page = await client.getSingle("homepage");
+  const page = await client.getByUID("webpage", "home");
+  const menu = await client.getSingle("menu");
 
   return {
-    props: { page },
+    props: { menu, page },
   };
 }
-
-export default Homepage;

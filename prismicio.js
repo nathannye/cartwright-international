@@ -6,16 +6,16 @@ export const endpoint = sm.apiEndpoint;
 export const repositoryName = prismic.getRepositoryName(endpoint);
 
 // Update the Link Resolver to match your project's route structure
-export function linkResolver(doc) {
-  switch (doc.type) {
-    case "homepage":
+export const linkResolver = (doc) => {
+  if (doc.type === "webpage") {
+    if (doc.uid === "home") {
       return "/";
-    case "webpage":
+    } else {
       return `/${doc.uid}`;
-    default:
-      return null;
+    }
   }
-}
+  return "/";
+};
 
 // This factory function allows smooth preview setup
 export function createClient(config = {}) {

@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-function Footer() {
+export const Footer = () => {
   return (
     <footer>
       <div className="topSplit">
@@ -39,6 +39,4 @@ function Footer() {
       </div>
     </footer>
   );
-}
-
-export default Footer;
+};

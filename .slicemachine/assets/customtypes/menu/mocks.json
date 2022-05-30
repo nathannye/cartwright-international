@@ -1,29 +1,50 @@
 {
-  "id": "2898be3d-4738-415e-9212-60c75289dd87",
-  "uid": "non-iste-non",
+  "id": "e511e5aa-130d-4a97-b4ef-21d22ce57fe6",
+  "uid": "qui-nesciunt-nihil",
   "type": "menu",
   "data": {
-    "menu-links": [
+    "menuLinks": [
       {
-        "label": "matrix intuitive platforms",
-        "link": {
-          "link_type": "Web",
-          "url": "https://prismic.io"
-        }
-      },
-      {
-        "label": "empower robust partnerships",
-        "link": {
-          "link_type": "Web",
-          "url": "http://twitter.com"
-        }
-      },
-      {
-        "label": "syndicate web-enabled experiences",
         "link": {
           "link_type": "Web",
           "url": "https://slicemachine.dev"
-        }
+        },
+        "label": "unleash cross-media partnerships"
+      },
+      {
+        "link": {
+          "link_type": "Web",
+          "url": "https://prismic.io"
+        },
+        "label": "benchmark global interfaces"
+      },
+      {
+        "link": {
+          "link_type": "Web",
+          "url": "http://google.com"
+        },
+        "label": "synergize rich architectures"
+      },
+      {
+        "link": {
+          "link_type": "Web",
+          "url": "http://google.com"
+        },
+        "label": "brand intuitive functionalities"
+      },
+      {
+        "link": {
+          "link_type": "Web",
+          "url": "http://google.com"
+        },
+        "label": "morph sticky mindshare"
+      },
+      {
+        "link": {
+          "link_type": "Web",
+          "url": "https://prismic.io"
+        },
+        "label": "evolve bricks-and-clicks channels"
       }
     ]
   }
