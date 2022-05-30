@@ -128,15 +128,15 @@ export const Navbar = ({ menu }) => {
         </svg>
         <nav>
           {menu.data?.menuLinks.map((menuLink) => (
-            // <Link href={menuLink.link} key={menuLink.link}>
-            //   <a>{menuLink.label}</a>
-            // </Link>
-            <PrismicLink
-              field={menuLink.link}
-              key={prismicH.asText(menuLink.label)}
-            >
-              <PrismicText field={menuLink.label} />
-            </PrismicLink>
+            <Link href={`/${menuLink.link}`} key={menuLink.link}>
+              <a>{menuLink.label}</a>
+            </Link>
+            // <PrismicLink
+            //   field={menuLink.link}
+            //   key={prismicH.asText(menuLink.label)}
+            // >
+            //   <PrismicText field={menuLink.label} />
+            // </PrismicLink>
           ))}
         </nav>
         <div id="hamburgerBtn"></div>

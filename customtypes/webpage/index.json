@@ -12,14 +12,14 @@
           "placeholder": ""
         }
       },
-      "page-description": {
+      "description": {
         "type": "Text",
         "config": {
           "label": "Page Description",
           "placeholder": ""
         }
       },
-      "page-title": {
+      "title": {
         "type": "Text",
         "config": {
           "label": "Page Title",

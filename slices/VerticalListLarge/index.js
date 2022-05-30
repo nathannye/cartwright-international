@@ -1,7 +1,7 @@
 import React from "react";
 import { PrismicRichText } from "@prismicio/react";
 
-const VerticalListLarge = ({ slice }) => (
+export const VerticalListLarge = ({ slice }) => (
   <section className="verticalListLarge">
     <div className="largeListEntry">
       <span className="lineTop"></span>
@@ -23,5 +23,3 @@ const VerticalListLarge = ({ slice }) => (
     </div>
   </section>
 );
-
-export default VerticalListLarge;

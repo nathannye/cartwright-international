@@ -6,16 +6,23 @@ import { createClient, linkResolver } from "../prismicio";
 import { components } from "../slices";
 import Head from "next/head";
 
-const Page = ({ slices, menu }) => {
+const Page = ({ slices, menu, page }) => {
   return (
     <Layout menu={menu}>
       <Head>
-        <title>this thing</title>
+        <title>{page.data.title}</title>
+        <meta name="description" content={page.data.description} />
+        <meta
+          name="viewport"
+          content="initial-scale=1.0, width=device-width"
+        ></meta>
       </Head>
       <SliceZone slices={slices} components={components} />
     </Layout>
   );
 };
+
+export default Page;
 
 export async function getStaticProps({ params, previewData }) {
   const client = createClient({ previewData });
@@ -26,7 +33,7 @@ export async function getStaticProps({ params, previewData }) {
   return {
     props: {
       menu,
-      slices: page.data.slices,
+      page,
     },
   };
 }
@@ -42,5 +49,3 @@ export async function getStaticPaths({ params, previewData }) {
     fallback: false,
   };
 }
-
-export default Page;

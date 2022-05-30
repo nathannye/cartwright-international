@@ -5,10 +5,17 @@
   "status": true,
   "json": {
     "Main": {
-      "phone-number": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "Uid",
+          "placeholder": ""
+        }
+      },
+      "title": {
         "type": "Text",
         "config": {
-          "label": "Phone Number",
+          "label": "Title",
           "placeholder": ""
         }
       },
@@ -16,6 +23,13 @@
         "type": "Text",
         "config": {
           "label": "Email",
+          "placeholder": ""
+        }
+      },
+      "phone-number": {
+        "type": "Text",
+        "config": {
+          "label": "Phone Number",
           "placeholder": ""
         }
       },
