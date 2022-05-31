@@ -4,10 +4,14 @@ import Footer from "./Footer";
 import gsap from "gsap";
 import { useRouter } from "next/router";
 import { useEffect, useState, useRef } from "react";
+import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
+import ScrollSmoother from "gsap/dist/ScrollSmoother";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
 export const Layout = ({ children, menu, footer }) => {
   const router = useRouter();
   const [isActive, setIsActive] = useState(false);
+  let smoother = null;
 
   useEffect(() => {
     gsap.set("div.transitionCover", {
@@ -110,6 +114,15 @@ export const Layout = ({ children, menu, footer }) => {
     };
   }, [isActive, router]);
 
+  useIsomorphicLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
+    smoother = ScrollSmoother.create({
+      smooth: 1.2,
+      normalizeScroll: true,
+    });
+  }, [smoother]);
+
   return (
     <div>
       <Navbar menu={menu} />
@@ -117,8 +130,13 @@ export const Layout = ({ children, menu, footer }) => {
         <div className="transitionCover"></div>
         <div className="transitionCover"></div>
       </div>
-      <main>{children}</main>
-      <Footer />
+
+      <main id="smooth-wrapper">
+        <div id="smooth-content">
+          {children}
+          <Footer />
+        </div>
+      </main>
     </div>
   );
 };
