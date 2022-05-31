@@ -118,7 +118,7 @@ export const Layout = ({ children, menu, footer }) => {
     gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
     smoother = ScrollSmoother.create({
-      smooth: 1.2,
+      smooth: 1.15,
       normalizeScroll: true,
     });
   }, [smoother]);
