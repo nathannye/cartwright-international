@@ -250,6 +250,10 @@ span.lineTop {
   padding: 1.25rem var(--gutter);
 }
 
+#navbar > div {
+  cursor: pointer;
+}
+
 #navbar .logo {
   width: 3.75rem;
 }
@@ -406,7 +410,7 @@ header#headerLarge blockquote {
 #transitionContainer {
   width: 100vw;
   z-index: 17;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
@@ -422,14 +426,14 @@ header#headerLarge blockquote {
 }
 
 #transitionContainer div.transitionCover:not(:last-of-type) {
-  background: blue;
+  background: var(--maroon);
   height: 100vh;
   z-index: 17;
 }
 
 #transitionContainer div.transitionCover:last-of-type {
-  background: green;
-  height: 75vh;
+  background: var(--tan);
+  height: 100vh;
   z-index: 16;
 }
 

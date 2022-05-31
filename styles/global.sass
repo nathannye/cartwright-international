@@ -219,6 +219,9 @@ span.lineTop
     width: 100vw
     padding: 1.25rem var(--gutter)
 
+    & > div
+        cursor: pointer
+
     .logo
         width: 3.75rem
 
@@ -353,7 +356,7 @@ header#headerLarge
 #transitionContainer
     width: 100vw
     z-index: 17
-    position: absolute
+    position: fixed
     top: 0
     left: 0
     height: 100vh
@@ -367,13 +370,13 @@ header#headerLarge
         left: 0
 
         &:not(:last-of-type)
-            background: blue
+            background: var(--maroon)
             height: 100vh
             z-index: 17
             
         &:last-of-type
-            background: green
-            height: 75vh
+            background: var(--tan)
+            height: 100vh
             z-index: 16
 
 

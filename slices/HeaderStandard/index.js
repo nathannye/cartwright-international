@@ -58,13 +58,15 @@ const HeaderStandard = ({ slice }) => {
       autoAlpha: 0,
     });
 
-    let tl = gsap.timeline({});
+    let tl = gsap.timeline({
+      delay: 0.55,
+    });
 
     tl.to(
       "h2",
       {
         autoAlpha: 1,
-        duration: 0.4,
+        duration: 0.7,
       },
       0
     )
@@ -77,7 +79,7 @@ const HeaderStandard = ({ slice }) => {
           stagger: 0.1,
           ease: "power3.out",
         },
-        0.4
+        0.3
       )
       .to(
         solid.split.lines,
@@ -87,7 +89,7 @@ const HeaderStandard = ({ slice }) => {
           ease: "power3.inOut",
           clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
         },
-        0.4
+        0.3
       )
       .to(
         solid.split.lines,
@@ -97,7 +99,7 @@ const HeaderStandard = ({ slice }) => {
           stagger: 0.1,
           ease: "power3.out",
         },
-        0.4
+        0.3
       );
   });
 
