@@ -11,10 +11,15 @@ export const linkResolver = (doc) => {
     case "webpage":
       return `/${doc.uid}`;
     case "contact-us":
-      return "meet-with-us";
+      return "/meet-with-us";
     default:
       return null;
   }
+  // if (doc.uid === "home") {
+  //   return "/";
+  // } else if (doc.type === "webpage" && !doc.uid === "home") {
+  //   return `/${doc.uid}`;
+  // }
 };
 
 // This factory function allows smooth preview setup

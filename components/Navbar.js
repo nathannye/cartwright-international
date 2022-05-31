@@ -1,8 +1,87 @@
 import Link from "next/link";
 import { PrismicLink, PrismicText } from "@prismicio/react";
 import * as prismicH from "@prismicio/helpers";
+import { useRouter } from "next/router";
+import { useEffect, useState, useRef } from "react";
+import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
+import gsap from "gsap";
 
 const Navbar = ({ menu }) => {
+  const router = useRouter();
+  const transitionCoversRef = useRef();
+  const q = gsap.utils.selector(transitionCoversRef);
+  const [isActive, setIsActive] = useState(false);
+
+  useEffect(() => {
+    gsap.set("div.transitionCover", {
+      scaleY: 0,
+      transformOrigin: "center bottom",
+    });
+
+    const transitionStart = () => {
+      setIsActive(true);
+      const tl = gsap.timeline();
+      tl.to(
+        "div.transitionCover",
+        {
+          display: "block",
+          duration: 0.001,
+        },
+        0
+      )
+        .to("div.transitionCover", {
+          scaleY: 1,
+          ease: "power4.inOut",
+          duration: 0.6,
+          stagger: 0.4,
+          delay: 0.001,
+        })
+        .call(function () {
+          if (document.body.classList.contains("isLight")) {
+            document.body.classList.remove("isLight");
+          }
+        });
+    };
+    const transitionEnd = () => {
+      const tl = gsap.timeline();
+      if (isActive) {
+        tl.to(
+          "div.transitionCover",
+          {
+            autoAlpha: 0,
+            duration: 0.1,
+          },
+          0
+        )
+          .to(
+            "div.transitionCover",
+            {
+              display: "none",
+              duration: 0.001,
+            },
+            ">"
+          )
+          .call(function () {
+            if (document.body.classList.contains("isLight")) {
+              document.body.classList.remove("isLight");
+            }
+          });
+
+        setIsActive(false);
+      }
+    };
+
+    router.events.on("routeChangeStart", transitionStart);
+    router.events.on("routeChangeComplete", transitionEnd);
+    router.events.on("routeChangeError", transitionEnd);
+
+    return () => {
+      router.events.off("routeChangeStart", transitionStart);
+      router.events.off("routeChangeComplete", transitionEnd);
+      router.events.off("routeChangeError", transitionEnd);
+    };
+  }, [router, isActive]);
+
   return (
     <>
       <div id="navbar">
@@ -128,9 +207,6 @@ const Navbar = ({ menu }) => {
         </svg>
         <nav>
           {menu.data.menuLink.map((el) => (
-            // <Link href={`/${el.link}`} key={el.link}>
-            //   <a>{el.label}</a>
-            // </Link>
             <PrismicLink field={el.link} key={el.link}>
               {el.label}
             </PrismicLink>
@@ -140,30 +216,14 @@ const Navbar = ({ menu }) => {
       </div>
       <div id="mobileNavMenu">
         <nav>
-          <span>
-            <span className="lineTop"></span>
-            <h3>
-              <a href="">thing</a>
-            </h3>
-          </span>
-          <span>
-            <span className="lineTop"></span>
-            <h3>
-              <a href="">thing</a>
-            </h3>
-          </span>
-          <span>
-            <span className="lineTop"></span>
-            <h3>
-              <a href="">thing</a>
-            </h3>
-          </span>
-          <span>
-            <span className="lineTop"></span>
-            <h3>
-              <a href="">thing</a>
-            </h3>
-          </span>
+          {menu.data.menuLink.map((el) => (
+            <span key={el.link}>
+              <span className="lineTop"></span>
+              <h3>
+                <PrismicLink field={el.link}>{el.label}</PrismicLink>
+              </h3>
+            </span>
+          ))}
         </nav>
         <div id="lowerInfo">
           <a href="" className="secondaryLink">
@@ -290,6 +350,10 @@ const Navbar = ({ menu }) => {
             </g>
           </svg>
         </div>
+      </div>
+      <div id="transitionContainer" ref={transitionCoversRef}>
+        <div className="transitionCover"></div>
+        <div className="transitionCover"></div>
       </div>
     </>
   );

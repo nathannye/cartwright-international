@@ -383,6 +383,56 @@ header#headerLarge blockquote {
   margin-left: calc(var(--gutter) * 2);
 }
 
+.headingOverlapContainer {
+  display: grid;
+}
+
+.headingOverlapContainer h1 {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.headingOverlapContainer h1.outlineHeading {
+  -webkit-text-stroke: clamp(0.55px, calc(0.021875rem + ((1vw - 3.5px) * 0.0353)), 1px) var(--light);
+  -webkit-text-fill-color: transparent;
+  color: transparent !important;
+  z-index: 4;
+}
+
+.headingOverlapContainer h1.solidHeading {
+  z-index: 5;
+}
+
+#transitionContainer {
+  width: 100vw;
+  z-index: 17;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  pointer-events: none;
+}
+
+#transitionContainer div.transitionCover {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#transitionContainer div.transitionCover:not(:last-of-type) {
+  background: blue;
+  height: 100vh;
+  z-index: 17;
+}
+
+#transitionContainer div.transitionCover:last-of-type {
+  background: green;
+  height: 75vh;
+  z-index: 16;
+}
+
 #loader {
   background: var(--light);
   width: 100vw;

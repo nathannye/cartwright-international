@@ -6,7 +6,7 @@ const TeamMember = ({ slice }) => {
 
   return (
     <section id="teamMembers">
-      <svg>
+      {/* <svg>
         <filter
           id="filter"
           x="-20%"
@@ -42,7 +42,7 @@ const TeamMember = ({ slice }) => {
             result="displacementMap"
           />
         </filter>
-      </svg>
+      </svg> */}
       <div className="col">
         {slice.items.map((item) => (
           <div key={item.name} className="teamMemberEntry">

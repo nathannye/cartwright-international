@@ -333,6 +333,50 @@ header#headerLarge
         color: var(--tan)
         margin-left: calc(var(--gutter) * 2)
 
+.headingOverlapContainer
+    display: grid
+
+    h1
+        grid-row: 1
+        grid-column: 1
+
+        &.outlineHeading
+            -webkit-text-stroke: clamp(0.55px, calc(0.021875rem + ((1vw - 3.5px) * 0.0353)), 1px) var(--light)
+            -webkit-text-fill-color: transparent
+            color: transparent !important
+            z-index: 4
+
+        &.solidHeading
+            z-index: 5
+            
+// Transition Covers
+#transitionContainer
+    width: 100vw
+    z-index: 17
+    position: absolute
+    top: 0
+    left: 0
+    height: 100vh
+    pointer-events: none
+
+    div.transitionCover
+        width: 100vw
+        height: 100vh
+        position: absolute
+        bottom: 0
+        left: 0
+
+        &:not(:last-of-type)
+            background: blue
+            height: 100vh
+            z-index: 17
+            
+        &:last-of-type
+            background: green
+            height: 75vh
+            z-index: 16
+
+
 // Loader
 #loader
     background: var(--light)

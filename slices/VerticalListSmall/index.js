@@ -21,8 +21,6 @@ const VerticalListSmall = ({ slice }) => {
   useIsomorphicLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    console.log(listRefs.current);
-
     listRefs.current.forEach((li, index) => {
       gsap.set(li.querySelector("span.lineTop"), {
         scaleX: 0,

@@ -35,7 +35,6 @@ export default function HeaderHome({ slice }) {
       scrollTrigger: {
         start: "bottom bottom",
         trigger: headerRef.current,
-        markers: true,
         onEnter: () => {
           document.body.classList.add("isLight");
         },
