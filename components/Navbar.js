@@ -18,14 +18,13 @@ const Navbar = ({ menu }) => {
       transformOrigin: "center bottom",
     });
 
-    const transitionStart = async () => {
+    const transitionStart = () => {
       setIsActive(true);
       const tl = gsap.timeline();
-      tl.to(
+      tl.set(
         "div.transitionCover",
         {
           display: "block",
-          duration: 0,
         },
         0
       )
@@ -36,7 +35,7 @@ const Navbar = ({ menu }) => {
             ease: "power4.inOut",
             duration: 1.1,
             stagger: -0.15,
-            delay: 0.001,
+            delay: 0.01,
           },
           0
         )
@@ -45,33 +44,27 @@ const Navbar = ({ menu }) => {
             if (document.body.classList.contains("isLight")) {
               setTimeout(() => {
                 document.body.classList.remove("isLight");
-              }, 700);
+              }, 100);
             }
           },
           null,
           ">"
         );
     };
-    const transitionEnd = async () => {
+    const transitionEnd = () => {
       const tl = gsap.timeline();
       if (isActive) {
         setTimeout(() => {
-          tl.to(
+          tl.set(
             "div.transitionCover",
             {
-              autoAlpha: 0,
-              duration: 0,
-              stagger: -0.001,
+              display: "none",
             },
             0
           )
-            .set(
-              "div.transitionCover",
-              {
-                display: "none",
-              },
-              ">"
-            )
+            .to("div.transitionCover", {
+              scaleY: 0,
+            })
             .call(
               function () {
                 if (document.body.classList.contains("isLight")) {
