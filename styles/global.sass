@@ -19,8 +19,25 @@ html
     --colSeven: calc(var(--unit) * 7)
     --colEight: calc(var(--unit) * 8)
     --powerEase: all .24s cubic-bezier(.67,0,.35,.98)
+    --longEase: all .54s ease-in-out
     min-height: 100vh
-    background: var(--light)
+
+body
+    background: var(--maroon)
+    transition: var(--longEase)
+
+    &.isLight
+        background: var(--light)
+        transition: var(--longEase)
+
+        div#navbar
+
+            nav a
+                color: var(--maroon)
+
+            svg g path
+                fill: var(--maroon)
+
 
 h1, h2, h3, blockquote
     font-family: 'Cormorant Garamond', serif
@@ -207,6 +224,12 @@ span.lineTop
     & > nav 
         display: none
 
+        a
+            color: var(--light)
+
+    svg g path
+        fill: var(--light)
+
     #hamburgerBtn
         display: block
         background: var(--maroon)
@@ -253,7 +276,6 @@ span.lineTop
 // Header Standard
 header.headerStandard
     // min-height: 112vh
-    background: var(--maroon)
     padding-top: 10rem
     padding-left: var(--gutter)
     display: flex
@@ -266,7 +288,6 @@ header.headerStandard
 
 // Header Homepage 
 header#headerLarge
-    background: var(--maroon)
     height: 102vh
     display: flex
     flex-direction: column

@@ -4,10 +4,13 @@ import Image from "next/image";
 import { useRef } from "react";
 import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
 import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
 export default function HeaderHome({ slice }) {
   const imageRef = useRef();
-  const tl = useRef();
+  const tl = useRef(null);
+  const headerRef = useRef();
+  const colorTL = useRef(null);
 
   gsap.defaults({
     duration: 0.96,
@@ -26,45 +29,28 @@ export default function HeaderHome({ slice }) {
       );
   }, []);
 
+  useIsomorphicLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    colorTL.current = gsap.timeline({
+      scrollTrigger: {
+        start: "bottom bottom",
+        trigger: headerRef.current,
+        markers: true,
+        onEnter: () => {
+          document.body.classList.add("isLight");
+        },
+        onEnterBack: () => {
+          document.body.classList.add("isLight");
+        },
+        onLeaveBack: () => {
+          document.body.classList.remove("isLight");
+        },
+      },
+    });
+  });
+
   return (
-    <header id="headerLarge">
-      <svg>
-        <filter
-          id="filter"
-          x="-20%"
-          y="-20%"
-          width="140%"
-          height="140%"
-          filterUnits="objectBoundingBox"
-          primitiveUnits="userSpaceOnUse"
-          colorInterpolationFilters="sRGB"
-        >
-          <feTurbulence
-            type="turbulence"
-            baseFrequency="0.036 0.016"
-            numOctaves="14"
-            seed="1"
-            stitchTiles="stitch"
-            x="0%"
-            y="0%"
-            width="100%"
-            height="100%"
-            result="turbulence"
-          />
-          <feDisplacementMap
-            in="SourceGraphic"
-            in2="turbulence"
-            scale="24"
-            xChannelSelector="R"
-            yChannelSelector="R"
-            x="0%"
-            y="0%"
-            width="100%"
-            height="100%"
-            result="displacementMap"
-          />
-        </filter>
-      </svg>
+    <header id="headerLarge" ref={headerRef}>
       <div id="companyNameContainer">
         <span>
           <h1>cartwright</h1>

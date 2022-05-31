@@ -20,8 +20,26 @@ html {
   --colSeven: calc(var(--unit) * 7);
   --colEight: calc(var(--unit) * 8);
   --powerEase: all 0.24s cubic-bezier(0.67, 0, 0.35, 0.98);
+  --longEase: all .54s ease-in-out;
   min-height: 100vh;
+}
+
+body {
+  background: var(--maroon);
+  transition: var(--longEase);
+}
+
+body.isLight {
   background: var(--light);
+  transition: var(--longEase);
+}
+
+body.isLight div#navbar nav a {
+  color: var(--maroon);
+}
+
+body.isLight div#navbar svg g path {
+  fill: var(--maroon);
 }
 
 h1, h2, h3, blockquote {
@@ -239,6 +257,14 @@ span.lineTop {
   display: none;
 }
 
+#navbar > nav a {
+  color: var(--light);
+}
+
+#navbar svg g path {
+  fill: var(--light);
+}
+
 #navbar #hamburgerBtn {
   display: block;
   background: var(--maroon);
@@ -290,7 +316,6 @@ span.lineTop {
 }
 
 header.headerStandard {
-  background: var(--maroon);
   padding-top: 10rem;
   padding-left: var(--gutter);
   display: flex;
@@ -304,7 +329,6 @@ header.headerStandard h2 {
 }
 
 header#headerLarge {
-  background: var(--maroon);
   height: 102vh;
   display: flex;
   flex-direction: column;

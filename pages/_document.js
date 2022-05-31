@@ -2,11 +2,15 @@ import { Html, Head, Main, NextScript } from "next/document";
 
 function Document() {
   return (
-    <Html lang="en" charset="utf-8">
+    <Html>
       <Head>
-        <meta charset="utf-8" />
+        <meta charSet="utf-8" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="true"
+        />
         <link
           rel="shortcut icon"
           href="../public/favicon-32x32.ico"

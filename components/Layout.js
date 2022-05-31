@@ -3,13 +3,30 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
 import { linkResolver } from "../prismicio";
+import { createContext, useState } from "react";
+
+// const TransitionContext = createContext({});
+
+// const TransitionProvider = ({ children }) => {
+//   const [timeline, setTimeline] = useState(() => {
+//     gsap.timeline({ paused: true });
+//   });
+
+//   return (
+//     <TransitionContext.Provider
+//       value={{
+//         timeline,
+//         setTimeline,
+//       }}
+//     >
+//       {children}
+//     </TransitionContext.Provider>
+//   );
+// };
 
 export const Layout = ({ children, menu, footer }) => {
   return (
     <div>
-      {/* <Head>
-        <title>thing thingy</title>
-      </Head> */}
       <Navbar menu={menu} />
       <main>{children}</main>
       <Footer />
@@ -22,3 +39,5 @@ export const Layout = ({ children, menu, footer }) => {
 //     footer = "hasNone";
 //   }
 // };
+
+// export { TransitionContext, TransitionProvider };

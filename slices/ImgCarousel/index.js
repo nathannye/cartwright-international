@@ -13,30 +13,24 @@ export default function ImgCarousel({ slice, children }) {
   const dragInstance = useRef(null);
   const draggerImagesRef = useRef([]);
   draggerImagesRef.current = [];
-  const cursorRef = useRef();
+  const cursorRef = useRef(null);
 
   const addImageRef = (el) => {
     if (el && !draggerImagesRef.current.includes(el)) {
       draggerImagesRef.current.push(el);
     }
   };
-  // Cursor Iso
-  useIsomorphicLayoutEffect(() => {
-    window.addEventListener("mousemove", (event) => {
-      let x = event.clientX;
-      let y = event.clientY;
+  // Cursor
+  // useIsomorphicLayoutEffect(() => {
+  //   window.addEventListener("mousemove", (event) => {
+  //     let x = event.clientX;
+  //     let y = event.clientY;
 
-      // cursorRef.current.style.top = `${y}px`;
-      // cursorRef.current.style.left = `${x}px`;
-    });
-
-    // draggerRef.current.addEventListener("mouseover", (event) => {
-    //   gsap.to(cursorRef, {
-    //     scale: 1,
-    //   });
-    // });
-  });
-
+  //     cursorRef.current.style.top = `${y}px`;
+  //     cursorRef.current.style.left = `${x}px`;
+  //   });
+  // });
+  // Intro fade + draggable
   useIsomorphicLayoutEffect(() => {
     gsap.registerPlugin(Draggable, InertiaPlugin, ScrollTrigger);
 
@@ -91,7 +85,7 @@ export default function ImgCarousel({ slice, children }) {
 
   return (
     <section className="imageCarousel" ref={boundRef}>
-      <div id="carouselCursor" ref={cursorRef}></div>
+      {/* <div id="carouselCursor" ref={cursorRef}></div> */}
       <div className="draggerContainer" ref={draggerRef}>
         {slice.items.map((item) => (
           <div key={item.image.url} ref={addImageRef}>
