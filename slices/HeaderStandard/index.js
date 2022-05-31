@@ -59,7 +59,7 @@ const HeaderStandard = ({ slice }) => {
     });
 
     let tl = gsap.timeline({
-      delay: 0.55,
+      delay: 0.675,
     });
 
     tl.to(

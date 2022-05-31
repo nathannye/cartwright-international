@@ -1,95 +1,6 @@
 import Link from "next/link";
-import { PrismicLink, PrismicText } from "@prismicio/react";
-import * as prismicH from "@prismicio/helpers";
-import { useRouter } from "next/router";
-import { useEffect, useState, useRef } from "react";
-import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
-import gsap from "gsap";
-import { set } from "lodash";
-
+import { PrismicLink } from "@prismicio/react";
 const Navbar = ({ menu }) => {
-  const router = useRouter();
-  const transitionCoversRef = useRef();
-  const [isActive, setIsActive] = useState(false);
-
-  useEffect(() => {
-    gsap.set("div.transitionCover", {
-      scaleY: 0,
-      transformOrigin: "center bottom",
-    });
-
-    const transitionStart = () => {
-      setIsActive(true);
-      const tl = gsap.timeline();
-      tl.set(
-        "div.transitionCover",
-        {
-          display: "block",
-        },
-        0
-      )
-        .to(
-          "div.transitionCover",
-          {
-            scaleY: 1,
-            ease: "power4.inOut",
-            duration: 1.1,
-            stagger: -0.15,
-            delay: 0.01,
-          },
-          0
-        )
-        .call(
-          function () {
-            if (document.body.classList.contains("isLight")) {
-              setTimeout(() => {
-                document.body.classList.remove("isLight");
-              }, 100);
-            }
-          },
-          null,
-          ">"
-        );
-    };
-    const transitionEnd = () => {
-      const tl = gsap.timeline();
-      if (isActive) {
-        setTimeout(() => {
-          tl.set(
-            "div.transitionCover",
-            {
-              display: "none",
-            },
-            0
-          )
-            .to("div.transitionCover", {
-              scaleY: 0,
-            })
-            .call(
-              function () {
-                if (document.body.classList.contains("isLight")) {
-                  document.body.classList.remove("isLight");
-                }
-              },
-              null,
-              0
-            );
-        }, 700);
-        setIsActive(false);
-      }
-    };
-
-    router.events.on("routeChangeStart", transitionStart);
-    router.events.on("routeChangeComplete", transitionEnd);
-    router.events.on("routeChangeError", transitionEnd);
-
-    return () => {
-      router.events.off("routeChangeStart", transitionStart);
-      router.events.off("routeChangeComplete", transitionEnd);
-      router.events.off("routeChangeError", transitionEnd);
-    };
-  }, [isActive, router]);
-
   return (
     <>
       <div id="navbar">
@@ -360,10 +271,6 @@ const Navbar = ({ menu }) => {
             </g>
           </svg>
         </div>
-      </div>
-      <div id="transitionContainer" ref={transitionCoversRef}>
-        <div className="transitionCover"></div>
-        <div className="transitionCover"></div>
       </div>
     </>
   );
