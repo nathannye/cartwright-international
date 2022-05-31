@@ -1,0 +1,43 @@
+[
+  {
+    "variation": "default",
+    "name": "Default",
+    "slice_type": "vertical_list_large",
+    "items": [
+      {
+        "entry-title": "transform dynamic interfaces",
+        "entry-description": "synergize customized ROI",
+        "entry-bullet-list": [
+          {
+            "type": "paragraph",
+            "text": "Ea Lorem nostrud id eu duis adipisicing ullamco velit culpa non laborum amet. Veniam deserunt non sunt dolore mollit duis et ut adipisicing tempor enim aute reprehenderit irure. Aliqua qui cupidatat officia sint.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "entry-title": "utilize transparent bandwidth",
+        "entry-description": "strategize bricks-and-clicks architectures",
+        "entry-bullet-list": [
+          {
+            "type": "paragraph",
+            "text": "Incididunt et consectetur et adipisicing.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "entry-title": "scale best-of-breed supply-chains",
+        "entry-description": "extend cross-media networks",
+        "entry-bullet-list": [
+          {
+            "type": "paragraph",
+            "text": "Eiusmod excepteur ullamco nostrud aliquip cupidatat ut mollit in exercitation.",
+            "spans": []
+          }
+        ]
+      }
+    ],
+    "primary": {}
+  }
+]

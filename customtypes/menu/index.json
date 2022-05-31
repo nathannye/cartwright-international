@@ -5,7 +5,7 @@
   "status": true,
   "json": {
     "Main": {
-      "menuLinks": {
+      "menuLink": {
         "type": "Group",
         "config": {
           "label": "Menu Links",

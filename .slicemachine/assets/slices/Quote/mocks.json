@@ -1,0 +1,16 @@
+[
+  {
+    "variation": "default",
+    "name": "Default",
+    "slice_type": "quote",
+    "items": [],
+    "primary": {
+      "heading": "drive 24/365 communities",
+      "quote": "strategize enterprise partnerships",
+      "link": {
+        "link_type": "Web",
+        "url": "https://prismic.io"
+      }
+    }
+  }
+]

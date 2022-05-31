@@ -1,0 +1,769 @@
+{
+  "slices": {
+    "components": {
+      "header_home": {
+        "library": "slices",
+        "id": "header_home",
+        "name": "HeaderHome",
+        "description": "HeaderHome",
+        "model": {
+          "id": "header_home",
+          "type": "SharedSlice",
+          "name": "HeaderHome",
+          "description": "HeaderHome",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "HeaderHome",
+              "primary": {
+                "header-image": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Header Image",
+                    "constraint": {
+                      "width": 1400,
+                      "height": 600
+                    },
+                    "thumbnails": []
+                  }
+                },
+                "small-paragraph": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Quote Text",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "header_home",
+            "items": [],
+            "primary": {
+              "header-image": {
+                "dimensions": {
+                  "width": 1400,
+                  "height": 600
+                },
+                "alt": "Placeholder image",
+                "copyright": null,
+                "url": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=1400&h=600&fit=crop"
+              },
+              "small-paragraph": "incentivize cross-media infrastructures"
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      },
+      "header_standard": {
+        "library": "slices",
+        "id": "header_standard",
+        "name": "HeaderStandard",
+        "description": "HeaderStandard",
+        "model": {
+          "id": "header_standard",
+          "type": "SharedSlice",
+          "name": "HeaderStandard",
+          "description": "HeaderStandard",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "HeaderStandard",
+              "primary": {
+                "subhead": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Subhead",
+                    "placeholder": "Please type a subhead here"
+                  }
+                },
+                "headline": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Headline",
+                    "placeholder": "Please type a headline here"
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "header_standard",
+            "items": [],
+            "primary": {
+              "subhead": "transition real-time e-commerce",
+              "headline": "brand virtual users"
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      },
+      "img_carousel": {
+        "library": "slices",
+        "id": "img_carousel",
+        "name": "ImgCarousel",
+        "description": "ImgCarousel",
+        "model": {
+          "id": "img_carousel",
+          "type": "SharedSlice",
+          "name": "ImgCarousel",
+          "description": "ImgCarousel",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "ImgCarousel",
+              "primary": {},
+              "items": {
+                "image": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Image",
+                    "constraint": {
+                      "width": 400,
+                      "height": 600
+                    },
+                    "thumbnails": []
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "img_carousel",
+            "items": [
+              {
+                "image": {
+                  "dimensions": {
+                    "width": 400,
+                    "height": 600
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?w=400&h=600&fit=crop"
+                }
+              },
+              {
+                "image": {
+                  "dimensions": {
+                    "width": 400,
+                    "height": 600
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1587905069134-008460d7a636?w=400&h=600&fit=crop"
+                }
+              },
+              {
+                "image": {
+                  "dimensions": {
+                    "width": 400,
+                    "height": 600
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1586952518485-11b180e92764?w=400&h=600&fit=crop"
+                }
+              },
+              {
+                "image": {
+                  "dimensions": {
+                    "width": 400,
+                    "height": 600
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1591012911207-0dbac31f37da?w=400&h=600&fit=crop"
+                }
+              }
+            ],
+            "primary": {}
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      },
+      "our_framework": {
+        "library": "slices",
+        "id": "our_framework",
+        "name": "OurFramework",
+        "description": "OurFramework",
+        "model": {
+          "id": "our_framework",
+          "type": "SharedSlice",
+          "name": "OurFramework",
+          "description": "OurFramework",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "OurFramework",
+              "primary": {
+                "title": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Title",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "items": {
+                "step-title": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Step Title",
+                    "placeholder": ""
+                  }
+                },
+                "step-heading": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Step Heading",
+                    "placeholder": ""
+                  }
+                },
+                "step-description": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Step Description",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "our_framework",
+            "items": [
+              {
+                "step-title": "reinvent virtual infrastructures",
+                "step-heading": "aggregate strategic platforms",
+                "step-description": "utilize virtual networks"
+              },
+              {
+                "step-title": "deploy bricks-and-clicks technologies",
+                "step-heading": "disintermediate value-added interfaces",
+                "step-description": "redefine cross-media convergence"
+              }
+            ],
+            "primary": {
+              "title": "aggregate scalable schemas"
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      },
+      "quote": {
+        "library": "slices",
+        "id": "quote",
+        "name": "Quote",
+        "description": "Quote",
+        "model": {
+          "id": "quote",
+          "type": "SharedSlice",
+          "name": "Quote",
+          "description": "Quote",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "Quote",
+              "primary": {
+                "heading": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Heading",
+                    "placeholder": ""
+                  }
+                },
+                "quote": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Text",
+                    "placeholder": ""
+                  }
+                },
+                "link": {
+                  "type": "Link",
+                  "config": {
+                    "label": "Link",
+                    "placeholder": "",
+                    "select": null
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "quote",
+            "items": [],
+            "primary": {
+              "heading": "drive 24/365 communities",
+              "quote": "strategize enterprise partnerships",
+              "link": {
+                "link_type": "Web",
+                "url": "https://prismic.io"
+              }
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      },
+      "team_member": {
+        "library": "slices",
+        "id": "team_member",
+        "name": "TeamMember",
+        "description": "TeamMember",
+        "model": {
+          "id": "team_member",
+          "type": "SharedSlice",
+          "name": "TeamMember",
+          "description": "TeamMember",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "TeamMember",
+              "primary": {},
+              "items": {
+                "name": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Name",
+                    "placeholder": ""
+                  }
+                },
+                "bio": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Bio",
+                    "placeholder": ""
+                  }
+                },
+                "email": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Email",
+                    "placeholder": ""
+                  }
+                },
+                "position": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Position",
+                    "placeholder": ""
+                  }
+                },
+                "image": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Image",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "team_member",
+            "items": [
+              {
+                "name": "enhance world-class platforms",
+                "bio": "incubate efficient experiences",
+                "email": "enhance frictionless paradigms",
+                "position": "enhance integrated web-readiness",
+                "image": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1544731612-de7f96afe55f?w=900&h=500&fit=crop"
+                }
+              },
+              {
+                "name": "empower global platforms",
+                "bio": "monetize e-business interfaces",
+                "email": "exploit scalable communities",
+                "position": "engineer B2B experiences",
+                "image": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89?w=900&h=500&fit=crop"
+                }
+              },
+              {
+                "name": "reintermediate proactive deliverables",
+                "bio": "drive killer niches",
+                "email": "cultivate seamless synergies",
+                "position": "facilitate integrated networks",
+                "image": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1596195689404-24d8a8d1c6ea?w=900&h=500&fit=crop"
+                }
+              },
+              {
+                "name": "incentivize out-of-the-box ROI",
+                "bio": "disintermediate cutting-edge solutions",
+                "email": "synergize turn-key schemas",
+                "position": "exploit cross-platform action-items",
+                "image": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b?w=900&h=500&fit=crop"
+                }
+              },
+              {
+                "name": "engineer scalable bandwidth",
+                "bio": "aggregate open-source interfaces",
+                "email": "enhance front-end metrics",
+                "position": "leverage cross-platform ROI",
+                "image": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1589321599763-d66926c29613?w=900&h=500&fit=crop"
+                }
+              },
+              {
+                "name": "implement strategic networks",
+                "bio": "facilitate holistic e-services",
+                "email": "scale e-business experiences",
+                "position": "integrate cutting-edge mindshare",
+                "image": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1601933973783-43cf8a7d4c5f?w=900&h=500&fit=crop"
+                }
+              }
+            ],
+            "primary": {}
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      },
+      "vertical_list_large": {
+        "library": "slices",
+        "id": "vertical_list_large",
+        "name": "VerticalListLarge",
+        "description": "VerticalListLarge",
+        "model": {
+          "id": "vertical_list_large",
+          "type": "SharedSlice",
+          "name": "VerticalListLarge",
+          "description": "VerticalListLarge",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "VerticalListLarge",
+              "primary": {},
+              "items": {
+                "entry-title": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Entry Title",
+                    "placeholder": ""
+                  }
+                },
+                "entry-description": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Entry Description",
+                    "placeholder": ""
+                  }
+                },
+                "entry-bullet-list": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Entry Bullet List",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "single": "list-item"
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "vertical_list_large",
+            "items": [
+              {
+                "entry-title": "transform dynamic interfaces",
+                "entry-description": "synergize customized ROI",
+                "entry-bullet-list": [
+                  {
+                    "type": "paragraph",
+                    "text": "Ea Lorem nostrud id eu duis adipisicing ullamco velit culpa non laborum amet. Veniam deserunt non sunt dolore mollit duis et ut adipisicing tempor enim aute reprehenderit irure. Aliqua qui cupidatat officia sint.",
+                    "spans": []
+                  }
+                ]
+              },
+              {
+                "entry-title": "utilize transparent bandwidth",
+                "entry-description": "strategize bricks-and-clicks architectures",
+                "entry-bullet-list": [
+                  {
+                    "type": "paragraph",
+                    "text": "Incididunt et consectetur et adipisicing.",
+                    "spans": []
+                  }
+                ]
+              },
+              {
+                "entry-title": "scale best-of-breed supply-chains",
+                "entry-description": "extend cross-media networks",
+                "entry-bullet-list": [
+                  {
+                    "type": "paragraph",
+                    "text": "Eiusmod excepteur ullamco nostrud aliquip cupidatat ut mollit in exercitation.",
+                    "spans": []
+                  }
+                ]
+              }
+            ],
+            "primary": {}
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      },
+      "vertical_list_small": {
+        "library": "slices",
+        "id": "vertical_list_small",
+        "name": "VerticalListSmall",
+        "description": "VerticalListSmall",
+        "model": {
+          "id": "vertical_list_small",
+          "type": "SharedSlice",
+          "name": "VerticalListSmall",
+          "description": "VerticalListSmall",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "VerticalListSmall",
+              "primary": {
+                "title": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Section Title",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "items": {
+                "heading": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Row Heading",
+                    "placeholder": ""
+                  }
+                },
+                "description": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Row Description",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            },
+            {
+              "id": "verticalListWithDescription",
+              "name": "VerticalListWithDescription",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "VerticalListSmall",
+              "primary": {
+                "title": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Section Title",
+                    "placeholder": ""
+                  }
+                },
+                "description": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Section Description",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "items": {
+                "heading": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Row Heading",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "vertical_list_small",
+            "items": [
+              {
+                "heading": "recontextualize synergistic e-commerce",
+                "description": "benchmark back-end solutions"
+              },
+              {
+                "heading": "brand user-centric communities",
+                "description": "extend synergistic deliverables"
+              },
+              {
+                "heading": "engage e-business supply-chains",
+                "description": "iterate one-to-one e-tailers"
+              },
+              {
+                "heading": "e-enable cross-media synergies",
+                "description": "streamline viral e-tailers"
+              }
+            ],
+            "primary": {
+              "title": "integrate leading-edge users"
+            }
+          },
+          "verticalListWithDescription": {
+            "variation": "verticalListWithDescription",
+            "name": "VerticalListWithDescription",
+            "slice_type": "vertical_list_small",
+            "items": [
+              {
+                "heading": "visualize extensible blockchains"
+              },
+              {
+                "heading": "engineer sticky eyeballs"
+              },
+              {
+                "heading": "redefine customized methodologies"
+              }
+            ],
+            "primary": {
+              "title": "utilize best-of-breed blockchains",
+              "description": "e-enable rich experiences"
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      }
+    }
+  }
+}

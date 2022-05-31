@@ -17,7 +17,7 @@ const Page = ({ slices, menu, page }) => {
           content="initial-scale=1.0, width=device-width"
         ></meta>
       </Head>
-      <SliceZone slices={slices} components={components} />
+      <SliceZone slices={page.data.slices} components={components} />
     </Layout>
   );
 };
