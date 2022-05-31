@@ -11,8 +11,8 @@ function Document() {
           type="image/x-icon"
         />
         <link
+          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap"
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=IBM+Plex+Sans:ital,wght@1,400;0,400;0,500;0,600;1,400&display=swap"
         />
       </Head>
       <body>
