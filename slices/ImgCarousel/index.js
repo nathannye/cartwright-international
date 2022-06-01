@@ -7,6 +7,7 @@ import { useRef } from "react";
 import { createRef } from "react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
+
 export default function ImgCarousel({ slice, children }) {
   const draggerRef = useRef(null);
   const boundRef = useRef(null);
@@ -20,6 +21,7 @@ export default function ImgCarousel({ slice, children }) {
       draggerImagesRef.current.push(el);
     }
   };
+
   // Cursor
   // useIsomorphicLayoutEffect(() => {
   //   window.addEventListener("mousemove", (event) => {
@@ -38,7 +40,7 @@ export default function ImgCarousel({ slice, children }) {
       yPercent: 8,
       autoAlpha: 0,
     });
-
+    
     gsap.to(draggerImagesRef.current, {
       yPercent: 0,
       autoAlpha: 1,

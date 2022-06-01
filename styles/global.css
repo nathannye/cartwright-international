@@ -641,7 +641,7 @@ header#headerLarge blockquote {
 
 .imageCarousel .draggerContainer > div img {
   height: 100%;
-  transform: scale(1.2);
+  transform: scale(1.07);
 }
 
 .imageCarousel .draggerContainer > div:not(:last-child) {
@@ -904,8 +904,8 @@ header#headerLarge blockquote {
     width: var(--colSeven);
   }
   .imageCarousel .draggerContainer > div {
-    width: var(--colFour);
-    height: 70vh;
+    width: var(--colFive);
+    height: 72vh;
   }
   #ourFramework .frameworkEntry:nth-of-type(even) .frameworkText {
     margin-right: var(--gutter);
