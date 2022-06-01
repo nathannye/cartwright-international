@@ -53,12 +53,13 @@ const HeaderStandard = ({ slice }) => {
     gsap.set(solidSplit.lines, {
       autoAlpha: 0,
       x: -45,
-    });
-
-    gsap.set(solidSplit.lines, {
-      x: -45,
       display: "inline-block",
       clipPath: "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)",
+    });
+
+    gsap.set(outlineSplit.lines, {
+      x: -45,
+      autoAlpha: 0,
     });
 
     gsap.set(q("h2"), {
@@ -104,6 +105,7 @@ const HeaderStandard = ({ slice }) => {
           x: 0,
           duration: 1.1,
           stagger: 0.1,
+          autoAlpha: 1,
           ease: "power3.out",
         },
         0.3

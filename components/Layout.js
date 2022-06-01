@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import gsap from "gsap";
 import { useRouter } from "next/router";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useLayoutEffect } from "react";
 import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
 import ScrollSmoother from "gsap/dist/ScrollSmoother";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
@@ -21,7 +21,7 @@ export const Layout = ({ children, menu, footer }) => {
   const contentRef = useRef(null);
   const q = gsap.utils.selector(coverRef);
 
-  let smoother = null;
+  let smoother = useRef();
 
   useEffect(() => {
     gsap.set(q("div.transitionCover"), {
@@ -40,7 +40,7 @@ export const Layout = ({ children, menu, footer }) => {
         0
       )
         .to(
-          "main",
+          mainRef.current,
           {
             y: -40,
             duration: 0.3,
@@ -124,17 +124,17 @@ export const Layout = ({ children, menu, footer }) => {
     };
   }, [isActive, router, q]);
 
-  useIsomorphicLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+  // useLayoutEffect(() => {
+  //   gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-    smoother = ScrollSmoother.create({
-      smooth: 1.15,
-      normalizeScroll: true,
-      ignoreMobileResize: true,
-    });
+  //   smoother = ScrollSmoother.create({
+  //     smooth: 1.15,
+  //     // normalizeScroll: true,
+  //     // ignoreMobileResize: true,
+  //   });
 
-    ScrollTrigger.refresh();
-  }, [smoother]);
+  //   ScrollTrigger.refresh();
+  // });
 
   return (
     <div>
@@ -145,7 +145,7 @@ export const Layout = ({ children, menu, footer }) => {
       </div>
 
       <main id="smooth-wrapper" ref={mainRef}>
-        <div id="smooth-content" ref={contentRef}>
+        <div id="smooth-content">
           {children}
           <Footer />
         </div>

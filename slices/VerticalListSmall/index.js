@@ -1,15 +1,14 @@
 import React from "react";
-import { useRef } from "react";
+import { useRef, useLayoutEffect } from "react";
 import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
 // import { PrismicText } from "@prismicio/react";s
-
-gsap.registerPlugin(ScrollTrigger);
 
 const VerticalListSmall = ({ slice }) => {
   const listRefs = useRef([]);
   listRefs.current = [];
+  const q = gsap.utils.selector(listRefs.current);
 
   const listContainerRef = useRef(null);
 
@@ -19,14 +18,17 @@ const VerticalListSmall = ({ slice }) => {
     }
   };
 
-  useIsomorphicLayoutEffect(() => {
+  useLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
     listRefs.current.forEach((li, index) => {
-      gsap.set(li.querySelector("span.lineTop"), {
+      gsap.set(li.children[0], {
         scaleX: 0,
-
         transformOrigin: "center left",
       });
-      gsap.set([li.querySelector("h3"), li.querySelector("p")], {
+      gsap.set(li.children[1], {
+        opacity: 0,
+      });
+      gsap.set(li.children[2], {
         opacity: 0,
       });
 
@@ -35,22 +37,21 @@ const VerticalListSmall = ({ slice }) => {
           start: "top bottom-=17%",
           trigger: li,
         },
-        delay: index / 8,
+        delay: index / 7,
       });
 
       tl.to(
-        li.querySelector("span.lineTop"),
+        li.children[0],
         {
           scaleX: 1,
           duration: 1,
           ease: "power4.inOut",
           delay: 0.15,
         },
-        0,
-        "line"
+        0
       )
         .to(
-          li.querySelector("h3"),
+          li.children[1],
           {
             opacity: 1,
             duration: 0.75,
@@ -58,7 +59,7 @@ const VerticalListSmall = ({ slice }) => {
           0
         )
         .to(
-          li.querySelector("p"),
+          li.children[2],
           {
             opacity: 1,
             delay: 0.25,
@@ -71,7 +72,7 @@ const VerticalListSmall = ({ slice }) => {
     return () => {
       ScrollTrigger.kill;
     };
-  });
+  }, []);
 
   return (
     <section className="verticalListSmall">
