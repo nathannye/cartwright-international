@@ -75,12 +75,18 @@ const VerticalListSmall = ({ slice }) => {
   }, []);
 
   return (
-    <section className="verticalListSmall">
+    <section
+      className={`verticalListSmall${
+        slice.variation == "verticalListWithDescription"
+          ? " hasDescription"
+          : ""
+      }`}
+    >
       <span className="verticalListHeading">
         <h2>{slice.primary.title}</h2>
       </span>
       <div className="verticalListEntries" ref={listContainerRef}>
-        <p>{slice.primary.description}</p>
+        <p className="sectionDescription">{slice.primary.description}</p>
         <div>
           {slice.items.map((item) => (
             <div className="listEntry" key={item.heading} ref={addListRef}>

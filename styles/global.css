@@ -534,6 +534,14 @@ header#headerLarge blockquote {
   padding-right: var(--gutter);
 }
 
+.verticalListSmall p.sectionDescription {
+  display: none;
+}
+
+.verticalListSmall.hasDescription p.sectionDescription {
+  display: block;
+}
+
 .verticalListSmall span.verticalListHeading {
   display: flex;
   justify-content: space-between;
@@ -701,10 +709,26 @@ header#headerLarge blockquote {
 }
 
 #ourFramework .frameworkCard {
-  background: var(--maroon);
   width: 300px;
   height: 450px;
   position: relative;
+  display: grid;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+#ourFramework .frameworkCard .iconContainer {
+  height: 100%;
+  width: 100%;
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 35%;
+}
+
+#ourFramework .frameworkCard .iconContainer img {
+  width: 90px;
 }
 
 #ourFramework .frameworkCard .cardInfo {
@@ -898,13 +922,16 @@ header#headerLarge blockquote {
     width: var(--colTwo);
   }
   .verticalListSmall {
-    width: var(--colSeven);
+    width: var(--colFive);
+  }
+  .verticalListSmall.hasDescription {
+    width: var(--colSix);
   }
   .imageCarousel {
     width: var(--colSeven);
   }
   .imageCarousel .draggerContainer > div {
-    width: var(--colFive);
+    width: var(--colSeven);
     height: 72vh;
   }
   #ourFramework .frameworkEntry:nth-of-type(even) .frameworkText {

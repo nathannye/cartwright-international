@@ -23,7 +23,7 @@ export const Layout = ({ children, menu, footer }) => {
 
   let smoother = useRef();
 
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     gsap.set(q("div.transitionCover"), {
       scaleY: 0,
       transformOrigin: "center bottom",

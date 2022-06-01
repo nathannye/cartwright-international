@@ -8,9 +8,7 @@ const Index = ({ page, menu }) => {
   return (
     <Layout menu={menu}>
       <Head>
-        <title>
-          Cartwright International | Excellence Defined by Experience
-        </title>
+        <title>{page.data.title}</title>
         <meta
           name="description"
           content="A sales consulting agency with a framework for success based on actively understanding your businesses objectives."

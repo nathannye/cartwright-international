@@ -20,21 +20,21 @@
         }
       },
       "items": {
-        "step-title": {
+        "title": {
           "type": "Text",
           "config": {
             "label": "Step Title",
             "placeholder": ""
           }
         },
-        "step-heading": {
+        "heading": {
           "type": "Text",
           "config": {
             "label": "Step Heading",
             "placeholder": ""
           }
         },
-        "step-description": {
+        "description": {
           "type": "Text",
           "config": {
             "label": "Step Description",
