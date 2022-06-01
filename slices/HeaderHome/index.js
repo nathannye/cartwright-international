@@ -12,11 +12,6 @@ export default function HeaderHome({ slice }) {
   const headerRef = useRef();
   const colorTL = useRef(null);
 
-  gsap.defaults({
-    duration: 0.96,
-    ease: "power4.inOut",
-  });
-
   useIsomorphicLayoutEffect(() => {
     let outline = document.querySelector("svg > g#outlineText");
     let solid = document.querySelector("svg > g#solidText");

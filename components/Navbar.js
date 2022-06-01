@@ -1,6 +1,92 @@
 import Link from "next/link";
 import { PrismicLink } from "@prismicio/react";
+import { useLayoutEffect, useRef, useState } from "react";
+import Lottie from "lottie-web";
+import gsap from "gsap";
+import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
+import SplitText from "gsap/dist/SplitText";
+
 const Navbar = ({ menu }) => {
+  let burgerContainerRef = useRef(null);
+  const mobileLinksRef = useRef(null);
+  const linksRef = useRef([]);
+  const mobileNavRef = useRef(null);
+
+  const addMobileLinksRef = (el) => {
+    if (el && !linksRef.current.includes(el)) {
+      linksRef.current.push(el);
+    }
+  };
+
+  // Mobile Nav Iso
+  useIsomorphicLayoutEffect(() => {
+    const masterTL = gsap.timeline({
+      paused: true,
+    });
+    masterTL.reversed(true);
+    gsap.set(mobileNavRef.current, {
+      xPercent: 100,
+    });
+
+    masterTL.to(
+      mobileNavRef.current,
+      {
+        xPercent: 0,
+        duration: 0.75,
+        ease: "power3.inOut",
+      },
+      0
+    );
+
+    gsap.registerPlugin(SplitText);
+
+    linksRef.current.forEach((li, index) => {
+      linksRef.current.split = new SplitText(li.querySelector("h3"), {
+        type: "chars, lines",
+        linesClass: "splitLineOverflow",
+      });
+      gsap.set(linksRef.current.split.chars, {
+        yPercent: -100,
+      });
+
+      gsap.set(li.querySelector(".lineTop"), {
+        scaleX: 0,
+        transformOrigin: "left center",
+      });
+
+      let tl = gsap.timeline({
+        delay: 0.7,
+      });
+      tl.to(
+        li.querySelector(".lineTop"),
+        {
+          scaleX: 1,
+          duration: 0.82,
+          ease: "power4.inOut",
+          delay: index / 8,
+        },
+        0
+      ).to(
+        linksRef.current.split.chars,
+        {
+          yPercent: 0,
+          duration: 0.85,
+          stagger: 0.015,
+          delay: index / 8,
+          ease: "power4.inOut",
+        },
+        0
+      );
+      masterTL.add(tl, 0);
+    });
+
+    burgerContainerRef.current.addEventListener("click", () => {
+      masterTL.reversed()
+        ? masterTL.play()
+        : masterTL.timeScale(1.35).reverse();
+    });
+  }, []);
+
   return (
     <>
       <div id="navbar">
@@ -133,12 +219,12 @@ const Navbar = ({ menu }) => {
             </PrismicLink>
           ))}
         </nav>
-        <div id="hamburgerBtn"></div>
+        <div id="hamburgerBtn" ref={burgerContainerRef}></div>
       </div>
-      <div id="mobileNavMenu">
+      <div id="mobileNavMenu" ref={mobileNavRef}>
         <nav>
           {menu.data.menuLink.map((el, index) => (
-            <span key={el.link + el + index}>
+            <span key={el.link + el + index} ref={addMobileLinksRef}>
               <span className="lineTop"></span>
               <h3>
                 <PrismicLink field={el.link}>{el.label}</PrismicLink>
@@ -271,6 +357,7 @@ const Navbar = ({ menu }) => {
             </g>
           </svg>
         </div>
+        <div id="mobileNavBacker"></div>
       </div>
     </>
   );

@@ -9,8 +9,11 @@ import SplitText from "gsap/dist/SplitText";
 const HeaderStandard = ({ slice }) => {
   const colorTL = useRef(null);
   const headerRef = useRef(null);
+
   // Swap color of header on scroll
   useIsomorphicLayoutEffect(() => {
+    document.body.classList.remove("isLight");
+
     gsap.registerPlugin(ScrollTrigger);
     colorTL.current = gsap.timeline({
       scrollTrigger: {

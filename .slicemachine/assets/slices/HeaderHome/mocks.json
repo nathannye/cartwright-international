@@ -1,0 +1,20 @@
+[
+  {
+    "variation": "default",
+    "name": "Default",
+    "slice_type": "header_home",
+    "items": [],
+    "primary": {
+      "header-image": {
+        "dimensions": {
+          "width": 1400,
+          "height": 600
+        },
+        "alt": "Placeholder image",
+        "copyright": null,
+        "url": "https://images.unsplash.com/photo-1600804931749-2da4ce26c869?w=1400&h=600&fit=crop"
+      },
+      "small-paragraph": "evolve real-time supply-chains"
+    }
+  }
+]

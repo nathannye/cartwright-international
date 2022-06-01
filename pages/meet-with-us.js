@@ -3,10 +3,13 @@ import Link from "next/link";
 import { Layout } from "../components/Layout";
 import Head from "next/head";
 import { EmailForm } from "../components/EmailForm";
+import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
 
-const MeetUs = ({ page, menu, footer }) => {
+const MeetUs = ({ page, menu }) => {
+  useIsomorphicLayoutEffect(() => {});
+
   return (
-    <Layout menu={menu} footer={footer}>
+    <Layout menu={menu}>
       <Head>
         <title>{page.data.title}</title>
       </Head>
@@ -17,10 +20,10 @@ const MeetUs = ({ page, menu, footer }) => {
             <br />
             things rolling
           </h1>
-          <h1>
+          <h1 className="hasAnimatedUnderline">
             <a href={`mailto:${page.data.email}`}>{page.data.email}</a>
           </h1>
-          <h1>
+          <h1 className="hasAnimatedUnderline">
             <a href={`tel:${[page.data["phone-number"]]}`}>
               {page.data["phone-number"]}
             </a>

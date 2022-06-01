@@ -3,6 +3,10 @@
   margin: 0;
 }
 
+#smooth-wrapper {
+  z-index: 10;
+}
+
 html {
   font-size: 87.5%;
   --maroon: #7B0E26;
@@ -93,6 +97,15 @@ h1 {
   color: var(--light);
   font-size: clamp(3rem, calc(3rem + ((1vw - 0.25rem) * 6.25)), 10rem);
   line-height: 89%;
+  position: relative;
+}
+
+h1.hasAnimatedUnderline::after {
+  position: absolute;
+  left: 0;
+  bottom: -1em;
+  content: '';
+  background: var(--tan);
 }
 
 h2, label {
@@ -228,6 +241,10 @@ section {
   margin-bottom: 18rem;
 }
 
+.splitLineOverflow {
+  overflow: hidden;
+}
+
 span.lineTop {
   height: 1px;
   display: block;
@@ -255,7 +272,7 @@ span.lineTop {
 }
 
 #navbar .logo {
-  width: 3.75rem;
+  width: 3.5rem;
 }
 
 #navbar > nav {
@@ -282,13 +299,13 @@ span.lineTop {
   top: 0;
   left: 0;
   z-index: 19;
-  background: var(--light);
+  display: flex;
   width: 100vw;
+  background: var(--light);
   height: 100vh;
   padding-bottom: 6rem;
   padding-left: 2rem;
   padding-right: 2rem;
-  display: none;
   flex-direction: column;
   justify-content: flex-end;
 }
@@ -305,7 +322,7 @@ span.lineTop {
   font-family: inherit;
 }
 
-#mobileNavMenu nav span:not(:last-child) {
+#mobileNavMenu nav > span {
   margin-bottom: 1.5rem;
 }
 
@@ -343,8 +360,8 @@ header#headerLarge {
 header#headerLarge #companyNameContainer {
   display: flex;
   flex-direction: column;
-  width: var(--colEight);
-  padding-right: 2rem;
+  margin-right: 2rem;
+  margin-left: var(--gutter);
 }
 
 header#headerLarge #companyNameContainer span {
@@ -735,6 +752,45 @@ header#headerLarge blockquote {
   margin-bottom: 7rem;
 }
 
+#privacyPolicy {
+  padding-top: 9rem;
+  margin-right: var(--gutter);
+  margin-left: var(--gutter);
+  padding-bottom: 10rem;
+}
+
+#privacyPolicy h1 {
+  margin-bottom: var(--gutter);
+}
+
+#privacyPolicy #privacyBody {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#privacyPolicy h3 {
+  margin-bottom: .5rem !important;
+  margin-top: 2rem;
+}
+
+#privacyPolicy h3:first-child {
+  margin-bottom: 4rem !important;
+}
+
+#privacyPolicy h1, #privacyPolicy h2, #privacyPolicy h3, #privacyPolicy h4, #privacyPolicy h5, #privacyPolicy h6, #privacyPolicy p, #privacyPolicy ul, #privacyPolicy li, #privacyPolicy em, #privacyPolicy strong, #privacyPolicy pre, #privacyPolicy a {
+  color: var(--light);
+}
+
+#privacyPolicy a {
+  text-decoration: underline;
+  transition: var(--powerEase);
+}
+
+#privacyPolicy a:hover {
+  opacity: .5;
+  transition: var(--powerEase);
+}
+
 #meetUsPage {
   background: var(--maroon);
   padding-top: 10rem;
@@ -766,6 +822,9 @@ header#headerLarge blockquote {
   #navbar {
     padding: 1rem var(--gutter);
   }
+  #navbar .logo {
+    width: 4.25rem;
+  }
   #navbar > nav {
     display: flex;
   }
@@ -782,7 +841,7 @@ header#headerLarge blockquote {
     width: var(--colSix);
   }
   header#headerLarge {
-    height: 140vh;
+    height: 150vh;
   }
   header#headerLarge img {
     height: 55%;

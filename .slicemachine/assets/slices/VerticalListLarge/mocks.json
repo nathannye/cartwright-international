@@ -1,0 +1,43 @@
+[
+  {
+    "variation": "default",
+    "name": "Default",
+    "slice_type": "vertical_list_large",
+    "items": [
+      {
+        "entry-title": "streamline end-to-end synergies",
+        "entry-description": "transform dynamic web-readiness",
+        "entry-bullet-list": [
+          {
+            "type": "paragraph",
+            "text": "Ipsum tempor cillum nostrud adipisicing. Proident elit reprehenderit adipisicing dolor tempor exercitation id cillum officia. Veniam Lorem cupidatat commodo ad voluptate veniam veniam officia tempor non laboris culpa ipsum laboris cupidatat.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "entry-title": "seize vertical architectures",
+        "entry-description": "embrace bricks-and-clicks vortals",
+        "entry-bullet-list": [
+          {
+            "type": "paragraph",
+            "text": "Do aute consequat nulla adipisicing ullamco nisi cupidatat.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "entry-title": "recontextualize customized experiences",
+        "entry-description": "exploit one-to-one functionalities",
+        "entry-bullet-list": [
+          {
+            "type": "paragraph",
+            "text": "Esse ullamco cillum consectetur. Ea ad commodo cillum deserunt magna nisi laborum ut magna exercitation excepteur aliqua exercitation ut.",
+            "spans": []
+          }
+        ]
+      }
+    ],
+    "primary": {}
+  }
+]

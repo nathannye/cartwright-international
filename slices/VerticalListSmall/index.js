@@ -5,9 +5,10 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 // import { PrismicText } from "@prismicio/react";s
 
+gsap.registerPlugin(ScrollTrigger);
+
 const VerticalListSmall = ({ slice }) => {
   const listRefs = useRef([]);
-  const tl = useRef(null);
   listRefs.current = [];
 
   const listContainerRef = useRef(null);
@@ -19,8 +20,6 @@ const VerticalListSmall = ({ slice }) => {
   };
 
   useIsomorphicLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
     listRefs.current.forEach((li, index) => {
       gsap.set(li.querySelector("span.lineTop"), {
         scaleX: 0,
@@ -31,7 +30,7 @@ const VerticalListSmall = ({ slice }) => {
         opacity: 0,
       });
 
-      tl = gsap.timeline({
+      let tl = gsap.timeline({
         scrollTrigger: {
           start: "top bottom-=17%",
           trigger: li,
@@ -69,16 +68,10 @@ const VerticalListSmall = ({ slice }) => {
         );
     });
 
-    const resize = () => {
-      ScrollTrigger.refresh;
-    };
-
-    window.addEventListener("resize", resize);
-
     return () => {
       ScrollTrigger.kill;
     };
-  }, []);
+  });
 
   return (
     <section className="verticalListSmall">

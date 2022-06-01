@@ -1,0 +1,52 @@
+[
+  {
+    "variation": "default",
+    "name": "Default",
+    "slice_type": "vertical_list_small",
+    "items": [
+      {
+        "heading": "whiteboard back-end synergies",
+        "description": "scale bricks-and-clicks e-tailers"
+      },
+      {
+        "heading": "integrate mission-critical networks",
+        "description": "unleash bleeding-edge eyeballs"
+      },
+      {
+        "heading": "unleash 24/365 infomediaries",
+        "description": "whiteboard killer communities"
+      },
+      {
+        "heading": "extend interactive action-items",
+        "description": "redefine proactive networks"
+      },
+      {
+        "heading": "innovate sexy convergence",
+        "description": "architect clicks-and-mortar portals"
+      }
+    ],
+    "primary": {
+      "title": "target out-of-the-box portals"
+    }
+  },
+  {
+    "variation": "verticalListWithDescription",
+    "name": "VerticalListWithDescription",
+    "slice_type": "vertical_list_small",
+    "items": [
+      {
+        "heading": "orchestrate efficient niches"
+      },
+      {
+        "heading": "scale front-end supply-chains"
+      },
+      {
+        "heading": "unleash end-to-end bandwidth"
+      }
+    ],
+    "primary": {
+      "title": "drive turn-key interfaces",
+      "description": "syndicate real-time channels"
+    }
+  }
+]

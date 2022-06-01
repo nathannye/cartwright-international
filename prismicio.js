@@ -12,6 +12,8 @@ export const linkResolver = (doc) => {
       return `/${doc.uid}`;
     case "contact-us":
       return "/meet-with-us";
+    case "privacy-policy":
+      return "/privacy-policy";
     default:
       return null;
   }

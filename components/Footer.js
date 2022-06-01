@@ -10,7 +10,7 @@ const Footer = ({ contact }) => {
       </div>
       <div className="bottomSplit">
         <div>
-          <Link href="/">
+          <Link href="/privacy-policy">
             <a className="secondaryLink">Privacy Policy</a>
           </Link>
           <p> © {new Date().getFullYear()} Cartwright International</p>

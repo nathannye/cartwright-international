@@ -1,0 +1,55 @@
+[
+  {
+    "variation": "default",
+    "name": "Default",
+    "slice_type": "team_member",
+    "items": [
+      {
+        "name": "envisioneer turn-key e-markets",
+        "bio": "empower value-added schemas",
+        "email": "maximize best-of-breed convergence",
+        "position": "transition synergistic synergies",
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1600861194802-a2b11076bc51?w=900&h=500&fit=crop"
+        }
+      },
+      {
+        "name": "architect sexy niches",
+        "bio": "deliver synergistic solutions",
+        "email": "streamline real-time applications",
+        "position": "reintermediate leading-edge ROI",
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1547394765-185e1e68f34e?w=900&h=500&fit=crop"
+        }
+      },
+      {
+        "name": "envisioneer distributed ROI",
+        "bio": "morph killer e-tailers",
+        "email": "harness distributed methodologies",
+        "position": "productize next-generation synergies",
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1494173853739-c21f58b16055?w=900&h=500&fit=crop"
+        }
+      }
+    ],
+    "primary": {}
+  }
+]

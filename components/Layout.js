@@ -8,6 +8,11 @@ import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
 import ScrollSmoother from "gsap/dist/ScrollSmoother";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
+gsap.defaults({
+  duration: 0.96,
+  ease: "power4.inOut",
+});
+
 export const Layout = ({ children, menu, footer }) => {
   const router = useRouter();
   const [isActive, setIsActive] = useState(false);

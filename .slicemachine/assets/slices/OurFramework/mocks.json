@@ -1,0 +1,37 @@
+[
+  {
+    "variation": "default",
+    "name": "Default",
+    "slice_type": "our_framework",
+    "items": [
+      {
+        "step-title": "drive intuitive e-tailers",
+        "step-heading": "orchestrate user-centric synergies",
+        "step-description": "grow cutting-edge users"
+      },
+      {
+        "step-title": "orchestrate leading-edge interfaces",
+        "step-heading": "transition sexy action-items",
+        "step-description": "maximize 24/365 technologies"
+      },
+      {
+        "step-title": "integrate magnetic networks",
+        "step-heading": "disintermediate cross-media convergence",
+        "step-description": "engage customized synergies"
+      },
+      {
+        "step-title": "morph mission-critical networks",
+        "step-heading": "synthesize mission-critical models",
+        "step-description": "incubate bricks-and-clicks e-markets"
+      },
+      {
+        "step-title": "leverage cross-media communities",
+        "step-heading": "maximize transparent ROI",
+        "step-description": "drive 24/7 solutions"
+      }
+    ],
+    "primary": {
+      "title": "evolve leading-edge e-business"
+    }
+  }
+]
