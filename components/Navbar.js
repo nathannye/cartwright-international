@@ -11,6 +11,12 @@ const Navbar = ({ menu }) => {
   const mobileLinksRef = useRef(null);
   const linksRef = useRef([]);
   const mobileNavRef = useRef(null);
+  const q = gsap.utils.selector(linksRef.current);
+
+  const masterTL = gsap.timeline({
+    paused: true,
+  });
+  masterTL.reversed(true);
 
   const addMobileLinksRef = (el) => {
     if (el && !linksRef.current.includes(el)) {
@@ -20,10 +26,6 @@ const Navbar = ({ menu }) => {
 
   // Mobile Nav Iso
   useIsomorphicLayoutEffect(() => {
-    const masterTL = gsap.timeline({
-      paused: true,
-    });
-    masterTL.reversed(true);
     gsap.set(mobileNavRef.current, {
       xPercent: 100,
     });
@@ -41,7 +43,7 @@ const Navbar = ({ menu }) => {
     gsap.registerPlugin(SplitText);
 
     linksRef.current.forEach((li, index) => {
-      linksRef.current.split = new SplitText(li.querySelector("h3"), {
+      linksRef.current.split = new SplitText(q("h3"), {
         type: "chars, lines",
         linesClass: "splitLineOverflow",
       });
@@ -49,7 +51,7 @@ const Navbar = ({ menu }) => {
         yPercent: -100,
       });
 
-      gsap.set(li.querySelector(".lineTop"), {
+      gsap.set(q(".lineTop"), {
         scaleX: 0,
         transformOrigin: "left center",
       });
@@ -58,7 +60,7 @@ const Navbar = ({ menu }) => {
         delay: 0.7,
       });
       tl.to(
-        li.querySelector(".lineTop"),
+        q(".lineTop"),
         {
           scaleX: 1,
           duration: 0.82,
@@ -79,13 +81,11 @@ const Navbar = ({ menu }) => {
       );
       masterTL.add(tl, 0);
     });
-
-    burgerContainerRef.current.addEventListener("click", () => {
-      masterTL.reversed()
-        ? masterTL.play()
-        : masterTL.timeScale(1.35).reverse();
-    });
   }, []);
+
+  const burgerToggle = ({ currentTarget }) => {
+    masterTL.reversed() ? masterTL.play() : masterTL.timeScale(1.35).reverse();
+  };
 
   return (
     <>
@@ -219,7 +219,11 @@ const Navbar = ({ menu }) => {
             </PrismicLink>
           ))}
         </nav>
-        <div id="hamburgerBtn" ref={burgerContainerRef}></div>
+        <div
+          id="hamburgerBtn"
+          ref={burgerContainerRef}
+          onClick={burgerToggle}
+        ></div>
       </div>
       <div id="mobileNavMenu" ref={mobileNavRef}>
         <nav>

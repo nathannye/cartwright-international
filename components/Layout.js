@@ -16,10 +16,15 @@ gsap.defaults({
 export const Layout = ({ children, menu, footer }) => {
   const router = useRouter();
   const [isActive, setIsActive] = useState(false);
+  const coverRef = useRef(null);
+  const mainRef = useRef(null);
+  const contentRef = useRef(null);
+  const q = gsap.utils.selector(coverRef);
+
   let smoother = null;
 
   useEffect(() => {
-    gsap.set("div.transitionCover", {
+    gsap.set(q("div.transitionCover"), {
       scaleY: 0,
       transformOrigin: "center bottom",
     });
@@ -28,7 +33,7 @@ export const Layout = ({ children, menu, footer }) => {
       setIsActive(true);
       const tl = gsap.timeline();
       tl.set(
-        "div.transitionCover",
+        q("div.transitionCover"),
         {
           display: "block",
         },
@@ -45,7 +50,7 @@ export const Layout = ({ children, menu, footer }) => {
           0
         )
         .to(
-          "div.transitionCover",
+          q("div.transitionCover"),
           {
             scaleY: 1,
             ease: "power4.inOut",
@@ -72,7 +77,7 @@ export const Layout = ({ children, menu, footer }) => {
       if (isActive) {
         setTimeout(() => {
           tl.to(
-            "main",
+            mainRef.current,
             {
               autoAlpha: 1,
               y: 0,
@@ -81,7 +86,7 @@ export const Layout = ({ children, menu, footer }) => {
             0
           )
             .set(
-              "div.transitionCover",
+              q("div.transitionCover"),
               {
                 display: "none",
               },
@@ -97,7 +102,7 @@ export const Layout = ({ children, menu, footer }) => {
               0
             )
             .set(
-              "div.transitionCover",
+              q("div.transitionCover"),
               {
                 scaleY: 0,
               },
@@ -117,7 +122,7 @@ export const Layout = ({ children, menu, footer }) => {
       router.events.off("routeChangeComplete", transitionEnd);
       router.events.off("routeChangeError", transitionEnd);
     };
-  }, [isActive, router]);
+  }, [isActive, router, q]);
 
   useIsomorphicLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
@@ -131,13 +136,13 @@ export const Layout = ({ children, menu, footer }) => {
   return (
     <div>
       <Navbar menu={menu} />
-      <div id="transitionContainer">
+      <div id="transitionContainer" ref={coverRef}>
         <div className="transitionCover"></div>
         <div className="transitionCover"></div>
       </div>
 
-      <main id="smooth-wrapper">
-        <div id="smooth-content">
+      <main id="smooth-wrapper" ref={mainRef}>
+        <div id="smooth-content" ref={contentRef}>
           {children}
           <Footer />
         </div>

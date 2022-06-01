@@ -4,14 +4,17 @@ import { createClient } from "../prismicio";
 import { Layout } from "../components/Layout";
 import Head from "next/head";
 import gsap from "gsap";
+import { useRef } from "react";
 
 export const PrivacyPolicy = ({ page, menu }) => {
+  const pageRef = useRef(null);
+
   useIsomorphicLayoutEffect(() => {
-    gsap.set("div#privacyPolicy", {
+    gsap.set(pageRef.current, {
       y: 45,
     });
 
-    gsap.to("div#privacyPolicy", {
+    gsap.to(pageRef.current, {
       y: 0,
     });
   });
@@ -21,12 +24,12 @@ export const PrivacyPolicy = ({ page, menu }) => {
       <Head>
         <title>{page.data.title}</title>
       </Head>
-      <div id="privacyPolicy">
+      <main id="privacyPolicy" ref={pageRef}>
         <h1>{page.data.title}</h1>
         <div id="privacyBody">
           <PrismicRichText field={page.data.policy} />
         </div>
-      </div>
+      </main>
     </Layout>
   );
 };

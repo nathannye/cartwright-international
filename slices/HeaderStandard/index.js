@@ -9,6 +9,13 @@ import SplitText from "gsap/dist/SplitText";
 const HeaderStandard = ({ slice }) => {
   const colorTL = useRef(null);
   const headerRef = useRef(null);
+  const solidRef = useRef(null);
+  const outlineRef = useRef(null);
+  const el = useRef(null);
+  const tl = useRef(null);
+  const headingRefs = useRef(null);
+  const h = gsap.utils.selector(headingRefs);
+  const q = gsap.utils.selector(el);
 
   // Swap color of header on scroll
   useIsomorphicLayoutEffect(() => {
@@ -30,34 +37,31 @@ const HeaderStandard = ({ slice }) => {
         },
       },
     });
-  });
+  }, []);
 
   // Animate h1s
   useIsomorphicLayoutEffect(() => {
-    let outline = document.querySelector(".outlineHeading");
-    let solid = document.querySelector(".solidHeading");
-
-    outline.split = new SplitText(outline, {
+    let outlineSplit = new SplitText(h(".outlineHeading"), {
       type: "lines",
     });
 
-    solid.split = new SplitText(solid, {
+    let solidSplit = new SplitText(h(".solidHeading"), {
       type: "lines",
       linesClass: "splitLine",
     });
 
-    gsap.set(outline.split.lines, {
+    gsap.set(solidSplit.lines, {
       autoAlpha: 0,
       x: -45,
     });
 
-    gsap.set(solid.split.lines, {
+    gsap.set(solidSplit.lines, {
       x: -45,
       display: "inline-block",
       clipPath: "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)",
     });
 
-    gsap.set("h2", {
+    gsap.set(q("h2"), {
       autoAlpha: 0,
     });
 
@@ -66,7 +70,7 @@ const HeaderStandard = ({ slice }) => {
     });
 
     tl.to(
-      "h2",
+      q("h2"),
       {
         autoAlpha: 1,
         duration: 0.7,
@@ -74,7 +78,7 @@ const HeaderStandard = ({ slice }) => {
       0
     )
       .to(
-        outline.split.lines,
+        outlineSplit.lines,
         {
           autoAlpha: 1,
           x: 0,
@@ -85,7 +89,7 @@ const HeaderStandard = ({ slice }) => {
         0.3
       )
       .to(
-        solid.split.lines,
+        solidSplit.lines,
         {
           stagger: 0.1,
           duration: 0.82,
@@ -95,7 +99,7 @@ const HeaderStandard = ({ slice }) => {
         0.3
       )
       .to(
-        solid.split.lines,
+        solidSplit.lines,
         {
           x: 0,
           duration: 1.1,
@@ -107,9 +111,9 @@ const HeaderStandard = ({ slice }) => {
   });
 
   return (
-    <header className="headerStandard" ref={headerRef}>
+    <header className="headerStandard" ref={el}>
       <h2>{slice.primary.subhead}</h2>
-      <div className="headingOverlapContainer">
+      <div className="headingOverlapContainer" ref={headingRefs}>
         <h1 className="outlineHeading">{slice.primary.headline}</h1>
         <h1 className="solidHeading">{slice.primary.headline}</h1>
       </div>
