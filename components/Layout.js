@@ -108,7 +108,7 @@ export const Layout = ({ children, menu, footer }) => {
               },
               0
             );
-        }, 700);
+        }, 1200);
         setIsActive(false);
       }
     };
@@ -130,7 +130,10 @@ export const Layout = ({ children, menu, footer }) => {
     smoother = ScrollSmoother.create({
       smooth: 1.15,
       normalizeScroll: true,
+      ignoreMobileResize: true,
     });
+
+    ScrollTrigger.refresh();
   }, [smoother]);
 
   return (

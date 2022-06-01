@@ -2,7 +2,8 @@ import { Html, Head, Main, NextScript } from "next/document";
 
 function Document() {
   return (
-    <Html>
+    <Html lang="en">
+      
       <Head>
         <meta charSet="utf-8" />
         <link
