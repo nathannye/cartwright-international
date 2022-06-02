@@ -228,7 +228,11 @@ const Navbar = ({ menu }) => {
       <div id="mobileNavMenu" ref={mobileNavRef}>
         <nav>
           {menu.data.menuLink.map((el, index) => (
-            <span key={el.link + el + index} ref={addMobileLinksRef}>
+            <span
+              key={el.link + el + index}
+              ref={addMobileLinksRef}
+              onClick={handleMobileNavClick}
+            >
               <span className="lineTop"></span>
               <h3>
                 <PrismicLink field={el.link}>{el.label}</PrismicLink>
