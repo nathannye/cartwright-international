@@ -2,7 +2,16 @@ import React from "react";
 import useEffect from "react";
 
 const TeamMember = ({ slice }) => {
+  // const members = slice.items.filter(
+  //   (item) => !slice.items.indexOf(item) === 0
+  // );
+  // const first = slice.[0];
+
   const members = slice.items;
+  const evens = slice.items.filter((item) => members.indexOf(item) % 2 === 0);
+  const odds = slice.items.filter((item) => members.indexOf(item) % 2 === 1);
+
+  // odds.unshift(first);
 
   return (
     <section id="teamMembers">
@@ -44,7 +53,7 @@ const TeamMember = ({ slice }) => {
         </filter>
       </svg> */}
       <div className="col">
-        {slice.items.map((item) => (
+        {evens.map((item) => (
           <div key={item.name} className="teamMemberEntry">
             <h4>{item.position}</h4>
             <div className="imageContainer">
@@ -61,7 +70,7 @@ const TeamMember = ({ slice }) => {
         ))}
       </div>
       <div className="col">
-        {slice.items.map((item) => (
+        {odds.map((item) => (
           <div key={item.name} className="teamMemberEntry">
             <h4>{item.position}</h4>
             <div className="imageContainer">

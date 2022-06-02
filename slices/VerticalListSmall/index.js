@@ -34,7 +34,6 @@ const VerticalListSmall = ({ slice }) => {
 
       let tl = gsap.timeline({
         scrollTrigger: {
-          start: "top bottom-=17%",
           trigger: li,
         },
         delay: index / 7,

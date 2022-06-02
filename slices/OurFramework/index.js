@@ -31,9 +31,7 @@ const OurFramework = ({ slice }) => {
     infoRefs.current.forEach((li, index) => {
       let tl = gsap.timeline({
         scrollTrigger: {
-          start: "top center",
           trigger: li,
-          markers: true,
           onEnter: () => {
             console.log("entered");
           },

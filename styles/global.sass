@@ -114,7 +114,7 @@ h2, label
     font-size: clamp(0.9rem, calc(0.9rem + ((1vw - 0.25rem) * 0.0893)), 1rem)
     font-weight: 600
     color: var(--maroon)
-    margin-bottom: calc(var(--gutter) *2)
+    margin-bottom: calc(var(--gutter))
     text-transform: uppercase
     font-family: 'IBM Plex Sans', sans-serif
 
@@ -674,33 +674,40 @@ header#headerLarge
         
 #teamMembers
     display: flex
-    margin-left: 1.25rem
-    margin-right: 1.25rem
+    margin-left: var(--gutter)
+    margin-right: var(--gutter)
     justify-content: center
     flex-wrap: wrap
+    flex-grow: 1
+    max-width: 980px
 
     .col
-        width: var(--colTwo)
         display: flex
-        min-width: 240px
-        flex-grow: 1
+        // width: 100%
+        min-width: 300px
         flex-direction: column
+        width: var(--colTwo)
+        flex-grow: 1
+
+        &:last-child
+            margin-top: 22rem
+            margin-left: var(--colOne)
 
     .teamMemberEntry
-
         h4
             margin-bottom: 1rem
 
         div.imageContainer
             width: 100%
-            height: 320px
+            height: 600px
             overflow: hidden
 
         img
-            width: auto
+            width: 100%
             height: 100%
             object-fit: cover
-            transform: scale(1.5)
+            object-position: center top
+            transform: scale(1.04)
 
         &:not(:last-child)
             margin-bottom: 7rem
@@ -896,22 +903,27 @@ header#headerLarge
         max-width: 2000px
 
     #teamMembers
-        margin-left: var(--gutter)
-        margin-right: var(--gutter)
+        margin-left: auto
+        margin-right: auto 
+    // #teamMembers
+    //     margin-left: auto
+    //     margin-right: auto
+    //     width: var(--colFive)
+    //     max-width: 1000px
 
-        .col
-            max-width: 360px    
+    //     .col
+    //         width: var(--colTwo)
 
-            &:first-of-type
-                margin-right: var(--colOne)
+    //         &:first-of-type
+    //             margin-right: var(--colOne)
 
-            &:last-child
-                margin-top: 16rem
+    //         &:last-child
+    //             margin-top: 16rem
             
-            .teamMemberEntry
+    //         .teamMemberEntry
 
-                div.imageContainer
-                    height: 500px
+    //             div.imageContainer
+    //                 height: 700px
 
 @media (hover: hover)
 

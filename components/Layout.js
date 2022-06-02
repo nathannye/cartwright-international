@@ -13,6 +13,10 @@ gsap.defaults({
   ease: "power4.inOut",
 });
 
+ScrollTrigger.defaults({
+  start: "top bottom-=15%",
+});
+
 export const Layout = ({ children, menu, footer }) => {
   const router = useRouter();
   const [isActive, setIsActive] = useState(false);

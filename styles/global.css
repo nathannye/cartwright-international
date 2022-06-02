@@ -128,7 +128,7 @@ h2, label {
   font-size: clamp(0.9rem, calc(0.9rem + ((1vw - 0.25rem) * 0.0893)), 1rem);
   font-weight: 600;
   color: var(--maroon);
-  margin-bottom: calc(var(--gutter) *2);
+  margin-bottom: calc(var(--gutter));
   text-transform: uppercase;
   font-family: 'IBM Plex Sans', sans-serif;
 }
@@ -765,18 +765,25 @@ header#headerLarge blockquote {
 
 #teamMembers {
   display: flex;
-  margin-left: 1.25rem;
-  margin-right: 1.25rem;
+  margin-left: var(--gutter);
+  margin-right: var(--gutter);
   justify-content: center;
   flex-wrap: wrap;
+  flex-grow: 1;
+  max-width: 980px;
 }
 
 #teamMembers .col {
-  width: var(--colTwo);
   display: flex;
-  min-width: 240px;
-  flex-grow: 1;
+  min-width: 300px;
   flex-direction: column;
+  width: var(--colTwo);
+  flex-grow: 1;
+}
+
+#teamMembers .col:last-child {
+  margin-top: 22rem;
+  margin-left: var(--colOne);
 }
 
 #teamMembers .teamMemberEntry h4 {
@@ -785,15 +792,16 @@ header#headerLarge blockquote {
 
 #teamMembers .teamMemberEntry div.imageContainer {
   width: 100%;
-  height: 320px;
+  height: 600px;
   overflow: hidden;
 }
 
 #teamMembers .teamMemberEntry img {
-  width: auto;
+  width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: scale(1.5);
+  object-position: center top;
+  transform: scale(1.04);
 }
 
 #teamMembers .teamMemberEntry:not(:last-child) {
@@ -988,20 +996,8 @@ header#headerLarge blockquote {
     max-width: 2000px;
   }
   #teamMembers {
-    margin-left: var(--gutter);
-    margin-right: var(--gutter);
-  }
-  #teamMembers .col {
-    max-width: 360px;
-  }
-  #teamMembers .col:first-of-type {
-    margin-right: var(--colOne);
-  }
-  #teamMembers .col:last-child {
-    margin-top: 16rem;
-  }
-  #teamMembers .col .teamMemberEntry div.imageContainer {
-    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 

@@ -1,0 +1,57 @@
+[
+  {
+    "variation": "default",
+    "name": "Default",
+    "slice_type": "vertical_list_small",
+    "items": [
+      {
+        "heading": "mesh back-end e-commerce",
+        "description": "harness back-end ROI"
+      },
+      {
+        "heading": "orchestrate rich web services",
+        "description": "cultivate holistic infomediaries"
+      },
+      {
+        "heading": "innovate extensible e-tailers",
+        "description": "innovate leading-edge interfaces"
+      },
+      {
+        "heading": "benchmark dot-com channels",
+        "description": "brand leading-edge e-commerce"
+      }
+    ],
+    "primary": {
+      "title": "matrix dynamic functionalities"
+    }
+  },
+  {
+    "variation": "verticalListWithDescription",
+    "name": "VerticalListWithDescription",
+    "slice_type": "vertical_list_small",
+    "items": [
+      {
+        "heading": "exploit dot-com niches"
+      },
+      {
+        "heading": "redefine customized systems"
+      },
+      {
+        "heading": "cultivate next-generation convergence"
+      },
+      {
+        "heading": "transform B2C convergence"
+      },
+      {
+        "heading": "reinvent enterprise infrastructures"
+      },
+      {
+        "heading": "drive seamless schemas"
+      }
+    ],
+    "primary": {
+      "title": "optimize global architectures",
+      "description": "drive viral relationships"
+    }
+  }
+]
