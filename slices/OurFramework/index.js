@@ -53,8 +53,9 @@ const OurFramework = ({ slice }) => {
         li.split.words,
         {
           yPercent: 0,
-          duration: 0.74,
-          stagger: 0.1,
+          duration: 0.84,
+          stagger: 0.16,
+          ease: "power3.inOut",
         },
         0
       );
