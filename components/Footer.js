@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { EmailForm } from "../components/EmailForm";
+import { createClient } from "../prismicio";
 
 const Footer = ({ contact }) => {
   return (
@@ -24,22 +25,22 @@ const Footer = ({ contact }) => {
           </a>
         </div>
         <div>
-          {/* <a href={`mailto:${contact.data.email}`}>{contact.data.email}</a> •
-          <a href={`tel:${contact.data["phone-number"]}`}></a> */}
+          <a href="mailto:">charles@cartwright.net </a> •
+          <a href="tel:616-420-4006">616-420-4006</a>
         </div>
       </div>
     </footer>
   );
 };
 
-// export async function getStaticProps({ previewData }) {
-//   const client = createClient({ previewData });
+export async function getStaticProps({ previewData }) {
+  const client = createClient({ previewData });
 
-//   const contact = await client.getSingle("contact-us");
+  const contact = await client.getSingle("contact-us");
 
-//   return {
-//     props: { contact },
-//   };
-// }
+  return {
+    props: { contact },
+  };
+}
 
 export default Footer;

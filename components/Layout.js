@@ -21,8 +21,6 @@ export const Layout = ({ children, menu, footer }) => {
   const contentRef = useRef(null);
   const q = gsap.utils.selector(coverRef);
 
-  let smoother = useRef();
-
   useIsomorphicLayoutEffect(() => {
     gsap.set(q("div.transitionCover"), {
       scaleY: 0,
@@ -124,18 +122,6 @@ export const Layout = ({ children, menu, footer }) => {
     };
   }, [isActive, router, q]);
 
-  // useLayoutEffect(() => {
-  //   gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-
-  //   smoother = ScrollSmoother.create({
-  //     smooth: 1.15,
-  //     // normalizeScroll: true,
-  //     // ignoreMobileResize: true,
-  //   });
-
-  //   ScrollTrigger.refresh();
-  // });
-
   return (
     <div>
       <Navbar menu={menu} />
@@ -144,10 +130,10 @@ export const Layout = ({ children, menu, footer }) => {
         <div className="transitionCover"></div>
       </div>
 
-      <main id="smooth-wrapper" ref={mainRef}>
-        <div id="smooth-content">
+      <main ref={mainRef}>
+        <div>
           {children}
-          <Footer />
+          <Footer footer={footer} />
         </div>
       </main>
     </div>

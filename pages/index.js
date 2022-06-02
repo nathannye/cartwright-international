@@ -4,9 +4,9 @@ import { SliceZone } from "@prismicio/react";
 import Head from "next/head";
 import { Layout } from "../components/Layout";
 
-const Index = ({ page, menu }) => {
+const Index = ({ page, menu, footer }) => {
   return (
-    <Layout menu={menu}>
+    <Layout menu={menu} footer={footer}>
       <Head>
         <title>{page.data.title}</title>
         <meta
@@ -30,8 +30,9 @@ export async function getStaticProps({ previewData }) {
 
   const page = await client.getByUID("webpage", "home");
   const menu = await client.getSingle("menu");
+  const footer = await client.getSingle("contact-us");
 
   return {
-    props: { menu, page },
+    props: { menu, page, footer },
   };
 }

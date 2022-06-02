@@ -17,11 +17,6 @@ export const linkResolver = (doc) => {
     default:
       return null;
   }
-  // if (doc.uid === "home") {
-  //   return "/";
-  // } else if (doc.type === "webpage" && !doc.uid === "home") {
-  //   return `/${doc.uid}`;
-  // }
 };
 
 // This factory function allows smooth preview setup

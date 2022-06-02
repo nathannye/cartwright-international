@@ -6,7 +6,7 @@ import { createClient, linkResolver } from "../prismicio";
 import { components } from "../slices";
 import Head from "next/head";
 
-const Page = ({ slices, menu, page }) => {
+const Page = ({ slices, menu, page, footer }) => {
   return (
     <Layout menu={menu}>
       <Head>
@@ -26,14 +26,15 @@ export default Page;
 
 export async function getStaticProps({ params, previewData }) {
   const client = createClient({ previewData });
-
   const menu = await client.getSingle("menu");
   const page = await client.getByUID("webpage", params.uid);
+  const footer = await client.getSingle("contact-us");
 
   return {
     props: {
       menu,
       page,
+      footer,
     },
   };
 }

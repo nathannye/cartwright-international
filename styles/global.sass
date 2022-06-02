@@ -12,7 +12,7 @@ html
     --light: #F7F5F3
     --dark: #474444
     --unit: 12.5%
-    --gutter: 2rem
+    --gutter: 1.25rem
     --colOne: var(--unit)
     --colTwo: calc(var(--unit) * 2)
     --colThree: calc(var(--unit) * 3)
@@ -24,10 +24,12 @@ html
     --powerEase: all .24s cubic-bezier(.67,0,.35,.98)
     --longEase: all .4s linear
     min-height: 100vh
+    overflow-x: hidden
 
 body
     background: var(--maroon)
     transition: var(--longEase)
+    overflow-x: hidden
 
     &.isLight
         background: var(--light)
@@ -112,7 +114,7 @@ h2, label
     font-size: clamp(0.9rem, calc(0.9rem + ((1vw - 0.25rem) * 0.0893)), 1rem)
     font-weight: 600
     color: var(--maroon)
-    margin-bottom: var(--gutter)
+    margin-bottom: calc(var(--gutter) *2)
     text-transform: uppercase
     font-family: 'IBM Plex Sans', sans-serif
 
@@ -173,7 +175,7 @@ footer
         justify-content: space-between
 
     #emailFormContainer
-        margin-top: var(--gutter)
+        margin-top: calc(var(--gutter)*2)
 
         form
             position: relative
@@ -223,7 +225,11 @@ footer
             margin-top: 0.5rem
 
 section
-    margin-bottom: 18rem
+    margin-bottom: calc(var(--gutter) * 10)
+
+section.verticalListSmall + section.imageCarousel
+    margin-top: calc(var(--gutter) * -6)
+
 
 .splitLineOverflow
     overflow: hidden 
@@ -284,12 +290,12 @@ span.lineTop
     left: 0
     z-index: 19
     display: flex
-    width: 100vw
+    width: 100%
     background: var(--light)
     height: 100vh
     padding-bottom: 6rem
-    padding-left: 2rem
-    padding-right: 2rem
+    padding-left: var(--gutter)
+    padding-right: var(--gutter)
     flex-direction: column
     justify-content: flex-end
 
@@ -341,7 +347,7 @@ header#headerLarge
     #companyNameContainer
         display: flex
         flex-direction: column
-        margin-right: 2rem
+        margin-right: var(--gutter)
         padding-left: var(--gutter)
         overflow: visible
 
@@ -408,7 +414,7 @@ header#headerLarge
         width: 100vw
         height: 100vh
         position: absolute
-        bottom: 0
+        top: 0
         left: 0
 
         &:not(:last-of-type)
@@ -466,10 +472,8 @@ header#headerLarge
 
 // Vertical List Small
 .verticalListSmall
-    width: 100%
-    margin-left: var(--colOne)
-    padding-right: var(--gutter)
-    // margin-left: var(--colOne)
+    margin-left: var(--gutter)
+    margin-right: var(--gutter)
 
     p.sectionDescription
         display: none
@@ -478,7 +482,12 @@ header#headerLarge
 
         p.sectionDescription
             display: block
-
+            // width: 100%
+            width: 40%
+            min-width: 310px
+            margin-bottom: var(--gutter)
+            padding-right: var(--gutter)
+            flex-grow: 1
 
     span.verticalListHeading
         display: flex
@@ -495,12 +504,6 @@ header#headerLarge
             width: 60%
             flex-grow: 1
 
-        & > p
-            width: 40%
-            max-width: 510px
-            min-width: 310px
-            margin-bottom: var(--gutter)
-            padding-right: var(--gutter)
 
         div.listEntry
             display: flex
@@ -511,12 +514,14 @@ header#headerLarge
 
             h3
                 margin-right: var(--gutter)
+                min-width: 150px
 
             p
-                max-width: var(--colFive)
+                flex-grow: 1
+                margin-bottom: 0
 
             &:not(:last-child)
-                margin-bottom: 2.5rem
+                margin-bottom: calc(var(--gutter)*2)
 
 // Large Vertical List
 
@@ -552,7 +557,7 @@ header#headerLarge
 .imageCarousel  
     width: var(--colEight)
     overflow: hidden
-    margin-left: auto
+    margin-left: var(--gutter)
 
     &:hover #carouselCursor
         transition: transform .25s ease-in-out, opacity .25s ease-in-out
@@ -576,7 +581,7 @@ header#headerLarge
                 transform: scale(1.07)
 
             &:not(:last-child)
-                margin-right: 2rem
+                margin-right: var(--gutter)
 
 #carouselCursor
     width: 120px
@@ -609,9 +614,8 @@ header#headerLarge
         color: var(--light)
 
 #ourFramework
-    width: var(--colSix)
-    margin-left: auto
-    margin-right: auto
+    margin-left: var(--gutter)
+    margin-right: var(--gutter)
 
     .frameworkEntry
         display: flex
@@ -622,11 +626,11 @@ header#headerLarge
             flex-direction: row-reverse
 
         &:not(:last-child)
-            margin-bottom: 9rem
+            margin-bottom: 6rem
 
     .frameworkCard
-        width: 300px
-        height: 450px
+        width: 100%
+        height: 370px
         position: relative
         display: grid
 
@@ -639,7 +643,7 @@ header#headerLarge
             justify-content: center
             align-items: center
             background-color: rgba(0,0,0, .4)
-            padding-bottom: 12%
+            padding-bottom: 7%
 
             img
                 width: 90px
@@ -661,9 +665,8 @@ header#headerLarge
         margin-top: 1rem
 
 .quoteLarge
-    margin-left: auto
-    margin-right: auto
-    width: var(--colSix)
+    margin-left: var(--gutter)
+    margin-right: var(--gutter)
 
     blockquote
         font-size: clamp(1.75rem, calc(1.75rem + ((1vw - 0.25rem) * 1.1161)), 3rem)
@@ -675,10 +678,6 @@ header#headerLarge
     margin-right: 1.25rem
     justify-content: center
     flex-wrap: wrap
-
-    svg
-        position: absolute
-        visibility: hidden
 
     .col
         width: var(--colTwo)
@@ -701,7 +700,6 @@ header#headerLarge
             width: auto
             height: 100%
             object-fit: cover
-            filter: url(#filter)
             transform: scale(1.5)
 
         &:not(:last-child)
@@ -773,6 +771,12 @@ header#headerLarge
 // Applies to anything above 768px
 @media only screen and (min-width: 768px)
 
+    section
+        margin-bottom: 12rem
+
+    section.verticalListSmall + section.imageCarousel
+        margin-top: calc(var(--gutter)* -2)
+
     html
         --gutter: 3rem
 
@@ -818,13 +822,36 @@ header#headerLarge
             width: var(--colTwo)
 
     .verticalListSmall
-        width: var(--colFive)
+        width: var(--colSix)
+        margin-left: var(--colOne)
+        max-width: 1200px
 
         &.hasDescription
             width: var(--colSix)
 
+        .verticalListEntries
+
+            div.listEntry
+                display: flex
+                justify-content: space-between
+                align-items: flex-start
+                flex-wrap: wrap
+                width: 100%
+
+                h3
+                    margin-right: var(--gutter)
+                    min-width: unset
+
+                p
+                    max-width: var(--colFive)
+                    margin-left: auto
+
+                &:not(:last-child)
+                    margin-bottom: var(--gutter)
+
     .imageCarousel
         width: var(--colSeven)
+        margin-left: auto
 
         .draggerContainer
 
@@ -833,6 +860,9 @@ header#headerLarge
                 height: 72vh
 
     #ourFramework
+        margin-right: auto
+        margin-left: auto
+        width: var(--colSix)
 
         .frameworkEntry
 
@@ -846,11 +876,24 @@ header#headerLarge
                 .frameworkText
                     margin-left: var(--gutter)
 
+            &:not(:last-child)
+                margin-bottom: 9rem
+
         .frameworkText
             width: var(--colTwo)
+
+        .frameworkCard
+            width: 300px
+            height: 450px
+
+            .iconContainer
+                padding-bottom: 12%
     
     .quoteLarge
-        width: var(--colFive)
+        width: var(--colFour)
+        margin-right: var(--colOne)
+        margin-left: var(--colOne)
+        max-width: 2000px
 
     #teamMembers
         margin-left: var(--gutter)

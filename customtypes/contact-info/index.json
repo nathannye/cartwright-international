@@ -1,0 +1,17 @@
+{
+  "id": "contact-info",
+  "label": "Contact Information",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "phone": {
+        "type": "Text",
+        "config": {
+          "label": "Phone",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}

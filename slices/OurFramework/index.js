@@ -59,8 +59,14 @@ const OurFramework = ({ slice }) => {
         },
         0
       );
+      return () => {
+        tl.kill;
+      };
     });
-  });
+    return () => {
+      ScrollTrigger.kill;
+    };
+  }, []);
 
   return (
     <section id="ourFramework">
