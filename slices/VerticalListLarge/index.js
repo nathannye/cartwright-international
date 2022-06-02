@@ -10,9 +10,12 @@ const VerticalListLarge = ({ slice }) => {
         <div className="largeListEntry" key={index + item}>
           <span className="lineTop"></span>
           <div>
-            <h3>{item["entry-title"]}</h3>
+            <h2>{item["entry-title"]}</h2>
             <div>
-              <h4>{item["entry-description"]}</h4>
+              <h3>{item["entry-description"]}</h3>
+              <PrismicRichText
+                field={item["entry-bullet-list"]}
+              ></PrismicRichText>
             </div>
           </div>
         </div>
