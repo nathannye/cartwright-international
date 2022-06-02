@@ -43,7 +43,7 @@ const Navbar = ({ menu }) => {
     gsap.registerPlugin(SplitText);
 
     linksRef.current.forEach((li, index) => {
-      linksRef.current.split = new SplitText(q("h3"), {
+      linksRef.current.split = new SplitText(q("h3 > a"), {
         type: "chars, lines",
         linesClass: "splitLineOverflow",
       });
@@ -84,6 +84,10 @@ const Navbar = ({ menu }) => {
   }, []);
 
   const burgerToggle = ({ currentTarget }) => {
+    masterTL.reversed() ? masterTL.play() : masterTL.timeScale(1.35).reverse();
+  };
+
+  const handleMobileNavClick = ({ currentTarget }) => {
     masterTL.reversed() ? masterTL.play() : masterTL.timeScale(1.35).reverse();
   };
 
