@@ -40,12 +40,12 @@ export default function ImgCarousel({ slice, children }) {
       yPercent: 8,
       autoAlpha: 0,
     });
-    
+
     gsap.to(draggerImagesRef.current, {
       yPercent: 0,
       autoAlpha: 1,
-      stagger: 0.22,
-      duration: 1,
+      stagger: 0.15,
+      duration: 0.65,
       ease: "power1.out",
       scrollTrigger: {
         trigger: draggerRef.current,

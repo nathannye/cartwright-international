@@ -10,6 +10,7 @@ const Navbar = ({ menu }) => {
   let burgerContainerRef = useRef(null);
   const mobileLinksRef = useRef(null);
   const linksRef = useRef([]);
+  linksRef.current = [];
   const mobileNavRef = useRef(null);
   const q = gsap.utils.selector(linksRef.current);
 
@@ -23,7 +24,6 @@ const Navbar = ({ menu }) => {
       linksRef.current.push(el);
     }
   };
-
   // Mobile Nav Iso
   useIsomorphicLayoutEffect(() => {
     gsap.set(mobileNavRef.current, {

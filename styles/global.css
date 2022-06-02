@@ -713,7 +713,6 @@ header#headerLarge blockquote {
   height: 450px;
   position: relative;
   display: grid;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 
 #ourFramework .frameworkCard .iconContainer {
@@ -724,7 +723,8 @@ header#headerLarge blockquote {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 35%;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-bottom: 12%;
 }
 
 #ourFramework .frameworkCard .iconContainer img {
