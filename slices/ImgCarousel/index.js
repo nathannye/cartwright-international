@@ -56,7 +56,7 @@ export default function ImgCarousel({ slice, children }) {
     dragInstance.current = Draggable.create(draggerRef.current, {
       type: "x",
       inertia: true,
-      edgeResistance: 0.85,
+      edgeResistance: 0.65,
       bounds: boundRef.current,
       // onDragStart: () => {
       //   gsap.to(draggerImagesRef.current, {

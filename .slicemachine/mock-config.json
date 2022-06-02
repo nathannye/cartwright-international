@@ -1,0 +1,10 @@
+{
+  "slices": {
+    "VerticalListSmall": {
+      "default": {
+        "items": {}
+      }
+    },
+    "Quote": {}
+  }
+}

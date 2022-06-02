@@ -25,7 +25,7 @@ const HeaderStandard = ({ slice }) => {
     colorTL.current = gsap.timeline({
       scrollTrigger: {
         start: "bottom bottom",
-        trigger: headerRef.current,
+        trigger: el.current,
         onEnter: () => {
           document.body.classList.add("isLight");
         },
@@ -37,6 +37,10 @@ const HeaderStandard = ({ slice }) => {
         },
       },
     });
+
+    return () => {
+      ScrollTrigger.kill;
+    };
   }, []);
 
   // Animate h1s
@@ -109,7 +113,12 @@ const HeaderStandard = ({ slice }) => {
           ease: "power3.out",
         },
         0.3
-      );
+    );
+    
+    return () => {
+      
+    }
+
   });
 
   return (

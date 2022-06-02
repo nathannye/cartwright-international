@@ -347,6 +347,13 @@
                     "placeholder": "",
                     "select": null
                   }
+                },
+                "link-label": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Link Label",
+                    "placeholder": ""
+                  }
                 }
               },
               "items": {},
@@ -361,12 +368,13 @@
             "slice_type": "quote",
             "items": [],
             "primary": {
-              "heading": "evolve dynamic ROI",
-              "quote": "expedite distributed web services",
+              "heading": "iterate world-class infrastructures",
+              "quote": "mesh rich channels",
               "link": {
                 "link_type": "Web",
-                "url": "https://slicemachine.dev"
-              }
+                "url": "https://prismic.io"
+              },
+              "link-label": "leverage out-of-the-box e-markets"
             }
           }
         },
@@ -644,6 +652,14 @@
                     "label": "Row Description",
                     "placeholder": ""
                   }
+                },
+                "link": {
+                  "type": "Link",
+                  "config": {
+                    "label": "Link",
+                    "placeholder": "",
+                    "select": null
+                  }
                 }
               },
               "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
@@ -690,24 +706,48 @@
             "slice_type": "vertical_list_small",
             "items": [
               {
-                "heading": "mesh back-end e-commerce",
-                "description": "harness back-end ROI"
+                "heading": "productize next-generation action-items",
+                "description": "envisioneer vertical channels",
+                "link": {
+                  "link_type": "Web",
+                  "url": "http://twitter.com"
+                }
               },
               {
-                "heading": "orchestrate rich web services",
-                "description": "cultivate holistic infomediaries"
+                "heading": "transform enterprise platforms",
+                "description": "evolve world-class initiatives",
+                "link": {
+                  "link_type": "Web",
+                  "url": "http://google.com"
+                }
               },
               {
-                "heading": "innovate extensible e-tailers",
-                "description": "innovate leading-edge interfaces"
+                "heading": "incubate 24/7 schemas",
+                "description": "reinvent best-of-breed infomediaries",
+                "link": {
+                  "link_type": "Web",
+                  "url": "https://slicemachine.dev"
+                }
               },
               {
-                "heading": "benchmark dot-com channels",
-                "description": "brand leading-edge e-commerce"
+                "heading": "implement revolutionary e-tailers",
+                "description": "monetize visionary content",
+                "link": {
+                  "link_type": "Web",
+                  "url": "https://slicemachine.dev"
+                }
+              },
+              {
+                "heading": "deliver next-generation ROI",
+                "description": "facilitate e-business schemas",
+                "link": {
+                  "link_type": "Web",
+                  "url": "http://twitter.com"
+                }
               }
             ],
             "primary": {
-              "title": "matrix dynamic functionalities"
+              "title": "deploy e-business networks"
             }
           },
           "verticalListWithDescription": {
@@ -716,27 +756,18 @@
             "slice_type": "vertical_list_small",
             "items": [
               {
-                "heading": "exploit dot-com niches"
+                "heading": "reintermediate mission-critical paradigms"
               },
               {
-                "heading": "redefine customized systems"
+                "heading": "brand plug-and-play solutions"
               },
               {
-                "heading": "cultivate next-generation convergence"
-              },
-              {
-                "heading": "transform B2C convergence"
-              },
-              {
-                "heading": "reinvent enterprise infrastructures"
-              },
-              {
-                "heading": "drive seamless schemas"
+                "heading": "iterate out-of-the-box partnerships"
               }
             ],
             "primary": {
-              "title": "optimize global architectures",
-              "description": "drive viral relationships"
+              "title": "envisioneer virtual paradigms",
+              "description": "reintermediate seamless metrics"
             }
           }
         },
