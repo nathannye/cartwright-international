@@ -96,6 +96,12 @@ a.secondaryLink {
   margin-top: 1rem;
   text-underline-offset: .15rem;
   display: inline-block;
+  transition: var(--powerEase);
+}
+
+a.secondaryLink:hover {
+  opacity: .65;
+  transition: var(--powerEase);
 }
 
 ul {
@@ -813,11 +819,36 @@ header#headerLarge blockquote {
   margin-bottom: 6rem;
 }
 
+#ourFramework .frameworkEntry:first-of-type .oliveBranch {
+  left: -41%;
+  top: -10%;
+  transform: rotate(-210deg);
+}
+
+#ourFramework .frameworkEntry:nth-of-type(2) .oliveBranch {
+  left: -4%;
+  bottom: -4%;
+  transform: rotate(-50deg);
+}
+
+#ourFramework .frameworkEntry:nth-of-type(3) .oliveBranch {
+  left: -2%;
+  top: -25%;
+  transform: rotate(230deg);
+}
+
 #ourFramework .frameworkCard {
   width: 100%;
   height: 370px;
   position: relative;
   display: grid;
+}
+
+#ourFramework .frameworkCard .oliveBranch {
+  position: absolute;
+  width: 390px;
+  height: 390px;
+  opacity: .05;
 }
 
 #ourFramework .frameworkCard .iconContainer {
@@ -828,8 +859,12 @@ header#headerLarge blockquote {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: var(--maroon);
   padding-bottom: 7%;
+}
+
+#ourFramework .frameworkCard .iconContainer:last-of-type {
+  display: none;
 }
 
 #ourFramework .frameworkCard .iconContainer img {
@@ -997,7 +1032,7 @@ header#headerLarge blockquote {
 
 @media only screen and (min-width: 700px) {
   section {
-    margin-bottom: 12rem;
+    margin-bottom: 16rem;
   }
   section.verticalListSmall + section.imageCarousel {
     margin-top: calc(var(--gutter)* -2);
@@ -1097,6 +1132,9 @@ header#headerLarge blockquote {
   }
   #ourFramework .frameworkEntry:not(:last-child) {
     margin-bottom: 9rem;
+  }
+  #ourFramework .frameworkEntry.excel .iconContainer img {
+    width: 99px;
   }
   #ourFramework .frameworkText {
     width: var(--colTwo);

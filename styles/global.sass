@@ -87,6 +87,11 @@ a
         margin-top: 1rem
         text-underline-offset: .15rem
         display: inline-block
+        transition: var(--powerEase)
+
+        &:hover
+            opacity: .65
+            transition: var(--powerEase)
     
 ul
     padding-left: 0
@@ -314,7 +319,7 @@ footer
             display: flex
             align-items: center
             flex-wrap: wrap
-            
+
             
         p
             margin-bottom: 0
@@ -729,12 +734,33 @@ header#headerLarge
         &:not(:last-child)
             margin-bottom: 6rem
 
+        &:first-of-type .oliveBranch
+            left: -41%
+            top: -10%
+            transform: rotate(-210deg)
+
+        &:nth-of-type(2) .oliveBranch
+            left: -4%
+            bottom: -4%
+            transform: rotate(-50deg)
+
+        &:nth-of-type(3) .oliveBranch
+            left: -2%
+            top: -25%
+            transform: rotate(230deg)
+
     .frameworkCard
         width: 100%
         height: 370px
         position: relative
         display: grid
 
+        .oliveBranch
+            position: absolute
+            width: 390px
+            height: 390px
+            opacity: .05
+            
         .iconContainer
             height: 100%
             width: 100%
@@ -743,8 +769,11 @@ header#headerLarge
             display: flex
             justify-content: center
             align-items: center
-            background-color: rgba(0,0,0, .4)
+            background-color: var(--maroon)
             padding-bottom: 7%
+
+            &:last-of-type
+                display: none
 
             img
                 width: 90px
@@ -888,7 +917,7 @@ header#headerLarge
 @media only screen and (min-width: 700px)
 
     section
-        margin-bottom: 12rem
+        margin-bottom: 16rem
 
     section.verticalListSmall + section.imageCarousel
         margin-top: calc(var(--gutter)* -2)
@@ -1003,6 +1032,9 @@ header#headerLarge
 
             &:not(:last-child)
                 margin-bottom: 9rem
+
+            &.excel .iconContainer img
+                width: 99px
 
         .frameworkText
             width: var(--colTwo)

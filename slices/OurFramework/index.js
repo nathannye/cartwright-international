@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { PrismicText } from "@prismicio/react";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import SplitText from "gsap/dist/SplitText";
+import branch from "../../public/oliveBranch.svg";
 
 const OurFramework = ({ slice }) => {
   const infoRefs = useRef([]);
@@ -82,17 +83,21 @@ const OurFramework = ({ slice }) => {
       <h2>{slice.primary.title}</h2>
       {slice.items.map((item, index) => {
         return (
-          <div className="frameworkEntry" key={index}>
+          <div
+            className={`frameworkEntry ${item.title.toLowerCase()}`}
+            key={index}
+          >
             <div className="frameworkCard" ref={addCardRefs}>
+              <img className="oliveBranch" src="./oliveBranch.svg" alt="" />
               <div className="cardInfo" ref={addInfoRefs}>
                 <h3 className="entryNumber">{`0${index + 1}`}</h3>
                 <h3 className="entryName">{item.title}</h3>
               </div>
               <div className="iconContainer">
-                <img src="/identifyWhite.svg" />
+                <img src={`./${item.title.toLowerCase()}White.svg`} />
               </div>
               <div className="iconContainer">
-                <img src="./identifyMaroon.svg" />
+                <img src={`./${item.title}Maroon.svg`} />
               </div>
             </div>
             <div className="frameworkText" ref={addTextRef}>
