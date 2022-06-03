@@ -7,6 +7,8 @@ import { useEffect, useState, useRef, useLayoutEffect } from "react";
 import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
 import ScrollSmoother from "gsap/dist/ScrollSmoother";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import Notification from "./Notification"
+
 
 gsap.defaults({
   duration: 0.96,
@@ -128,7 +130,7 @@ export const Layout = ({ children, menu }) => {
       router.events.off("routeChangeComplete", transitionEnd);
       router.events.off("routeChangeError", transitionEnd);
     };
-  }, [isActive, router, q]);
+  }, [isActive, router]);
 
   return (
     <div>
@@ -141,6 +143,7 @@ export const Layout = ({ children, menu }) => {
       <main ref={mainRef}>
         <div>{children}</div>
       </main>
+      <Notification />
       <Footer />
     </div>
   );

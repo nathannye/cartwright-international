@@ -494,12 +494,10 @@ span.lineTop {
 }
 
 header.headerStandard {
-  padding-top: 10rem;
-  padding-left: var(--gutter);
+  padding: 10rem var(--gutter);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-bottom: 10rem;
 }
 
 header.headerStandard h2 {
@@ -519,6 +517,7 @@ header#headerLarge #companyNameContainer {
   margin-right: var(--gutter);
   padding-left: var(--gutter);
   overflow: visible;
+  max-width: 1500px;
 }
 
 header#headerLarge #companyNameContainer span {
@@ -1034,7 +1033,50 @@ header#headerLarge blockquote {
   letter-spacing: inherit;
 }
 
+.notification {
+  background: var(--maroon);
+  z-index: 12;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 2rem var(--gutter);
+}
+
+.notification > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.notification h3 {
+  color: var(--light);
+  width: 100%;
+  text-align: center;
+}
+
+.notification button {
+  background: none;
+  border: none;
+  font-weight: 500;
+  font-size: .9rem;
+  font-family: 'IBM Plex Sans', sans-serif;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: .2rem;
+  cursor: pointer;
+  color: var(--light);
+}
+
 @media only screen and (min-width: 700px) {
+  .notification h3 {
+    margin-bottom: 0;
+    width: unset;
+    text-align: left;
+  }
   section {
     margin-bottom: 16rem;
   }

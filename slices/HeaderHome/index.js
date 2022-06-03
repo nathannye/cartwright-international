@@ -1,6 +1,4 @@
 import React from "react";
-import { PrismicRichText } from "@prismicio/react";
-import Image from "next/image";
 import { useRef } from "react";
 import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
 import gsap from "gsap";

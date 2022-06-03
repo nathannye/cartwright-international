@@ -444,12 +444,10 @@ span.lineTop
 // Header Standard
 header.headerStandard
     // min-height: 112vh
-    padding-top: 10rem
-    padding-left: var(--gutter)
+    padding: 10rem var(--gutter)
     display: flex
     flex-direction: column
     justify-content: center
-    padding-bottom: 10rem
 
     h2
         color: var(--tan)
@@ -467,6 +465,7 @@ header#headerLarge
         margin-right: var(--gutter)
         padding-left: var(--gutter)
         overflow: visible
+        max-width: 1500px
 
         span
             display: flex
@@ -482,6 +481,7 @@ header#headerLarge
         overflow: hidden
         height: 55%
         margin-right: var(--gutter)
+        // margin-left: var(--colThree)
 
         img
             // filter: url("#filter")
@@ -489,6 +489,7 @@ header#headerLarge
             width: 100%
             transform: scale(1.1)
             object-fit: cover
+            // object-position: right
 
     h1
         margin: 0
@@ -916,9 +917,52 @@ header#headerLarge
         font-family: inherit
         letter-spacing: inherit 
 
+.notification
+    background: var(--maroon)
+    z-index: 12
+    width: 100%
+    position: fixed
+    bottom: 0
+    left: 0
+    padding: 2rem var(--gutter)
+
+    & > div
+        display: flex
+        justify-content: space-between
+        align-items: center
+        flex-wrap: wrap
+        max-width: 1000px
+        margin: auto
+
+    h3
+        color: var(--light)
+        width: 100%
+        text-align: center
+
+    button
+        background: none
+        border: none
+        font-weight: 500
+        // letter-spacing: .05em
+        font-size: .9rem
+        font-family: 'IBM Plex Sans', sans-serif
+        text-transform: uppercase
+        text-decoration: underline
+        text-underline-offset: .2rem
+        cursor: pointer
+        color: var(--light)
+        // padding: 0 2rem
+
 
 // Applies to anything above 768px
 @media only screen and (min-width: 700px)
+
+    .notification
+
+        h3
+            margin-bottom: 0
+            width: unset
+            text-align: left
 
     section
         margin-bottom: 16rem
