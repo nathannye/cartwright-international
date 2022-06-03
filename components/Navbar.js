@@ -36,7 +36,7 @@ const Navbar = ({ menu }) => {
 
       return () => anim.current.destroy();
     }
-  }, []);
+  });
 
   const addMobileLinksRef = (el) => {
     if (el && !linksRef.current.includes(el)) {
@@ -100,7 +100,7 @@ const Navbar = ({ menu }) => {
     //   );
     //   masterTL.add(tl, 0);
     // });
-  }, []);
+  });
 
   var direction = -1;
 

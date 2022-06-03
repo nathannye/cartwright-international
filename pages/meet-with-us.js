@@ -31,7 +31,7 @@ const MeetUs = ({ page, menu }) => {
           </a>
           {/* </h3> */}
         </main>
-        <footer>
+        <footer className="shortFooter">
           <div>
             <Link href="/">
               <a className="secondaryLink">Privacy Policy</a>

@@ -264,6 +264,19 @@ body.isLight div#navbar #hamburgerBtn svg path.hamburgerLine {
   transition: var(--colorSwapEase);
 }
 
+.shortFooter {
+  display: flex;
+  justify-content: space-between;
+}
+
+.shortFooter > div {
+  width: 50%;
+}
+
+.shortFooter > div p {
+  width: unset;
+}
+
 footer {
   background: var(--maroon);
   padding: 3rem var(--gutter);
