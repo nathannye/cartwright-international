@@ -71,12 +71,15 @@ export const Layout = ({ children, menu }) => {
             }
           },
           null,
-          0.9
+          0.95
         );
     };
     const transitionEnd = () => {
-      console.log("transition ended");
-      const tl = gsap.timeline();
+      const tl = gsap.timeline({
+        onComplete: () => {
+          ScrollTrigger.refresh();
+        },
+      });
       if (isActive) {
         setTimeout(() => {
           tl.to(
@@ -111,7 +114,7 @@ export const Layout = ({ children, menu }) => {
               },
               0
             );
-        }, 1050);
+        }, 1000);
         setIsActive(false);
       }
     };

@@ -25,7 +25,7 @@ html {
   --colSeven: calc(var(--unit) * 7);
   --colEight: calc(var(--unit) * 8);
   --powerEase: all 0.265s cubic-bezier(0.67, 0, 0.35, 0.98);
-  --colorSwapEase: color .375s ease-in-out, background-color .375s ease-in-out, -webkit-text-stroke-color .375s ease-in-out, fill .375s ease-in-out, stroke .375s ease-in-out;
+  --colorSwapEase: color .425s ease-in-out, background-color .425s ease-in-out, -webkit-text-stroke-color .425s ease-in-out, fill .425s ease-in-out, stroke .425s ease-in-out;
   min-height: 100vh;
   overflow-x: hidden;
 }
