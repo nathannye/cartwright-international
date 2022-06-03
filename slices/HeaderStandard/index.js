@@ -113,12 +113,9 @@ const HeaderStandard = ({ slice }) => {
           ease: "power3.out",
         },
         0.3
-    );
-    
-    return () => {
-      
-    }
+      );
 
+    return () => {};
   });
 
   return (

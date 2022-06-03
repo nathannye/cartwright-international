@@ -9,7 +9,7 @@ const MeetUs = ({ page, menu }) => {
   useIsomorphicLayoutEffect(() => {});
 
   return (
-    <Layout menu={menu}>
+    <Layout menu={menu} noFooter>
       <Head>
         <title>{page.data.title}</title>
       </Head>

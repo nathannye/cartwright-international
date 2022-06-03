@@ -1,0 +1,50 @@
+{
+  "id": "page",
+  "label": "Page",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "heading": {
+        "type": "Text",
+        "config": {
+          "label": "Heading",
+          "placeholder": ""
+        }
+      },
+      "subhead": {
+        "type": "Text",
+        "config": {
+          "label": "Subhead",
+          "placeholder": ""
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "vertical_list_small": {
+              "type": "SharedSlice"
+            },
+            "our_framework": {
+              "type": "SharedSlice"
+            },
+            "quote": {
+              "type": "SharedSlice"
+            },
+            "team_member": {
+              "type": "SharedSlice"
+            },
+            "img_carousel": {
+              "type": "SharedSlice"
+            },
+            "header_home": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}

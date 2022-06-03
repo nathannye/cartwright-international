@@ -14,10 +14,10 @@ gsap.defaults({
 });
 
 ScrollTrigger.defaults({
-  start: "top bottom-=9%",
+  start: "top bottom-=4%",
 });
 
-export const Layout = ({ children, menu, footer }) => {
+export const Layout = ({ children, menu }) => {
   const router = useRouter();
   const [isActive, setIsActive] = useState(false);
   const coverRef = useRef(null);
@@ -32,6 +32,7 @@ export const Layout = ({ children, menu, footer }) => {
     });
 
     const transitionStart = () => {
+      console.log("start transition");
       setIsActive(true);
       const tl = gsap.timeline();
       tl.set(
@@ -64,6 +65,7 @@ export const Layout = ({ children, menu, footer }) => {
         )
         .call(
           function () {
+            ScrollTrigger.refresh;
             if (document.body.classList.contains("isLight")) {
               setTimeout(() => {
                 document.body.classList.remove("isLight");
@@ -73,8 +75,10 @@ export const Layout = ({ children, menu, footer }) => {
           null,
           1
         );
+      console.log(tl.duration());
     };
     const transitionEnd = () => {
+      console.log("transition ended");
       const tl = gsap.timeline();
       if (isActive) {
         setTimeout(() => {
@@ -110,14 +114,16 @@ export const Layout = ({ children, menu, footer }) => {
               },
               0
             );
-        }, 1200);
+        }, 1260);
         setIsActive(false);
       }
     };
 
     router.events.on("routeChangeStart", transitionStart);
     router.events.on("routeChangeComplete", transitionEnd);
-    router.events.on("routeChangeError", transitionEnd);
+    router.events.on("routeChangeError", () => {
+      console.log("we fucked up");
+    });
 
     return () => {
       router.events.off("routeChangeStart", transitionStart);
@@ -135,11 +141,9 @@ export const Layout = ({ children, menu, footer }) => {
       </div>
 
       <main ref={mainRef}>
-        <div>
-          {children}
-          <Footer footer={footer} />
-        </div>
+        <div>{children}</div>
       </main>
+      <Footer />
     </div>
   );
 };

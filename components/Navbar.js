@@ -1,23 +1,42 @@
 import Link from "next/link";
 import { PrismicLink } from "@prismicio/react";
 import { useLayoutEffect, useRef, useState } from "react";
-import Lottie from "lottie-web";
+import Lottie from "lottie-web/build/player/lottie_light";
 import gsap from "gsap";
 import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
 import SplitText from "gsap/dist/SplitText";
+import animationData from "../public/lottie/hamburgerAnim.json";
 
 const Navbar = ({ menu }) => {
-  let burgerContainerRef = useRef(null);
   const mobileLinksRef = useRef(null);
   const linksRef = useRef([]);
   linksRef.current = [];
   const mobileNavRef = useRef(null);
   const q = gsap.utils.selector(linksRef.current);
 
+  const animationContainer = useRef(null);
+  const anim = useRef(null);
+
   const masterTL = gsap.timeline({
     paused: true,
   });
   masterTL.reversed(true);
+
+  useIsomorphicLayoutEffect(() => {
+    if (animationContainer.current) {
+      anim.current = Lottie.loadAnimation({
+        container: animationContainer.current,
+        renderer: "svg",
+        loop: false,
+        autoplay: false,
+        animationData,
+      });
+
+      anim.current.setSpeed(1.3);
+
+      return () => anim.current.destroy();
+    }
+  }, []);
 
   const addMobileLinksRef = (el) => {
     if (el && !linksRef.current.includes(el)) {
@@ -34,8 +53,8 @@ const Navbar = ({ menu }) => {
       mobileNavRef.current,
       {
         xPercent: 0,
-        duration: 0.75,
-        ease: "power3.inOut",
+        duration: 0.65,
+        ease: "power4.inOut",
       },
       0
     );
@@ -43,7 +62,7 @@ const Navbar = ({ menu }) => {
     gsap.registerPlugin(SplitText);
 
     linksRef.current.forEach((li, index) => {
-      linksRef.current.split = new SplitText(q("h3 > a"), {
+      linksRef.current.split = new SplitText(q("h1"), {
         type: "chars, lines",
         linesClass: "splitLineOverflow",
       });
@@ -83,12 +102,13 @@ const Navbar = ({ menu }) => {
     });
   }, []);
 
-  const burgerToggle = ({ currentTarget }) => {
-    masterTL.reversed() ? masterTL.play() : masterTL.timeScale(1.35).reverse();
-  };
+  var direction = -1;
 
-  const handleMobileNavClick = ({ currentTarget }) => {
-    masterTL.reversed() ? masterTL.play() : masterTL.timeScale(1.35).reverse();
+  const burgerToggle = ({ currentTarget }) => {
+    masterTL.reversed() ? masterTL.play() : masterTL.timeScale(1.4).reverse();
+
+    anim.current.setDirection((direction *= -1));
+    anim.current.play();
   };
 
   return (
@@ -225,8 +245,8 @@ const Navbar = ({ menu }) => {
         </nav>
         <div
           id="hamburgerBtn"
-          ref={burgerContainerRef}
           onClick={burgerToggle}
+          ref={animationContainer}
         ></div>
       </div>
       <div id="mobileNavMenu" ref={mobileNavRef}>
@@ -235,12 +255,12 @@ const Navbar = ({ menu }) => {
             <span
               key={el.link + el + index}
               ref={addMobileLinksRef}
-              onClick={handleMobileNavClick}
+              onClick={burgerToggle}
             >
               <span className="lineTop"></span>
-              <h3>
+              <h1>
                 <PrismicLink field={el.link}>{el.label}</PrismicLink>
-              </h3>
+              </h1>
             </span>
           ))}
         </nav>

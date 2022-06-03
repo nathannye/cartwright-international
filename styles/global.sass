@@ -24,7 +24,7 @@ html
     --colSeven: calc(var(--unit) * 7)
     --colEight: calc(var(--unit) * 8)
     --powerEase: all .265s cubic-bezier(.67,0,.35,.98)
-    --colorSwapEase: color .375s ease-in-out, background-color .375s ease-in-out, -webkit-text-stroke-color .375s ease-in-out, fill .375s ease-in-out
+    --colorSwapEase: color .375s ease-in-out, background-color .375s ease-in-out, -webkit-text-stroke-color .375s ease-in-out, fill .375s ease-in-out, stroke .375s ease-in-out
     min-height: 100vh
     overflow-x: hidden
 
@@ -47,7 +47,7 @@ a
 
         &:after, &:before
             content: ''
-            background-image: url('../public/linkArrow.svg')
+            background-image: url('/linkArrow.svg')
             background-position: center
             background-size: 100%
             width: .9rem
@@ -136,7 +136,7 @@ h1
 
 h2, label
     letter-spacing: .12em
-    font-size: clamp(0.9rem, calc(0.9rem + ((1vw - 0.25rem) * 0.0893)), 1rem)
+    font-size: clamp(0.95rem, calc(0.95rem + ((1vw - 0.25rem) * 0.1786)), 1.15rem)
     font-family: 'Cormorant Garamond', serif
     font-variant-numeric: lining-nums
     font-weight: 600
@@ -219,8 +219,12 @@ body
                 color: var(--maroon)
                 transition: var(--colorSwapEase)
 
-            svg g path
+            svg.logo g path
                 fill: var(--maroon)
+                transition: var(--colorSwapEase)
+
+            #hamburgerBtn svg path.hamburgerLine
+                stroke: var(--maroon)
                 transition: var(--colorSwapEase)
 
 footer
@@ -260,7 +264,7 @@ footer
                 font-weight: 600
 
         input[type="submit"]
-            background: url("../assets/emailArrow.svg")
+            background: url("/emailArrow.svg")
             background-repeat: no-repeat
             background-size: 20px
             border: none
@@ -341,15 +345,20 @@ span.lineTop
 
         a
             color: var(--light)
+            transition: var(--colorSwapEase)
 
-    svg g path
+    svg.logo g path
         fill: var(--light)
+        transition: var(--colorSwapEase)
 
     #hamburgerBtn
         display: block
-        background: var(--maroon)
         height: 4rem
         width: 4rem
+        padding-left: .75rem
+
+        svg path.hamburgerLine
+            transition: var(--colorSwapEase)
 
 #mobileNavMenu
     position: fixed
@@ -375,12 +384,12 @@ span.lineTop
 
         a
             font-size: inherit
-            text-transform: capitalize
+            text-transform: inherit
             font-weight: inherit
             font-family: inherit
 
         & > span
-            margin-bottom: 1.5rem
+            margin-bottom: 2.25rem
 
     div#lowerInfo
         margin-top: 3.5rem
@@ -493,7 +502,6 @@ header#headerLarge
             background: var(--tan)
             height: 100vh
             z-index: 16
-
 
 // Loader
 #loader
@@ -773,7 +781,7 @@ header#headerLarge
         display: flex
         // width: 100%
         min-width: 320px
-        max-width: 400px
+        max-width: 340px
         flex-direction: column
         width: 100%
         flex-grow: 1
@@ -788,7 +796,7 @@ header#headerLarge
 
         div.imageContainer
             width: 100%
-            height: 600px
+            height: 500px
             overflow: hidden
 
         img
@@ -931,6 +939,10 @@ header#headerLarge
 
         &.hasDescription
             width: var(--colSix)
+            max-width: 1400px
+
+            p
+                max-width: 450px
 
         .verticalListEntries
 
@@ -966,6 +978,7 @@ header#headerLarge
         margin-right: auto
         margin-left: auto
         width: var(--colSix)
+        max-width: 1200px
 
         .frameworkEntry
 
@@ -1009,10 +1022,10 @@ header#headerLarge
             .teamMemberEntry
 
                 div.imageContainer
-                    height: 650px
+                    height: 550px
 
             &:last-child
-                margin-left: var(--colOne)
+                margin-left: var(--colTwo)
                 margin-top: 22rem
 
     .verticalListLarge
