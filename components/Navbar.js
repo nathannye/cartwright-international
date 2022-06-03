@@ -32,7 +32,7 @@ const Navbar = ({ menu }) => {
         animationData,
       });
 
-      anim.current.setSpeed(1.3);
+      anim.current.setSpeed(1.75);
 
       return () => anim.current.destroy();
     }
