@@ -6,7 +6,20 @@ const Footer = ({ contact }) => {
   return (
     <footer>
       <div className="topSplit">
-        <h1>Let’s make it happen, drop us a line</h1>
+        <div>
+          <h1>Let’s make it happen, drop us a line</h1>
+          <div className="contactInfo">
+            <a href="mailto:charles@cartwright.net">
+              <h3>charles@cartwright.net </h3>
+            </a>
+            <span>
+              <h3>•</h3>
+            </span>
+            <a href="tel:616-420-4006">
+              <h3> 616-420-4006</h3>
+            </a>
+          </div>
+        </div>
         <EmailForm />
       </div>
       <div className="bottomSplit">
@@ -15,7 +28,8 @@ const Footer = ({ contact }) => {
             <a className="secondaryLink">Privacy Policy</a>
           </Link>
           <p> © {new Date().getFullYear()} Cartwright International</p>
-          <a
+        </div>
+        <a
             className="secondaryLink"
             href="https://www.nye.design"
             target="_blank"
@@ -23,11 +37,6 @@ const Footer = ({ contact }) => {
           >
             Made by Nathan Nye
           </a>
-        </div>
-        <div>
-          <a href="mailto:">charles@cartwright.net </a> •
-          <a href="tel:616-420-4006">616-420-4006</a>
-        </div>
       </div>
     </footer>
   );

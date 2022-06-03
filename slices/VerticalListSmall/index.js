@@ -18,7 +18,7 @@ const VerticalListSmall = ({ slice }) => {
     }
   };
 
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     listRefs.current.forEach((li, index) => {
       gsap.set(li.children[0], {

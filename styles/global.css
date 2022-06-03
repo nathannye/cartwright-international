@@ -94,6 +94,7 @@ a.secondaryLink {
   text-transform: uppercase;
   text-decoration: underline;
   margin-top: 1rem;
+  text-underline-offset: .15rem;
   display: inline-block;
 }
 
@@ -159,9 +160,12 @@ h2, label {
 }
 
 h3 {
-  font-size: clamp(1.45rem, calc(1.45rem + ((1vw - 0.25rem) * 0.7143)), 2.25rem);
+  font-size: clamp(1.45rem, calc(1.45rem + ((1vw - 0.25rem) * 0.7143)), 2.25rem) !important;
   letter-spacing: -.015em;
-  font-weight: 400;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-variant-numeric: lining-nums;
+  text-transform: none;
   color: var(--maroon);
   margin-bottom: .5rem;
 }
@@ -327,8 +331,29 @@ footer #emailFormContainer span.lineBottom {
   margin-top: .75rem;
 }
 
+footer .contactInfo span {
+  margin: 0 1rem;
+  display: inline-block;
+}
+
+footer .contactInfo a > h3, footer .contactInfo span > h3 {
+  color: var(--tan);
+  font-size: clamp(1.45rem, calc(1.45rem + ((1vw - 0.25rem) * 2.2768)), 4rem) !important;
+  font-style: italic;
+  display: block;
+  text-underline-offset: .25rem;
+}
+
 footer .bottomSplit {
-  margin-top: 9rem;
+  margin-top: 6rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer .bottomSplit > div {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 footer .bottomSplit p {
@@ -1010,12 +1035,15 @@ header#headerLarge blockquote {
   header#headerLarge img {
     height: 55%;
   }
-  footer .topSplit h1 {
-    max-width: var(--colFour);
+  footer .topSplit > div {
+    max-width: var(--colFive);
   }
   footer #emailFormContainer {
     margin-top: 0;
     width: var(--colTwo);
+  }
+  footer .bottomSplit > div > p {
+    margin-left: 3rem;
   }
   .verticalListSmall {
     width: var(--colSix);

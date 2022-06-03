@@ -37,7 +37,7 @@ export default function HeaderHome({ slice }) {
 
     tl.current = gsap
       .timeline({
-        delay: 0.8,
+        delay: 1.3,
       })
       .to(
         outline.querySelectorAll("g"),

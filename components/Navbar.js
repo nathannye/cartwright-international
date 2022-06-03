@@ -7,7 +7,6 @@ import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
 import SplitText from "gsap/dist/SplitText";
 import animationData from "../public/lottie/hamburgerAnim.json";
 
-
 const Navbar = ({ menu }) => {
   const mobileLinksRef = useRef(null);
   const linksRef = useRef([]);
@@ -62,45 +61,45 @@ const Navbar = ({ menu }) => {
 
     gsap.registerPlugin(SplitText);
 
-    linksRef.current.forEach((li, index) => {
-      linksRef.current.split = new SplitText(q("h1"), {
-        type: "chars, lines",
-        linesClass: "splitLineOverflow",
-      });
-      gsap.set(linksRef.current.split.chars, {
-        yPercent: -100,
-      });
+    // linksRef.current.forEach((li, index) => {
+    //   linksRef.current.split = new SplitText(li.children[2], {
+    //     type: "chars, lines",
+    //     linesClass: "splitLineOverflow",
+    //   });
+    //   gsap.set(linksRef.current.split.chars, {
+    //     yPercent: -100,
+    //   });
 
-      gsap.set(q(".lineTop"), {
-        scaleX: 0,
-        transformOrigin: "left center",
-      });
+    //   gsap.set(li.children[0], {
+    //     scaleX: 0,
+    //     transformOrigin: "left center",
+    //   });
 
-      let tl = gsap.timeline({
-        delay: 0.7,
-      });
-      tl.to(
-        q(".lineTop"),
-        {
-          scaleX: 1,
-          duration: 0.82,
-          ease: "power4.inOut",
-          delay: index / 8,
-        },
-        0
-      ).to(
-        linksRef.current.split.chars,
-        {
-          yPercent: 0,
-          duration: 0.85,
-          stagger: 0.015,
-          delay: index / 8,
-          ease: "power4.inOut",
-        },
-        0
-      );
-      masterTL.add(tl, 0);
-    });
+    //   let tl = gsap.timeline({
+    //     delay: 0.7,
+    //   });
+    //   tl.to(
+    //     q(".lineTop"),
+    //     {
+    //       scaleX: 1,
+    //       duration: 0.82,
+    //       ease: "power4.inOut",
+    //       delay: index / 8,
+    //     },
+    //     0
+    //   ).to(
+    //     linksRef.current.split.chars,
+    //     {
+    //       yPercent: 0,
+    //       duration: 0.85,
+    //       stagger: 0.015,
+    //       delay: index / 8,
+    //       ease: "power4.inOut",
+    //     },
+    //     0
+    //   );
+    //   masterTL.add(tl, 0);
+    // });
   }, []);
 
   var direction = -1;

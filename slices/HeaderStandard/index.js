@@ -71,8 +71,7 @@ const HeaderStandard = ({ slice }) => {
     });
 
     let tl = gsap.timeline({
-      delay: 0.675,
-      onComplete: () => {},
+      delay: 1.2,
     });
 
     tl.to(
@@ -112,17 +111,22 @@ const HeaderStandard = ({ slice }) => {
           stagger: 0.1,
           autoAlpha: 1,
           ease: "power3.out",
+          // onComplete: () => {
+          //   solidSplit.revert();
+          //   outlineSplit.revert();
+          // },
         },
         0.3
-      )
-      .call(
-        function () {
-          outlineSplit.revert();
-          solidSplit.revert();
-        },
-        null,
-        ">"
       );
+    // .call(
+    //   function () {
+    //     // tl.kill;
+    //     outlineSplit.revert();
+    //     // solidSplit.revert();
+    //   },
+    //   null,
+    //   ">"
+    // );
   });
 
   return (
