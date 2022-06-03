@@ -150,7 +150,6 @@ h1.hasAnimatedUnderline::after {
 h2, label {
   letter-spacing: .12em;
   font-size: clamp(0.95rem, calc(0.95rem + ((1vw - 0.25rem) * 0.1786)), 1.15rem);
-  font-family: 'Cormorant Garamond', serif;
   font-variant-numeric: lining-nums;
   font-weight: 600;
   color: var(--maroon);
@@ -213,6 +212,7 @@ body {
   background: var(--maroon);
   transition: var(--colorSwapEase);
   overflow-x: hidden;
+  height: 100%;
 }
 
 body.isLight {
@@ -392,6 +392,12 @@ span.lineTop {
 #navbar > nav a {
   color: var(--light);
   transition: var(--colorSwapEase);
+  transition: opacity .25s linear;
+}
+
+#navbar > nav a:hover {
+  opacity: .5;
+  transition: opacity .25s linear;
 }
 
 #navbar svg.logo g path {
@@ -730,10 +736,12 @@ header#headerLarge blockquote {
 .imageCarousel {
   width: var(--colEight);
   overflow: hidden;
+  position: relative;
+  height: 100%;
   margin-left: var(--gutter);
 }
 
-.imageCarousel:hover #carouselCursor {
+.imageCarousel::hover .imageCarousel > #carouselCursor {
   transition: transform .25s ease-in-out, opacity .25s ease-in-out;
   transform: scale(1.2) translate(-50%, -50%);
   opacity: 1;
@@ -759,38 +767,6 @@ header#headerLarge blockquote {
 
 .imageCarousel .draggerContainer > div:not(:last-child) {
   margin-right: var(--gutter);
-}
-
-#carouselCursor {
-  width: 120px;
-  height: 120px;
-  position: absolute;
-  background: var(--maroon);
-  border-radius: 60px;
-  z-index: 102;
-  display: none;
-  pointer-events: none;
-  transform: translate(-50%, -50%) scale(0.6);
-  opacity: 0;
-  transition: transform .25s ease-in-out, opacity .25s ease-in-out;
-}
-
-#carouselCursor:after {
-  content: 'DRAG';
-  font-weight: 600;
-  text-align: center;
-  margin: 0;
-  font-family: 'IBM Plex Sans', sans-serif;
-  font-size: 1rem;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  bottom: 0;
-  transform: translateY(25%);
-  margin-top: auto;
-  margin-bottom: auto;
-  color: var(--light);
 }
 
 #ourFramework {

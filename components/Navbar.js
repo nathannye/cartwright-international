@@ -7,6 +7,7 @@ import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
 import SplitText from "gsap/dist/SplitText";
 import animationData from "../public/lottie/hamburgerAnim.json";
 
+
 const Navbar = ({ menu }) => {
   const mobileLinksRef = useRef(null);
   const linksRef = useRef([]);

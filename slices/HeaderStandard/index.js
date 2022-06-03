@@ -72,6 +72,7 @@ const HeaderStandard = ({ slice }) => {
 
     let tl = gsap.timeline({
       delay: 0.675,
+      onComplete: () => {},
     });
 
     tl.to(
@@ -113,9 +114,15 @@ const HeaderStandard = ({ slice }) => {
           ease: "power3.out",
         },
         0.3
+      )
+      .call(
+        function () {
+          outlineSplit.revert();
+          solidSplit.revert();
+        },
+        null,
+        ">"
       );
-
-    return () => {};
   });
 
   return (

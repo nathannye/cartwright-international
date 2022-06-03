@@ -1,8 +1,9 @@
-import "../styles/global.css";
+import "../styles/global.min.css";
 import Link from "next/link";
 import { PrismicProvider } from "@prismicio/react";
 import { PrismicPreview } from "@prismicio/next";
 import { linkResolver, repositoryName } from "../prismicio";
+import Head from "next/head";
 
 export default function MyApp({ Component, pageProps }) {
   return (
@@ -15,6 +16,9 @@ export default function MyApp({ Component, pageProps }) {
       )}
     >
       <PrismicPreview repositoryName={repositoryName}>
+        <Head>
+
+        </Head>
         <Component {...pageProps} />
       </PrismicPreview>
     </PrismicProvider>

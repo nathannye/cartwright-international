@@ -7,31 +7,21 @@ import { useRef } from "react";
 import { createRef } from "react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
+import useMousePosition from "../../components/MousePos";
 
 export default function ImgCarousel({ slice, children }) {
+  const { clientX, clientY } = useMousePosition();
   const draggerRef = useRef(null);
   const boundRef = useRef(null);
   const dragInstance = useRef(null);
   const draggerImagesRef = useRef([]);
   draggerImagesRef.current = [];
-  const cursorRef = useRef(null);
 
   const addImageRef = (el) => {
     if (el && !draggerImagesRef.current.includes(el)) {
       draggerImagesRef.current.push(el);
     }
   };
-
-  // Cursor
-  // useIsomorphicLayoutEffect(() => {
-  //   window.addEventListener("mousemove", (event) => {
-  //     let x = event.clientX;
-  //     let y = event.clientY;
-
-  //     cursorRef.current.style.top = `${y}px`;
-  //     cursorRef.current.style.left = `${x}px`;
-  //   });
-  // });
   // Intro fade + draggable
   useIsomorphicLayoutEffect(() => {
     gsap.registerPlugin(Draggable, InertiaPlugin, ScrollTrigger);
@@ -87,7 +77,10 @@ export default function ImgCarousel({ slice, children }) {
 
   return (
     <section className="imageCarousel" ref={boundRef}>
-      {/* <div id="carouselCursor" ref={cursorRef}></div> */}
+      <div
+        id="carouselCursor"
+        style={{ top: `${clientY}px`, left: `${clientX}px` }}
+      ></div>
       <div className="draggerContainer" ref={draggerRef}>
         {slice.items.map((item) => (
           <div key={item.image.url} ref={addImageRef}>
