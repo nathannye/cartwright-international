@@ -1,10 +1,8 @@
 import gsap from "gsap";
 import Draggable from "gsap/dist/Draggable";
 import InertiaPlugin from "gsap/dist/InertiaPlugin";
-import { VelocityTracker } from "gsap/dist/InertiaPlugin";
 import React from "react";
 import { useRef } from "react";
-import { createRef } from "react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
 import useMousePosition from "../../components/MousePos";
@@ -48,23 +46,8 @@ export default function ImgCarousel({ slice, children }) {
       inertia: true,
       edgeResistance: 0.65,
       bounds: boundRef.current,
-      // onDragStart: () => {
-      //   gsap.to(draggerImagesRef.current, {
-      //     scale: () => {
-      //       // var vx = tracker.get("x");
-      //       // console.log(s);
-      //     },
-      //     duration: 0.35,
-      //   });
-      // },
-      // onDragEnd: () => {
-      //   gsap.to(draggerImagesRef.current, {
-      //     scale: 1,
-      //     duration: 0.35,
-      //   });
-      // },
     });
-    ScrollTrigger.refresh;
+    ScrollTrigger.refresh();
     return () => {
       if (ScrollTrigger) {
         ScrollTrigger.kill;
@@ -88,7 +71,6 @@ export default function ImgCarousel({ slice, children }) {
           </div>
         ))}
       </div>
-      <h3>{slice.items.length}</h3>
     </section>
   );
 }

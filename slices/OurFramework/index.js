@@ -2,10 +2,8 @@ import React from "react";
 import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
 import { useRef } from "react";
 import gsap from "gsap";
-import { PrismicText } from "@prismicio/react";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import SplitText from "gsap/dist/SplitText";
-import branch from "../../public/oliveBranch.svg";
 
 const OurFramework = ({ slice }) => {
   const infoRefs = useRef([]);

@@ -353,6 +353,7 @@ footer .contactInfo a > h3, footer .contactInfo span > h3 {
 footer .bottomSplit {
   margin-top: 6rem;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -365,6 +366,7 @@ footer .bottomSplit > div {
 footer .bottomSplit p {
   margin-bottom: 0;
   margin-top: 0.5rem;
+  min-width: 320px;
 }
 
 section {
@@ -440,7 +442,7 @@ span.lineTop {
   display: block;
   height: 4rem;
   width: 4rem;
-  padding-left: .75rem;
+  padding: .75rem;
 }
 
 #navbar #hamburgerBtn svg path.hamburgerLine {
@@ -468,26 +470,14 @@ span.lineTop {
   flex-direction: column;
 }
 
-#mobileNavMenu nav a {
-  font-size: inherit;
-  text-transform: inherit;
-  font-weight: inherit;
-  font-family: inherit;
+#mobileNavMenu nav h1 {
+  color: var(--maroon);
+  font-size: 2.05rem;
+  letter-spacing: -.014em;
 }
 
 #mobileNavMenu nav > span {
   margin-bottom: 2.25rem;
-}
-
-#mobileNavMenu div#lowerInfo {
-  margin-top: 3.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-#mobileNavMenu div#lowerInfo .logo {
-  width: 4rem;
 }
 
 header.headerStandard {
@@ -766,7 +756,6 @@ header#headerLarge blockquote {
 
 .imageCarousel {
   width: var(--colEight);
-  overflow: hidden;
   position: relative;
   height: 100%;
   margin-left: var(--gutter);
@@ -809,6 +798,10 @@ header#headerLarge blockquote {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+}
+
+#ourFramework .frameworkEntry.excel .iconContainer img {
+  width: 99px;
 }
 
 #ourFramework .frameworkEntry:nth-of-type(2) {
@@ -912,8 +905,6 @@ header#headerLarge blockquote {
 
 #teamMembers .col {
   display: flex;
-  min-width: 320px;
-  max-width: 340px;
   flex-direction: column;
   width: 100%;
   flex-grow: 1;
@@ -946,7 +937,7 @@ header#headerLarge blockquote {
 }
 
 #teamMembers .teamMemberEntry h3 {
-  margin-top: .5rem;
+  margin-top: 1.5rem;
   margin-bottom: 0;
 }
 
@@ -1133,9 +1124,6 @@ header#headerLarge blockquote {
   #ourFramework .frameworkEntry:not(:last-child) {
     margin-bottom: 9rem;
   }
-  #ourFramework .frameworkEntry.excel .iconContainer img {
-    width: 99px;
-  }
   #ourFramework .frameworkText {
     width: var(--colTwo);
   }
@@ -1159,6 +1147,7 @@ header#headerLarge blockquote {
   }
   #teamMembers .col {
     width: var(--colTwo);
+    max-width: 360px;
   }
   #teamMembers .col .teamMemberEntry div.imageContainer {
     height: 550px;

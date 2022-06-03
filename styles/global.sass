@@ -313,6 +313,7 @@ footer
     .bottomSplit
         margin-top: 6rem
         display: flex
+        flex-wrap: wrap
         justify-content: space-between
 
         & > div
@@ -320,10 +321,12 @@ footer
             align-items: center
             flex-wrap: wrap
 
-            
+        
+
         p
             margin-bottom: 0
             margin-top: 0.5rem
+            min-width: 320px
 
 section
     margin-bottom: calc(var(--gutter) * 10)
@@ -393,7 +396,7 @@ span.lineTop
         display: block
         height: 4rem
         width: 4rem
-        padding-left: .75rem
+        padding: .75rem
 
         svg path.hamburgerLine
             transition: var(--colorSwapEase)
@@ -420,23 +423,13 @@ span.lineTop
         display: flex
         flex-direction: column
 
-        a
-            font-size: inherit
-            text-transform: inherit
-            font-weight: inherit
-            font-family: inherit
+        h1
+            color: var(--maroon)
+            font-size: 2.05rem
+            letter-spacing: -.014em
 
         & > span
             margin-bottom: 2.25rem
-
-    div#lowerInfo
-        margin-top: 3.5rem
-        display: flex
-        align-items: center
-        justify-content: space-between
-
-        .logo
-            width: 4rem
             
 // Header Standard
 header.headerStandard
@@ -690,7 +683,6 @@ header#headerLarge
 // Image Carousel
 .imageCarousel  
     width: var(--colEight)
-    overflow: hidden 
     position: relative
     height: 100%
     margin-left: var(--gutter)
@@ -727,6 +719,9 @@ header#headerLarge
         display: flex
         flex-wrap: wrap
         align-items: center
+
+        &.excel .iconContainer img
+            width: 99px
 
         &:nth-of-type(2)
             flex-direction: row-reverse
@@ -814,8 +809,7 @@ header#headerLarge
     .col
         display: flex
         // width: 100%
-        min-width: 320px
-        max-width: 340px
+        // min-width: 320px
         flex-direction: column
         width: 100%
         flex-grow: 1
@@ -844,7 +838,7 @@ header#headerLarge
             margin-bottom: 7rem
 
         h3
-            margin-top: .5rem
+            margin-top: 1.5rem
             margin-bottom: 0
 
         p
@@ -1033,8 +1027,7 @@ header#headerLarge
             &:not(:last-child)
                 margin-bottom: 9rem
 
-            &.excel .iconContainer img
-                width: 99px
+
 
         .frameworkText
             width: var(--colTwo)
@@ -1059,6 +1052,7 @@ header#headerLarge
 
         .col
             width: var(--colTwo)
+            max-width: 360px
 
             .teamMemberEntry
 
