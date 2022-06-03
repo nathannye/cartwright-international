@@ -71,7 +71,7 @@ const HeaderStandard = ({ slice }) => {
     });
 
     let tl = gsap.timeline({
-      delay: 1.2,
+      delay: 0.96,
     });
 
     tl.to(
@@ -87,8 +87,8 @@ const HeaderStandard = ({ slice }) => {
         {
           autoAlpha: 1,
           x: 0,
-          duration: 1.1,
-          stagger: 0.1,
+          duration: 0.76,
+          stagger: 0.09,
           ease: "power3.out",
         },
         0.3
@@ -97,7 +97,7 @@ const HeaderStandard = ({ slice }) => {
         solidSplit.lines,
         {
           stagger: 0.1,
-          duration: 0.82,
+          duration: 0.74,
           ease: "power3.inOut",
           clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
         },
@@ -107,8 +107,8 @@ const HeaderStandard = ({ slice }) => {
         solidSplit.lines,
         {
           x: 0,
-          duration: 1.1,
-          stagger: 0.1,
+          duration: 0.76,
+          stagger: 0.09,
           autoAlpha: 1,
           ease: "power3.out",
           // onComplete: () => {

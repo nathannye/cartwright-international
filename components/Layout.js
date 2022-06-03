@@ -34,7 +34,7 @@ export const Layout = ({ children, menu }) => {
     const transitionStart = () => {
       console.log("start transition");
       setIsActive(true);
-      const tl = gsap.timeline();
+      const tl = gsap.timeline({});
       tl.set(
         q("div.transitionCover"),
         {
@@ -57,8 +57,8 @@ export const Layout = ({ children, menu }) => {
           {
             scaleY: 1,
             ease: "power4.inOut",
-            duration: 1.1,
-            stagger: -0.15,
+            duration: 0.74,
+            stagger: -0.13,
             delay: 0.01,
           },
           0
@@ -67,15 +67,12 @@ export const Layout = ({ children, menu }) => {
           function () {
             ScrollTrigger.refresh;
             if (document.body.classList.contains("isLight")) {
-              setTimeout(() => {
-                document.body.classList.remove("isLight");
-              }, 100);
+              document.body.classList.remove("isLight");
             }
           },
           null,
-          1
+          0.9
         );
-      console.log(tl.duration());
     };
     const transitionEnd = () => {
       console.log("transition ended");
@@ -114,16 +111,14 @@ export const Layout = ({ children, menu }) => {
               },
               0
             );
-        }, 1260);
+        }, 1050);
         setIsActive(false);
       }
     };
 
     router.events.on("routeChangeStart", transitionStart);
     router.events.on("routeChangeComplete", transitionEnd);
-    router.events.on("routeChangeError", () => {
-      console.log("we fucked up");
-    });
+    router.events.on("routeChangeError", transitionEnd);
 
     return () => {
       router.events.off("routeChangeStart", transitionStart);

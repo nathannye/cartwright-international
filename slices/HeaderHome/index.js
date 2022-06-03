@@ -37,7 +37,7 @@ export default function HeaderHome({ slice }) {
 
     tl.current = gsap
       .timeline({
-        delay: 1.3,
+        delay: 1.1,
       })
       .to(
         outline.querySelectorAll("g"),
@@ -45,7 +45,7 @@ export default function HeaderHome({ slice }) {
           stagger: -0.17,
           x: 0,
           autoAlpha: 1,
-          duration: 1.1,
+          duration: 0.78,
           ease: "power3.out",
         },
         0
@@ -55,7 +55,7 @@ export default function HeaderHome({ slice }) {
         {
           stagger: 0.14,
           x: 0,
-          duration: 1.1,
+          duration: 0.78,
           ease: "power3.out",
         },
         0
@@ -65,7 +65,7 @@ export default function HeaderHome({ slice }) {
         {
           clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
           stagger: 0.14,
-          duration: 1,
+          duration: 0.78,
           ease: "power3.inOut",
         },
         0.06
@@ -74,7 +74,7 @@ export default function HeaderHome({ slice }) {
         imageRef.current,
         {
           clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-          duration: 1.3,
+          duration: 0.98,
           ease: "power4.inOut",
         },
         0.2

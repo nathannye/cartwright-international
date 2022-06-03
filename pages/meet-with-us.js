@@ -20,14 +20,16 @@ const MeetUs = ({ page, menu }) => {
             <br />
             things rolling
           </h1>
-          <h1 className="hasAnimatedUnderline">
-            <a href={`mailto:${page.data.email}`}>{page.data.email}</a>
-          </h1>
-          <h1 className="hasAnimatedUnderline">
-            <a href={`tel:${[page.data["phone-number"]]}`}>
-              {page.data["phone-number"]}
-            </a>
-          </h1>
+          {/* <h3 className="hasAnimatedUnderline"> */}
+          <a href={`mailto:${page.data.email}`}>
+            <h3>{page.data.email}</h3>
+          </a>
+          {/* </h3> */}
+          {/* <h3 className="hasAnimatedUnderline"> */}
+          <a href={`tel:${[page.data["phone-number"]]}`}>
+            <h3>{page.data["phone-number"]}</h3>
+          </a>
+          {/* </h3> */}
         </main>
         <footer>
           <div>
