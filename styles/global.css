@@ -804,6 +804,15 @@ header#headerLarge blockquote {
 #ourFramework {
   margin-left: var(--gutter);
   margin-right: var(--gutter);
+  position: relative;
+}
+
+#ourFramework .oliveBranch {
+  position: absolute;
+  width: 390px;
+  height: 390px;
+  opacity: .09;
+  z-index: 20 !important;
 }
 
 #ourFramework .frameworkEntry {
@@ -847,19 +856,6 @@ header#headerLarge blockquote {
   height: 370px;
   position: relative;
   display: grid;
-}
-
-#ourFramework .frameworkCard > .oliveBranch {
-  position: absolute;
-  width: 390px;
-  height: 390px;
-  opacity: .09;
-  display: block;
-  z-index: 20 !important;
-}
-
-#ourFramework .frameworkCard > .oliveBranch svg {
-  display: block;
 }
 
 #ourFramework .frameworkCard .iconContainer {

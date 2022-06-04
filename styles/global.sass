@@ -725,6 +725,14 @@ header#headerLarge
 #ourFramework
     margin-left: var(--gutter)
     margin-right: var(--gutter)
+    position: relative
+
+    .oliveBranch
+        position: absolute
+        width: 390px
+        height: 390px
+        opacity: .09
+        z-index: 20 !important
 
     .frameworkEntry
         display: flex
@@ -761,17 +769,6 @@ header#headerLarge
         position: relative
         display: grid
 
-        & > .oliveBranch
-            position: absolute
-            width: 390px
-            height: 390px
-            opacity: .09
-            display: block
-            z-index: 20 !important
-
-            svg
-                display: block
-            
         .iconContainer
             height: 100%
             width: 100%

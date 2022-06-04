@@ -2,33 +2,18 @@ import { useRef } from "react";
 import gsap from "gsap";
 import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import Lottie from "lottie-web/build/player/lottie_light";
 import SplitText from "gsap/dist/SplitText";
-import animationData from "../public/lottie/oliveAnim.json";
-// import OliveBranch from "./OliveBranch";
 
 const FrameworkEntry = ({ entry, index }) => {
   const containerRef = useRef(null);
-  const oliveRef = useRef(null);
-  const q = gsap.utils.selector(containerRef.current);
-  const anim = useRef(null);
 
   useIsomorphicLayoutEffect(() => {
+    const q = gsap.utils.selector(containerRef.current);
     let maroonIcon = q(".iconContainer:first-of-type");
     let whiteIcon = q(".iconContainer:nth-of-type(2)");
     let smallText = q(".cardInfo > h3");
     let header = q(".frameworkText h3");
     let para = q(".frameworkText p");
-
-    if (oliveRef.current) {
-      anim.current = Lottie.loadAnimation({
-        container: q(".oliveBranch"),
-        renderer: "svg",
-        loop: false,
-        autoplay: false,
-        animationData,
-      });
-    }
 
     smallText.split = new SplitText(smallText, {
       type: "words, lines",
@@ -79,13 +64,6 @@ const FrameworkEntry = ({ entry, index }) => {
       },
       0
     )
-      //   .call(
-      //     function () {
-      //       anim.current.play();
-      //     },
-      //     null,
-      //     0.2
-      //   )
       .to(
         whiteIcon,
         {
@@ -99,7 +77,6 @@ const FrameworkEntry = ({ entry, index }) => {
         {
           yPercent: 0,
           stagger: 0.07,
-          ease: "power3.inOut",
         },
         0
       )
@@ -107,11 +84,11 @@ const FrameworkEntry = ({ entry, index }) => {
         header.split.words,
         {
           yPercent: 0,
-          duration: 0.95,
-          ease: "power3.inOut",
-          stagger: 0.09,
+          duration: 0.85,
+          ease: "power4.inOut",
+          stagger: 0.1,
         },
-        0.15
+        0.3
       )
       .to(
         para.split.lines,
@@ -119,11 +96,11 @@ const FrameworkEntry = ({ entry, index }) => {
           y: 0,
           ease: "power2.out",
           autoAlpha: 1,
-          stagger: 0.04,
+          stagger: 0.12,
         },
-        0.45
+        0.75
       );
-  });
+  }, []);
 
   return (
     <div
@@ -132,9 +109,7 @@ const FrameworkEntry = ({ entry, index }) => {
       ref={containerRef}
     >
       <div className="frameworkCard">
-        {/* <OliveBranch /> */}
-        <div className="oliveBranch" ref={oliveRef}></div>
-        {/* <img className="oliveBranch" src="./oliveBranch.svg" alt="" /> */}
+        <img className="oliveBranch" src="./oliveBranch.svg" alt="" />
         <div className="cardInfo">
           <h3 className="entryNumber">{`0${index + 1}`}</h3>
           <h3 className="entryName">{entry.title}</h3>
