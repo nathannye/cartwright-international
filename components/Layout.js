@@ -7,12 +7,11 @@ import { useEffect, useState, useRef, useLayoutEffect } from "react";
 import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
 import ScrollSmoother from "gsap/dist/ScrollSmoother";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import Notification from "./Notification"
-
+import Notification from "./Notification";
 
 gsap.defaults({
-  duration: 0.96,
-  ease: "power4.inOut",
+  duration: 0.86,
+  ease: "power3.inOut",
 });
 
 ScrollTrigger.defaults({

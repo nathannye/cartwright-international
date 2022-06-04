@@ -849,11 +849,17 @@ header#headerLarge blockquote {
   display: grid;
 }
 
-#ourFramework .frameworkCard .oliveBranch {
+#ourFramework .frameworkCard > .oliveBranch {
   position: absolute;
   width: 390px;
   height: 390px;
-  opacity: .05;
+  opacity: .09;
+  display: block;
+  z-index: 20 !important;
+}
+
+#ourFramework .frameworkCard > .oliveBranch svg {
+  display: block;
 }
 
 #ourFramework .frameworkCard .iconContainer {
@@ -864,12 +870,11 @@ header#headerLarge blockquote {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--maroon);
   padding-bottom: 7%;
 }
 
-#ourFramework .frameworkCard .iconContainer:last-of-type {
-  display: none;
+#ourFramework .frameworkCard .iconContainer.whiteIcon {
+  background: var(--maroon);
 }
 
 #ourFramework .frameworkCard .iconContainer img {
@@ -883,6 +888,7 @@ header#headerLarge blockquote {
   justify-content: space-between;
   width: 100%;
   padding: 0 2rem;
+  z-index: 10;
   align-items: center;
 }
 
@@ -1038,6 +1044,7 @@ header#headerLarge blockquote {
   z-index: 12;
   width: 100%;
   position: fixed;
+  opacity: 0;
   bottom: 0;
   left: 0;
   padding: 2rem var(--gutter);

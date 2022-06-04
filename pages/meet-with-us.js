@@ -6,7 +6,9 @@ import { EmailForm } from "../components/EmailForm";
 import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
 
 const MeetUs = ({ page, menu }) => {
-  useIsomorphicLayoutEffect(() => {});
+  useIsomorphicLayoutEffect(() => {
+    
+  });
 
   return (
     <Layout menu={menu} noFooter>

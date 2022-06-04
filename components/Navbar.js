@@ -106,7 +106,6 @@ const Navbar = ({ menu }) => {
 
   const burgerToggle = ({ currentTarget }) => {
     masterTL.reversed() ? masterTL.play() : masterTL.timeScale(1.4).reverse();
-
     anim.current.setDirection((direction *= -1));
     anim.current.play();
   };

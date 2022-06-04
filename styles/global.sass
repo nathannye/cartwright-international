@@ -761,11 +761,16 @@ header#headerLarge
         position: relative
         display: grid
 
-        .oliveBranch
+        & > .oliveBranch
             position: absolute
             width: 390px
             height: 390px
-            opacity: .05
+            opacity: .09
+            display: block
+            z-index: 20 !important
+
+            svg
+                display: block
             
         .iconContainer
             height: 100%
@@ -775,11 +780,10 @@ header#headerLarge
             display: flex
             justify-content: center
             align-items: center
-            background-color: var(--maroon)
             padding-bottom: 7%
 
-            &:last-of-type
-                display: none
+            &.whiteIcon
+                background: var(--maroon)
 
             img
                 width: 90px
@@ -791,6 +795,7 @@ header#headerLarge
             justify-content: space-between
             width: 100%
             padding: 0 2rem
+            z-index: 10
             align-items: center
 
             h3
@@ -922,6 +927,7 @@ header#headerLarge
     z-index: 12
     width: 100%
     position: fixed
+    opacity: 0
     bottom: 0
     left: 0
     padding: 2rem var(--gutter)
@@ -1129,8 +1135,6 @@ header#headerLarge
 
                     & > div
                         width: var(--colFour)
-
-
 
 @media (hover: hover)
 
