@@ -307,6 +307,7 @@ footer .topSplit {
 
 footer #emailFormContainer {
   margin-top: calc(var(--gutter)*2);
+  width: 100%;
 }
 
 footer #emailFormContainer form {
@@ -533,6 +534,14 @@ header#headerLarge {
   justify-content: flex-end;
 }
 
+header#headerLarge svg#homeFilter {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  opacity: .01;
+  pointer-events: none;
+}
+
 header#headerLarge #companyNameContainer {
   display: flex;
   flex-direction: column;
@@ -565,6 +574,7 @@ header#headerLarge div.imageContainer img {
   width: 100%;
   transform: scale(1.1);
   object-fit: cover;
+  filter: url(#noise);
 }
 
 header#headerLarge h1 {

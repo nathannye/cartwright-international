@@ -5,7 +5,6 @@ import gsap from "gsap";
 import { useRouter } from "next/router";
 import { useEffect, useState, useRef, useLayoutEffect } from "react";
 import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
-import ScrollSmoother from "gsap/dist/ScrollSmoother";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Notification from "./Notification";
 
@@ -24,9 +23,15 @@ export const Layout = ({ children, menu }) => {
   const coverRef = useRef(null);
   const mainRef = useRef(null);
   const contentRef = useRef(null);
-  const q = gsap.utils.selector(coverRef);
+  const scroller = useRef(null);
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const m = gsap.utils.selector(mainRef.current);
 
   useIsomorphicLayoutEffect(() => {
+    const q = gsap.utils.selector(coverRef.current);
+
     gsap.set(q("div.transitionCover"), {
       scaleY: 0,
       transformOrigin: "center bottom",
@@ -135,16 +140,17 @@ export const Layout = ({ children, menu }) => {
   return (
     <div>
       <Navbar menu={menu} />
+      <Notification />
       <div id="transitionContainer" ref={coverRef}>
         <div className="transitionCover"></div>
         <div className="transitionCover"></div>
       </div>
 
-      <main ref={mainRef}>
+      <main>
         <div>{children}</div>
+
+        <Footer />
       </main>
-      <Notification />
-      <Footer />
     </div>
   );
 };

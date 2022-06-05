@@ -9,6 +9,7 @@ export default function HeaderHome({ slice }) {
   const tl = useRef(null);
   const headerRef = useRef(null);
   const colorTL = useRef(null);
+  const svgRef = useRef(null);
 
   useIsomorphicLayoutEffect(() => {
     let outline = document.querySelector("svg > g#outlineText");
@@ -23,14 +24,28 @@ export default function HeaderHome({ slice }) {
     );
 
     const q = gsap.utils.selector(headerRef.current);
+    const v = gsap.utils.selector(svgRef.current);
 
     gsap.set(imageRef.current, {
-      clipPath: "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)",
+      clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
     });
     gsap.set(solid.querySelectorAll("g"), {
       x: -20,
       clipPath: "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)",
     });
+
+    gsap.set(v("#turbulence"), {
+      attr: {
+        baseFrequency: ".009 .01",
+      },
+    });
+
+    gsap.set(v("#displace"), {
+      attr: {
+        scale: "100",
+      },
+    });
+
     gsap.set(outline.querySelectorAll("g"), {
       x: -20,
       autoAlpha: 0,
@@ -79,6 +94,28 @@ export default function HeaderHome({ slice }) {
           ease: "power4.inOut",
         },
         0.2
+      )
+      .to(
+        v("#turbulence"),
+        {
+          attr: {
+            baseFrequency: "0 0",
+          },
+          duration: 1.5,
+          ease: "power1.out",
+        },
+        0
+      )
+      .to(
+        v("#displace"),
+        {
+          attr: {
+            scale: "40",
+          },
+          duration: 1,
+          ease: "power1.out",
+        },
+        0
       );
 
     return () => {
@@ -107,10 +144,12 @@ export default function HeaderHome({ slice }) {
 
   return (
     <header id="headerLarge" ref={headerRef}>
-      <filter id="noise">
-        <feTurbulence result="NOISE" numOctaves="1" id="turbulence" />
-        <feDisplacementMap in="SourceGraphic" in2="NOISE" id="displace" />
-      </filter>
+      <svg id="homeFilter" ref={svgRef}>
+        <filter id="noise">
+          <feTurbulence result="NOISE" numOctaves="1" id="turbulence" />
+          <feDisplacementMap in="SourceGraphic" in2="NOISE" id="displace" />
+        </filter>
+      </svg>
       <div id="companyNameContainer">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 407.06 90.24">
           <g id="solidText">

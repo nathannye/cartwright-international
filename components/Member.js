@@ -121,10 +121,15 @@ const Member = ({ entry, index }) => {
         },
         0.2
       )
-      .to(q("a"), {
-        y: 0,
-        ease: "power3.out",
-      });
+      .to(
+        q("a"),
+        {
+          y: 0,
+          autoAlpha: 1,
+          ease: "power2.out",
+        },
+        0.2
+      );
 
     return () => {
       ScrollTrigger.kill;

@@ -271,6 +271,7 @@ footer
 
     #emailFormContainer
         margin-top: calc(var(--gutter)*2)
+        width: 100%
 
         form
             position: relative
@@ -480,6 +481,13 @@ header#headerLarge
     flex-direction: column
     justify-content: flex-end
 
+    svg#homeFilter
+        height: 100%
+        width: 100%
+        position: fixed
+        opacity: .01
+        pointer-events: none;
+
     #companyNameContainer
         display: flex
         flex-direction: column
@@ -502,15 +510,13 @@ header#headerLarge
         overflow: hidden
         height: 55%
         margin-right: var(--gutter)
-        // margin-left: var(--colThree)
 
         img
-            // filter: url("#filter")
             height: 100%
             width: 100%
             transform: scale(1.1)
             object-fit: cover
-            // object-position: right
+            filter: url(#noise)
 
     h1
         margin: 0
