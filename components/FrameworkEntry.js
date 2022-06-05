@@ -109,7 +109,7 @@ const FrameworkEntry = ({ entry, index }) => {
       ref={containerRef}
     >
       <div className="frameworkCard">
-        <img className="oliveBranch" src="./oliveBranch.svg" alt="" />
+        <img className="oliveBranch" src="oliveBranch.svg" alt="" />
         <div className="cardInfo">
           <h3 className="entryNumber">{`0${index + 1}`}</h3>
           <h3 className="entryName">{entry.title}</h3>
