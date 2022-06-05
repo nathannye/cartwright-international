@@ -7,7 +7,7 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 export default function HeaderHome({ slice }) {
   const imageRef = useRef();
   const tl = useRef(null);
-  const headerRef = useRef();
+  const headerRef = useRef(null);
   const colorTL = useRef(null);
 
   useIsomorphicLayoutEffect(() => {
@@ -21,6 +21,9 @@ export default function HeaderHome({ slice }) {
     let international = document.querySelector(
       "g#intl-solid, g#international-2"
     );
+
+    const q = gsap.utils.selector(headerRef.current);
+
     gsap.set(imageRef.current, {
       clipPath: "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)",
     });
@@ -104,6 +107,10 @@ export default function HeaderHome({ slice }) {
 
   return (
     <header id="headerLarge" ref={headerRef}>
+      <filter id="noise">
+        <feTurbulence result="NOISE" numOctaves="1" id="turbulence" />
+        <feDisplacementMap in="SourceGraphic" in2="NOISE" id="displace" />
+      </filter>
       <div id="companyNameContainer">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 407.06 90.24">
           <g id="solidText">

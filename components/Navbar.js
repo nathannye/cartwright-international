@@ -6,13 +6,14 @@ import gsap from "gsap";
 import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
 import SplitText from "gsap/dist/SplitText";
 import animationData from "../public/lottie/hamburgerAnim.json";
+import { useRouter } from "next/router";
 
 const Navbar = ({ menu }) => {
   const mobileLinksRef = useRef(null);
+  const mobileNavRef = useRef(null);
   const linksRef = useRef([]);
   linksRef.current = [];
-  const mobileNavRef = useRef(null);
-  const q = gsap.utils.selector(linksRef.current);
+  const router = useRouter();
 
   const animationContainer = useRef(null);
   const anim = useRef(null);
@@ -38,74 +39,72 @@ const Navbar = ({ menu }) => {
     }
   });
 
-  const addMobileLinksRef = (el) => {
-    if (el && !linksRef.current.includes(el)) {
-      linksRef.current.push(el);
-    }
-  };
   // Mobile Nav Iso
   useIsomorphicLayoutEffect(() => {
+    const q = gsap.utils.selector(mobileNavRef.current);
+
+    const links = q("a");
+
+    links.forEach((link, index) => {
+      link.split = new SplitText(link, {
+        type: "lines, words",
+        linesClass: "splitLineOverflow",
+      });
+
+      gsap.set(link.split.words, {
+        yPercent: -100,
+      });
+
+      let tween = gsap.to(
+        link.split.words,
+        {
+          yPercent: 0,
+          stagger: 0.06,
+          delay: index / 10,
+        },
+        0.1
+      );
+
+      masterTL.add(tween, 0.1);
+    });
+
     gsap.set(mobileNavRef.current, {
       xPercent: 100,
     });
 
-    masterTL.to(
-      mobileNavRef.current,
-      {
-        xPercent: 0,
-        duration: 0.65,
-        ease: "power4.inOut",
-      },
-      0
-    );
+    gsap.set(q("span.lineTop"), {
+      scaleX: 0,
+      transformOrigin: "left center",
+    });
+
+    masterTL
+      .to(
+        mobileNavRef.current,
+        {
+          xPercent: 0,
+          duration: 0.65,
+          ease: "power4.inOut",
+        },
+        0
+      )
+      .to(
+        q("span.lineTop"),
+        {
+          scaleX: 1,
+          stagger: 0.06,
+        },
+        0.1
+      );
 
     gsap.registerPlugin(SplitText);
-
-    // linksRef.current.forEach((li, index) => {
-    //   linksRef.current.split = new SplitText(li.children[2], {
-    //     type: "chars, lines",
-    //     linesClass: "splitLineOverflow",
-    //   });
-    //   gsap.set(linksRef.current.split.chars, {
-    //     yPercent: -100,
-    //   });
-
-    //   gsap.set(li.children[0], {
-    //     scaleX: 0,
-    //     transformOrigin: "left center",
-    //   });
-
-    //   let tl = gsap.timeline({
-    //     delay: 0.7,
-    //   });
-    //   tl.to(
-    //     q(".lineTop"),
-    //     {
-    //       scaleX: 1,
-    //       duration: 0.82,
-    //       ease: "power4.inOut",
-    //       delay: index / 8,
-    //     },
-    //     0
-    //   ).to(
-    //     linksRef.current.split.chars,
-    //     {
-    //       yPercent: 0,
-    //       duration: 0.85,
-    //       stagger: 0.015,
-    //       delay: index / 8,
-    //       ease: "power4.inOut",
-    //     },
-    //     0
-    //   );
-    //   masterTL.add(tl, 0);
-    // });
   });
 
   var direction = -1;
 
   const burgerToggle = ({ currentTarget }) => {
-    masterTL.reversed() ? masterTL.play() : masterTL.timeScale(1.4).reverse();
+    masterTL.reversed()
+      ? masterTL.timeScale(1).play()
+      : masterTL.timeScale(1.4).reverse();
     anim.current.setDirection((direction *= -1));
     anim.current.play();
   };
@@ -237,7 +236,12 @@ const Navbar = ({ menu }) => {
         </Link>
         <nav>
           {menu.data.menuLink.map((el, index) => (
-            <PrismicLink field={el.link} key={`${el + index}`}>
+            <PrismicLink
+              field={el.link}
+              key={`${el + index}`}
+              onClick={console.log(router.pathname)}
+              className={router.pathname}
+            >
               {el.label}
             </PrismicLink>
           ))}
@@ -253,8 +257,9 @@ const Navbar = ({ menu }) => {
           {menu.data.menuLink.map((el, index) => (
             <span
               key={el.link + el + index}
-              ref={addMobileLinksRef}
+              // ref={addMobileLinksRef}
               onClick={burgerToggle}
+              className={router.pathname == `/${el.link}` ? "active" : ""}
             >
               <span className="lineTop"></span>
 

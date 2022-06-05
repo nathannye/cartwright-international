@@ -878,6 +878,7 @@ header#headerLarge blockquote {
   height: 370px;
   position: relative;
   display: grid;
+  max-width: 250px;
 }
 
 #ourFramework .frameworkCard .iconContainer {
@@ -917,6 +918,7 @@ header#headerLarge blockquote {
 
 #ourFramework .frameworkText {
   margin-top: 1rem;
+  max-width: 250px;
 }
 
 .quoteLarge {
@@ -934,9 +936,14 @@ header#headerLarge blockquote {
   margin-left: var(--gutter);
   margin-right: var(--gutter);
   justify-content: center;
-  flex-wrap: wrap-reverse;
+  flex-wrap: wrap;
   flex-grow: 1;
   max-width: 980px;
+}
+
+#teamMembers svg {
+  height: 0;
+  position: absolute;
 }
 
 #teamMembers .col {
@@ -947,7 +954,7 @@ header#headerLarge blockquote {
 }
 
 #teamMembers .col:last-child {
-  margin-bottom: 7rem;
+  margin-top: 7rem;
 }
 
 #teamMembers .teamMemberEntry h4 {
@@ -1047,6 +1054,7 @@ header#headerLarge blockquote {
 
 #meetUsPage h1 {
   margin-left: var(--gutter);
+  max-width: 1200px;
 }
 
 #meetUsPage main a:not(footer a) {
@@ -1209,10 +1217,12 @@ header#headerLarge blockquote {
   }
   #ourFramework .frameworkText {
     width: var(--colTwo);
+    max-width: unset;
   }
   #ourFramework .frameworkCard {
     width: 300px;
     height: 450px;
+    max-width: unset;
   }
   #ourFramework .frameworkCard .iconContainer {
     padding-bottom: 12%;
@@ -1228,9 +1238,6 @@ header#headerLarge blockquote {
     margin-right: auto;
     width: calc(100% - (var(--gutter) *2));
   }
-  #teamMembers svg {
-    display: none;
-  }
   #teamMembers .col {
     width: var(--colTwo);
     max-width: 360px;
@@ -1240,7 +1247,8 @@ header#headerLarge blockquote {
   }
   #teamMembers .col .teamMemberEntry div.imageContainer img {
     filter: url(#noise);
-    transform: scale(1.12);
+    -webkit-filter: url(#noise);
+    transform: scale(1.05) translateX(-10px);
   }
   #teamMembers .col:last-child {
     margin-left: var(--colTwo);

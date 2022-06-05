@@ -789,6 +789,7 @@ header#headerLarge
         height: 370px
         position: relative
         display: grid
+        max-width: 250px
 
         .iconContainer
             height: 100%
@@ -815,6 +816,7 @@ header#headerLarge
             padding: 0 2rem
             z-index: 10
             align-items: center
+            
 
             h3
                 color: var(--tan)
@@ -822,6 +824,7 @@ header#headerLarge
 
     .frameworkText
         margin-top: 1rem
+        max-width: 250px
 
 .quoteLarge
     margin-left: var(--gutter)
@@ -836,9 +839,14 @@ header#headerLarge
     margin-left: var(--gutter)
     margin-right: var(--gutter)
     justify-content: center
-    flex-wrap: wrap-reverse
+    flex-wrap: wrap
     flex-grow: 1
     max-width: 980px
+
+    svg
+        height: 0
+        position: absolute
+
 
     .col
         display: flex
@@ -849,7 +857,7 @@ header#headerLarge
         flex-grow: 1
 
         &:last-child
-            margin-bottom: 7rem
+            margin-top: 7rem
 
     .teamMemberEntry
 
@@ -932,6 +940,7 @@ header#headerLarge
 
     h1
         margin-left: var(--gutter)
+        max-width: 1200px
 
     main a:not(footer a)
         color: var(--tan)
@@ -1110,14 +1119,14 @@ header#headerLarge
             &:not(:last-child)
                 margin-bottom: 9rem
 
-
-
         .frameworkText
             width: var(--colTwo)
+            max-width: unset
 
         .frameworkCard
             width: 300px
             height: 450px
+            max-width: unset
 
             .iconContainer
                 padding-bottom: 12%
@@ -1133,9 +1142,6 @@ header#headerLarge
         margin-right: auto 
         width: calc(100% - (var(--gutter) *2))
 
-        svg
-            display: none
-
         .col
             width: var(--colTwo)
             max-width: 360px
@@ -1147,7 +1153,8 @@ header#headerLarge
 
                     img
                         filter: url(#noise)
-                        transform: scale(1.12)
+                        -webkit-filter: url(#noise)
+                        transform: scale(1.05) translateX(-10px)
 
             &:last-child
                 margin-left: var(--colTwo)

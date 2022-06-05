@@ -45,7 +45,6 @@ const HeaderStandard = ({ slice }) => {
 
     let solidSplit = new SplitText(q(".solidHeading"), {
       type: "lines",
-      linesClass: "splitLine",
     });
 
     gsap.set(solidSplit.lines, {
@@ -110,8 +109,6 @@ const HeaderStandard = ({ slice }) => {
       );
     return () => {
       // colorTL.current.kill;
-      outlineSplit.revert();
-      solidSplit.revert();
     };
   });
 

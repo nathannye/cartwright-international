@@ -89,8 +89,9 @@ const Member = ({ entry, index }) => {
         v("#displace"),
         {
           attr: {
-            scale: "50",
+            scale: "40",
           },
+          duration: 1,
           ease: "circ.out",
         },
         0
@@ -134,15 +135,10 @@ const Member = ({ entry, index }) => {
 
   return (
     <>
-      <svg ref={svgRef}>
+      <svg ref={svgRef} width={400} height={700}>
         <filter id="noise">
           <feTurbulence result="NOISE" numOctaves="1" id="turbulence" />
-          <feDisplacementMap
-            in="SourceGraphic"
-            in2="NOISE"
-            scale="32"
-            id="displace"
-          />
+          <feDisplacementMap in="SourceGraphic" in2="NOISE" id="displace" />
         </filter>
       </svg>
       <div key={entry.name} className="teamMemberEntry" ref={memberRef}>

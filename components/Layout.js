@@ -76,6 +76,7 @@ export const Layout = ({ children, menu }) => {
         );
     };
     const transitionEnd = () => {
+      console.log("transition done");
       const tl = gsap.timeline({
         onComplete: () => {
           ScrollTrigger.refresh();
