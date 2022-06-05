@@ -235,6 +235,10 @@ body
                 color: var(--maroon)
                 transition: var(--colorSwapEase)
 
+                &:after
+                    background: var(--maroon)
+                    transition: var(--colorSwapEase)
+
             svg.logo g path
                 fill: var(--maroon)
                 transition: var(--colorSwapEase)
@@ -246,12 +250,16 @@ body
 .shortFooter
     display: flex
     justify-content: space-between
+    flex-wrap: wrap
 
     & > div
-        width: 50%
+        width: 100%
 
         p
             width: unset
+
+    #emailFormContainer
+        width: 100%
 
 footer
     background: var(--maroon)
@@ -410,14 +418,44 @@ span.lineTop
 
         a
             color: var(--light)
-            transition: var(--colorSwapEase)
-            transition: opacity .25s linear
+            // transition: var(--colorSwapEase)
+            // transition: opacity .25s linear
+            position: relative
+            opacity: .6
+            transition: all .4s ease-in-out
 
             &:hover
                 opacity: .5
                 transition: opacity .25s linear
 
-            &:after, &:before
+            &:after
+                position: absolute
+                content: ''
+                background: var(--light)
+                width: 8px
+                left: -1rem
+                // transition: var(--colorSwapEase)
+                height: 8px
+                opacity: 0
+                transform: translate(0px)
+                top: calc(50% - 3px)
+                transition: all .4s ease-in-out
+                border-radius: 10px
+
+            &.active
+                margin-left: 1.5rem
+                margin-right: 1.5rem !important
+                opacity: 1
+                transition: opacity .25s ease-in-out, transform .25s ease-in-out
+                transition: var(--colorSwapEase)
+
+                &:after
+                    position: absolute
+                    content: ''
+                    background: var(--light)
+                    transition: opacity .25s ease-in-out, transform .25s ease-in-out
+                    height: 8px
+                    opacity: 1
 
 
     svg.logo g path
@@ -462,6 +500,29 @@ span.lineTop
 
         & > span
             margin-bottom: 2.25rem
+
+        a
+            position: relative
+
+            &:after
+                position: absolute
+                content: ''
+                background: var(--maroon)
+                height: 8px
+                border-radius: 13px
+                left: -1.25rem
+                top: 8px
+                opacity: 0
+                width: 8px
+
+        span.active
+
+            a
+                margin-left: 1.25rem !important
+
+                &:after
+                    opacity: 1
+
             
 // Header Standard
 header.headerStandard

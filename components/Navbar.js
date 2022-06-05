@@ -239,8 +239,7 @@ const Navbar = ({ menu }) => {
             <PrismicLink
               field={el.link}
               key={`${el + index}`}
-              onClick={console.log(router.pathname)}
-              className={router.pathname}
+              className={router.asPath == `/${el.link.uid}` ? "active" : ""}
             >
               {el.label}
             </PrismicLink>
@@ -259,7 +258,7 @@ const Navbar = ({ menu }) => {
               key={el.link + el + index}
               // ref={addMobileLinksRef}
               onClick={burgerToggle}
-              className={router.pathname == `/${el.link}` ? "active" : ""}
+              className={router.asPath == `/${el.link.uid}` ? "active" : ""}
             >
               <span className="lineTop"></span>
 

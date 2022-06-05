@@ -1,0 +1,12 @@
+[
+  {
+    "variation": "default",
+    "name": "Default",
+    "slice_type": "header_standard",
+    "items": [],
+    "primary": {
+      "subhead": "benchmark open-source eyeballs",
+      "headline": "enable next-generation functionalities"
+    }
+  }
+]

@@ -262,6 +262,11 @@ body.isLight div#navbar nav a {
   transition: var(--colorSwapEase);
 }
 
+body.isLight div#navbar nav a:after {
+  background: var(--maroon);
+  transition: var(--colorSwapEase);
+}
+
 body.isLight div#navbar svg.logo g path {
   fill: var(--maroon);
   transition: var(--colorSwapEase);
@@ -275,14 +280,19 @@ body.isLight div#navbar #hamburgerBtn svg path.hamburgerLine {
 .shortFooter {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .shortFooter > div {
-  width: 50%;
+  width: 100%;
 }
 
 .shortFooter > div p {
   width: unset;
+}
+
+.shortFooter #emailFormContainer {
+  width: 100%;
 }
 
 footer {
@@ -460,13 +470,45 @@ span.lineTop {
 
 #navbar > nav a {
   color: var(--light);
-  transition: var(--colorSwapEase);
-  transition: opacity .25s linear;
+  position: relative;
+  opacity: .6;
+  transition: all .4s ease-in-out;
 }
 
 #navbar > nav a:hover {
   opacity: .5;
   transition: opacity .25s linear;
+}
+
+#navbar > nav a:after {
+  position: absolute;
+  content: '';
+  background: var(--light);
+  width: 8px;
+  left: -1rem;
+  height: 8px;
+  opacity: 0;
+  transform: translate(0px);
+  top: calc(50% - 3px);
+  transition: all .4s ease-in-out;
+  border-radius: 10px;
+}
+
+#navbar > nav a.active {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem !important;
+  opacity: 1;
+  transition: opacity .25s ease-in-out, transform .25s ease-in-out;
+  transition: var(--colorSwapEase);
+}
+
+#navbar > nav a.active:after {
+  position: absolute;
+  content: '';
+  background: var(--light);
+  transition: opacity .25s ease-in-out, transform .25s ease-in-out;
+  height: 8px;
+  opacity: 1;
 }
 
 #navbar svg.logo g path {
@@ -514,6 +556,30 @@ span.lineTop {
 
 #mobileNavMenu nav > span {
   margin-bottom: 2.25rem;
+}
+
+#mobileNavMenu nav a {
+  position: relative;
+}
+
+#mobileNavMenu nav a:after {
+  position: absolute;
+  content: '';
+  background: var(--maroon);
+  height: 8px;
+  border-radius: 13px;
+  left: -1.25rem;
+  top: 8px;
+  opacity: 0;
+  width: 8px;
+}
+
+#mobileNavMenu nav span.active a {
+  margin-left: 1.25rem !important;
+}
+
+#mobileNavMenu nav span.active a:after {
+  opacity: 1;
 }
 
 header.headerStandard {

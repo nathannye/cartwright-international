@@ -1,0 +1,54 @@
+[
+  {
+    "variation": "default",
+    "name": "Default",
+    "slice_type": "vertical_list_large",
+    "items": [
+      {
+        "entry-title": "visualize world-class systems",
+        "entry-description": "strategize e-business users",
+        "entry-bullet-list": [
+          {
+            "type": "paragraph",
+            "text": "Ea elit eu ut aliqua dolor consequat esse enim ad excepteur ad cillum duis proident reprehenderit. Dolore cupidatat ex aute.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "entry-title": "unleash collaborative networks",
+        "entry-description": "harness e-business ROI",
+        "entry-bullet-list": [
+          {
+            "type": "paragraph",
+            "text": "Cillum aliqua aliquip dolor eiusmod adipisicing eu laborum eiusmod nostrud ipsum mollit non.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "entry-title": "maximize extensible initiatives",
+        "entry-description": "generate plug-and-play e-services",
+        "entry-bullet-list": [
+          {
+            "type": "paragraph",
+            "text": "Aliqua anim enim qui est officia anim ullamco adipisicing.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "entry-title": "empower one-to-one web-readiness",
+        "entry-description": "expedite back-end mindshare",
+        "entry-bullet-list": [
+          {
+            "type": "paragraph",
+            "text": "Ut in labore elit aliqua pariatur voluptate veniam nostrud adipisicing. Officia commodo elit dolore eu est.",
+            "spans": []
+          }
+        ]
+      }
+    ],
+    "primary": {}
+  }
+]
