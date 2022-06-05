@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Proza+Libre:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Roboto+Flex:wdth,wght@100..800;&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
@@ -32,9 +32,11 @@ html {
 
 a {
   color: var(--maroon);
-  font-family: "Proza Libre", sans-serif;
-  font-weight: 500;
-  font-size: 1.03rem;
+  font-family: "Roboto Flex", sans-serif;
+  font-weight: 420;
+  font-size: 1rem;
+  letter-spacing: .052em;
+  font-style: normal;
   display: inline-block;
   text-transform: uppercase;
   text-decoration: none;
@@ -57,7 +59,7 @@ a.internalLink:after, a.internalLink:before {
   width: .9rem;
   display: block;
   position: absolute;
-  top: .25rem;
+  top: .1rem;
   transition: var(--powerEase);
   height: .9rem;
 }
@@ -154,58 +156,70 @@ h1.hasAnimatedUnderline::after {
   background: var(--tan);
 }
 
-h2, label {
-  letter-spacing: .12em;
-  font-size: clamp(0.95rem, calc(0.95rem + ((1vw - 0.25rem) * 0.1786)), 1.15rem);
+h2 {
+  letter-spacing: .052em;
+  font-size: 1rem;
   font-variant-numeric: lining-nums;
-  font-weight: 500;
+  font-weight: 800;
+  font-stretch: 93%;
+  color: var(--maroon);
+  margin-bottom: calc(var(--gutter));
+  text-transform: uppercase;
+  font-family: "Roboto Flex", sans-serif;
+}
+
+label {
+  letter-spacing: .032em;
+  font-size: clamp(0.95rem, calc(0.95rem + ((1vw - 0.25rem) * 0.1786)), 1rem);
+  font-weight: 320;
   color: var(--maroon);
   margin-bottom: calc(var(--gutter) /2);
   text-transform: uppercase;
-  font-family: "Proza Libre", sans-serif;
+  font-family: "Roboto Flex", sans-serif;
 }
 
 h3 {
   font-size: clamp(1.85rem, calc(1.85rem + ((1vw - 0.25rem) * 1.0536)), 2.15rem) !important;
-  letter-spacing: -.015em;
+  letter-spacing: -.02em;
   font-family: 'Cormorant Garamond', serif;
   font-weight: 500;
   font-variant-numeric: lining-nums;
   text-transform: none;
   color: var(--maroon);
-  margin-bottom: .5rem;
+  margin-bottom: .75rem;
 }
 
 h4 {
   color: var(--dark);
   opacity: .65;
-  font-family: "Proza Libre", sans-serif;
+  font-family: "Roboto Flex", sans-serif;
   font-weight: 400;
-  font-size: 1.2rem;
-  letter-spacing: -.01em;
+  font-size: 1.4rem;
+  letter-spacing: -.05em;
 }
 
 h5 {
   color: var(--dark);
   opacity: .65;
-  font-family: "Proza Libre", sans-serif;
-  font-weight: 400;
-  font-size: 1.2rem;
+  font-family: "Roboto Flex", sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 1rem;
   letter-spacing: -.01em;
 }
 
 p, ul {
-  font-family: "Proza Libre", sans-serif;
+  font-family: "Roboto Flex", sans-serif;
   color: var(--dark);
-  letter-spacing: -.022em;
+  letter-spacing: -.03em;
   font-size: 1.15rem;
-  font-weight: 400;
-  line-height: 1.475;
+  font-weight: 450;
+  line-height: 1.37;
   margin-bottom: 1.25rem;
 }
 
 input:not([type="submit"]) {
-  font-family: "Proza Libre", sans-serif;
+  font-family: "Roboto Flex", sans-serif;
   letter-spacing: -.022em;
   font-size: 1.15rem;
   font-weight: 300;
@@ -213,21 +227,21 @@ input:not([type="submit"]) {
 }
 
 li {
-  font-family: "Proza Libre", sans-serif;
+  font-family: "Roboto Flex", sans-serif;
   color: var(--dark);
-  letter-spacing: -.022em;
+  letter-spacing: -.023em;
   font-size: 1.15rem;
-  font-weight: 300;
+  font-weight: 220;
   line-height: 1.475;
   margin-bottom: .25rem;
 }
 
 ::placeholder {
   color: var(--light);
-  font-family: "Proza Libre", sans-serif;
-  letter-spacing: -.022em;
+  font-family: "Roboto Flex", sans-serif;
+  letter-spacing: -.012em;
   font-size: 1.25rem;
-  font-weight: 300;
+  font-weight: 220;
 }
 
 header {
@@ -307,6 +321,10 @@ body.isLight div#navbar #hamburgerBtn svg path.hamburgerLine {
 footer {
   background: var(--maroon);
   padding: 3rem var(--gutter);
+}
+
+footer p {
+  text-transform: uppercase;
 }
 
 footer.noFooter {
@@ -398,7 +416,6 @@ footer .contactInfo a > h3, footer .contactInfo span > h3 {
   font-size: clamp(1.45rem, calc(1.45rem + ((1vw - 0.25rem) * 2.2768)), 4rem) !important;
   font-style: italic;
   display: block;
-  text-underline-offset: .25rem;
 }
 
 footer .bottomSplit {
@@ -442,7 +459,7 @@ span.lineTop {
   width: 100%;
   opacity: .25;
   background: var(--maroon);
-  margin-bottom: 1rem;
+  margin-bottom: .6rem;
 }
 
 #navbar {
@@ -626,11 +643,21 @@ header#headerLarge svg#homeFilter {
 
 header#headerLarge #companyNameContainer {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   margin-right: var(--gutter);
   padding-left: var(--gutter);
   overflow: visible;
   max-width: 1500px;
+}
+
+header#headerLarge #companyNameContainer h2 {
+  color: var(--tan);
+  font-size: 1.5rem;
+  line-height: 1.1;
+  max-width: 450px;
+  text-indent: 2rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
 }
 
 header#headerLarge #companyNameContainer span {
@@ -647,7 +674,7 @@ header#headerLarge #companyNameContainer span blockquote {
 
 header#headerLarge div.imageContainer {
   overflow: hidden;
-  height: 55%;
+  height: 45%;
   margin-right: var(--gutter);
 }
 
@@ -831,7 +858,7 @@ header#headerLarge blockquote {
 .verticalListLarge {
   margin-left: var(--gutter);
   margin-right: var(--gutter);
-  max-width: 1600px;
+  max-width: 1200px;
 }
 
 .verticalListLarge div.largeListEntry {
@@ -1188,7 +1215,7 @@ header#headerLarge blockquote {
   border: none;
   font-weight: 500;
   font-size: .9rem;
-  font-family: "Proza Libre", sans-serif;
+  font-family: "Roboto Flex", sans-serif;
   text-transform: uppercase;
   text-decoration: underline;
   text-underline-offset: .2rem;

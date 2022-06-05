@@ -147,7 +147,7 @@ const Member = ({ entry, index }) => {
         </filter>
       </svg>
       <div key={entry.name} className="teamMemberEntry" ref={memberRef}>
-        <h4>{entry.position}</h4>
+        <h5>{entry.position}</h5>
         <div className="imageContainer">
           <img src={entry.image.url} alt={entry.image.alt} />
         </div>
