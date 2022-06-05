@@ -1,89 +1,24 @@
 import React from "react";
-import useEffect from "react";
+import Member from "../../components/Member";
 
 const TeamMember = ({ slice }) => {
-  // const members = slice.items.filter(
-  //   (item) => !slice.items.indexOf(item) === 0
-  // );
-  // const first = slice.[0];
-
-  const members = slice.items;
-  const evens = slice.items.filter((item) => members.indexOf(item) % 2 === 0);
-  const odds = slice.items.filter((item) => members.indexOf(item) % 2 === 1);
-
-  // odds.unshift(first);
+  const evens = slice.items.filter(
+    (item) => slice.items.indexOf(item) % 2 === 0
+  );
+  const odds = slice.items.filter(
+    (item) => slice.items.indexOf(item) % 2 === 1
+  );
 
   return (
     <section id="teamMembers">
-      {/* <svg>
-        <filter
-          id="filter"
-          x="-20%"
-          y="-20%"
-          width="140%"
-          height="140%"
-          filterUnits="objectBoundingBox"
-          primitiveUnits="userSpaceOnUse"
-          colorInterpolationFilters="sRGB"
-        >
-          <feTurbulence
-            type="turbulence"
-            baseFrequency="0.036 0.016"
-            numOctaves="14"
-            seed="1"
-            stitchTiles="stitch"
-            x="0%"
-            y="0%"
-            width="100%"
-            height="100%"
-            result="turbulence"
-          />
-          <feDisplacementMap
-            in="SourceGraphic"
-            in2="turbulence"
-            scale="24"
-            xChannelSelector="R"
-            yChannelSelector="R"
-            x="0%"
-            y="0%"
-            width="100%"
-            height="100%"
-            result="displacementMap"
-          />
-        </filter>
-      </svg> */}
       <div className="col">
-        {evens.map((item) => (
-          <div key={item.name} className="teamMemberEntry">
-            <h4>{item.position}</h4>
-            <div className="imageContainer">
-              <img src={item.image.url} alt={item.image.alt} />
-            </div>
-            <div className="teamMemberText">
-              <h3>{item.name}</h3>
-              <p>{item.bio}</p>
-              <a href={`mailto:${item.email}`} className="internalLink">
-                Contact
-              </a>
-            </div>
-          </div>
+        {evens.map((entry, index) => (
+          <Member entry={entry} key={entry + index} />
         ))}
       </div>
       <div className="col">
-        {odds.map((item) => (
-          <div key={item.name} className="teamMemberEntry">
-            <h4>{item.position}</h4>
-            <div className="imageContainer">
-              <img src={item.image.url} alt={item.image.alt} />
-            </div>
-            <div className="teamMemberText">
-              <h3>{item.name}</h3>
-              <p>{item.bio}</p>
-              <a href={`mailto:${item.email}`} className="internalLink">
-                Contact
-              </a>
-            </div>
-          </div>
+        {odds.map((entry, index) => (
+          <Member entry={entry} key={entry + index} />
         ))}
       </div>
     </section>

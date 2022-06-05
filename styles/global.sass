@@ -177,6 +177,13 @@ p, ul
     line-height: 1.475
     margin-bottom: 1.25rem
 
+input:not([type="submit"])
+    font-family: 'IBM Plex Sans', sans-serif
+    letter-spacing: -.022em
+    font-size: 1.15rem
+    font-weight: 300
+    line-height: 1.475
+
 li
     font-family: 'IBM Plex Sans', sans-serif
     color: var(--dark)
@@ -190,7 +197,7 @@ li
     color: var(--light)
     font-family: 'IBM Plex Sans', sans-serif
     letter-spacing: -.022em
-    font-size: 1.15rem
+    font-size: 1.25rem
     font-weight: 300
 
 header
@@ -256,12 +263,10 @@ footer
     *
         color: var(--light)
 
-        &:not(:last-child)
-            margin-bottom: .5rem
-
     .topSplit   
         display: flex
         flex-wrap: wrap
+        align-items: flex-start
         justify-content: space-between
 
     #emailFormContainer
@@ -270,33 +275,48 @@ footer
         form
             position: relative
 
+            // &:focus-within span.lineBottom
+
         input#emailField
             width: 100%
             background: transparent
             border: none
-            margin-top: 1rem
+            outline: none
+            overflow: visible
+            margin-top: 1.25rem
+            position: relative
             -moz-appearance: none
+            display: block
             -webkit-appearance: none
             appearance: none
+            transition: var(--powerEase)
 
-            &:focus
-                font-weight: 600
+            &:after
+                position: absolute
+                left: 0
+                bottom: 1rem
+                width: 100%
+                content: ''
+                height: 2px
+                display: block
+                background: var(--light)
 
         input[type="submit"]
             background: url("/emailArrow.svg")
             background-repeat: no-repeat
-            background-size: 20px
+            background-size: 100% 100%
             border: none
             cursor: pointer
             position: absolute
             right: 0
-            bottom: 1px
-            width: 42px
-            background-position: 100% 0
+            padding: 6px
+            bottom: 2px
+            width: auto
+            background-position: 100% 100%
             transition: var(--powerEase)
 
             &:hover
-                background-position: 65% 0
+                transform: translateX(-10px)
                 transition: var(--powerEase)
 
         span.lineBottom
@@ -319,7 +339,7 @@ footer
             font-style: italic
             display: block
             text-underline-offset: .25rem
-                
+
     .bottomSplit
         margin-top: 6rem
         display: flex
@@ -331,12 +351,13 @@ footer
             align-items: center
             flex-wrap: wrap
 
-        
+            a, p
+                margin-bottom: 0
+                min-width: 500px
+                margin-top: 0
 
-        p
-            margin-bottom: 0
-            margin-top: 0.5rem
-            min-width: 320px
+            a
+                margin-bottom: 1rem
 
 section
     margin-bottom: calc(var(--gutter) * 10)
@@ -870,7 +891,7 @@ header#headerLarge
         background: var(--light) !important
 
     #privacyBody
-        max-width: 800px
+        max-width: 500px
         margin: 0 auto
 
     h2
@@ -924,7 +945,7 @@ header#headerLarge
     z-index: 12
     width: 100%
     position: fixed
-    opacity: 0
+    display: none
     bottom: 0
     left: 0
     padding: 2rem var(--gutter)
@@ -1017,8 +1038,13 @@ header#headerLarge
             margin-top: 0
             width: var(--colTwo)
 
-        .bottomSplit > div > p
-            margin-left: 3rem
+        #privacy
+            margin-right: 2rem
+
+        .bottomSplit
+
+            a,p
+                min-width: unset !important
 
 
     .verticalListSmall
@@ -1067,7 +1093,7 @@ header#headerLarge
         margin-right: auto
         margin-left: auto
         width: var(--colSix)
-        max-width: 1200px
+        max-width: 1400px
 
         .frameworkEntry
 
@@ -1107,6 +1133,9 @@ header#headerLarge
         margin-right: auto 
         width: calc(100% - (var(--gutter) *2))
 
+        svg
+            display: none
+
         .col
             width: var(--colTwo)
             max-width: 360px
@@ -1115,6 +1144,10 @@ header#headerLarge
 
                 div.imageContainer
                     height: 550px
+
+                    img
+                        filter: url(#noise)
+                        transform: scale(1.12)
 
             &:last-child
                 margin-left: var(--colTwo)

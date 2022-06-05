@@ -25,18 +25,20 @@ const Footer = ({ contact }) => {
       <div className="bottomSplit">
         <div>
           <Link href="/privacy-policy">
-            <a className="secondaryLink">Privacy Policy</a>
+            <a className="secondaryLink" id="privacy">
+              Privacy Policy
+            </a>
           </Link>
-          <p> © {new Date().getFullYear()} Cartwright International</p>
+          <a
+            className="secondaryLink"
+            href="https://www.nye.design"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Made by Nathan Nye
+          </a>
         </div>
-        <a
-          className="secondaryLink"
-          href="https://www.nye.design"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Made by Nathan Nye
-        </a>
+        <p> © {new Date().getFullYear()} Cartwright International</p>
       </div>
     </footer>
   );

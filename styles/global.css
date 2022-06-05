@@ -195,6 +195,14 @@ p, ul {
   margin-bottom: 1.25rem;
 }
 
+input:not([type="submit"]) {
+  font-family: 'IBM Plex Sans', sans-serif;
+  letter-spacing: -.022em;
+  font-size: 1.15rem;
+  font-weight: 300;
+  line-height: 1.475;
+}
+
 li {
   font-family: 'IBM Plex Sans', sans-serif;
   color: var(--dark);
@@ -209,7 +217,7 @@ li {
   color: var(--light);
   font-family: 'IBM Plex Sans', sans-serif;
   letter-spacing: -.022em;
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   font-weight: 300;
 }
 
@@ -290,13 +298,10 @@ footer * {
   color: var(--light);
 }
 
-footer *:not(:last-child) {
-  margin-bottom: .5rem;
-}
-
 footer .topSplit {
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-start;
   justify-content: space-between;
 }
 
@@ -312,32 +317,45 @@ footer #emailFormContainer input#emailField {
   width: 100%;
   background: transparent;
   border: none;
-  margin-top: 1rem;
+  outline: none;
+  overflow: visible;
+  margin-top: 1.25rem;
+  position: relative;
   -moz-appearance: none;
+  display: block;
   -webkit-appearance: none;
   appearance: none;
+  transition: var(--powerEase);
 }
 
-footer #emailFormContainer input#emailField:focus {
-  font-weight: 600;
+footer #emailFormContainer input#emailField:after {
+  position: absolute;
+  left: 0;
+  bottom: 1rem;
+  width: 100%;
+  content: '';
+  height: 2px;
+  display: block;
+  background: var(--light);
 }
 
 footer #emailFormContainer input[type="submit"] {
   background: url("/emailArrow.svg");
   background-repeat: no-repeat;
-  background-size: 20px;
+  background-size: 100% 100%;
   border: none;
   cursor: pointer;
   position: absolute;
   right: 0;
-  bottom: 1px;
-  width: 42px;
-  background-position: 100% 0;
+  padding: 6px;
+  bottom: 2px;
+  width: auto;
+  background-position: 100% 100%;
   transition: var(--powerEase);
 }
 
 footer #emailFormContainer input[type="submit"]:hover {
-  background-position: 65% 0;
+  transform: translateX(-10px);
   transition: var(--powerEase);
 }
 
@@ -376,10 +394,14 @@ footer .bottomSplit > div {
   flex-wrap: wrap;
 }
 
-footer .bottomSplit p {
+footer .bottomSplit > div a, footer .bottomSplit > div p {
   margin-bottom: 0;
-  margin-top: 0.5rem;
-  min-width: 320px;
+  min-width: 500px;
+  margin-top: 0;
+}
+
+footer .bottomSplit > div a {
+  margin-bottom: 1rem;
 }
 
 section {
@@ -975,7 +997,7 @@ header#headerLarge blockquote {
 }
 
 #privacyPolicy #privacyBody {
-  max-width: 800px;
+  max-width: 500px;
   margin: 0 auto;
 }
 
@@ -1040,7 +1062,7 @@ header#headerLarge blockquote {
   z-index: 12;
   width: 100%;
   position: fixed;
-  opacity: 0;
+  display: none;
   bottom: 0;
   left: 0;
   padding: 2rem var(--gutter);
@@ -1126,8 +1148,11 @@ header#headerLarge blockquote {
     margin-top: 0;
     width: var(--colTwo);
   }
-  footer .bottomSplit > div > p {
-    margin-left: 3rem;
+  footer #privacy {
+    margin-right: 2rem;
+  }
+  footer .bottomSplit a, footer .bottomSplit p {
+    min-width: unset !important;
   }
   .verticalListSmall {
     width: var(--colSix);
@@ -1171,7 +1196,7 @@ header#headerLarge blockquote {
     margin-right: auto;
     margin-left: auto;
     width: var(--colSix);
-    max-width: 1200px;
+    max-width: 1400px;
   }
   #ourFramework .frameworkEntry:nth-of-type(even) .frameworkText {
     margin-right: var(--gutter);
@@ -1203,12 +1228,19 @@ header#headerLarge blockquote {
     margin-right: auto;
     width: calc(100% - (var(--gutter) *2));
   }
+  #teamMembers svg {
+    display: none;
+  }
   #teamMembers .col {
     width: var(--colTwo);
     max-width: 360px;
   }
   #teamMembers .col .teamMemberEntry div.imageContainer {
     height: 550px;
+  }
+  #teamMembers .col .teamMemberEntry div.imageContainer img {
+    filter: url(#noise);
+    transform: scale(1.12);
   }
   #teamMembers .col:last-child {
     margin-left: var(--colTwo);

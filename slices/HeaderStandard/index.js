@@ -8,17 +8,13 @@ import SplitText from "gsap/dist/SplitText";
 
 const HeaderStandard = ({ slice }) => {
   const colorTL = useRef(null);
-  const headerRef = useRef(null);
-  const solidRef = useRef(null);
-  const outlineRef = useRef(null);
   const el = useRef(null);
   const tl = useRef(null);
-  const headingRefs = useRef(null);
-  const h = gsap.utils.selector(headingRefs);
-  const q = gsap.utils.selector(el);
 
   // Swap color of header on scroll
   useIsomorphicLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger, SplitText);
+
     document.body.classList.remove("isLight");
 
     gsap.registerPlugin(ScrollTrigger);
@@ -37,19 +33,17 @@ const HeaderStandard = ({ slice }) => {
         },
       },
     });
-
-    return () => {
-      ScrollTrigger.kill;
-    };
   }, []);
 
   // Animate h1s
   useIsomorphicLayoutEffect(() => {
-    let outlineSplit = new SplitText(h(".outlineHeading"), {
+    gsap.registerPlugin(ScrollTrigger, SplitText);
+    const q = gsap.utils.selector(el);
+    let outlineSplit = new SplitText(q(".outlineHeading"), {
       type: "lines",
     });
 
-    let solidSplit = new SplitText(h(".solidHeading"), {
+    let solidSplit = new SplitText(q(".solidHeading"), {
       type: "lines",
       linesClass: "splitLine",
     });
@@ -111,28 +105,20 @@ const HeaderStandard = ({ slice }) => {
           stagger: 0.09,
           autoAlpha: 1,
           ease: "power3.out",
-          // onComplete: () => {
-          //   solidSplit.revert();
-          //   outlineSplit.revert();
-          // },
         },
         0.3
       );
-    // .call(
-    //   function () {
-    //     // tl.kill;
-    //     outlineSplit.revert();
-    //     // solidSplit.revert();
-    //   },
-    //   null,
-    //   ">"
-    // );
+    return () => {
+      // colorTL.current.kill;
+      outlineSplit.revert();
+      solidSplit.revert();
+    };
   });
 
   return (
     <header className="headerStandard" ref={el}>
       <h2>{slice.primary.subhead}</h2>
-      <div className="headingOverlapContainer" ref={headingRefs}>
+      <div className="headingOverlapContainer">
         <h1 className="outlineHeading">{slice.primary.headline}</h1>
         <h1 className="solidHeading">{slice.primary.headline}</h1>
       </div>

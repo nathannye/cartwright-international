@@ -94,9 +94,9 @@ const FrameworkEntry = ({ entry, index }) => {
         para.split.lines,
         {
           y: 0,
-          ease: "power2.out",
           autoAlpha: 1,
-          stagger: 0.12,
+          stagger: 0.06,
+          ease: "power3.out",
         },
         0.75
       );
