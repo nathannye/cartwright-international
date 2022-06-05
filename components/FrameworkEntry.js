@@ -118,7 +118,7 @@ const FrameworkEntry = ({ entry, index }) => {
           <img src={`./${entry.title.toLowerCase()}White.svg`} />
         </div>
         <div className="iconContainer maroonIcon">
-          <img src={`./${entry.title}Maroon.svg`} />
+          <img src={`./${entry.title.toLowerCase()}Maroon.svg`} />
         </div>
       </div>
       <div className="frameworkText">

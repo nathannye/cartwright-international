@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { PrismicLink } from "@prismicio/react";
-import { useLayoutEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import Lottie from "lottie-web/build/player/lottie_light";
 import gsap from "gsap";
 import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
@@ -9,7 +9,7 @@ import animationData from "../public/lottie/hamburgerAnim.json";
 import { useRouter } from "next/router";
 
 const Navbar = ({ menu }) => {
-  const mobileLinksRef = useRef(null);
+  const regularNavRef = useRef(null);
   const mobileNavRef = useRef(null);
   const linksRef = useRef([]);
   linksRef.current = [];
@@ -17,11 +17,19 @@ const Navbar = ({ menu }) => {
 
   const animationContainer = useRef(null);
   const anim = useRef(null);
+  const q = gsap.utils.selector(mobileNavRef.current);
 
   const masterTL = gsap.timeline({
     paused: true,
   });
   masterTL.reversed(true);
+
+  useIsomorphicLayoutEffect(() => {
+    const m = gsap.utils.selector(regularNavRef.current);
+    gsap.set(m(".activeIndi"), {
+      y: -20,
+    });
+  });
 
   useIsomorphicLayoutEffect(() => {
     if (animationContainer.current) {
@@ -41,9 +49,7 @@ const Navbar = ({ menu }) => {
 
   // Mobile Nav Iso
   useIsomorphicLayoutEffect(() => {
-    const q = gsap.utils.selector(mobileNavRef.current);
-
-    const links = q("a");
+    const links = q("h1");
 
     links.forEach((link, index) => {
       link.split = new SplitText(link, {
@@ -68,14 +74,27 @@ const Navbar = ({ menu }) => {
       masterTL.add(tween, 0.1);
     });
 
+    // const rule = CSSRulePlugin.getRule(q("span.lineTop a::after"));
+
     gsap.set(mobileNavRef.current, {
       xPercent: 100,
+    });
+
+    gsap.set(q("a.active .activeIndi"), {
+      y: -30,
+      transformOrigin: "center top",
     });
 
     gsap.set(q("span.lineTop"), {
       scaleX: 0,
       transformOrigin: "left center",
     });
+
+    // gsap.set(rule, {
+    //   cssRule: {
+    //     opacity: 0,
+    //   },
+    // });
 
     masterTL
       .to(
@@ -94,6 +113,15 @@ const Navbar = ({ menu }) => {
           stagger: 0.06,
         },
         0.1
+      )
+      .to(
+        q("a.active .activeIndi"),
+        {
+          y: 0,
+          duration: 0.6,
+          ease: "back.out(1.5)",
+        },
+        0.77
       );
 
     gsap.registerPlugin(SplitText);
@@ -107,6 +135,26 @@ const Navbar = ({ menu }) => {
       : masterTL.timeScale(1.4).reverse();
     anim.current.setDirection((direction *= -1));
     anim.current.play();
+  };
+
+  // gsap.set(q(".active .activeIndi"), {
+  //   y: -20,
+  // });
+
+  const handleNavChange = ({ currentTarget }) => {
+    const m = gsap.utils.selector(regularNavRef.current);
+
+    let hasActive = m(q(".active"));
+
+    // currentTarget.classList.add("willBeActive");
+
+    gsap.to(m(".active .activeIndi"), {
+      y: 0,
+    });
+
+    gsap.set(m(".active .activeIndi"), {
+      y: 0,
+    });
   };
 
   return (
@@ -234,14 +282,18 @@ const Navbar = ({ menu }) => {
             </g>
           </svg>
         </Link>
-        <nav>
+        <nav ref={regularNavRef}>
           {menu.data.menuLink.map((el, index) => (
             <PrismicLink
               field={el.link}
               key={`${el + index}`}
               className={router.asPath == `/${el.link.uid}` ? "active" : ""}
+              onClick={handleNavChange}
             >
               {el.label}
+              <div className="activeBox">
+                <div className="activeIndi"></div>
+              </div>
             </PrismicLink>
           ))}
         </nav>
@@ -254,18 +306,24 @@ const Navbar = ({ menu }) => {
       <div id="mobileNavMenu" ref={mobileNavRef}>
         <nav>
           {menu.data.menuLink.map((el, index) => (
-            <span
+            <PrismicLink
+              field={el.link}
               key={el.link + el + index}
-              // ref={addMobileLinksRef}
-              onClick={burgerToggle}
               className={router.asPath == `/${el.link.uid}` ? "active" : ""}
             >
-              <span className="lineTop"></span>
+              <span
+                key={el.link + el + index}
+                // ref={addMobileLinksRef}
+                onClick={burgerToggle}
+              >
+                <span className="lineTop"></span>
+                <div className="activeBox">
+                  <div className="activeIndi"></div>
+                </div>
 
-              <PrismicLink field={el.link}>
                 <h1>{el.label}</h1>
-              </PrismicLink>
-            </span>
+              </span>
+            </PrismicLink>
           ))}
         </nav>
         <div id="mobileNavBacker"></div>

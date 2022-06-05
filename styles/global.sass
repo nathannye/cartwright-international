@@ -1,8 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap")
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Proza+Libre:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap")
 
 *
     box-sizing: border-box
     margin: 0
+
+$sans: 'Proza Libre', sans-serif
 
 #smooth-wrapper
     z-index: 10
@@ -12,7 +14,7 @@ html
     --maroon: #7B0E26
     --tan: #ffcca7
     --light: #F7F5F3
-    --dark: #474444
+    --dark: rgba(71, 68, 65, .75)
     --unit: 12.5%
     --gutter: 1.25rem
     --colOne: var(--unit)
@@ -30,9 +32,9 @@ html
 
 a
     color: var(--maroon)
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: $sans
     font-weight: 500
-    font-size: .9rem
+    font-size: 1.03rem
     display: inline-block
     text-transform: uppercase
     text-decoration: none
@@ -144,14 +146,14 @@ h2, label
     letter-spacing: .12em
     font-size: clamp(0.95rem, calc(0.95rem + ((1vw - 0.25rem) * 0.1786)), 1.15rem)
     font-variant-numeric: lining-nums
-    font-weight: 600
+    font-weight: 500
     color: var(--maroon)
-    margin-bottom: calc(var(--gutter))
+    margin-bottom: calc(var(--gutter) /2)
     text-transform: uppercase
-    font-family: 'IBM Plex Sans', sans-serif
+    font-family: $sans
 
 h3
-    font-size: clamp(1.45rem, calc(1.45rem + ((1vw - 0.25rem) * 0.7143)), 2.25rem) !important
+    font-size:clamp(1.85rem, calc(1.85rem + ((1vw - 0.25rem) * 1.0536)), 2.15rem) !important
     letter-spacing: -.015em
     font-family: 'Cormorant Garamond', serif
     font-weight: 500
@@ -163,29 +165,37 @@ h3
 h4
     color: var(--dark)
     opacity: .65
-    font-family: 'IBM Plex Sans', sans-serif
+    font-family: $sans
+    font-weight: 400
+    font-size: 1.2rem
+    letter-spacing: -.01em
+
+h5
+    color: var(--dark)
+    opacity: .65
+    font-family: $sans
     font-weight: 400
     font-size: 1.2rem
     letter-spacing: -.01em
 
 p, ul
-    font-family: 'IBM Plex Sans', sans-serif
+    font-family: $sans
     color: var(--dark)
     letter-spacing: -.022em
     font-size: 1.15rem
-    font-weight: 300
+    font-weight: 400
     line-height: 1.475
     margin-bottom: 1.25rem
 
 input:not([type="submit"])
-    font-family: 'IBM Plex Sans', sans-serif
+    font-family: $sans
     letter-spacing: -.022em
     font-size: 1.15rem
     font-weight: 300
     line-height: 1.475
 
 li
-    font-family: 'IBM Plex Sans', sans-serif
+    font-family: $sans
     color: var(--dark)
     letter-spacing: -.022em
     font-size: 1.15rem
@@ -195,7 +205,7 @@ li
 
 ::placeholder
     color: var(--light)
-    font-family: 'IBM Plex Sans', sans-serif
+    font-family: $sans
     letter-spacing: -.022em
     font-size: 1.25rem
     font-weight: 300
@@ -384,7 +394,7 @@ span.lineTop
     width: 100%
     opacity: .25
     background: var(--maroon)
-    margin-bottom: .75rem
+    margin-bottom: 1rem
 
 // COMPONENTS
 
@@ -421,41 +431,46 @@ span.lineTop
             // transition: var(--colorSwapEase)
             // transition: opacity .25s linear
             position: relative
-            opacity: .6
+            opacity: .7
             transition: all .4s ease-in-out
 
             &:hover
-                opacity: .5
+                opacity: .35
                 transition: opacity .25s linear
-
-            &:after
-                position: absolute
-                content: ''
-                background: var(--light)
-                width: 8px
-                left: -1rem
-                // transition: var(--colorSwapEase)
-                height: 8px
-                opacity: 0
-                transform: translate(0px)
-                top: calc(50% - 3px)
-                transition: all .4s ease-in-out
-                border-radius: 10px
+                position: relative
 
             &.active
-                margin-left: 1.5rem
-                margin-right: 1.5rem !important
+                // margin-left: 1.5rem
                 opacity: 1
-                transition: opacity .25s ease-in-out, transform .25s ease-in-out
-                transition: var(--colorSwapEase)
+                // transition: all .5s ease-in-out
 
-                &:after
-                    position: absolute
-                    content: ''
-                    background: var(--light)
-                    transition: opacity .25s ease-in-out, transform .25s ease-in-out
+                // .activeBox
+                //     opacity: 1
+                //     transition: all .5s ease-in-out
+
+                //     .activeIndi
+                //         transition: all .5s ease-in-out
+                //         transform: translateY(0px)
+
+            .activeBox
+                height: 20px
+                width: 20px
+                top: -2px
+                left: -1.45rem
+                position: absolute
+                display: flex
+                // transition: all .5s ease-in-out
+                overflow: hidden
+                justify-content: center
+                align-items: center
+
+                .activeIndi
+                    width: 8px
                     height: 8px
-                    opacity: 1
+                    border-radius: 20px
+                    // transition: all .5s ease-in-out
+                    background: var(--light)
+
 
 
     svg.logo g path
@@ -498,30 +513,41 @@ span.lineTop
             font-size: 2.05rem
             letter-spacing: -.014em
 
-        & > span
-            margin-bottom: 2.25rem
-
         a
             position: relative
+            margin-bottom: 2rem
 
-            &:after
-                position: absolute
-                content: ''
-                background: var(--maroon)
-                height: 8px
-                border-radius: 13px
-                left: -1.25rem
-                top: 8px
-                opacity: 0
-                width: 8px
+            & > span
+                position: relative
 
-        span.active
+                div.activeBox
+                    position: absolute
+                    top: 28px
+                    left: -.2rem
+                    width: 18px
+                    height: 18px
+                    opacity: 0
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    overflow: hidden
 
-            a
-                margin-left: 1.25rem !important
+                    .activeIndi
+                        position: absolute
+                        width: 7px
+                        height: 7px
+                        background: var(--maroon)
+                        border-radius: 20px
+            
+        a.active
+            position: relative
 
-                &:after
-                    opacity: 1
+            h1
+                margin-left: 1.75rem
+
+            .activeBox
+                opacity: 1
+
 
             
 // Header Standard
@@ -929,7 +955,7 @@ header#headerLarge
     .teamMemberEntry
 
         h4
-            margin-bottom: 1rem
+            margin-bottom: 0rem
 
         div.imageContainer
             width: 100%
@@ -1045,7 +1071,7 @@ header#headerLarge
         font-weight: 500
         // letter-spacing: .05em
         font-size: .9rem
-        font-family: 'IBM Plex Sans', sans-serif
+        font-family: $sans
         text-transform: uppercase
         text-decoration: underline
         text-underline-offset: .2rem

@@ -1,22 +1,14 @@
 import React from "react";
 import { PrismicRichText } from "@prismicio/react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import LargeListEntry from "../../components/LargeListEntry";
 
 const VerticalListLarge = ({ slice }) => {
   return (
     <section className="verticalListLarge">
-      {slice.items.map((item, index) => (
-        <div className="largeListEntry" key={index + item}>
-          <span className="lineTop"></span>
-          <div>
-            <h2>{item["entry-title"]}</h2>
-            <div>
-              <h3>{item["entry-description"]}</h3>
-              <PrismicRichText
-                field={item["entry-bullet-list"]}
-              ></PrismicRichText>
-            </div>
-          </div>
-        </div>
+      {slice.items.map((entry, index) => (
+        <LargeListEntry entry={entry} index={index} key={index} />
       ))}
     </section>
   );

@@ -67,7 +67,13 @@
           "fileName": "index",
           "extension": "js"
         },
-        "screenshotPaths": {}
+        "screenshotPaths": {
+          "default": {
+            "path": "A:\\sites\\cartwright-international\\.slicemachine\\assets\\slices\\HeaderHome\\default\\preview.png",
+            "width": 800,
+            "height": 1350
+          }
+        }
       },
       "header_standard": {
         "library": "slices",

@@ -29,10 +29,9 @@ export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData });
 
   const page = await client.getByUID("webpage", "home");
-  const menu = await client.getSingle("menu");
   const footer = await client.getSingle("contact-us");
 
   return {
-    props: { menu, page, footer },
+    props: { page, footer },
   };
 }

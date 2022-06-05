@@ -1,10 +1,13 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { EmailForm } from "../components/EmailForm";
 import { createClient } from "../prismicio";
 
 const Footer = ({ contact }) => {
+  const router = useRouter();
+
   return (
-    <footer>
+    <footer className={router.asPath === "/meet-with-us" ? "noFooter" : ""}>
       <div className="topSplit">
         <div>
           <h1>Let’s make it happen, drop us a line</h1>

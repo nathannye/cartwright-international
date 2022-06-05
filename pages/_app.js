@@ -5,7 +5,7 @@ import { PrismicPreview } from "@prismicio/next";
 import { linkResolver, repositoryName } from "../prismicio";
 import Head from "next/head";
 
-export default function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps, router }) {
   return (
     <PrismicProvider
       linkResolver={linkResolver}
@@ -16,9 +16,8 @@ export default function MyApp({ Component, pageProps }) {
       )}
     >
       <PrismicPreview repositoryName={repositoryName}>
-        <Head>
+        <Head></Head>
 
-        </Head>
         <Component {...pageProps} />
       </PrismicPreview>
     </PrismicProvider>
