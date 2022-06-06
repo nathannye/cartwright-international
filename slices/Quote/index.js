@@ -30,7 +30,6 @@ const Quote = ({ slice }) => {
     tl.current = gsap.timeline({
       scrollTrigger: {
         trigger: quoteRef.current,
-        markers: true,
       },
     });
 
@@ -50,6 +49,9 @@ const Quote = ({ slice }) => {
         autoAlpha: 1,
         ease: "power3.out",
       });
+    return () => {
+      tl.current.kill();
+    };
   });
 
   return (
