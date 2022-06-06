@@ -24,11 +24,6 @@ export default function HeaderHome({ slice }) {
       type: "lines",
     });
 
-    // gsap.set(splitH2.current.lines, {
-    //   autoAlpha: 0,
-    //   y: 9,
-    // });
-
     gsap.set(q(".imageContainer"), {
       clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
     });
@@ -46,7 +41,6 @@ export default function HeaderHome({ slice }) {
       delay: 1.1,
       onComplete: () => {
         splitH2.current.revert();
-        console.log(splitH2.current);
       },
     });
     tl.current

@@ -481,7 +481,7 @@ span.lineTop {
 }
 
 #navbar .logo {
-  width: 3.5rem;
+  width: 4rem;
   cursor: pointer;
   transition: var(--powerEase);
 }
@@ -538,8 +538,7 @@ span.lineTop {
 
 #navbar #hamburgerBtn {
   display: block;
-  height: 4rem;
-  width: 4rem;
+  width: 5.25rem;
   padding: .75rem;
 }
 
@@ -556,7 +555,7 @@ span.lineTop {
   width: 100%;
   background: var(--light);
   height: 100vh;
-  padding-bottom: 6rem;
+  padding-bottom: 10rem;
   padding-left: var(--gutter);
   padding-right: var(--gutter);
   flex-direction: column;
@@ -579,13 +578,9 @@ span.lineTop {
   margin-bottom: 2rem;
 }
 
-#mobileNavMenu nav a > span {
-  position: relative;
-}
-
-#mobileNavMenu nav a > span div.activeBox {
+#mobileNavMenu nav a div.activeBox {
   position: absolute;
-  top: 28px;
+  top: 13px;
   left: -.2rem;
   width: 18px;
   height: 18px;
@@ -596,7 +591,7 @@ span.lineTop {
   overflow: hidden;
 }
 
-#mobileNavMenu nav a > span div.activeBox .activeIndi {
+#mobileNavMenu nav a div.activeBox .activeIndi {
   position: absolute;
   width: 7px;
   height: 7px;
@@ -606,10 +601,6 @@ span.lineTop {
 
 #mobileNavMenu nav a.active {
   position: relative;
-}
-
-#mobileNavMenu nav a.active h1 {
-  margin-left: 1.75rem;
 }
 
 #mobileNavMenu nav a.active .activeBox {
@@ -645,7 +636,6 @@ header#headerLarge #companyNameContainer {
 }
 
 header#headerLarge #companyNameContainer svg {
-  width: 53%;
   margin-bottom: 1.25rem;
   min-width: 300px;
 }
@@ -1261,13 +1251,15 @@ header#headerLarge blockquote {
     padding-left: var(--gutter);
   }
   header.headerStandard h1 {
-    width: var(--colSix);
+    width: var(--colSeven);
+    max-width: 1400px;
   }
   header#headerLarge {
     height: 150vh;
   }
   header#headerLarge #companyNameContainer svg {
     min-width: 650px;
+    width: 53%;
   }
   header#headerLarge #companyNameContainer h2 {
     max-width: 450px;

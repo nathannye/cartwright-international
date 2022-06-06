@@ -11,25 +11,24 @@ import { useRouter } from "next/router";
 const Navbar = ({ menu }) => {
   const regularNavRef = useRef(null);
   const mobileNavRef = useRef(null);
-  const linksRef = useRef([]);
-  linksRef.current = [];
+  const linkRefs = useRef([]);
+  linkRefs.current = [];
   const router = useRouter();
 
   const animationContainer = useRef(null);
   const anim = useRef(null);
-  const q = gsap.utils.selector(mobileNavRef.current);
 
   const masterTL = gsap.timeline({
     paused: true,
   });
-  masterTL.reversed(true);
 
-  useIsomorphicLayoutEffect(() => {
-    const m = gsap.utils.selector(regularNavRef.current);
-    gsap.set(m(".activeIndi"), {
-      y: -20,
-    });
-  });
+  const addLinkRef = (el) => {
+    if (el && !linkRefs.current.includes(el)) {
+      linkRefs.current.push(el);
+    }
+  };
+
+  masterTL.reversed(true);
 
   useIsomorphicLayoutEffect(() => {
     if (animationContainer.current) {
@@ -49,9 +48,9 @@ const Navbar = ({ menu }) => {
 
   // Mobile Nav Iso
   useIsomorphicLayoutEffect(() => {
-    const links = q("h1");
+    const q = gsap.utils.selector(mobileNavRef.current);
 
-    links.forEach((link, index) => {
+    linkRefs.current.forEach((link, index) => {
       link.split = new SplitText(link, {
         type: "lines, words",
         linesClass: "splitLineOverflow",
@@ -66,6 +65,7 @@ const Navbar = ({ menu }) => {
         {
           yPercent: 0,
           stagger: 0.06,
+          duration: 0.72,
           delay: index / 10,
         },
         0.1
@@ -74,14 +74,13 @@ const Navbar = ({ menu }) => {
       masterTL.add(tween, 0.1);
     });
 
-    // const rule = CSSRulePlugin.getRule(q("span.lineTop a::after"));
-
     gsap.set(mobileNavRef.current, {
       xPercent: 100,
+      autoAlpha: 0,
     });
 
     gsap.set(q("a.active .activeIndi"), {
-      y: -30,
+      x: -15,
       transformOrigin: "center top",
     });
 
@@ -90,17 +89,12 @@ const Navbar = ({ menu }) => {
       transformOrigin: "left center",
     });
 
-    // gsap.set(rule, {
-    //   cssRule: {
-    //     opacity: 0,
-    //   },
-    // });
-
     masterTL
       .to(
         mobileNavRef.current,
         {
           xPercent: 0,
+          autoAlpha: 1,
           duration: 0.65,
           ease: "power4.inOut",
         },
@@ -115,13 +109,23 @@ const Navbar = ({ menu }) => {
         0.1
       )
       .to(
+        q("a.active h1"),
+        {
+          x: "1.75rem",
+          duration: 0.5,
+          ease: "power4.inOut",
+        },
+        0.9
+      )
+      .to(
         q("a.active .activeIndi"),
         {
-          y: 0,
-          duration: 0.6,
+          x: 0,
+          delay: 0.12,
+          duration: 0.54,
           ease: "back.out(1.5)",
         },
-        0.77
+        "<"
       );
 
     gsap.registerPlugin(SplitText);
@@ -136,26 +140,6 @@ const Navbar = ({ menu }) => {
     anim.current.setDirection((direction *= -1));
     anim.current.play();
   };
-
-  // gsap.set(q(".active .activeIndi"), {
-  //   y: -20,
-  // });
-
-  // const handleNavChange = ({ currentTarget }) => {
-  //   const m = gsap.utils.selector(regularNavRef.current);
-
-  //   let hasActive = m(q(".active"));
-
-  //   // currentTarget.classList.add("willBeActive");
-
-  //   gsap.to(m(".active .activeIndi"), {
-  //     y: 0,
-  //   });
-
-  //   gsap.set(m(".active .activeIndi"), {
-  //     y: 0,
-  //   });
-  // };
 
   return (
     <>
@@ -310,15 +294,15 @@ const Navbar = ({ menu }) => {
               key={el.link + el + index}
               className={router.asPath == `/${el.link.uid}` ? "active" : ""}
             >
+              <div className="activeBox">
+                <div className="activeIndi"></div>
+              </div>
               <span
                 key={el.link + el + index}
-                // ref={addMobileLinksRef}
                 onClick={burgerToggle}
+                ref={addLinkRef}
               >
                 <span className="lineTop"></span>
-                <div className="activeBox">
-                  <div className="activeIndi"></div>
-                </div>
 
                 <h1>{el.label}</h1>
               </span>

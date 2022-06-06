@@ -432,7 +432,7 @@ span.lineTop
         cursor: pointer
 
     .logo
-        width: 3.5rem
+        width: 4rem
         cursor: pointer
         transition: var(--powerEase)
 
@@ -494,8 +494,8 @@ span.lineTop
 
     #hamburgerBtn
         display: block
-        height: 4rem
-        width: 4rem
+        // height: 4rem
+        width: 5.25rem
         padding: .75rem
 
         svg path.hamburgerLine
@@ -510,7 +510,7 @@ span.lineTop
     width: 100%
     background: var(--light)
     height: 100vh
-    padding-bottom: 6rem
+    padding-bottom: 10rem
     padding-left: var(--gutter)
     padding-right: var(--gutter)
     flex-direction: column
@@ -532,33 +532,27 @@ span.lineTop
             position: relative
             margin-bottom: 2rem
 
-            & > span
-                position: relative
+            div.activeBox
+                position: absolute
+                top: 13px
+                left: -.2rem
+                width: 18px
+                height: 18px
+                opacity: 0
+                display: flex
+                justify-content: center
+                align-items: center
+                overflow: hidden
 
-                div.activeBox
+                .activeIndi
                     position: absolute
-                    top: 28px
-                    left: -.2rem
-                    width: 18px
-                    height: 18px
-                    opacity: 0
-                    display: flex
-                    justify-content: center
-                    align-items: center
-                    overflow: hidden
-
-                    .activeIndi
-                        position: absolute
-                        width: 7px
-                        height: 7px
-                        background: var(--maroon)
-                        border-radius: 20px
+                    width: 7px
+                    height: 7px
+                    background: var(--maroon)
+                    border-radius: 20px
             
         a.active
             position: relative
-
-            h1
-                margin-left: 1.75rem
 
             .activeBox
                 opacity: 1
@@ -593,7 +587,6 @@ header#headerLarge
         overflow: visible
 
         svg
-            width: 53%
             // flex-grow: 1
             margin-bottom: 1.25rem
             min-width: 300px
@@ -1145,7 +1138,8 @@ header#headerLarge
         padding-left: var(--gutter)
 
         h1
-            width: var(--colSix)
+            width: var(--colSeven)
+            max-width: 1400px
 
     header#headerLarge
         height: 150vh
@@ -1154,6 +1148,7 @@ header#headerLarge
 
             svg
                 min-width: 650px
+                width: 53%
 
             h2
                 max-width: 450px
