@@ -9,7 +9,7 @@ const MailchimpFormContainer = (props) => {
 
   return (
     <div className="formContainer">
-      <div>
+      {/* <div>
         <MailchimpSubscribe
           url={actionURL}
           render={({ subscribe, status, message }) => (
@@ -20,7 +20,7 @@ const MailchimpFormContainer = (props) => {
             />
           )}
         />
-      </div>
+      </div> */}
     </div>
   );
 };
