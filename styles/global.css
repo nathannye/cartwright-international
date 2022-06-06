@@ -699,6 +699,16 @@ header.headerStandard svg {
   right: var(--gutter);
 }
 
+header.headerStandard h1 > a {
+  text-decoration: underline;
+  text-underline-offset: .5em;
+  font-weight: inherit;
+  font-size: inherit;
+  font-style: italic;
+  letter-spacing: inherit;
+  color: var(--tan);
+}
+
 header#headerLarge {
   height: 102vh;
   display: flex;
