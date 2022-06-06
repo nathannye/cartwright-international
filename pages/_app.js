@@ -5,8 +5,27 @@ import { PrismicPreview } from "@prismicio/next";
 import { linkResolver, repositoryName } from "../prismicio";
 import Head from "next/head";
 import ScrollToTop from "../components/ScrollTop";
+import { useRouter } from "next/router";
+import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
 
-export default function MyApp({ Component, pageProps, router }) {
+export default function MyApp({ Component, pageProps }) {
+  const router = useRouter();
+
+  useIsomorphicLayoutEffect(() => {
+    const handleRouteChange = (url) => {
+      ga.pageview(url);
+    };
+    //When the component is mounted, subscribe to router changes
+    //and log those page views
+    router.events.on("routeChangeComplete", handleRouteChange);
+
+    // If the component is unmounted, unsubscribe
+    // from the event with the `off` method
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
+
   return (
     <PrismicProvider
       linkResolver={linkResolver}

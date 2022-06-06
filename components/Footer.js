@@ -27,11 +27,6 @@ const Footer = ({ contact }) => {
       </div>
       <div className="bottomSplit">
         <div>
-          <Link href="/privacy-policy">
-            <a className="secondaryLink" id="privacy">
-              Privacy Policy
-            </a>
-          </Link>
           <a
             className="secondaryLink"
             href="https://www.nye.design"
@@ -40,6 +35,11 @@ const Footer = ({ contact }) => {
           >
             Made by Nathan Nye
           </a>
+          <Link href="/privacy-policy">
+            <a className="internalLink" id="privacy">
+              Privacy Policy
+            </a>
+          </Link>
         </div>
         <p> © {new Date().getFullYear()} Cartwright International</p>
       </div>
