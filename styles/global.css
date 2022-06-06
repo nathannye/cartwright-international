@@ -1423,7 +1423,7 @@ header#headerLarge blockquote {
     padding-bottom: 12%;
   }
   .quoteLarge {
-    width: var(--colFour);
+    width: var(--colSeven);
     margin-right: var(--colOne);
     margin-left: var(--colOne);
     max-width: 2000px;

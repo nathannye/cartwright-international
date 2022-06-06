@@ -13,7 +13,7 @@ const Footer = ({ contact }) => {
           <h1>Let’s make it happen, drop us a line</h1>
           <div className="contactInfo">
             <a href="mailto:charles@cartwright.net">
-              <h3>charles@cartwrightintl.net </h3>
+              <h3>info@cartwrightintl.net </h3>
             </a>
             <span>
               <h3>•</h3>
