@@ -5,6 +5,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import SplitText from "gsap/dist/SplitText";
+import DrawSVGPlugin from "gsap/dist/DrawSVGPlugin";
 
 const HeaderStandard = ({ slice }) => {
   const colorTL = useRef(null);
@@ -15,7 +16,7 @@ const HeaderStandard = ({ slice }) => {
 
   // Swap color of header on scroll
   useIsomorphicLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger, SplitText);
+    gsap.registerPlugin(ScrollTrigger, SplitText, DrawSVGPlugin);
 
     document.body.classList.remove("isLight");
 
@@ -49,6 +50,10 @@ const HeaderStandard = ({ slice }) => {
       type: "lines",
     });
 
+    gsap.set(q(".arrowCircle"), {
+      drawSVG: "0%",
+    });
+
     gsap.set(solidSplit.current.lines, {
       autoAlpha: 0,
       x: -45,
@@ -63,6 +68,15 @@ const HeaderStandard = ({ slice }) => {
 
     gsap.set(q("h2"), {
       autoAlpha: 0,
+    });
+
+    gsap.set(q(".arrowHead"), {
+      autoAlpha: 0,
+      y: -24,
+    });
+    gsap.set(q(".arrowStem"), {
+      autoAlpha: 0,
+      y: -24,
     });
 
     tl.current = gsap.timeline({
@@ -113,6 +127,32 @@ const HeaderStandard = ({ slice }) => {
           ease: "power3.out",
         },
         0.3
+      )
+      .to(
+        q(".arrowCircle"),
+        {
+          drawSVG: "100%",
+          duration: 0.75,
+        },
+        0.5
+      )
+      .to(
+        q(".arrowHead"),
+        {
+          y: 0,
+          duration: 0.59,
+          autoAlpha: 1,
+        },
+        "<+=.05"
+      )
+      .to(
+        q(".arrowStem"),
+        {
+          y: 0,
+          duration: 0.59,
+          autoAlpha: 1,
+        },
+        "<"
       );
     return () => {
       tl.current.kill();
@@ -126,6 +166,35 @@ const HeaderStandard = ({ slice }) => {
         <h1 className="outlineHeading">{slice.primary.headline}</h1>
         <h1 className="solidHeading">{slice.primary.headline}</h1>
       </div>
+      <svg
+        width="90"
+        height="90"
+        viewBox="0 0 90 90"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          className="arrowCircle"
+          cx="45.3371"
+          cy="44.8619"
+          r="43.1064"
+          stroke="#E6CCA6"
+          strokeWidth="2.5"
+          transform="rotate(-90 45 45)"
+        />
+        <path
+          className="arrowStem"
+          d="M45.311 30.4843L45.311 59.6402"
+          stroke="#E6CCA6"
+          strokeWidth="2.5"
+        />
+        <path
+          className="arrowHead"
+          d="M34.134 50.0709C40.7697 50.0709 45.4264 59.4617 45.4264 59.4617C45.4264 59.4617 49.3695 50.0709 56.7186 50.0709"
+          stroke="#E6CCA6"
+          strokeWidth="2.5"
+        />
+      </svg>
     </header>
   );
 };

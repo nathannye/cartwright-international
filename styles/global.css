@@ -282,6 +282,11 @@ body.isLight header h1.solidHeading {
   transition: var(--colorSwapEase);
 }
 
+body.isLight header.headerStandard svg {
+  stroke: var(--light);
+  transition: var(--colorSwapEase);
+}
+
 body.isLight div#navbar nav a {
   color: var(--maroon);
   transition: var(--colorSwapEase);
@@ -613,10 +618,19 @@ header.headerStandard {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
 }
 
 header.headerStandard h2 {
   color: var(--tan);
+}
+
+header.headerStandard svg {
+  width: 85px;
+  position: absolute;
+  bottom: 9vh;
+  transition: var(--colorSwapEase);
+  right: var(--gutter);
 }
 
 header#headerLarge {
@@ -882,6 +896,10 @@ header#headerLarge blockquote {
   width: 100%;
 }
 
+.verticalListLarge div.largeListEntry > div span {
+  display: none;
+}
+
 .verticalListLarge div.largeListEntry > div div.listColumns {
   display: flex;
   justify-content: space-between;
@@ -890,7 +908,6 @@ header#headerLarge blockquote {
 .verticalListLarge div.largeListEntry > div div.listColumns ul {
   width: calc(50% - .75rem);
   max-width: 550px;
-  margin-top: 1rem;
 }
 
 .verticalListLarge div.largeListEntry > div div.listColumns ul:not(:last-child) {

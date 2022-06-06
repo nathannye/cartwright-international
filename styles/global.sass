@@ -254,6 +254,10 @@ body
             h1.solidHeading
                 color: var(--maroon)
                 transition: var(--colorSwapEase)
+            
+            &.headerStandard svg
+                stroke: var(--light)
+                transition: var(--colorSwapEase)
 
         div#navbar
 
@@ -557,18 +561,23 @@ span.lineTop
             .activeBox
                 opacity: 1
 
-
-            
 // Header Standard
 header.headerStandard
-    // min-height: 112vh
     padding: 10rem var(--gutter)
     display: flex
     flex-direction: column
     justify-content: center
+    position: relative
 
     h2
         color: var(--tan)
+
+    svg
+        width: 85px
+        position: absolute
+        bottom: 9vh
+        transition: var(--colorSwapEase)
+        right: var(--gutter)
 
 // Header Homepage 
 header#headerLarge
@@ -801,6 +810,9 @@ header#headerLarge
 
                 h3
                     width: 100%   
+            
+            span
+                display: none
 
             div.listColumns
                 display: flex
@@ -808,11 +820,11 @@ header#headerLarge
 
                 ul
                     width: calc(50% - .75rem)
-                    max-width: 550px
-                    margin-top: 1rem                   
+                    max-width: 550px                
 
                     &:not(:last-child)
                         margin-right: 1.5rem
+
                     li
                         max-width: 220px
 
