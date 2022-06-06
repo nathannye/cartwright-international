@@ -137,7 +137,7 @@ ul li::before {
 
 blockquote {
   font-size: clamp(1.3rem, calc(1.3rem + ((1vw - 0.25rem) * 0.2679)), 1.6rem);
-  font-family: "Roboto", sans-serif;
+  font-family: "Cormorant Garamond", serif;
   font-variant-numeric: lining-nums;
   text-transform: uppercase;
 }
