@@ -636,6 +636,7 @@ header#headerLarge {
 header#headerLarge #companyNameContainer {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   align-items: flex-end;
   margin-right: var(--gutter);
   padding-left: var(--gutter);
@@ -643,9 +644,9 @@ header#headerLarge #companyNameContainer {
 }
 
 header#headerLarge #companyNameContainer svg {
-  width: 65%;
-  flex-grow: 1;
-  margin-bottom: var(--gutter);
+  width: 53%;
+  min-width: 820px;
+  margin-bottom: 1.25rem;
 }
 
 header#headerLarge #companyNameContainer h2 {
@@ -654,10 +655,9 @@ header#headerLarge #companyNameContainer h2 {
   line-height: 1.1;
   max-width: 450px;
   font-weight: 500;
-  margin-bottom: 0 1rem;
-  margin-left: 2.8rem;
+  margin-bottom: 1.5rem;
+  margin-left: 0;
   width: 30%;
-  flex-grow: 1;
 }
 
 header#headerLarge #companyNameContainer span {

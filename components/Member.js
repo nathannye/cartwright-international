@@ -37,18 +37,6 @@ const Member = ({ entry, index }) => {
       autoAlpha: 0,
     });
 
-    // gsap.set(v("#turbulence"), {
-    //   attr: {
-    //     baseFrequency: ".012 .012",
-    //   },
-    // });
-
-    // gsap.set(v("#displace"), {
-    //   attr: {
-    //     scale: "100",
-    //   },
-    // });
-
     gsap.set(q("a"), {
       autoAlpha: 0,
       y: 18,

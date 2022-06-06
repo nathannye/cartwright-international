@@ -29,7 +29,6 @@ export const Layout = ({ children, menu }) => {
     <div>
       <Navbar menu={menu} />
       <Notification />
-
       <main ref={mainRef}>
         <div>{children}</div>
         <Footer />

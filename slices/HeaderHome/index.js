@@ -3,6 +3,7 @@ import { useRef } from "react";
 import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import SplitText from "gsap/dist/SplitText";
 
 export default function HeaderHome({ slice }) {
   const imageRef = useRef();
@@ -12,6 +13,8 @@ export default function HeaderHome({ slice }) {
   const svgRef = useRef(null);
 
   useIsomorphicLayoutEffect(() => {
+    document.body.classList.remove("isLight");
+
     let outline = document.querySelector("svg > g#outlineText");
     let solid = document.querySelector("svg > g#solidText");
     solid.cw = solid.querySelector("text#cartwright");
@@ -24,7 +27,15 @@ export default function HeaderHome({ slice }) {
     );
 
     const q = gsap.utils.selector(headerRef.current);
-    const v = gsap.utils.selector(svgRef.current);
+
+    const splitH2 = new SplitText(q("h2"), {
+      type: "lines",
+    });
+
+    gsap.set(splitH2.lines, {
+      autoAlpha: 0,
+      y: 9,
+    });
 
     gsap.set(imageRef.current, {
       clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
@@ -39,10 +50,13 @@ export default function HeaderHome({ slice }) {
       autoAlpha: 0,
     });
 
-    tl.current = gsap
-      .timeline({
-        delay: 1.1,
-      })
+    tl.current = gsap.timeline({
+      delay: 1.1,
+      onComplete: () => {
+        splitH2.revert;
+      },
+    });
+    tl.current
       .to(
         outline.querySelectorAll("g"),
         {
@@ -75,26 +89,38 @@ export default function HeaderHome({ slice }) {
         0.06
       )
       .to(
+        splitH2.lines,
+        {
+          autoAlpha: 1,
+          y: 0,
+          ease: "power3.out",
+          stagger: 0.06,
+        },
+        0.1
+      )
+      .to(
         imageRef.current,
         {
           clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
           duration: 0.98,
+          delay: 0.5,
           ease: "power4.inOut",
         },
-        0.2
+        0.5
       );
 
-    return () => {
-      tl.current.kill();
-    };
+    // return () => {
+    //   tl.current.kill();
+    // };
   });
 
   useIsomorphicLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     colorTL.current = gsap.timeline({
       scrollTrigger: {
-        start: "bottom bottom",
+        start: "bottom+=100px bottom",
         trigger: headerRef.current,
+        markers: true,
         onEnter: () => {
           document.body.classList.add("isLight");
         },
@@ -106,6 +132,9 @@ export default function HeaderHome({ slice }) {
         },
       },
     });
+    return () => {
+      ScrollTrigger.refresh();
+    };
   });
 
   return (

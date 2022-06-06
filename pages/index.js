@@ -3,6 +3,7 @@ import { components } from "../slices";
 import { SliceZone } from "@prismicio/react";
 import Head from "next/head";
 import { Layout } from "../components/Layout";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
 const Index = ({ page, menu, footer }) => {
   return (
@@ -33,5 +34,8 @@ export async function getStaticProps({ previewData }) {
 
   return {
     props: { page, footer, menu },
+    // function() {
+    //   ScrollTrigger.refresh();
+    // },
   };
 }
