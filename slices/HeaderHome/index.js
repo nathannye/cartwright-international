@@ -14,6 +14,8 @@ export default function HeaderHome({ slice }) {
   const splitH2 = useRef(null);
 
   useIsomorphicLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger, SplitText);
+
     document.body.classList.remove("isLight");
 
     const q = gsap.utils.selector(headerRef.current);
@@ -100,9 +102,9 @@ export default function HeaderHome({ slice }) {
         0.5
       );
 
-    // return () => {
-    //   tl.current.kill();
-    // };
+    return () => {
+      tl.current.kill();
+    };
   });
 
   useIsomorphicLayoutEffect(() => {

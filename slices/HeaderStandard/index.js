@@ -10,6 +10,8 @@ const HeaderStandard = ({ slice }) => {
   const colorTL = useRef(null);
   const el = useRef(null);
   const tl = useRef(null);
+  const outlineSplit = useRef(null);
+  const solidSplit = useRef(null);
 
   // Swap color of header on scroll
   useIsomorphicLayoutEffect(() => {
@@ -39,22 +41,22 @@ const HeaderStandard = ({ slice }) => {
   useIsomorphicLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger, SplitText);
     const q = gsap.utils.selector(el);
-    let outlineSplit = new SplitText(q(".outlineHeading"), {
+    outlineSplit.current = new SplitText(q(".outlineHeading"), {
       type: "lines",
     });
 
-    let solidSplit = new SplitText(q(".solidHeading"), {
+    solidSplit.current = new SplitText(q(".solidHeading"), {
       type: "lines",
     });
 
-    gsap.set(solidSplit.lines, {
+    gsap.set(solidSplit.current.lines, {
       autoAlpha: 0,
       x: -45,
       display: "inline-block",
       clipPath: "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)",
     });
 
-    gsap.set(outlineSplit.lines, {
+    gsap.set(outlineSplit.current.lines, {
       x: -45,
       autoAlpha: 0,
     });
@@ -63,20 +65,25 @@ const HeaderStandard = ({ slice }) => {
       autoAlpha: 0,
     });
 
-    let tl = gsap.timeline({
+    tl.current = gsap.timeline({
       delay: 0.96,
+      onComplete: () => {
+        outlineSplit.current.revert();
+        solidSplit.current.revert();
+      },
     });
 
-    tl.to(
-      q("h2"),
-      {
-        autoAlpha: 1,
-        duration: 0.7,
-      },
-      0
-    )
+    tl.current
       .to(
-        outlineSplit.lines,
+        q("h2"),
+        {
+          autoAlpha: 1,
+          duration: 0.7,
+        },
+        0
+      )
+      .to(
+        outlineSplit.current.lines,
         {
           autoAlpha: 1,
           x: 0,
@@ -87,7 +94,7 @@ const HeaderStandard = ({ slice }) => {
         0.3
       )
       .to(
-        solidSplit.lines,
+        solidSplit.current.lines,
         {
           stagger: 0.1,
           duration: 0.74,
@@ -97,7 +104,7 @@ const HeaderStandard = ({ slice }) => {
         0.3
       )
       .to(
-        solidSplit.lines,
+        solidSplit.current.lines,
         {
           x: 0,
           duration: 0.76,
@@ -108,7 +115,7 @@ const HeaderStandard = ({ slice }) => {
         0.3
       );
     return () => {
-      // colorTL.current.kill;
+      tl.current.kill();
     };
   });
 
