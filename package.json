@@ -15,8 +15,6 @@
     "@prismicio/next": "^0.1.2",
     "@prismicio/react": "^2.3.0",
     "@prismicio/slice-simulator-react": "^0.2.2",
-    "@react-three/fiber": "^8.0.22",
-    "framer-motion": "^6.3.10",
     "gsap": "npm:@gsap/shockingly@^3.10.4",
     "lottie-react": "^2.2.1",
     "lottie-web": "^5.9.4",
@@ -24,11 +22,8 @@
     "next-page-transitions": "^1.0.0-beta.2",
     "react": "18.1.0",
     "react-dom": "18.1.0",
-    "react-mailchimp-subscribe": "^2.1.3",
     "react-transition-group": "^4.4.2",
-    "three": "^0.141.0",
-    "use-isomorphic-layout-effect": "^1.1.2",
-    "webpack-glsl-loader": "^1.0.1"
+    "use-isomorphic-layout-effect": "^1.1.2"
   },
   "devDependencies": {
     "eslint": "8.16.0",

@@ -26,6 +26,11 @@ const LargeListEntry = ({ entry, index }) => {
       yPercent: -100,
     });
 
+    gsap.set(q("li"), {
+      y: 7,
+      autoAlpha: 0,
+    });
+
     tl.current = gsap.timeline({
       scrollTrigger: {
         trigger: entryRef.current,
@@ -38,20 +43,48 @@ const LargeListEntry = ({ entry, index }) => {
         split.current.words,
         {
           yPercent: 0,
-          stagger: 0.04,
+          stagger: 0.06,
           duration: 0.85,
-          ease: "power4.inOut",
+          ease: "power3.inOut",
         },
-        0
+        0.06
       )
       .to(
         q(".lineTop"),
         {
           scaleX: 1,
+          duration: 0.55,
         },
         0.07
+      )
+      .to(
+        q("li"),
+        {
+          autoAlpha: 1,
+          y: 0,
+          stagger: 0.054,
+          ease: "power2.out",
+        },
+        0.34
       );
   });
+
+  // const evens = entry["entry-bullet-list"].filter(
+  //   (item) => entry["entry-bullet-list"].indexOf(item) % 2 === 0
+  // );
+  // const odds = entry["entry-bullet-list"].filter(
+  //   (item) => entry["entry-bullet-list"].indexOf(item) % 2 === 1
+  // );
+
+  const perCol = Math.round(entry["entry-bullet-list"].length / 2);
+
+  const firstCol = entry["entry-bullet-list"].filter(
+    (item) => entry["entry-bullet-list"].indexOf(item) < perCol
+  );
+
+  const secondCol = entry["entry-bullet-list"].filter(
+    (item) => entry["entry-bullet-list"].indexOf(item) > perCol - 1
+  );
 
   return (
     <div className="largeListEntry" key={index} ref={entryRef}>
@@ -61,8 +94,17 @@ const LargeListEntry = ({ entry, index }) => {
           <h3>{entry["entry-title"]}</h3>
           <span>{entry["entry-description"]}</span>
         </div>
-        <div>
-          <PrismicRichText field={entry["entry-bullet-list"]}></PrismicRichText>
+        <div className="listColumns">
+          <ul>
+            {firstCol.map((li, index) => (
+              <li key={index}>{li.text}</li>
+            ))}
+          </ul>
+          <ul>
+            {secondCol.map((li, index) => (
+              <li key={index}>{li.text}</li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>

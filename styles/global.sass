@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Roboto+Flex:wdth,wght@100..800;&display=swap")
 
-
 *
     box-sizing: border-box
     margin: 0
@@ -803,26 +802,19 @@ header#headerLarge
                 h3
                     width: 100%   
 
-            ul
-                width: 100%
-                max-width: 550px
+            div.listColumns
                 display: flex
-                margin-top: 1rem
-                align-items: flex-start
-                flex-wrap: wrap
+                justify-content: space-between
 
-                li
-                    width: 50%
-                    min-width: 180px
+                ul
+                    width: calc(50% - .75rem)
+                    max-width: 550px
+                    margin-top: 1rem                   
 
-                    &:nth-child(2n - 1)
-                        padding-right: 1rem
-
-                    // &:nth-child(2n)
-                    //     padding-left: 1rem
-
-                    //     &:before
-                    //         left: .15rem !important
+                    &:not(:last-child)
+                        margin-right: 1.5rem
+                    li
+                        max-width: 220px
 
 // Image Carousel
 .imageCarousel  

@@ -882,22 +882,23 @@ header#headerLarge blockquote {
   width: 100%;
 }
 
-.verticalListLarge div.largeListEntry > div ul {
-  width: 100%;
-  max-width: 550px;
+.verticalListLarge div.largeListEntry > div div.listColumns {
   display: flex;
+  justify-content: space-between;
+}
+
+.verticalListLarge div.largeListEntry > div div.listColumns ul {
+  width: calc(50% - .75rem);
+  max-width: 550px;
   margin-top: 1rem;
-  align-items: flex-start;
-  flex-wrap: wrap;
 }
 
-.verticalListLarge div.largeListEntry > div ul li {
-  width: 50%;
-  min-width: 180px;
+.verticalListLarge div.largeListEntry > div div.listColumns ul:not(:last-child) {
+  margin-right: 1.5rem;
 }
 
-.verticalListLarge div.largeListEntry > div ul li:nth-child(2n - 1) {
-  padding-right: 1rem;
+.verticalListLarge div.largeListEntry > div div.listColumns ul li {
+  max-width: 220px;
 }
 
 .imageCarousel {
