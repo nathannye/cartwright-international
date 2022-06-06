@@ -1,0 +1,32 @@
+[
+  {
+    "variation": "default",
+    "name": "Default",
+    "slice_type": "vertical_list_large",
+    "items": [
+      {
+        "entry-title": "generate magnetic e-markets",
+        "entry-description": "revolutionize global communities",
+        "entry-bullet-list": [
+          {
+            "type": "paragraph",
+            "text": "Est magna velit excepteur consequat et. Veniam incididunt ullamco officia ex tempor commodo aliqua anim quis sit duis excepteur mollit.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "entry-title": "cultivate seamless channels",
+        "entry-description": "scale global convergence",
+        "entry-bullet-list": [
+          {
+            "type": "paragraph",
+            "text": "Do eiusmod eu veniam labore excepteur laboris fugiat exercitation elit elit aliqua elit do. Minim velit est do laborum excepteur mollit ad ipsum ad consectetur eiusmod officia adipisicing voluptate. Ad ex laborum voluptate fugiat.",
+            "spans": []
+          }
+        ]
+      }
+    ],
+    "primary": {}
+  }
+]

@@ -91,12 +91,12 @@ const MeetUs = ({ page, menu }) => {
         <main>
           <div className="headingOverlapContainer">
             <h1 className="outlineHeading">
-              Let’s get
-              <br /> things rolling
+              Let’s get things rolling, shoot us an email or give us a call.
+              We’d love to hear how we can help!
             </h1>
             <h1 className="solidHeading">
-              Let’s get <br />
-              things rolling
+              Let’s get things rolling, shoot us an email or give us a call.
+              We’d love to hear how we can help!
             </h1>
           </div>
           {/* <h3 className="hasAnimatedUnderline"> */}

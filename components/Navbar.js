@@ -112,17 +112,17 @@ const Navbar = ({ menu }) => {
         q("a.active h1"),
         {
           x: "1.75rem",
-          duration: 0.5,
+          duration: 0.6,
           ease: "power4.inOut",
         },
-        0.9
+        1
       )
       .to(
         q("a.active .activeIndi"),
         {
           x: 0,
-          delay: 0.12,
-          duration: 0.54,
+          delay: 0.19,
+          duration: 0.64,
           ease: "back.out(1.5)",
         },
         "<"

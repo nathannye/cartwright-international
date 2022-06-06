@@ -622,6 +622,7 @@ header#headerLarge
             font-size: clamp(1rem, calc(1rem + ((1vw - 0.25rem) * 0.4464)), 1.5rem)
             line-height: 1.1
             max-width: 450px
+            min-width: 250px
             font-weight: 500
             margin-bottom: 1.5rem
             margin-left: 0
@@ -1073,7 +1074,8 @@ header#headerLarge
 
     h1
         margin-left: var(--gutter)
-        max-width: 1200px
+        // max-width: 1200px
+        width: var(--colSix)
 
     main a:not(footer a)
         color: var(--tan)

@@ -1,0 +1,52 @@
+[
+  {
+    "variation": "default",
+    "name": "Default",
+    "slice_type": "team_member",
+    "items": [
+      {
+        "name": "architect turn-key platforms",
+        "email": "orchestrate scalable infrastructures",
+        "position": "incentivize 24/7 infrastructures",
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1589321599763-d66926c29613?w=900&h=500&fit=crop"
+        },
+        "bio": [
+          {
+            "type": "paragraph",
+            "text": "Ad Lorem aute non veniam enim est eu anim duis in id deserunt eiusmod do. Sint ullamco nostrud dolore Lorem qui ut id. Minim ipsum amet ullamco elit dolore ex mollit reprehenderit eiusmod mollit.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "name": "mesh user-centric metrics",
+        "email": "repurpose extensible action-items",
+        "position": "integrate e-business mindshare",
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1600804931749-2da4ce26c869?w=900&h=500&fit=crop"
+        },
+        "bio": [
+          {
+            "type": "paragraph",
+            "text": "Ullamco anim occaecat proident consectetur laborum proident pariatur duis tempor tempor anim id duis culpa labore. Tempor nostrud commodo sit aute veniam do deserunt dolore ex ipsum laborum culpa consequat dolor quis. Veniam Lorem quis ullamco aliquip reprehenderit reprehenderit incididunt cillum occaecat qui tempor dolor amet.",
+            "spans": []
+          }
+        ]
+      }
+    ],
+    "primary": {}
+  }
+]
