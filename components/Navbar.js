@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { PrismicLink } from "@prismicio/react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Lottie from "lottie-web/build/player/lottie_light";
 import gsap from "gsap";
 import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
@@ -14,9 +14,55 @@ const Navbar = ({ menu }) => {
   const linkRefs = useRef([]);
   linkRefs.current = [];
   const router = useRouter();
-
+  const transitionRef = useRef(null);
   const animationContainer = useRef(null);
   const anim = useRef(null);
+
+  const [isActive, setIsActive] = useState(false);
+
+  useIsomorphicLayoutEffect(() => {
+    const q = gsap.utils.selector(transitionRef.current);
+    let timer;
+
+    gsap.set(q("div.transitionCover"), {
+      scaleY: 0,
+      autoAlpha: 1,
+      transformOrigin: "center bottom",
+    });
+
+    const aniStart = async () => {
+      setIsActive(true);
+
+      gsap.to(q("div.transitionCover"), {
+        scaleY: 1,
+        duration: 0.72,
+        ease: "power3.inOut",
+        stagger: -0.18,
+      });
+    };
+
+    const aniEnd = () => {
+      if (isActive) {
+        gsap.to(q("div.transitionCover"), {
+          autoAlpha: 0,
+          duration: 0.6,
+          delay: 1.3,
+          ease: "none",
+          stagger: -0.18,
+        });
+      }
+    };
+
+    router.events.on("routeChangeStart", aniStart);
+    router.events.on("routeChangeComplete", aniEnd);
+    router.events.on("routeChangeError", aniEnd);
+
+    return () => {
+      router.events.off("routeChangeStart", aniStart);
+      router.events.off("routeChangeComplete", aniEnd);
+      router.events.off("routeChangeError", aniEnd);
+    };
+  }, [router]);
 
   const masterTL = gsap.timeline({
     paused: true,
@@ -309,7 +355,10 @@ const Navbar = ({ menu }) => {
             </PrismicLink>
           ))}
         </nav>
-        <div id="mobileNavBacker"></div>
+      </div>
+      <div id="transitionContainer" ref={transitionRef}>
+        <div className="transitionCover"></div>
+        <div className="transitionCover"></div>
       </div>
     </>
   );
