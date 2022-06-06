@@ -92,14 +92,14 @@ const MeetUs = ({ page, menu }) => {
           <div className="headingOverlapContainer">
             <h1 className="outlineHeading">
               Let’s get things rolling, shoot us an
-              <a href="mailto:info@cartwrightintl.net">email</a> or give us a{" "}
-              <a href="tel:616-420-4006">call.</a>
+              <a href="mailto:info@cartwrightintl.net"> email</a> or give us a
+              <a href="tel:616-420-4006"> call.</a>
               We’d love to hear how we can help!
             </h1>
             <h1 className="solidHeading">
               Let’s get things rolling, shoot us an
-              <a href="mailto:info@cartwrightintl.net">email</a> or give us a{" "}
-              <a href="tel:616-420-4006">call.</a>
+              <a href="mailto:info@cartwrightintl.net"> email</a> or give us a
+              <a href="tel:616-420-4006"> call.</a>
               We’d love to hear how we can help!
             </h1>
           </div>
