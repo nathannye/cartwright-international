@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { EmailForm } from "../components/EmailForm";
 import { createClient } from "../prismicio";
+import SocialIcon from "../components/SocialIcon";
 
 const Footer = ({ contact }) => {
   const router = useRouter();
@@ -23,7 +24,27 @@ const Footer = ({ contact }) => {
             </a>
           </div>
         </div>
-        <EmailForm />
+        <div>
+          <EmailForm />
+          <div id="socialIcons">
+            <h2>keep up with us on social!</h2>
+            <div>
+              <a href="">
+                <img src="./facebook.svg" alt="facebook icon" />
+              </a>
+              <a
+                href="https://www.instagram.com/cartwright_international/"
+                target="_blank"
+                rel="noReferrer"
+              >
+                <img src="./instagram.svg" alt="instagram icon" />
+              </a>
+              <a href="">
+                <img src="./twitter.svg" alt="twitter icon" />
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
       <div className="bottomSplit">
         <div>

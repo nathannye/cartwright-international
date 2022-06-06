@@ -179,7 +179,7 @@ h2 {
 label {
   letter-spacing: .032em;
   font-size: clamp(0.95rem, calc(0.95rem + ((1vw - 0.25rem) * 0.1786)), 1rem);
-  font-weight: 320;
+  font-weight: 400;
   color: var(--maroon);
   margin-bottom: calc(var(--gutter) /2);
   text-transform: uppercase;
@@ -251,7 +251,7 @@ li {
   font-family: "Roboto", sans-serif;
   letter-spacing: -.012em;
   font-size: 1.25rem;
-  font-weight: 220;
+  font-weight: 300;
 }
 
 header {
@@ -362,6 +362,34 @@ body.isLight div#navbar #hamburgerBtn svg path.hamburgerLine {
 footer {
   background: var(--maroon);
   padding: var(--gutter);
+}
+
+footer #socialIcons {
+  display: none;
+}
+
+footer #socialIcons h2 {
+  font-weight: 400;
+}
+
+footer #socialIcons > div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+footer #socialIcons > div a {
+  height: 1.75rem;
+  width: 1.75rem;
+}
+
+footer #socialIcons > div a:not(:last-child) {
+  margin-right: 1.5rem;
+}
+
+footer #socialIcons > div a img {
+  height: 100%;
+  width: 100%;
 }
 
 footer p {
@@ -1349,7 +1377,6 @@ header#headerLarge blockquote {
   }
   footer #emailFormContainer {
     margin-top: 0;
-    width: var(--colTwo);
   }
   footer #privacy {
     margin-right: 2rem;
