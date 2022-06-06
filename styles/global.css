@@ -285,6 +285,10 @@ body.isLight header h1.outlineHeading {
   transition: var(--colorSwapEase);
 }
 
+body.isLight header h1.outlineHeading > a {
+  -webkit-text-stroke-color: var(--tan);
+}
+
 body.isLight header h1.solidHeading {
   color: var(--maroon);
   transition: var(--colorSwapEase);
