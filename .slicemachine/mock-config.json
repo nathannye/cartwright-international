@@ -1,0 +1,16 @@
+{
+  "slices": {
+    "TeamMember": {
+      "default": {
+        "items": {
+          "bio": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    }
+  }
+}

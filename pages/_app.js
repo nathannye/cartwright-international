@@ -4,6 +4,7 @@ import { PrismicProvider } from "@prismicio/react";
 import { PrismicPreview } from "@prismicio/next";
 import { linkResolver, repositoryName } from "../prismicio";
 import Head from "next/head";
+import ScrollToTop from "../components/ScrollTop";
 
 export default function MyApp({ Component, pageProps, router }) {
   return (
@@ -15,6 +16,7 @@ export default function MyApp({ Component, pageProps, router }) {
         </Link>
       )}
     >
+      <ScrollToTop />
       <PrismicPreview repositoryName={repositoryName}>
         <Head></Head>
         <Component {...pageProps} />

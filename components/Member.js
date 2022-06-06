@@ -3,6 +3,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import SplitText from "gsap/dist/SplitText";
+import { PrismicRichText } from "@prismicio/react";
 
 const Member = ({ entry, index }) => {
   const memberRef = useRef(null);
@@ -125,7 +126,7 @@ const Member = ({ entry, index }) => {
       </div>
       <div className="teamMemberText">
         <h3>{entry.name}</h3>
-        <p>{entry.bio}</p>
+        <PrismicRichText field={entry.bio} />
         <a href={`mailto:${entry.email}`} className="internalLink">
           Contact
         </a>

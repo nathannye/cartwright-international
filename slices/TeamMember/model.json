@@ -19,13 +19,6 @@
             "placeholder": ""
           }
         },
-        "bio": {
-          "type": "Text",
-          "config": {
-            "label": "Bio",
-            "placeholder": ""
-          }
-        },
         "email": {
           "type": "Text",
           "config": {
@@ -46,6 +39,15 @@
             "label": "Image",
             "constraint": {},
             "thumbnails": []
+          }
+        },
+        "bio": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Bio",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em,embed"
           }
         }
       },
