@@ -6,38 +6,39 @@ import SplitText from "gsap/dist/SplitText";
 
 const FrameworkEntry = ({ entry, index }) => {
   const containerRef = useRef(null);
+  const tl = useRef(null);
+  const smallSplit = useRef(null);
+  const paraSplit = useRef(null);
+  const headerSplit = useRef(null);
 
   useIsomorphicLayoutEffect(() => {
     const q = gsap.utils.selector(containerRef.current);
     let maroonIcon = q(".iconContainer:first-of-type");
     let whiteIcon = q(".iconContainer:nth-of-type(2)");
-    let smallText = q(".cardInfo > h3");
-    let header = q(".frameworkText h3");
-    let para = q(".frameworkText p");
 
-    smallText.split = new SplitText(smallText, {
+    smallSplit.current = new SplitText(q(".cardInfo h3"), {
       type: "words, lines",
       linesClass: "splitLineOverflow",
     });
 
-    gsap.set(smallText.split.words, {
+    gsap.set(smallSplit.current.split.words, {
       yPercent: 100,
     });
 
-    header.split = new SplitText(header, {
+    headerSplit.current = new SplitText(q(".frameworkText h3"), {
       type: "words, lines",
       linesClass: "splitLineOverflow",
     });
 
-    gsap.set(header.split.words, {
+    gsap.set(headerSplit.current.words, {
       yPercent: -100,
     });
 
-    para.split = new SplitText(para, {
+    paraSplit.current = new SplitText(q(".frameworkText p"), {
       type: "lines",
     });
 
-    gsap.set(para.split.lines, {
+    gsap.set(paraSplit.current.lines, {
       y: 8,
       autoAlpha: 0,
     });
@@ -50,21 +51,27 @@ const FrameworkEntry = ({ entry, index }) => {
       clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)",
     });
 
-    let tl = gsap.timeline({
+    tl.current = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
         start: "center bottom-=7%",
       },
+      onComplete: () => {
+        headerSplit.current.revert();
+        paraSplit.current.revert();
+        smallSplit.current.revert();
+      },
     });
 
-    tl.to(
-      maroonIcon,
-      {
-        clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-        duration: 1,
-      },
-      0
-    )
+    tl.current
+      .to(
+        maroonIcon,
+        {
+          clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
+          duration: 1,
+        },
+        0
+      )
       .to(
         whiteIcon,
         {
@@ -74,7 +81,7 @@ const FrameworkEntry = ({ entry, index }) => {
         0
       )
       .to(
-        smallText.split.words,
+        smallSplit.current.words,
         {
           yPercent: 0,
           stagger: 0.07,
@@ -82,7 +89,7 @@ const FrameworkEntry = ({ entry, index }) => {
         0
       )
       .to(
-        header.split.words,
+        headerSplit.current.words,
         {
           yPercent: 0,
           duration: 0.85,
@@ -92,7 +99,7 @@ const FrameworkEntry = ({ entry, index }) => {
         0.3
       )
       .to(
-        para.split.lines,
+        paraSplit.current.lines,
         {
           y: 0,
           autoAlpha: 1,

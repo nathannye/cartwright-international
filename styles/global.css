@@ -183,6 +183,7 @@ h3 {
   letter-spacing: -.02em;
   font-family: 'Cormorant Garamond', serif;
   font-weight: 500;
+  line-height: 1.2;
   font-variant-numeric: lining-nums;
   text-transform: none;
   color: var(--maroon);
@@ -1255,14 +1256,16 @@ header#headerLarge blockquote {
     max-width: 1400px;
   }
   header#headerLarge {
-    height: 150vh;
+    height: 127vh;
   }
   header#headerLarge #companyNameContainer svg {
     min-width: 650px;
-    width: 53%;
+    width: 80%;
+    padding-right: 2rem;
   }
   header#headerLarge #companyNameContainer h2 {
     max-width: 450px;
+    width: 20%;
   }
   header#headerLarge img {
     height: 55%;
