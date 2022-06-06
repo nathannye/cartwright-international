@@ -111,11 +111,7 @@ export default function HeaderHome({ slice }) {
   return (
     <header id="headerLarge" ref={headerRef}>
       <div id="companyNameContainer">
-        <h2>
-          A sales training and consulting agency with a vision to make sales
-          teams a true driver of business
-        </h2>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 407.06 90.24">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 407.06 79">
           <g id="solidText">
             <g id="cw-solid">
               <text
@@ -306,6 +302,10 @@ export default function HeaderHome({ slice }) {
             </g>
           </g>
         </svg>
+        <h2>
+          A sales training and consulting agency with a vision to make sales
+          teams a true driver of business
+        </h2>
       </div>
       <div className="imageContainer" ref={imageRef}>
         <img

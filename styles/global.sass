@@ -586,20 +586,27 @@ header#headerLarge
 
     #companyNameContainer
         display: flex
-        flex-direction: column-reverse
+        flex-wrap: wrap
+        align-items: flex-end
         margin-right: var(--gutter)
         padding-left: var(--gutter)
         overflow: visible
-        max-width: 1500px
+
+        svg
+            width: 65%
+            flex-grow: 1
+            margin-bottom: var(--gutter)
 
         h2
             color: var(--tan)
-            font-size: 1.5rem
+            font-size: clamp(1rem, calc(1rem + ((1vw - 0.25rem) * 0.4464)), 1.5rem)
             line-height: 1.1
             max-width: 450px
-            text-indent: 2rem
             font-weight: 500
-            margin-bottom: 2rem
+            margin-bottom: 0 1rem
+            margin-left: 2.8rem
+            width: 30%
+            flex-grow: 1
 
         span
             display: flex
@@ -647,7 +654,7 @@ header#headerLarge
 
         &.solidHeading
             z-index: 5
-            
+
 // Transition Covers
 #transitionContainer
     width: 100vw
@@ -1142,6 +1149,11 @@ header#headerLarge
     header#headerLarge
         height: 150vh
 
+        #companyNameContainer
+
+            h2
+                max-width: 450px
+
         img
             height: 55%
 
@@ -1259,7 +1271,6 @@ header#headerLarge
 
                 div.imageContainer
                     height: 550px
-
 
             &:last-child
                 margin-left: var(--colTwo)

@@ -141,21 +141,21 @@ const Navbar = ({ menu }) => {
   //   y: -20,
   // });
 
-  const handleNavChange = ({ currentTarget }) => {
-    const m = gsap.utils.selector(regularNavRef.current);
+  // const handleNavChange = ({ currentTarget }) => {
+  //   const m = gsap.utils.selector(regularNavRef.current);
 
-    let hasActive = m(q(".active"));
+  //   let hasActive = m(q(".active"));
 
-    // currentTarget.classList.add("willBeActive");
+  //   // currentTarget.classList.add("willBeActive");
 
-    gsap.to(m(".active .activeIndi"), {
-      y: 0,
-    });
+  //   gsap.to(m(".active .activeIndi"), {
+  //     y: 0,
+  //   });
 
-    gsap.set(m(".active .activeIndi"), {
-      y: 0,
-    });
-  };
+  //   gsap.set(m(".active .activeIndi"), {
+  //     y: 0,
+  //   });
+  // };
 
   return (
     <>
@@ -288,7 +288,6 @@ const Navbar = ({ menu }) => {
               field={el.link}
               key={`${el + index}`}
               className={router.asPath == `/${el.link.uid}` ? "active" : ""}
-              onClick={handleNavChange}
             >
               {el.label}
               <div className="activeBox">
