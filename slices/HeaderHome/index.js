@@ -11,41 +11,31 @@ export default function HeaderHome({ slice }) {
   const headerRef = useRef(null);
   const colorTL = useRef(null);
   const svgRef = useRef(null);
+  const splitH2 = useRef(null);
 
   useIsomorphicLayoutEffect(() => {
     document.body.classList.remove("isLight");
 
-    let outline = document.querySelector("svg > g#outlineText");
-    let solid = document.querySelector("svg > g#solidText");
-    solid.cw = solid.querySelector("text#cartwright");
-    solid.intl = solid.querySelector("text#international");
-    outline.cw = solid.querySelector("g#cartwright");
-    outline.intl = outline.querySelector("g#international-2");
-    let cartwright = document.querySelector("g#cw-solid, g#cartwright");
-    let international = document.querySelector(
-      "g#intl-solid, g#international-2"
-    );
-
     const q = gsap.utils.selector(headerRef.current);
 
-    const splitH2 = new SplitText(q("h2"), {
+    splitH2.current = new SplitText(q("h2"), {
       type: "lines",
     });
 
-    gsap.set(splitH2.lines, {
-      autoAlpha: 0,
-      y: 9,
-    });
+    // gsap.set(splitH2.current.lines, {
+    //   autoAlpha: 0,
+    //   y: 9,
+    // });
 
-    gsap.set(imageRef.current, {
+    gsap.set(q(".imageContainer"), {
       clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
     });
-    gsap.set(solid.querySelectorAll("g"), {
+    gsap.set(q("svg > g#solidText > g"), {
       x: -20,
       clipPath: "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)",
     });
 
-    gsap.set(outline.querySelectorAll("g"), {
+    gsap.set(q("svg > g#outlineText g"), {
       x: -20,
       autoAlpha: 0,
     });
@@ -53,12 +43,13 @@ export default function HeaderHome({ slice }) {
     tl.current = gsap.timeline({
       delay: 1.1,
       onComplete: () => {
-        splitH2.revert;
+        splitH2.current.revert();
+        console.log(splitH2.current);
       },
     });
     tl.current
       .to(
-        outline.querySelectorAll("g"),
+        q("svg > g#outlineText g"),
         {
           stagger: -0.17,
           x: 0,
@@ -69,7 +60,7 @@ export default function HeaderHome({ slice }) {
         0
       )
       .to(
-        solid.querySelectorAll("g"),
+        q("svg > g#solidText > g"),
         {
           stagger: 0.14,
           x: 0,
@@ -79,7 +70,7 @@ export default function HeaderHome({ slice }) {
         0
       )
       .to(
-        solid.querySelectorAll("g"),
+        q("svg > g#solidText g"),
         {
           clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
           stagger: 0.14,
@@ -88,18 +79,18 @@ export default function HeaderHome({ slice }) {
         },
         0.06
       )
-      .to(
-        splitH2.lines,
+      .from(
+        splitH2.current.lines,
         {
-          autoAlpha: 1,
-          y: 0,
+          autoAlpha: 0,
+          y: 10,
           ease: "power3.out",
           stagger: 0.06,
         },
         0.1
       )
       .to(
-        imageRef.current,
+        q(".imageContainer"),
         {
           clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
           duration: 0.98,
@@ -133,7 +124,7 @@ export default function HeaderHome({ slice }) {
       },
     });
     return () => {
-      ScrollTrigger.refresh();
+      ScrollTrigger.kill;
     };
   });
 
@@ -331,12 +322,9 @@ export default function HeaderHome({ slice }) {
             </g>
           </g>
         </svg>
-        <h2>
-          A sales training and consulting agency with a vision to make sales
-          teams a true driver of business
-        </h2>
+        <h2>{slice.primary["small-paragraph"]}</h2>
       </div>
-      <div className="imageContainer" ref={imageRef}>
+      <div className="imageContainer">
         <img
           src={slice.primary["header-image"].url}
           alt={slice.primary["header-image"].alt}
