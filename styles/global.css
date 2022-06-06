@@ -311,23 +311,44 @@ body.isLight div#navbar #hamburgerBtn svg path.hamburgerLine {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.shortFooter a, .shortFooter p {
+  font-size: .96rem;
+  line-height: 1;
 }
 
 .shortFooter > div {
-  width: 100%;
-}
-
-.shortFooter > div p {
-  width: unset;
+  width: 50%;
+  flex-grow: 1;
 }
 
 .shortFooter #emailFormContainer {
-  width: 100%;
+  flex-grow: 1;
+  margin-bottom: 1rem;
+}
+
+.shortFooter .infoSplit {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.shortFooter .infoSplit * {
+  margin-bottom: 0;
+  margin-top: 2rem;
+  min-width: 100%;
+}
+
+.shortFooter p {
+  width: unset;
+  margin-left: 0;
 }
 
 footer {
   background: var(--maroon);
-  padding: 3rem var(--gutter);
+  padding: var(--gutter);
 }
 
 footer p {
@@ -352,6 +373,7 @@ footer .topSplit {
 footer #emailFormContainer {
   margin-top: calc(var(--gutter)*2);
   width: 100%;
+  margin-bottom: var(--gutter);
 }
 
 footer #emailFormContainer form {
@@ -392,7 +414,7 @@ footer #emailFormContainer input[type="submit"] {
   cursor: pointer;
   position: absolute;
   right: 0;
-  padding: 6px;
+  padding: 8px;
   bottom: 2px;
   width: auto;
   background-position: 100% 100%;
@@ -1235,6 +1257,22 @@ header#headerLarge blockquote {
 }
 
 @media only screen and (min-width: 700px) {
+  .shortFooter {
+    justify-content: space-between;
+  }
+  .shortFooter #emailFormContainer {
+    margin-bottom: 0;
+    min-width: 390px;
+  }
+  .shortFooter .infoSplit {
+    justify-content: flex-end;
+  }
+  .shortFooter .infoSplit * {
+    min-width: unset;
+  }
+  .shortFooter .infoSplit *:not(:last-child) {
+    margin-right: 1rem;
+  }
   .notification h3 {
     margin-bottom: 0;
     width: unset;

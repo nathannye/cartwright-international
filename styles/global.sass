@@ -281,19 +281,37 @@ body
     display: flex
     justify-content: space-between
     flex-wrap: wrap
+    align-items: flex-end
+
+    a, p
+        font-size: .96rem
+        line-height: 1
 
     & > div
-        width: 100%
-
-        p
-            width: unset
+        width: 50%
+        flex-grow: 1
 
     #emailFormContainer
-        width: 100%
+        flex-grow: 1
+        margin-bottom: 1rem
+
+    .infoSplit
+        display: flex
+        justify-content: flex-start
+        flex-wrap: wrap
+
+        *
+            margin-bottom: 0
+            margin-top: 2rem
+            min-width: 100%
+
+    p
+        width: unset
+        margin-left: 0
 
 footer
     background: var(--maroon)
-    padding: 3rem var(--gutter)
+    padding: var(--gutter)
 
     p
         text-transform: uppercase
@@ -313,12 +331,11 @@ footer
     #emailFormContainer
         margin-top: calc(var(--gutter)*2)
         width: 100%
+        margin-bottom: var(--gutter)
 
         form
             position: relative
-
-            // &:focus-within span.lineBottom
-
+            
         input#emailField
             width: 100%
             background: transparent
@@ -351,7 +368,7 @@ footer
             cursor: pointer
             position: absolute
             right: 0
-            padding: 6px
+            padding: 8px
             bottom: 2px
             width: auto
             background-position: 100% 100%
@@ -1100,11 +1117,25 @@ header#headerLarge
         text-underline-offset: .2rem
         cursor: pointer
         color: var(--light)
-        // padding: 0 2rem
-
 
 // Applies to anything above 768px
 @media only screen and (min-width: 700px)
+
+    .shortFooter
+        justify-content: space-between
+
+        #emailFormContainer
+            margin-bottom: 0
+            min-width: 390px
+
+        .infoSplit
+            justify-content: flex-end
+
+            *
+                min-width: unset
+
+            *:not(:last-child)
+                margin-right: 1rem
 
     .notification
 

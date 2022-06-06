@@ -111,21 +111,21 @@ const MeetUs = ({ page, menu }) => {
           {/* </h3> */}
         </main>
         <footer className="shortFooter">
-          <div>
+          <EmailForm />
+          <div className="infoSplit">
             <Link href="/">
               <a className="secondaryLink">Privacy Policy</a>
             </Link>
-            <p> © {new Date().getFullYear()} Cartwright International</p>
             <a
               className="secondaryLink"
               href="https://www.nye.design"
               target="_blank"
-              rel="noreferrer"
+              rel="noReferrer"
             >
               Made by Nathan Nye
             </a>
+            <p> © {new Date().getFullYear()} Cartwright International</p>
           </div>
-          <EmailForm />
         </footer>
       </div>
     </Layout>
