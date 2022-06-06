@@ -6,29 +6,28 @@ import SplitText from "gsap/dist/SplitText";
 
 const Member = ({ entry, index }) => {
   const memberRef = useRef(null);
-  // const svgRef = useRef(null);
-
   const tl = useRef(null);
+  const nameSplit = useRef(null);
+  const bioSplit = useRef(null);
 
   useIsomorphicLayoutEffect(() => {
     const q = gsap.utils.selector(memberRef.current);
-    // const v = gsap.utils.selector(svgRef.current);
 
     gsap.registerPlugin(ScrollTrigger, SplitText);
 
-    let nameSplit = new SplitText(q("h3"), {
+    nameSplit.current = new SplitText(q("h3"), {
       type: "words, lines",
       linesClass: "splitLineOverflow",
     });
 
-    let bioSplit = new SplitText(q("p"), {
+    bioSplit.current = new SplitText(q("p"), {
       type: "lines",
     });
 
-    gsap.set(nameSplit.words, {
+    gsap.set(nameSplit.current.words, {
       yPercent: 100,
     });
-    gsap.set(bioSplit.lines, {
+    gsap.set(bioSplit.current.lines, {
       y: 8,
       autoAlpha: 0,
     });
@@ -42,6 +41,10 @@ const Member = ({ entry, index }) => {
       y: 18,
     });
 
+    gsap.set(q("h5"), {
+      autoAlpha: 0,
+    });
+
     gsap.set(q(".imageContainer"), {
       clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)",
     });
@@ -49,10 +52,23 @@ const Member = ({ entry, index }) => {
     tl.current = gsap.timeline({
       scrollTrigger: {
         trigger: memberRef.current,
-        start: "center bottom-=13%",
+        start: "center bottom-=4%",
+      },
+      onComplete: () => {
+        nameSplit.current.revert();
+        bioSplit.current.revert();
       },
     });
     tl.current
+      .to(
+        q("h5"),
+        {
+          autoAlpha: 1,
+          duration: 0.4,
+          ease: "none",
+        },
+        0
+      )
       .to(
         q(".imageContainer"),
         {
@@ -62,7 +78,7 @@ const Member = ({ entry, index }) => {
         0
       )
       .to(
-        nameSplit.words,
+        nameSplit.current.words,
         {
           yPercent: 0,
         },
@@ -77,7 +93,7 @@ const Member = ({ entry, index }) => {
         0.1
       )
       .to(
-        bioSplit.lines,
+        bioSplit.current.lines,
         {
           y: 0,
           stagger: 0.06,
@@ -98,8 +114,6 @@ const Member = ({ entry, index }) => {
 
     return () => {
       ScrollTrigger.kill;
-      nameSplit.revert();
-      bioSplit.revert();
     };
   }, []);
 
