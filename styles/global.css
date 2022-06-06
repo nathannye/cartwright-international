@@ -373,6 +373,7 @@ footer .topSplit {
 footer #emailFormContainer {
   margin-top: calc(var(--gutter)*2);
   width: 100%;
+  max-width: 520px;
   margin-bottom: var(--gutter);
 }
 
