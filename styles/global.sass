@@ -454,7 +454,6 @@ span.lineTop
     left: 0
     z-index: 20
     width: 100vw
-    background: var(--light)
     padding: .5rem var(--gutter)
 
     & > div
@@ -474,29 +473,14 @@ span.lineTop
 
         a
             color: var(--light)
-            // transition: var(--colorSwapEase)
-            // transition: opacity .25s linear
             position: relative
-            opacity: .7
+            // opacity: .7
             transition: all .4s ease-in-out
 
             &:hover
                 opacity: .35
                 transition: opacity .25s linear
                 position: relative
-
-            &.active
-                // margin-left: 1.5rem
-                opacity: 1
-                // transition: all .5s ease-in-out
-
-                // .activeBox
-                //     opacity: 1
-                //     transition: all .5s ease-in-out
-
-                //     .activeIndi
-                //         transition: all .5s ease-in-out
-                //         transform: translateY(0px)
 
             .activeBox
                 height: 20px
@@ -505,6 +489,7 @@ span.lineTop
                 left: -1.45rem
                 position: absolute
                 display: flex
+                opacity: 0
                 // transition: all .5s ease-in-out
                 overflow: hidden
                 justify-content: center
@@ -516,6 +501,13 @@ span.lineTop
                     border-radius: 20px
                     // transition: all .5s ease-in-out
                     background: var(--light)
+                    
+            &.active 
+                margin-left: 1.25rem
+
+                .activeBox 
+                    opacity: 1
+                    transition: var(--powerEase)
 
     svg.logo g path
         fill: var(--light)
@@ -581,7 +573,6 @@ span.lineTop
                     border-radius: 20px
             
         a.active
-            position: relative
 
             .activeBox
                 opacity: 1
@@ -600,7 +591,7 @@ header.headerStandard
     svg
         width: 85px
         position: absolute
-        bottom: 9vh
+        bottom: 2vh
         transition: var(--colorSwapEase)
         right: var(--gutter)
 

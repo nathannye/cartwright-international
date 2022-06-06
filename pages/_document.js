@@ -13,6 +13,7 @@ function Document() {
         <script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+          crossOrigin="anonymous"
         />
         <script
           dangerouslySetInnerHTML={{

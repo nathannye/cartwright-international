@@ -8,6 +8,8 @@ import ScrollToTop from "../components/ScrollTop";
 import { useRouter } from "next/router";
 import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
 
+import * as ga from "../lib/ga";
+
 export default function MyApp({ Component, pageProps }) {
   const router = useRouter();
 

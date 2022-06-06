@@ -510,7 +510,6 @@ span.lineTop {
   left: 0;
   z-index: 20;
   width: 100vw;
-  background: var(--light);
   padding: 0.5rem var(--gutter);
 }
 
@@ -536,7 +535,6 @@ span.lineTop {
 #navbar > nav a {
   color: var(--light);
   position: relative;
-  opacity: .7;
   transition: all .4s ease-in-out;
 }
 
@@ -546,10 +544,6 @@ span.lineTop {
   position: relative;
 }
 
-#navbar > nav a.active {
-  opacity: 1;
-}
-
 #navbar > nav a .activeBox {
   height: 20px;
   width: 20px;
@@ -557,6 +551,7 @@ span.lineTop {
   left: -1.45rem;
   position: absolute;
   display: flex;
+  opacity: 0;
   overflow: hidden;
   justify-content: center;
   align-items: center;
@@ -567,6 +562,15 @@ span.lineTop {
   height: 8px;
   border-radius: 20px;
   background: var(--light);
+}
+
+#navbar > nav a.active {
+  margin-left: 1.25rem;
+}
+
+#navbar > nav a.active .activeBox {
+  opacity: 1;
+  transition: var(--powerEase);
 }
 
 #navbar svg.logo g path {
@@ -637,10 +641,6 @@ span.lineTop {
   border-radius: 20px;
 }
 
-#mobileNavMenu nav a.active {
-  position: relative;
-}
-
 #mobileNavMenu nav a.active .activeBox {
   opacity: 1;
 }
@@ -660,7 +660,7 @@ header.headerStandard h2 {
 header.headerStandard svg {
   width: 85px;
   position: absolute;
-  bottom: 9vh;
+  bottom: 2vh;
   transition: var(--colorSwapEase);
   right: var(--gutter);
 }
