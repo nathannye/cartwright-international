@@ -1,0 +1,43 @@
+[
+  {
+    "variation": "default",
+    "name": "Default",
+    "slice_type": "vertical_list_large",
+    "items": [
+      {
+        "entry-title": "drive back-end experiences",
+        "entry-description": "scale rich blockchains",
+        "entry-bullet-list": [
+          {
+            "type": "paragraph",
+            "text": "Minim ullamco aute eiusmod cillum fugiat non excepteur labore anim ex cupidatat consectetur incididunt. Elit reprehenderit quis dolore est fugiat exercitation ullamco dolore amet nulla aute eiusmod laborum do.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "entry-title": "matrix proactive users",
+        "entry-description": "target impactful methodologies",
+        "entry-bullet-list": [
+          {
+            "type": "paragraph",
+            "text": "Labore aliquip culpa irure proident qui enim commodo magna Lorem voluptate adipisicing aliqua dolore. Deserunt cupidatat irure nostrud consectetur incididunt eiusmod commodo non nulla proident minim non minim consectetur. Nostrud ea quis ex cupidatat in in reprehenderit.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "entry-title": "disintermediate visionary users",
+        "entry-description": "leverage distributed mindshare",
+        "entry-bullet-list": [
+          {
+            "type": "paragraph",
+            "text": "Officia aliquip nulla officia consequat esse incididunt elit occaecat aute. Ex aliqua reprehenderit veniam et ad nulla in irure esse deserunt cillum et do Lorem.",
+            "spans": []
+          }
+        ]
+      }
+    ],
+    "primary": {}
+  }
+]

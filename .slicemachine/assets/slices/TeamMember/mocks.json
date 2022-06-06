@@ -1,0 +1,115 @@
+[
+  {
+    "variation": "default",
+    "name": "Default",
+    "slice_type": "team_member",
+    "items": [
+      {
+        "name": "architect holistic architectures",
+        "email": "brand cross-media vortals",
+        "position": "morph cutting-edge mindshare",
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1547394765-185e1e68f34e?w=900&h=500&fit=crop"
+        },
+        "bio": [
+          {
+            "type": "paragraph",
+            "text": "Labore cillum mollit do cupidatat anim eiusmod deserunt. Anim magna ex aute non deserunt sint proident dolor deserunt consectetur sunt non voluptate tempor incididunt. Pariatur aliquip occaecat id excepteur adipisicing proident mollit nostrud fugiat.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "name": "morph sexy methodologies",
+        "email": "enhance frictionless technologies",
+        "position": "whiteboard extensible technologies",
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?w=900&h=500&fit=crop"
+        },
+        "bio": [
+          {
+            "type": "paragraph",
+            "text": "Proident nulla qui adipisicing proident. Occaecat sunt tempor labore do nulla excepteur anim ut laborum sunt sunt exercitation. Ipsum cillum eu proident nulla est id irure laboris deserunt occaecat aliqua Lorem ullamco aute.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "name": "syndicate virtual functionalities",
+        "email": "innovate ubiquitous e-markets",
+        "position": "cultivate B2C web-readiness",
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1589321599763-d66926c29613?w=900&h=500&fit=crop"
+        },
+        "bio": [
+          {
+            "type": "paragraph",
+            "text": "Pariatur laboris sint incididunt quis. Magna in ipsum eu veniam nostrud.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "name": "morph end-to-end content",
+        "email": "empower seamless channels",
+        "position": "scale vertical infomediaries",
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea?w=900&h=500&fit=crop"
+        },
+        "bio": [
+          {
+            "type": "paragraph",
+            "text": "Voluptate eiusmod cupidatat quis ipsum adipisicing culpa labore irure laboris velit sunt et deserunt dolor irure. Culpa velit in incididunt ea. Esse ullamco eiusmod cupidatat aliqua amet aliquip aliquip duis excepteur pariatur cupidatat nulla ex.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "name": "reinvent real-time e-business",
+        "email": "engineer revolutionary solutions",
+        "position": "transition vertical models",
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43?w=900&h=500&fit=crop"
+        },
+        "bio": [
+          {
+            "type": "paragraph",
+            "text": "Enim ex voluptate occaecat mollit aute aliqua deserunt officia aliqua officia quis consectetur aliquip ea. In fugiat aliqua proident.",
+            "spans": []
+          }
+        ]
+      }
+    ],
+    "primary": {}
+  }
+]
