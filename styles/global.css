@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Roboto+Flex:wdth,wght@100..800;&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Roboto:wght@100;300;400;500;700&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
@@ -32,8 +32,8 @@ html {
 
 a {
   color: var(--maroon);
-  font-family: "Roboto Flex", sans-serif;
-  font-weight: 420;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
   font-size: 1rem;
   letter-spacing: .052em;
   font-style: normal;
@@ -137,7 +137,7 @@ ul li::before {
 
 blockquote {
   font-size: clamp(1.3rem, calc(1.3rem + ((1vw - 0.25rem) * 0.2679)), 1.6rem);
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Roboto", sans-serif;
   font-variant-numeric: lining-nums;
   text-transform: uppercase;
 }
@@ -145,7 +145,7 @@ blockquote {
 h1 {
   text-transform: uppercase;
   font-weight: 500;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Roboto", sans-serif;
   font-variant-numeric: lining-nums;
   font-kerning: normal;
   letter-spacing: -.002em;
@@ -173,7 +173,7 @@ h2 {
   color: var(--maroon);
   margin-bottom: calc(var(--gutter) / 2);
   text-transform: uppercase;
-  font-family: "Roboto Flex", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 label {
@@ -183,13 +183,13 @@ label {
   color: var(--maroon);
   margin-bottom: calc(var(--gutter) /2);
   text-transform: uppercase;
-  font-family: "Roboto Flex", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 h3 {
   font-size: clamp(1.85rem, calc(1.85rem + ((1vw - 0.25rem) * 1.0536)), 2.15rem) !important;
   letter-spacing: -.02em;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 500;
   line-height: 1.2;
   font-variant-numeric: lining-nums;
@@ -201,7 +201,7 @@ h3 {
 h4 {
   color: var(--dark);
   opacity: .65;
-  font-family: "Roboto Flex", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 1.4rem;
   letter-spacing: -.05em;
@@ -210,7 +210,7 @@ h4 {
 h5 {
   color: var(--dark);
   opacity: .65;
-  font-family: "Roboto Flex", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
   text-transform: uppercase;
   font-size: 1rem;
@@ -219,7 +219,7 @@ h5 {
 }
 
 p, ul {
-  font-family: "Roboto Flex", sans-serif;
+  font-family: "Roboto", sans-serif;
   color: var(--dark);
   letter-spacing: -.03em;
   font-size: 1.15rem;
@@ -229,7 +229,7 @@ p, ul {
 }
 
 input:not([type="submit"]) {
-  font-family: "Roboto Flex", sans-serif;
+  font-family: "Roboto", sans-serif;
   letter-spacing: -.022em;
   font-size: 1.15rem;
   font-weight: 300;
@@ -237,7 +237,7 @@ input:not([type="submit"]) {
 }
 
 li {
-  font-family: "Roboto Flex", sans-serif;
+  font-family: "Roboto", sans-serif;
   color: var(--dark);
   letter-spacing: -.023em;
   font-size: 1.15rem;
@@ -248,7 +248,7 @@ li {
 
 ::placeholder {
   color: var(--light);
-  font-family: "Roboto Flex", sans-serif;
+  font-family: "Roboto", sans-serif;
   letter-spacing: -.012em;
   font-size: 1.25rem;
   font-weight: 220;
@@ -297,6 +297,11 @@ body.isLight header.headerStandard svg {
 
 body.isLight div#navbar nav a {
   color: var(--maroon);
+  transition: var(--colorSwapEase);
+}
+
+body.isLight div#navbar nav a.active .activeIndi {
+  background-color: var(--maroon);
   transition: var(--colorSwapEase);
 }
 
@@ -562,6 +567,7 @@ span.lineTop {
   height: 8px;
   border-radius: 20px;
   background: var(--light);
+  transition: var(--colorSwapEase);
 }
 
 #navbar > nav a.active {
@@ -1259,7 +1265,7 @@ header#headerLarge blockquote {
   border: none;
   font-weight: 500;
   font-size: .9rem;
-  font-family: "Roboto Flex", sans-serif;
+  font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   text-decoration: underline;
   text-underline-offset: .2rem;
