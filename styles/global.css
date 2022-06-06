@@ -633,14 +633,6 @@ header#headerLarge {
   justify-content: flex-end;
 }
 
-header#headerLarge svg#homeFilter {
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  opacity: .01;
-  pointer-events: none;
-}
-
 header#headerLarge #companyNameContainer {
   display: flex;
   flex-direction: column-reverse;
@@ -683,7 +675,6 @@ header#headerLarge div.imageContainer img {
   width: 100%;
   transform: scale(1.1);
   object-fit: cover;
-  filter: url(#noise);
 }
 
 header#headerLarge h1 {
@@ -1363,11 +1354,6 @@ header#headerLarge blockquote {
   }
   #teamMembers .col .teamMemberEntry div.imageContainer {
     height: 550px;
-  }
-  #teamMembers .col .teamMemberEntry div.imageContainer img {
-    filter: url(#noise);
-    -webkit-filter: url(#noise);
-    transform: scale(1.05) translateX(-10px);
   }
   #teamMembers .col:last-child {
     margin-left: var(--colTwo);

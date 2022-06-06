@@ -53,6 +53,7 @@ const FrameworkEntry = ({ entry, index }) => {
     let tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
+        start: "center bottom-=7%",
       },
     });
 

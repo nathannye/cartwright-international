@@ -584,13 +584,6 @@ header#headerLarge
     flex-direction: column
     justify-content: flex-end
 
-    svg#homeFilter
-        height: 100%
-        width: 100%
-        position: fixed
-        opacity: .01
-        pointer-events: none;
-
     #companyNameContainer
         display: flex
         flex-direction: column-reverse
@@ -628,8 +621,6 @@ header#headerLarge
             width: 100%
             transform: scale(1.1)
             object-fit: cover
-            filter: url(#noise)
-
     h1
         margin: 0
 
@@ -1269,10 +1260,6 @@ header#headerLarge
                 div.imageContainer
                     height: 550px
 
-                    img
-                        filter: url(#noise)
-                        -webkit-filter: url(#noise)
-                        transform: scale(1.05) translateX(-10px)
 
             &:last-child
                 margin-left: var(--colTwo)

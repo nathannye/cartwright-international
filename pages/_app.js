@@ -17,7 +17,6 @@ export default function MyApp({ Component, pageProps, router }) {
     >
       <PrismicPreview repositoryName={repositoryName}>
         <Head></Head>
-
         <Component {...pageProps} />
       </PrismicPreview>
     </PrismicProvider>

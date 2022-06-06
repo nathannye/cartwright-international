@@ -34,18 +34,6 @@ export default function HeaderHome({ slice }) {
       clipPath: "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)",
     });
 
-    gsap.set(v("#turbulence"), {
-      attr: {
-        baseFrequency: ".009 .01",
-      },
-    });
-
-    gsap.set(v("#displace"), {
-      attr: {
-        scale: "100",
-      },
-    });
-
     gsap.set(outline.querySelectorAll("g"), {
       x: -20,
       autoAlpha: 0,
@@ -94,28 +82,6 @@ export default function HeaderHome({ slice }) {
           ease: "power4.inOut",
         },
         0.2
-      )
-      .to(
-        v("#turbulence"),
-        {
-          attr: {
-            baseFrequency: "0 0",
-          },
-          duration: 1.5,
-          ease: "power1.out",
-        },
-        0
-      )
-      .to(
-        v("#displace"),
-        {
-          attr: {
-            scale: "40",
-          },
-          duration: 1,
-          ease: "power1.out",
-        },
-        0
       );
 
     return () => {
@@ -144,12 +110,6 @@ export default function HeaderHome({ slice }) {
 
   return (
     <header id="headerLarge" ref={headerRef}>
-      <svg id="homeFilter" ref={svgRef}>
-        <filter id="noise">
-          <feTurbulence result="NOISE" numOctaves="1" id="turbulence" />
-          <feDisplacementMap in="SourceGraphic" in2="NOISE" id="displace" />
-        </filter>
-      </svg>
       <div id="companyNameContainer">
         <h2>
           A sales training and consulting agency with a vision to make sales

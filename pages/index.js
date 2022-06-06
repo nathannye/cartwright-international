@@ -24,14 +24,14 @@ const Index = ({ page, menu, footer }) => {
 };
 
 export default Index;
-
 export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData });
 
   const page = await client.getByUID("webpage", "home");
   const footer = await client.getSingle("contact-us");
+  const menu = await client.getSingle("menu");
 
   return {
-    props: { page, footer },
+    props: { page, footer, menu },
   };
 }

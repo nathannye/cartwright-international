@@ -6,13 +6,13 @@ import SplitText from "gsap/dist/SplitText";
 
 const Member = ({ entry, index }) => {
   const memberRef = useRef(null);
-  const svgRef = useRef(null);
+  // const svgRef = useRef(null);
 
   const tl = useRef(null);
 
   useIsomorphicLayoutEffect(() => {
     const q = gsap.utils.selector(memberRef.current);
-    const v = gsap.utils.selector(svgRef.current);
+    // const v = gsap.utils.selector(svgRef.current);
 
     gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -37,21 +37,21 @@ const Member = ({ entry, index }) => {
       autoAlpha: 0,
     });
 
-    gsap.set(v("#turbulence"), {
-      attr: {
-        baseFrequency: ".012 .012",
-      },
-    });
+    // gsap.set(v("#turbulence"), {
+    //   attr: {
+    //     baseFrequency: ".012 .012",
+    //   },
+    // });
 
-    gsap.set(v("#displace"), {
-      attr: {
-        scale: "100",
-      },
-    });
+    // gsap.set(v("#displace"), {
+    //   attr: {
+    //     scale: "100",
+    //   },
+    // });
 
     gsap.set(q("a"), {
       autoAlpha: 0,
-      y: 8,
+      y: 18,
     });
 
     gsap.set(q(".imageContainer"), {
@@ -61,8 +61,7 @@ const Member = ({ entry, index }) => {
     tl.current = gsap.timeline({
       scrollTrigger: {
         trigger: memberRef.current,
-        // markers: true,
-        // scrub: true,
+        start: "center bottom-=13%",
       },
     });
     tl.current
@@ -71,28 +70,6 @@ const Member = ({ entry, index }) => {
         {
           clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
           duration: 1.5,
-        },
-        0
-      )
-      .to(
-        v("#turbulence"),
-        {
-          attr: {
-            baseFrequency: "0 0",
-          },
-          duration: 1.5,
-          ease: "circ.out",
-        },
-        0
-      )
-      .to(
-        v("#displace"),
-        {
-          attr: {
-            scale: "40",
-          },
-          duration: 1,
-          ease: "circ.out",
         },
         0
       )
@@ -139,27 +116,19 @@ const Member = ({ entry, index }) => {
   }, []);
 
   return (
-    <>
-      <svg ref={svgRef} width={400} height={700}>
-        <filter id="noise">
-          <feTurbulence result="NOISE" numOctaves="1" id="turbulence" />
-          <feDisplacementMap in="SourceGraphic" in2="NOISE" id="displace" />
-        </filter>
-      </svg>
-      <div key={entry.name} className="teamMemberEntry" ref={memberRef}>
-        <h5>{entry.position}</h5>
-        <div className="imageContainer">
-          <img src={entry.image.url} alt={entry.image.alt} />
-        </div>
-        <div className="teamMemberText">
-          <h3>{entry.name}</h3>
-          <p>{entry.bio}</p>
-          <a href={`mailto:${entry.email}`} className="internalLink">
-            Contact
-          </a>
-        </div>
+    <div key={entry.name} className="teamMemberEntry" ref={memberRef}>
+      <h5>{entry.position}</h5>
+      <div className="imageContainer">
+        <img src={entry.image.url} alt={entry.image.alt} />
       </div>
-    </>
+      <div className="teamMemberText">
+        <h3>{entry.name}</h3>
+        <p>{entry.bio}</p>
+        <a href={`mailto:${entry.email}`} className="internalLink">
+          Contact
+        </a>
+      </div>
+    </div>
   );
 };
 

@@ -14,7 +14,7 @@ gsap.defaults({
 });
 
 ScrollTrigger.defaults({
-  start: "top bottom-=4%",
+  start: "top bottom-=11%",
 });
 
 export const Layout = ({ children, menu }) => {
