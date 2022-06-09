@@ -15,103 +15,104 @@ const Member = ({ entry, index }) => {
     const q = gsap.utils.selector(memberRef.current);
 
     gsap.registerPlugin(ScrollTrigger, SplitText);
+    document.fonts.ready.then(() => {
+      nameSplit.current = new SplitText(q("h3"), {
+        type: "words, lines",
+        linesClass: "splitLineOverflow",
+      });
 
-    nameSplit.current = new SplitText(q("h3"), {
-      type: "words, lines",
-      linesClass: "splitLineOverflow",
-    });
+      bioSplit.current = new SplitText(q("p"), {
+        type: "lines",
+      });
 
-    bioSplit.current = new SplitText(q("p"), {
-      type: "lines",
-    });
+      gsap.set(nameSplit.current.words, {
+        yPercent: 100,
+      });
+      gsap.set(bioSplit.current.lines, {
+        y: 8,
+        autoAlpha: 0,
+      });
 
-    gsap.set(nameSplit.current.words, {
-      yPercent: 100,
-    });
-    gsap.set(bioSplit.current.lines, {
-      y: 8,
-      autoAlpha: 0,
-    });
+      gsap.set(q("h4"), {
+        autoAlpha: 0,
+      });
 
-    gsap.set(q("h4"), {
-      autoAlpha: 0,
-    });
+      gsap.set(q("a"), {
+        autoAlpha: 0,
+        y: 18,
+      });
 
-    gsap.set(q("a"), {
-      autoAlpha: 0,
-      y: 18,
-    });
+      gsap.set(q("h5"), {
+        autoAlpha: 0,
+      });
 
-    gsap.set(q("h5"), {
-      autoAlpha: 0,
-    });
+      gsap.set(q(".imageContainer"), {
+        clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)",
+      });
 
-    gsap.set(q(".imageContainer"), {
-      clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)",
-    });
-
-    tl.current = gsap.timeline({
-      scrollTrigger: {
-        trigger: memberRef.current,
-        start: "center bottom-=4%",
-      },
-      onComplete: () => {
-        nameSplit.current.revert();
-        bioSplit.current.revert();
-      },
-    });
-    tl.current
-      .to(
-        q("h5"),
-        {
-          autoAlpha: 1,
-          duration: 0.4,
-          ease: "none",
+      tl.current = gsap.timeline({
+        scrollTrigger: {
+          trigger: memberRef.current,
+          start: "center bottom-=4%",
         },
-        0
-      )
-      .to(
-        q(".imageContainer"),
-        {
-          clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-          duration: 1.5,
+        onComplete: () => {
+          nameSplit.current.revert();
+          bioSplit.current.revert();
         },
-        0
-      )
-      .to(
-        nameSplit.current.words,
-        {
-          yPercent: 0,
-        },
-        0.1
-      )
-      .to(
-        q("h4"),
-        {
-          autoAlpha: 1,
-          duration: 0.6,
-        },
-        0.1
-      )
-      .to(
-        bioSplit.current.lines,
-        {
-          y: 0,
-          stagger: 0.06,
-          ease: "power3.out",
-          autoAlpha: 1,
-        },
-        0.2
-      )
-      .to(
-        q("a"),
-        {
-          y: 0,
-          autoAlpha: 1,
-          ease: "power2.out",
-        },
-        0.2
-      );
+      });
+      tl.current
+        .to(
+          q("h5"),
+          {
+            autoAlpha: 1,
+            duration: 0.4,
+            ease: "none",
+          },
+          0
+        )
+        .to(
+          q(".imageContainer"),
+          {
+            clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+            duration: 1.5,
+          },
+          0
+        )
+        .to(
+          nameSplit.current.words,
+          {
+            yPercent: 0,
+          },
+          0.1
+        )
+        .to(
+          q("h4"),
+          {
+            autoAlpha: 1,
+            duration: 0.6,
+          },
+          0.1
+        )
+        .to(
+          bioSplit.current.lines,
+          {
+            y: 0,
+            stagger: 0.06,
+            ease: "power3.out",
+            autoAlpha: 1,
+          },
+          0.2
+        )
+        .to(
+          q("a"),
+          {
+            y: 0,
+            autoAlpha: 1,
+            ease: "power2.out",
+          },
+          0.2
+        );
+    });
 
     return () => {
       ScrollTrigger.kill;

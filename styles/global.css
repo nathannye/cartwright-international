@@ -586,7 +586,7 @@ span.lineTop {
   width: 20px;
   top: 50%;
   transform: translateY(-50%);
-  left: -1.45rem;
+  left: -.65rem;
   position: absolute;
   display: flex;
   opacity: 0;
@@ -596,8 +596,8 @@ span.lineTop {
 }
 
 #navbar > nav a .activeBox .activeIndi {
-  width: 8px;
-  height: 8px;
+  width: 34%;
+  height: 34%;
   border-radius: 20px;
   background: var(--light);
   transition: var(--colorSwapEase);
@@ -605,6 +605,8 @@ span.lineTop {
 
 #navbar > nav a.active {
   margin-left: 1.25rem;
+  padding-left: 1rem;
+  transition: var(--powerEase);
 }
 
 #navbar > nav a.active .activeBox {
