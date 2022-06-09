@@ -16,98 +16,100 @@ const FrameworkEntry = ({ entry, index }) => {
     let maroonIcon = q(".iconContainer:first-of-type");
     let whiteIcon = q(".iconContainer:nth-of-type(2)");
 
-    smallSplit.current = new SplitText(q(".cardInfo h3"), {
-      type: "words, lines",
-      linesClass: "splitLineOverflow",
-    });
+    document.fonts.ready.then(() => {
+      smallSplit.current = new SplitText(q(".cardInfo h3"), {
+        type: "words, lines",
+        linesClass: "splitLineOverflow",
+      });
 
-    gsap.set(smallSplit.current.split.words, {
-      yPercent: 100,
-    });
+      gsap.set(smallSplit.current.split.words, {
+        yPercent: 100,
+      });
 
-    headerSplit.current = new SplitText(q(".frameworkText h3"), {
-      type: "words, lines",
-      linesClass: "splitLineOverflow",
-    });
+      headerSplit.current = new SplitText(q(".frameworkText h3"), {
+        type: "words, lines",
+        linesClass: "splitLineOverflow",
+      });
 
-    gsap.set(headerSplit.current.words, {
-      yPercent: -100,
-    });
+      gsap.set(headerSplit.current.words, {
+        yPercent: -100,
+      });
 
-    paraSplit.current = new SplitText(q(".frameworkText p"), {
-      type: "lines",
-    });
+      paraSplit.current = new SplitText(q(".frameworkText p"), {
+        type: "lines",
+      });
 
-    gsap.set(paraSplit.current.lines, {
-      y: 8,
-      autoAlpha: 0,
-    });
+      gsap.set(paraSplit.current.lines, {
+        y: 8,
+        autoAlpha: 0,
+      });
 
-    gsap.set(maroonIcon, {
-      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-    });
+      gsap.set(maroonIcon, {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+      });
 
-    gsap.set(whiteIcon, {
-      clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)",
-    });
+      gsap.set(whiteIcon, {
+        clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)",
+      });
 
-    tl.current = gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "center bottom-=7%",
-      },
-      onComplete: () => {
-        headerSplit.current.revert();
-        paraSplit.current.revert();
-        smallSplit.current.revert();
-      },
-    });
-
-    tl.current
-      .to(
-        maroonIcon,
-        {
-          clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-          duration: 1,
+      tl.current = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "center bottom-=7%",
         },
-        0
-      )
-      .to(
-        whiteIcon,
-        {
-          clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-          duration: 1,
+        onComplete: () => {
+          headerSplit.current.revert();
+          paraSplit.current.revert();
+          smallSplit.current.revert();
         },
-        0
-      )
-      .to(
-        smallSplit.current.words,
-        {
-          yPercent: 0,
-          stagger: 0.07,
-        },
-        0
-      )
-      .to(
-        headerSplit.current.words,
-        {
-          yPercent: 0,
-          duration: 0.85,
-          ease: "power4.inOut",
-          stagger: 0.1,
-        },
-        0.3
-      )
-      .to(
-        paraSplit.current.lines,
-        {
-          y: 0,
-          autoAlpha: 1,
-          stagger: 0.06,
-          ease: "power3.out",
-        },
-        0.75
-      );
+      });
+
+      tl.current
+        .to(
+          maroonIcon,
+          {
+            clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
+            duration: 1,
+          },
+          0
+        )
+        .to(
+          whiteIcon,
+          {
+            clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+            duration: 1,
+          },
+          0
+        )
+        .to(
+          smallSplit.current.words,
+          {
+            yPercent: 0,
+            stagger: 0.07,
+          },
+          0
+        )
+        .to(
+          headerSplit.current.words,
+          {
+            yPercent: 0,
+            duration: 0.85,
+            ease: "power4.inOut",
+            stagger: 0.1,
+          },
+          0.3
+        )
+        .to(
+          paraSplit.current.lines,
+          {
+            y: 0,
+            autoAlpha: 1,
+            stagger: 0.06,
+            ease: "power3.out",
+          },
+          0.75
+        );
+    });
   }, []);
 
   return (

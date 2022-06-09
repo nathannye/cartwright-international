@@ -34,8 +34,5 @@ export async function getStaticProps({ previewData }) {
 
   return {
     props: { page, footer, menu },
-    // function() {
-    //   ScrollTrigger.refresh();
-    // },
   };
 }

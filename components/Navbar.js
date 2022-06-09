@@ -82,6 +82,11 @@ const Navbar = ({ menu }) => {
         duration: 0.72,
         ease: "power3.inOut",
         stagger: -0.18,
+        onComplete: () => {
+          if (document.body.classList.contains("isLight")) {
+            document.body.classList.remove("isLight ");
+          }
+        },
       });
     };
 
