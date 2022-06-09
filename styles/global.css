@@ -64,11 +64,7 @@ a.internalLink:after, a.internalLink:before {
   height: .9rem;
 }
 
-a.internalLink#privacy {
-  margin-left: 3em;
-}
-
-a.internalLink#privacy:after, a.internalLink#privacy:before {
+a.internalLink:after:after, a.internalLink:after:before, a.internalLink:before:after, a.internalLink:before:before {
   filter: brightness(40) saturate(0);
 }
 
@@ -413,6 +409,10 @@ footer .topSplit {
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-between;
+}
+
+footer #privacy {
+  margin-left: 0;
 }
 
 footer #emailFormContainer {
@@ -1394,6 +1394,7 @@ header#headerLarge blockquote {
   }
   footer #privacy {
     margin-right: 2rem;
+    margin-left: 3rem;
   }
   footer .bottomSplit a, footer .bottomSplit p {
     min-width: unset !important;

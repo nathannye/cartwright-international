@@ -48,14 +48,7 @@ const Footer = ({ contact }) => {
       </div>
       <div className="bottomSplit">
         <div>
-          <a
-            className="secondaryLink"
-            href="https://www.nye.design"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Made by Nathan Nye
-          </a>
+          <a className="secondaryLink">Made by Nathan Nye</a>
           <Link href="/privacy-policy">
             <a className="internalLink" id="privacy">
               Privacy Policy
