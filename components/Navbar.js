@@ -146,27 +146,29 @@ const Navbar = ({ menu }) => {
     const q = gsap.utils.selector(mobileNavRef.current);
 
     linkRefs.current.forEach((link, index) => {
-      link.split = new SplitText(link, {
-        type: "lines, words",
-        linesClass: "splitLineOverflow",
+      document.fonts.ready.then(() => {
+        link.split = new SplitText(link, {
+          type: "lines, words",
+          linesClass: "splitLineOverflow",
+        });
+
+        gsap.set(link.split.words, {
+          yPercent: -100,
+        });
+
+        let tween = gsap.to(
+          link.split.words,
+          {
+            yPercent: 0,
+            stagger: 0.06,
+            duration: 0.72,
+            delay: index / 10,
+          },
+          0.1
+        );
+
+        masterTL.add(tween, 0.1);
       });
-
-      gsap.set(link.split.words, {
-        yPercent: -100,
-      });
-
-      let tween = gsap.to(
-        link.split.words,
-        {
-          yPercent: 0,
-          stagger: 0.06,
-          duration: 0.72,
-          delay: index / 10,
-        },
-        0.1
-      );
-
-      masterTL.add(tween, 0.1);
     });
 
     gsap.set(mobileNavRef.current, {

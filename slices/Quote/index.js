@@ -13,42 +13,44 @@ const Quote = ({ slice }) => {
   useIsomorphicLayoutEffect(() => {
     const q = gsap.utils.selector(quoteRef.current);
 
-    split.current = new SplitText(q("blockquote"), {
-      type: "lines",
-    });
+    document.fonts.ready.then(() => {
+      split.current = new SplitText(q("blockquote"), {
+        type: "lines",
+      });
 
-    gsap.set(split.current.lines, {
-      y: 18,
-      autoAlpha: 0,
-    });
+      gsap.set(split.current.lines, {
+        y: 18,
+        autoAlpha: 0,
+      });
 
-    gsap.set(q("a"), {
-      y: 18,
-      autoAlpha: 0,
-    });
+      gsap.set(q("a"), {
+        y: 18,
+        autoAlpha: 0,
+      });
 
-    tl.current = gsap.timeline({
-      scrollTrigger: {
-        trigger: quoteRef.current,
-      },
-    });
+      tl.current = gsap.timeline({
+        scrollTrigger: {
+          trigger: quoteRef.current,
+        },
+      });
 
-    tl.current
-      .to(
-        split.current.lines,
-        {
+      tl.current
+        .to(
+          split.current.lines,
+          {
+            y: 0,
+            autoAlpha: 1,
+            stagger: 0.06,
+            ease: "power3.out",
+          },
+          0
+        )
+        .to(q("a"), {
           y: 0,
           autoAlpha: 1,
-          stagger: 0.06,
           ease: "power3.out",
-        },
-        0
-      )
-      .to(q("a"), {
-        y: 0,
-        autoAlpha: 1,
-        ease: "power3.out",
-      });
+        });
+    });
     return () => {
       tl.current.kill();
     };

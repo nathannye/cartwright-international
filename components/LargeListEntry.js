@@ -17,56 +17,58 @@ const LargeListEntry = ({ entry, index }) => {
       transformOrigin: "left center",
     });
 
-    split.current = new SplitText(q("h3"), {
-      type: "words, lines",
-      linesClass: "splitLineOverflow",
-    });
+    document.fonts.ready.then(() => {
+      split.current = new SplitText(q("h3"), {
+        type: "words, lines",
+        linesClass: "splitLineOverflow",
+      });
 
-    gsap.set(split.current.words, {
-      yPercent: -100,
-    });
+      gsap.set(split.current.words, {
+        yPercent: -100,
+      });
 
-    gsap.set(q("li"), {
-      y: 7,
-      autoAlpha: 0,
-    });
+      gsap.set(q("li"), {
+        y: 7,
+        autoAlpha: 0,
+      });
 
-    tl.current = gsap.timeline({
-      scrollTrigger: {
-        trigger: entryRef.current,
-      },
-    });
-
-    tl.current
-
-      .to(
-        split.current.words,
-        {
-          yPercent: 0,
-          stagger: 0.06,
-          duration: 0.85,
-          ease: "power3.inOut",
+      tl.current = gsap.timeline({
+        scrollTrigger: {
+          trigger: entryRef.current,
         },
-        0.06
-      )
-      .to(
-        q(".lineTop"),
-        {
-          scaleX: 1,
-          duration: 0.55,
-        },
-        0.07
-      )
-      .to(
-        q("li"),
-        {
-          autoAlpha: 1,
-          y: 0,
-          stagger: 0.054,
-          ease: "power2.out",
-        },
-        0.34
-      );
+      });
+
+      tl.current
+
+        .to(
+          split.current.words,
+          {
+            yPercent: 0,
+            stagger: 0.06,
+            duration: 0.85,
+            ease: "power3.inOut",
+          },
+          0.06
+        )
+        .to(
+          q(".lineTop"),
+          {
+            scaleX: 1,
+            duration: 0.55,
+          },
+          0.07
+        )
+        .to(
+          q("li"),
+          {
+            autoAlpha: 1,
+            y: 0,
+            stagger: 0.054,
+            ease: "power2.out",
+          },
+          0.34
+        );
+    });
   });
 
   // const evens = entry["entry-bullet-list"].filter(

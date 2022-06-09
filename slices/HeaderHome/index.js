@@ -20,82 +20,83 @@ export default function HeaderHome({ slice }) {
 
     const q = gsap.utils.selector(headerRef.current);
 
-    splitH2.current = new SplitText(q("h2"), {
-      type: "lines",
-    });
+    document.fonts.ready.then(() => {
+      splitH2.current = new SplitText(q("h2"), {
+        type: "lines",
+      });
 
-    gsap.set(q(".imageContainer"), {
-      clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
-    });
-    gsap.set(q("svg > g#solidText > g"), {
-      x: -20,
-      clipPath: "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)",
-    });
+      gsap.set(q(".imageContainer"), {
+        clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+      });
+      gsap.set(q("svg > g#solidText > g"), {
+        x: -20,
+        clipPath: "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)",
+      });
 
-    gsap.set(q("svg > g#outlineText g"), {
-      x: -20,
-      autoAlpha: 0,
-    });
+      gsap.set(q("svg > g#outlineText g"), {
+        x: -20,
+        autoAlpha: 0,
+      });
 
-    tl.current = gsap.timeline({
-      delay: 1.1,
-      onComplete: () => {
-        splitH2.current.revert();
-      },
+      tl.current = gsap.timeline({
+        delay: 1.1,
+        onComplete: () => {
+          splitH2.current.revert();
+        },
+      });
+      tl.current
+        .to(
+          q("svg > g#outlineText g"),
+          {
+            stagger: -0.17,
+            x: 0,
+            autoAlpha: 1,
+            duration: 0.78,
+            ease: "power3.out",
+          },
+          0
+        )
+        .to(
+          q("svg > g#solidText > g"),
+          {
+            stagger: 0.14,
+            x: 0,
+            duration: 0.78,
+            ease: "power3.out",
+          },
+          0
+        )
+        .to(
+          q("svg > g#solidText g"),
+          {
+            clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+            stagger: 0.14,
+            duration: 0.78,
+            ease: "power3.inOut",
+          },
+          0.06
+        )
+        .from(
+          splitH2.current.lines,
+          {
+            autoAlpha: 0,
+            y: 10,
+            ease: "power3.out",
+            stagger: 0.06,
+          },
+          0.1
+        )
+        .to(
+          q(".imageContainer"),
+          {
+            clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+            duration: 0.98,
+            delay: 0.5,
+            ease: "power4.inOut",
+          },
+          0.5
+        );
     });
-    tl.current
-      .to(
-        q("svg > g#outlineText g"),
-        {
-          stagger: -0.17,
-          x: 0,
-          autoAlpha: 1,
-          duration: 0.78,
-          ease: "power3.out",
-        },
-        0
-      )
-      .to(
-        q("svg > g#solidText > g"),
-        {
-          stagger: 0.14,
-          x: 0,
-          duration: 0.78,
-          ease: "power3.out",
-        },
-        0
-      )
-      .to(
-        q("svg > g#solidText g"),
-        {
-          clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-          stagger: 0.14,
-          duration: 0.78,
-          ease: "power3.inOut",
-        },
-        0.06
-      )
-      .from(
-        splitH2.current.lines,
-        {
-          autoAlpha: 0,
-          y: 10,
-          ease: "power3.out",
-          stagger: 0.06,
-        },
-        0.1
-      )
-      .to(
-        q(".imageContainer"),
-        {
-          clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-          duration: 0.98,
-          delay: 0.5,
-          ease: "power4.inOut",
-        },
-        0.5
-      );
-
     return () => {
       tl.current.kill();
     };
