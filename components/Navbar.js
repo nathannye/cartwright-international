@@ -28,9 +28,9 @@ const Navbar = ({ menu }) => {
 
     introtl.current = gsap.timeline({
       delay: 0.5,
-      // onComplete: () => {
-      //   introtl.current.kill();
-      // },
+      onComplete: () => {
+        introtl.current.kill();
+      },
     });
 
     gsap.set(n("a"), {
@@ -62,7 +62,7 @@ const Navbar = ({ menu }) => {
         },
         0
       );
-  });
+  }, []);
 
   useIsomorphicLayoutEffect(() => {
     const q = gsap.utils.selector(transitionRef.current);
