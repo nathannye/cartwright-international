@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { EmailForm } from "../components/EmailForm";
+import MailchimpForm from "../components/MailchimpForm";
 import { createClient } from "../prismicio";
 import SocialIcon from "../components/SocialIcon";
 
@@ -25,7 +25,7 @@ const Footer = ({ contact }) => {
           </div>
         </div>
         <div>
-          <EmailForm />
+          <MailchimpForm />
           <div id="socialIcons">
             <h2>keep up with us on social!</h2>
             <div>
