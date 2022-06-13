@@ -84,7 +84,7 @@ const Navbar = ({ menu }) => {
         stagger: -0.18,
         onComplete: () => {
           if (document.body.classList.contains("isLight")) {
-            document.body.classList.remove("isLight ");
+            document.body.classList.remove("isLight");
           }
         },
       });

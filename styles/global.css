@@ -396,8 +396,12 @@ footer #socialIcons > div a img {
   width: 100%;
 }
 
+footer div.formStatus {
+  margin-top: .5rem;
+}
+
 footer p {
-  text-transform: uppercase;
+  opacity: .5;
 }
 
 footer.noFooter {
@@ -430,7 +434,17 @@ footer #emailFormContainer form {
   position: relative;
 }
 
-footer #emailFormContainer input#emailField {
+footer #emailFormContainer form .invisiFields {
+  position: absolute;
+  top: 0;
+  left: -5000px;
+}
+
+footer #emailFormContainer form .statusMessage.hide {
+  display: none;
+}
+
+footer #emailFormContainer input#MERGE0 {
   width: 100%;
   background: transparent;
   border: none;
@@ -445,7 +459,7 @@ footer #emailFormContainer input#emailField {
   transition: var(--powerEase);
 }
 
-footer #emailFormContainer input#emailField:after {
+footer #emailFormContainer input#MERGE0:after {
   position: absolute;
   left: 0;
   bottom: 1rem;
@@ -1390,7 +1404,7 @@ header#headerLarge blockquote {
   header#headerLarge img {
     height: 55%;
   }
-  footer .topSplit > div {
+  footer .topSplit > div:not(:last-child) {
     max-width: var(--colFive);
   }
   footer #emailFormContainer {
@@ -1470,7 +1484,7 @@ header#headerLarge blockquote {
   }
   .quoteLarge {
     width: var(--colSeven);
-    margin-right: var(--colOne);
+    padding-right: var(--colOne);
     margin-left: var(--colOne);
     max-width: 2000px;
   }

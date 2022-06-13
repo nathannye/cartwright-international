@@ -350,8 +350,11 @@ footer
                     height: 100%
                     width: 100%
 
+    div.formStatus
+        margin-top: .5rem
+
     p
-        text-transform: uppercase
+        opacity: .5
 
     &.noFooter
         display: none
@@ -376,8 +379,16 @@ footer
 
         form
             position: relative
+
+            .invisiFields
+                position: absolute
+                top: 0 
+                left: -5000px
             
-        input#emailField
+            .statusMessage.hide
+                display: none
+            
+        input#MERGE0
             width: 100%
             background: transparent
             border: none
@@ -1244,7 +1255,7 @@ header#headerLarge
 
         .topSplit
 
-            & > div
+            & > div:not(:last-child)
                 max-width: var(--colFive)
 
         #emailFormContainer
@@ -1338,7 +1349,7 @@ header#headerLarge
     
     .quoteLarge
         width: var(--colSeven)
-        margin-right: var(--colOne)
+        padding-right: var(--colOne)
         margin-left: var(--colOne)
         max-width: 2000px
 

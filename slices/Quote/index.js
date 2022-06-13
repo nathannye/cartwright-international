@@ -32,6 +32,9 @@ const Quote = ({ slice }) => {
         scrollTrigger: {
           trigger: quoteRef.current,
         },
+        onComplete: () => {
+          split.current.revert();
+        },
       });
 
       tl.current
@@ -52,7 +55,9 @@ const Quote = ({ slice }) => {
         });
     });
     return () => {
-      tl.current.kill();
+      if (tl.current) {
+        tl.current.kill();
+      }
     };
   });
 

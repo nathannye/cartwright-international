@@ -2,7 +2,6 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import MailchimpForm from "../components/MailchimpForm";
 import { createClient } from "../prismicio";
-import SocialIcon from "../components/SocialIcon";
 
 const Footer = ({ contact }) => {
   const router = useRouter();

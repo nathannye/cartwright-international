@@ -10,7 +10,7 @@ import DrawSVGPlugin from "gsap/dist/DrawSVGPlugin";
 const HeaderStandard = ({ slice }) => {
   const colorTL = useRef(null);
   const el = useRef(null);
-  const tl = useRef(null);
+  const tl = useRef();
   const outlineSplit = useRef(null);
   const solidSplit = useRef(null);
 
@@ -158,7 +158,9 @@ const HeaderStandard = ({ slice }) => {
         );
     });
     return () => {
-      tl.current.kill();
+      if (tl.current) {
+        tl.current.kill();
+      }
     };
   });
 

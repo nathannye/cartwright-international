@@ -6,7 +6,6 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import SplitText from "gsap/dist/SplitText";
 
 export default function HeaderHome({ slice }) {
-  const imageRef = useRef();
   const tl = useRef(null);
   const headerRef = useRef(null);
   const colorTL = useRef(null);
@@ -98,9 +97,11 @@ export default function HeaderHome({ slice }) {
         );
     });
     return () => {
-      tl.current.kill();
+      if (tl.current) {
+        tl.current.kill;
+      }
     };
-  });
+  }, []);
 
   useIsomorphicLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
