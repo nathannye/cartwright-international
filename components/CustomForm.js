@@ -1,5 +1,4 @@
 import { useState, useRef } from "react";
-import FormMessage from "./FormMessage";
 
 const CustomForm = ({ status, message, onValidated }) => {
   const [email, setEmail] = useState("");
