@@ -2,7 +2,7 @@ import { createClient } from "../prismicio";
 import Link from "next/link";
 import { Layout } from "../components/Layout";
 import Head from "next/head";
-import { EmailForm } from "../components/EmailForm";
+import MailchimpForm from "../components/MailchimpForm";
 import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
 import { useRef } from "react";
 import gsap from "gsap";
@@ -117,7 +117,7 @@ const MeetUs = ({ page, menu }) => {
           {/* </h3> */}
         </main>
         <footer className="shortFooter">
-          <EmailForm />
+          <MailchimpForm />
           <div className="infoSplit">
             <Link href="/">
               <a className="secondaryLink">Privacy Policy</a>
