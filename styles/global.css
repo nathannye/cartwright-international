@@ -337,8 +337,7 @@ body.isLight div#navbar #hamburgerBtn svg path.hamburgerLine {
 }
 
 .shortFooter > div {
-  width: 50%;
-  flex-grow: 1;
+  min-width: 270px;
 }
 
 .shortFooter #emailFormContainer {
@@ -440,8 +439,8 @@ footer #emailFormContainer form .invisiFields {
   left: -5000px;
 }
 
-footer #emailFormContainer form .statusMessage.hide {
-  display: none;
+footer #emailFormContainer form .formStatus p {
+  margin-bottom: 0 !important;
 }
 
 footer #emailFormContainer input#MERGE0 {
@@ -486,7 +485,7 @@ footer #emailFormContainer input[type="submit"] {
 }
 
 footer #emailFormContainer input[type="submit"]:hover {
-  transform: translateX(-10px);
+  opacity: .5;
   transition: var(--powerEase);
 }
 

@@ -303,9 +303,8 @@ body
         line-height: 1
 
     & > div
-        width: 50%
-        flex-grow: 1
-
+        min-width: 270px 
+        
     #emailFormContainer
         flex-grow: 1
         margin-bottom: 1rem
@@ -385,8 +384,8 @@ footer
                 top: 0 
                 left: -5000px
             
-            .statusMessage.hide
-                display: none
+            .formStatus p
+                margin-bottom: 0 !important
             
         input#MERGE0
             width: 100%
@@ -427,7 +426,7 @@ footer
             transition: var(--powerEase)
 
             &:hover
-                transform: translateX(-10px)
+                opacity: .5
                 transition: var(--powerEase)
 
         span.lineBottom
