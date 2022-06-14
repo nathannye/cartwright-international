@@ -1,0 +1,69 @@
+[
+  {
+    "variation": "default",
+    "name": "Default",
+    "slice_type": "vertical_list_small",
+    "items": [
+      {
+        "heading": "embrace dot-com users",
+        "description": "strategize distributed web services",
+        "link": {
+          "link_type": "Web",
+          "url": "http://google.com"
+        }
+      },
+      {
+        "heading": "exploit clicks-and-mortar e-tailers",
+        "description": "revolutionize dynamic deliverables",
+        "link": {
+          "link_type": "Web",
+          "url": "https://slicemachine.dev"
+        }
+      },
+      {
+        "heading": "aggregate vertical users",
+        "description": "synergize strategic e-services",
+        "link": {
+          "link_type": "Web",
+          "url": "https://slicemachine.dev"
+        }
+      },
+      {
+        "heading": "mesh bleeding-edge networks",
+        "description": "exploit bleeding-edge architectures",
+        "link": {
+          "link_type": "Web",
+          "url": "https://prismic.io"
+        }
+      },
+      {
+        "heading": "transform sticky infrastructures",
+        "description": "scale world-class e-markets",
+        "link": {
+          "link_type": "Web",
+          "url": "http://google.com"
+        }
+      }
+    ],
+    "primary": {
+      "title": "transform out-of-the-box content"
+    }
+  },
+  {
+    "variation": "verticalListWithDescription",
+    "name": "VerticalListWithDescription",
+    "slice_type": "vertical_list_small",
+    "items": [
+      {
+        "heading": "harness compelling ROI"
+      },
+      {
+        "heading": "leverage dot-com synergies"
+      }
+    ],
+    "primary": {
+      "title": "syndicate cross-platform infrastructures",
+      "description": "incubate granular bandwidth"
+    }
+  }
+]

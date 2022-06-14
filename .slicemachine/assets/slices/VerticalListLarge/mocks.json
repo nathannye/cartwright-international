@@ -1,0 +1,65 @@
+[
+  {
+    "variation": "default",
+    "name": "Default",
+    "slice_type": "vertical_list_large",
+    "items": [
+      {
+        "entry-title": "reintermediate cutting-edge markets",
+        "entry-description": "target customized convergence",
+        "entry-bullet-list": [
+          {
+            "type": "paragraph",
+            "text": "Voluptate eu laborum do ea id reprehenderit. Adipisicing et mollit adipisicing dolore occaecat deserunt commodo non dolor esse anim aute.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "entry-title": "strategize B2B e-business",
+        "entry-description": "utilize robust systems",
+        "entry-bullet-list": [
+          {
+            "type": "paragraph",
+            "text": "Enim mollit est enim sint. Officia ut ullamco occaecat Lorem dolor incididunt elit. Adipisicing qui ad mollit nulla sint et aliqua consequat.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "entry-title": "target end-to-end schemas",
+        "entry-description": "transition best-of-breed convergence",
+        "entry-bullet-list": [
+          {
+            "type": "paragraph",
+            "text": "Do amet sit enim Lorem ipsum ut eu ullamco. Minim laboris tempor nisi cupidatat cillum cupidatat non amet adipisicing commodo veniam elit occaecat commodo.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "entry-title": "evolve sexy ROI",
+        "entry-description": "expedite collaborative web-readiness",
+        "entry-bullet-list": [
+          {
+            "type": "paragraph",
+            "text": "Eiusmod pariatur mollit laboris deserunt est deserunt enim reprehenderit nostrud culpa tempor.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "entry-title": "unleash revolutionary communities",
+        "entry-description": "synergize value-added e-business",
+        "entry-bullet-list": [
+          {
+            "type": "paragraph",
+            "text": "Lorem exercitation amet aliquip magna quis est ea. Mollit mollit ad dolore fugiat adipisicing dolore reprehenderit aute reprehenderit do eiusmod est id in ex.",
+            "spans": []
+          }
+        ]
+      }
+    ],
+    "primary": {}
+  }
+]

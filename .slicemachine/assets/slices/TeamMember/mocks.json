@@ -1,0 +1,52 @@
+[
+  {
+    "variation": "default",
+    "name": "Default",
+    "slice_type": "team_member",
+    "items": [
+      {
+        "name": "productize robust mindshare",
+        "email": "expedite seamless e-markets",
+        "position": "monetize user-centric users",
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1596195689404-24d8a8d1c6ea?w=900&h=500&fit=crop"
+        },
+        "bio": [
+          {
+            "type": "paragraph",
+            "text": "Consequat elit nulla voluptate. Velit minim est eu irure quis cupidatat duis duis ex occaecat quis id voluptate. Nostrud tempor fugiat nulla fugiat.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "name": "benchmark distributed vortals",
+        "email": "maximize frictionless ROI",
+        "position": "aggregate cutting-edge architectures",
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab?w=900&h=500&fit=crop"
+        },
+        "bio": [
+          {
+            "type": "paragraph",
+            "text": "Fugiat et deserunt excepteur non commodo excepteur eu sit cillum officia aliqua pariatur sint commodo. Ut minim proident nostrud velit labore ad et enim nostrud. Aute elit et esse ipsum sint elit pariatur.",
+            "spans": []
+          }
+        ]
+      }
+    ],
+    "primary": {}
+  }
+]

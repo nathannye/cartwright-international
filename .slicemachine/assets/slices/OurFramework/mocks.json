@@ -1,0 +1,32 @@
+[
+  {
+    "variation": "default",
+    "name": "Default",
+    "slice_type": "our_framework",
+    "items": [
+      {
+        "title": "incubate clicks-and-mortar portals",
+        "heading": "empower plug-and-play metrics",
+        "description": "redefine impactful ROI"
+      },
+      {
+        "title": "transition visionary solutions",
+        "heading": "deploy distributed convergence",
+        "description": "brand vertical communities"
+      },
+      {
+        "title": "matrix interactive interfaces",
+        "heading": "seize impactful bandwidth",
+        "description": "e-enable innovative systems"
+      },
+      {
+        "title": "maximize sticky eyeballs",
+        "heading": "transition global ROI",
+        "description": "transition cross-platform e-business"
+      }
+    ],
+    "primary": {
+      "title": "generate end-to-end functionalities"
+    }
+  }
+]

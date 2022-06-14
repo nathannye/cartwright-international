@@ -3,7 +3,6 @@ import { useRef, useLayoutEffect } from "react";
 import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-// import { PrismicText } from "@prismicio/react";s
 
 const VerticalListSmall = ({ slice }) => {
   const listRefs = useRef([]);

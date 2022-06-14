@@ -1,0 +1,17 @@
+[
+  {
+    "variation": "default",
+    "name": "Default",
+    "slice_type": "quote",
+    "items": [],
+    "primary": {
+      "heading": "benchmark proactive technologies",
+      "quote": "monetize enterprise e-commerce",
+      "link": {
+        "link_type": "Web",
+        "url": "http://google.com"
+      },
+      "link-label": "recontextualize wireless blockchains"
+    }
+  }
+]
