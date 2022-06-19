@@ -1,0 +1,91 @@
+{
+  "id": "footer-contact",
+  "label": "Footer & Contact",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "footer-heading": {
+        "type": "Text",
+        "config": {
+          "label": "Footer Heading",
+          "placeholder": ""
+        }
+      },
+      "phone-number": {
+        "type": "Text",
+        "config": {
+          "label": "Phone Number",
+          "placeholder": ""
+        }
+      },
+      "email": {
+        "type": "Text",
+        "config": {
+          "label": "Email",
+          "placeholder": ""
+        }
+      },
+      "email-signup": {
+        "type": "Group",
+        "config": {
+          "label": "Email Signup",
+          "fields": {
+            "signup-title": {
+              "type": "Text",
+              "config": {
+                "label": "Signup Title",
+                "placeholder": ""
+              }
+            },
+            "signup-placeholder": {
+              "type": "Text",
+              "config": {
+                "label": "Signup Placeholder",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
+      "social-title": {
+        "type": "Text",
+        "config": {
+          "label": "Social Title",
+          "placeholder": ""
+        }
+      },
+      "social": {
+        "type": "Group",
+        "config": {
+          "label": "Social Media",
+          "fields": {
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Social Link",
+                "placeholder": "",
+                "select": null
+              }
+            },
+            "image": {
+              "type": "Image",
+              "config": {
+                "label": "Social Icon",
+                "constraint": {},
+                "thumbnails": []
+              }
+            }
+          }
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {}
+        }
+      }
+    }
+  }
+}
