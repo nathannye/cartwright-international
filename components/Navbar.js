@@ -22,51 +22,8 @@ const Navbar = ({ menu }) => {
 
   const [isActive, setIsActive] = useState(false);
 
-  // useIsomorphicLayoutEffect(() => {
-  //   const n = gsap.utils.selector(desktopNavRef.current);
-  //   const g = gsap.utils.selector(logoRef.current);
-
-  //   introtl.current = gsap.timeline({
-  //     delay: 0.5,
-  //     onComplete: () => {
-  //       introtl.current.kill();
-  //     },
-  //   });
-
-  //   gsap.set(n("a"), {
-  //     opacity: 0,
-  //   });
-
-  //   gsap.set(g("svg.logo"), {
-  //     opacity: 0,
-  //   });
-
-  //   introtl.current
-  //     .to(
-  //       n("a"),
-  //       {
-  //         duration: 0.75,
-  //         opacity: 1,
-  //         stagger: 0.1,
-  //         delay: 0.23,
-  //         ease: "power1.out",
-  //       },
-  //       0
-  //     )
-  //     .to(
-  //       g("svg.logo"),
-  //       {
-  //         duration: 0.75,
-  //         opacity: 1,
-  //         ease: "power1.out",
-  //       },
-  //       0
-  //     );
-  // }, []);
-
   useIsomorphicLayoutEffect(() => {
     const q = gsap.utils.selector(transitionRef.current);
-    let timer;
 
     gsap.set(q("div.transitionCover"), {
       scaleY: 0,

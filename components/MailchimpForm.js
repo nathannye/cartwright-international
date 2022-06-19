@@ -8,18 +8,16 @@ const actionURL = `https://cartwrightintl.us18.list-manage.com/subscribe/post?u=
 
 const MailchimpFormContainer = (props) => {
   return (
-    <div>
-      <MailchimpSubscribe
-        url={actionURL}
-        render={({ subscribe, status, message }) => (
-          <CustomForm
-            status={status}
-            message={message}
-            onValidated={(formData) => subscribe(formData)}
-          />
-        )}
-      />
-    </div>
+    <MailchimpSubscribe
+      url={actionURL}
+      render={({ subscribe, status, message }) => (
+        <CustomForm
+          status={status}
+          message={message}
+          onValidated={(formData) => subscribe(formData)}
+        />
+      )}
+    />
   );
 };
 export default MailchimpFormContainer;

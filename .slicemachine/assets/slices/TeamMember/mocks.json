@@ -5,9 +5,9 @@
     "slice_type": "team_member",
     "items": [
       {
-        "name": "productize robust mindshare",
-        "email": "expedite seamless e-markets",
-        "position": "monetize user-centric users",
+        "name": "seize extensible mindshare",
+        "email": "unleash intuitive methodologies",
+        "position": "aggregate impactful experiences",
         "image": {
           "dimensions": {
             "width": 900,
@@ -15,20 +15,20 @@
           },
           "alt": "Placeholder image",
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1596195689404-24d8a8d1c6ea?w=900&h=500&fit=crop"
+          "url": "https://images.unsplash.com/photo-1587905069134-008460d7a636?w=900&h=500&fit=crop"
         },
         "bio": [
           {
             "type": "paragraph",
-            "text": "Consequat elit nulla voluptate. Velit minim est eu irure quis cupidatat duis duis ex occaecat quis id voluptate. Nostrud tempor fugiat nulla fugiat.",
+            "text": "Et veniam culpa do ullamco excepteur elit officia nostrud non ullamco sint ex ex adipisicing.",
             "spans": []
           }
         ]
       },
       {
-        "name": "benchmark distributed vortals",
-        "email": "maximize frictionless ROI",
-        "position": "aggregate cutting-edge architectures",
+        "name": "repurpose wireless applications",
+        "email": "incubate ubiquitous e-services",
+        "position": "engage turn-key networks",
         "image": {
           "dimensions": {
             "width": 900,
@@ -36,12 +36,75 @@
           },
           "alt": "Placeholder image",
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab?w=900&h=500&fit=crop"
+          "url": "https://images.unsplash.com/photo-1547082299-de196ea013d6?w=900&h=500&fit=crop"
         },
         "bio": [
           {
             "type": "paragraph",
-            "text": "Fugiat et deserunt excepteur non commodo excepteur eu sit cillum officia aliqua pariatur sint commodo. Ut minim proident nostrud velit labore ad et enim nostrud. Aute elit et esse ipsum sint elit pariatur.",
+            "text": "Nulla nisi dolore magna. Officia nulla consectetur Lorem ullamco adipisicing culpa irure nostrud. Amet qui labore ipsum mollit est ad sit dolore aliquip nisi amet aliqua Lorem adipisicing commodo.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "name": "transition killer convergence",
+        "email": "empower cross-media deliverables",
+        "position": "embrace synergistic e-business",
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea?w=900&h=500&fit=crop"
+        },
+        "bio": [
+          {
+            "type": "paragraph",
+            "text": "Esse deserunt voluptate reprehenderit aute sunt consequat reprehenderit excepteur ut do ipsum ipsum ea elit. Reprehenderit ad laboris ad mollit et labore aliqua non deserunt id.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "name": "syndicate extensible eyeballs",
+        "email": "grow plug-and-play synergies",
+        "position": "repurpose cross-platform e-business",
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1589321578146-4c1ba445cc88?w=900&h=500&fit=crop"
+        },
+        "bio": [
+          {
+            "type": "paragraph",
+            "text": "Fugiat officia incididunt et laboris dolor laboris reprehenderit ipsum cillum ipsum.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "name": "evolve B2C initiatives",
+        "email": "harness wireless supply-chains",
+        "position": "iterate sticky e-tailers",
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72?w=900&h=500&fit=crop"
+        },
+        "bio": [
+          {
+            "type": "paragraph",
+            "text": "Amet nulla aliqua officia excepteur duis labore aliqua minim pariatur cillum.",
             "spans": []
           }
         ]

@@ -17,6 +17,21 @@
             "label": "Section Title",
             "placeholder": ""
           }
+        },
+        "link": {
+          "type": "Link",
+          "config": {
+            "label": "Link",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "link-label": {
+          "type": "Text",
+          "config": {
+            "label": "Link Label",
+            "placeholder": ""
+          }
         }
       },
       "items": {
@@ -32,14 +47,6 @@
           "config": {
             "label": "Row Description",
             "placeholder": ""
-          }
-        },
-        "link": {
-          "type": "Link",
-          "config": {
-            "label": "Link",
-            "placeholder": "",
-            "select": null
           }
         }
       },

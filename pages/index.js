@@ -7,7 +7,7 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
 const Index = ({ page, menu, footer }) => {
   return (
-    <Layout menu={menu} footer={footer}>
+    <Layout menu={menu} footer={footer} >
       <Head>
         <title>{page.data.title}</title>
         <meta
@@ -29,7 +29,7 @@ export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData });
 
   const page = await client.getByUID("webpage", "home");
-  const footer = await client.getSingle("contact-us");
+  const footer = await client.getSingle("footer-contact");
   const menu = await client.getSingle("menu");
 
   return {

@@ -8,7 +8,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import SplitText from "gsap/dist/SplitText";
 
-const MeetUs = ({ page, menu }) => {
+const MeetUs = ({ page, menu, footer }) => {
   const meetUsRef = useRef(null);
   const tl = useRef(null);
   const solidSplit = useRef(null);
@@ -85,7 +85,7 @@ const MeetUs = ({ page, menu }) => {
   }, []);
 
   return (
-    <Layout menu={menu}>
+    <Layout menu={menu} footer={footer}>
       <Head>
         <title>{page.data.title}</title>
       </Head>
@@ -143,9 +143,10 @@ export async function getStaticProps({ previewData }) {
 
   const page = await client.getSingle("contact-us");
   const menu = await client.getSingle("menu");
+  const footer = await client.getSingle("footer-contact");
 
   return {
-    props: { page, menu },
+    props: { page, menu, footer },
   };
 }
 

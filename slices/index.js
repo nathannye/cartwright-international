@@ -5,6 +5,7 @@ import HeaderStandard from './HeaderStandard';
 import ImgCarousel from './ImgCarousel';
 import OurFramework from './OurFramework';
 import Quote from './Quote';
+import SocialMedia from './SocialMedia';
 import TeamMember from './TeamMember';
 import VerticalListLarge from './VerticalListLarge';
 import VerticalListSmall from './VerticalListSmall';
@@ -15,6 +16,7 @@ export {
 	ImgCarousel,
 	OurFramework,
 	Quote,
+	SocialMedia,
 	TeamMember,
 	VerticalListLarge,
 	VerticalListSmall,
@@ -26,6 +28,7 @@ export const components = {
 	img_carousel: ImgCarousel,
 	our_framework: OurFramework,
 	quote: Quote,
+	social_media: SocialMedia,
 	team_member: TeamMember,
 	vertical_list_large: VerticalListLarge,
 	vertical_list_small: VerticalListSmall,

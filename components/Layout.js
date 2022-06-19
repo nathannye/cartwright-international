@@ -6,7 +6,6 @@ import { useRouter } from "next/router";
 import { useEffect, useState, useRef, useLayoutEffect } from "react";
 import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import Notification from "./Notification";
 
 gsap.defaults({
   duration: 0.86,
@@ -17,7 +16,7 @@ ScrollTrigger.defaults({
   start: "top bottom-=11%",
 });
 
-export const Layout = ({ children, menu }) => {
+export const Layout = ({ children, menu, footer }) => {
   const router = useRouter();
   const coverRef = useRef(null);
   const mainRef = useRef(null);
@@ -28,10 +27,11 @@ export const Layout = ({ children, menu }) => {
   return (
     <div>
       <Navbar menu={menu} />
-      <Notification />
+      {/* <Notification /> */}
+
       <main ref={mainRef}>
         <div>{children}</div>
-        <Footer />
+        <Footer footer={footer} />
       </main>
     </div>
   );

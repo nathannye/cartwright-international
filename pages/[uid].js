@@ -8,7 +8,7 @@ import Head from "next/head";
 
 const Page = ({ slices, menu, page, footer }) => {
   return (
-    <Layout menu={menu}>
+    <Layout menu={menu} footer={footer}>
       <Head>
         <title>{page.data.title}</title>
         <meta name="description" content={page.data.description} />
@@ -28,7 +28,7 @@ export async function getStaticProps({ params, previewData }) {
   const client = createClient({ previewData });
   const menu = await client.getSingle("menu");
   const page = await client.getByUID("webpage", params.uid);
-  const footer = await client.getSingle("contact-us");
+  const footer = await client.getSingle("footer-contact");
 
   return {
     props: {

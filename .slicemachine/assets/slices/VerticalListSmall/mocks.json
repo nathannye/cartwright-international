@@ -5,48 +5,29 @@
     "slice_type": "vertical_list_small",
     "items": [
       {
-        "heading": "embrace dot-com users",
-        "description": "strategize distributed web services",
-        "link": {
-          "link_type": "Web",
-          "url": "http://google.com"
-        }
+        "heading": "engineer scalable portals",
+        "description": "brand e-business experiences"
       },
       {
-        "heading": "exploit clicks-and-mortar e-tailers",
-        "description": "revolutionize dynamic deliverables",
-        "link": {
-          "link_type": "Web",
-          "url": "https://slicemachine.dev"
-        }
+        "heading": "synthesize mission-critical schemas",
+        "description": "whiteboard leading-edge blockchains"
       },
       {
-        "heading": "aggregate vertical users",
-        "description": "synergize strategic e-services",
-        "link": {
-          "link_type": "Web",
-          "url": "https://slicemachine.dev"
-        }
+        "heading": "reinvent seamless blockchains",
+        "description": "reinvent dynamic methodologies"
       },
       {
-        "heading": "mesh bleeding-edge networks",
-        "description": "exploit bleeding-edge architectures",
-        "link": {
-          "link_type": "Web",
-          "url": "https://prismic.io"
-        }
-      },
-      {
-        "heading": "transform sticky infrastructures",
-        "description": "scale world-class e-markets",
-        "link": {
-          "link_type": "Web",
-          "url": "http://google.com"
-        }
+        "heading": "aggregate extensible deliverables",
+        "description": "synergize cross-platform users"
       }
     ],
     "primary": {
-      "title": "transform out-of-the-box content"
+      "title": "deliver cutting-edge mindshare",
+      "link": {
+        "link_type": "Web",
+        "url": "https://slicemachine.dev"
+      },
+      "link-label": "syndicate plug-and-play blockchains"
     }
   },
   {
@@ -55,15 +36,15 @@
     "slice_type": "vertical_list_small",
     "items": [
       {
-        "heading": "harness compelling ROI"
+        "heading": "aggregate leading-edge relationships"
       },
       {
-        "heading": "leverage dot-com synergies"
+        "heading": "incentivize impactful blockchains"
       }
     ],
     "primary": {
-      "title": "syndicate cross-platform infrastructures",
-      "description": "incubate granular bandwidth"
+      "title": "morph B2B web-readiness",
+      "description": "disintermediate extensible supply-chains"
     }
   }
 ]

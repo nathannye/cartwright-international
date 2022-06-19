@@ -48,7 +48,7 @@ const Notification = () => {
   };
 
   return (
-    <div className="notification" ref={notiRef}>
+    <div className="notification" id="standardNotification" ref={notiRef}>
       <div>
         <h3>Hey, want the latest sales tips?</h3>
         <div className="notificationButtons">

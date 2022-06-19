@@ -45,38 +45,35 @@ a
     &.internalLink
         margin-top: 1rem
         padding-bottom: 1px
+        cursor: pointer
         text-decoration: underline
         text-underline-offset: .27em
         position: relative
         transition: var(--powerEase)
-
-        &:hover
-            transform: translateX(1.75rem)
-            transition: var(--powerEase)
 
 
         &:after, &:before
             content: ''
             background-image: url('/linkArrow.svg')
             background-position: center
-            background-size: 100%
-            width: .9rem
+            background-size: 100% 100%
+            width: 1rem
             display: block
             position: absolute
             top: .1rem
             transition: var(--powerEase)
-            height: .9rem
+            height: 1rem
 
 
             &:after, &:before
                 filter: brightness(40) saturate(0)
 
         &:before
-            transform: translateX(-1.25rem)
+            transform: translateX(-1.5rem)
             opacity: 1
 
         &:hover:before
-            transform: translateX(-1.5rem)
+            transform: translateX(-1.15rem)
             opacity: 0
             transition-delay: .2s
             transition: var(--powerEase)
@@ -87,7 +84,7 @@ a
 
         &:hover:after
             opacity: 1
-            transform: translateX(1rem)
+            transform: translateX(.5rem)
             transition: var(--powerEase)
             
 
@@ -185,7 +182,7 @@ h4
     color: var(--dark)
     opacity: .65
     font-family: $sans
-    font-weight: 400
+    font-weight: 300
     font-size: 1.4rem
     letter-spacing: -.05em
 
@@ -329,6 +326,15 @@ footer
 
     #socialIcons
         display: none
+        margin-top: calc(var(--gutter) * 2)
+
+        a
+            transition: all ease-in-out .24s
+            cursor: pointer
+
+            &:hover
+                opacity: .7
+                transition: all ease-in-out .24s
 
         h2
             font-weight: 400
@@ -366,6 +372,11 @@ footer
         flex-wrap: wrap
         align-items: flex-start
         justify-content: space-between
+
+        & > div:last-child
+            flex-grow: 1
+            width: 50%
+            max-width: 420px
 
     #privacy
         margin-left: 0
@@ -805,6 +816,11 @@ header#headerLarge
 .verticalListSmall
     margin-left: var(--gutter)
     margin-right: var(--gutter)
+    display: flex
+    flex-direction: column
+
+    a.internalLink
+        align-self: flex-end
 
     p.sectionDescription
         display: none
@@ -942,7 +958,7 @@ header#headerLarge
         width: 390px
         height: 390px
         opacity: .09
-        z-index: 20 !important
+        z-index: 10 !important
 
     .frameworkEntry
         display: flex
@@ -1136,25 +1152,63 @@ header#headerLarge
         font-family: inherit
         letter-spacing: inherit 
 
+.cookieNotification
+    display: flex
+    position: fixed
+    bottom: 0
+    background: var(--maroon)
+    width: 100%
+    z-index: 12
+    color: var(--light)
+    width: 100%
+    text-align: center
+    justify-content: center
+    padding: 2rem var(--gutter)
+    border-top: solid var(--tan) 1px
+
+    & > div:first-of-type
+        font-family: $sans
+        letter-spacing: -.03em
+        font-size: 1.22rem
+        font-weight: 400
+        line-height: 1.37
+        margin-right: var(--gutter)
+
+    button
+        background: none
+        border: none
+        font-weight: 500
+        // letter-spacing: .05em
+        font-size: .9rem
+        font-family: $sans
+        text-transform: uppercase
+        text-decoration: underline
+        text-underline-offset: .2rem
+        cursor: pointer
+        color: var(--light)
+
 .notification
     background: var(--maroon)
     z-index: 12
     width: 100%
     position: fixed
-    display: none
     bottom: 0
     left: 0
     padding: 2rem var(--gutter)
+    border-top: solid var(--tan) 1px
 
+    &#standardNotification
+        display: none
+        
     & > div
         display: flex
         justify-content: space-between
         align-items: center
         flex-wrap: wrap
-        max-width: 1000px
+        max-width: 930px
         margin: auto
 
-    h3
+    p
         color: var(--light)
         width: 100%
         text-align: center
@@ -1193,7 +1247,7 @@ header#headerLarge
 
     .notification
 
-        h3
+        p
             margin-bottom: 0
             width: unset
             text-align: left
@@ -1251,6 +1305,11 @@ header#headerLarge
             height: 55%
 
     footer
+
+        .internalLink
+
+            &:after, &:before
+                filter: brightness(10) saturate(0) contrast(2)
 
         .topSplit
 

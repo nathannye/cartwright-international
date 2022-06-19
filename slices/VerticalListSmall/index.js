@@ -3,6 +3,7 @@ import { useRef, useLayoutEffect } from "react";
 import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import { PrismicLink } from "@prismicio/react";
 
 const VerticalListSmall = ({ slice }) => {
   const listRefs = useRef([]);
@@ -95,6 +96,9 @@ const VerticalListSmall = ({ slice }) => {
           ))}
         </div>
       </div>
+      <PrismicLink field={slice.primary.link} className="internalLink">
+        {slice.primary["link-label"]}
+      </PrismicLink>
     </section>
   );
 };
