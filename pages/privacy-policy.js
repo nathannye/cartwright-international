@@ -20,7 +20,7 @@ export const PrivacyPolicy = ({ page, menu }) => {
   });
 
   return (
-    <Layout menu={menu}>
+    <Layout menu={menu} footer={footer}>
       <Head>
         <title>{page.data.title}</title>
       </Head>
@@ -39,9 +39,10 @@ export async function getStaticProps({ previewData }) {
 
   const page = await client.getSingle("privacy-policy");
   const menu = await client.getSingle("menu");
+  const footer = await client.getSingle("footer-contact");
 
   return {
-    props: { page, menu },
+    props: { page, menu, footer },
   };
 }
 
