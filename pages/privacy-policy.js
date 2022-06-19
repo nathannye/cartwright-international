@@ -6,7 +6,7 @@ import Head from "next/head";
 import gsap from "gsap";
 import { useRef } from "react";
 
-export const PrivacyPolicy = ({ page, menu }) => {
+export const PrivacyPolicy = ({ page, menu, footer }) => {
   const pageRef = useRef(null);
 
   useIsomorphicLayoutEffect(() => {
