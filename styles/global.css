@@ -1359,8 +1359,8 @@ header#headerLarge blockquote {
   border-top: solid var(--tan) 1px;
 }
 
-.notification#standardNotification {
-  display: none;
+.notification#standardNotification > div {
+  max-width: 650px;
 }
 
 .notification > div {

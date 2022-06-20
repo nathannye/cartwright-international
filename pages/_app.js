@@ -1,7 +1,7 @@
 import "../styles/global.min.css";
 import Link from "next/link";
 import { PrismicProvider } from "@prismicio/react";
-import Script from "next/script";
+import Notification from "../components/Notification";
 import { PrismicPreview } from "@prismicio/next";
 import { linkResolver, repositoryName } from "../prismicio";
 import Head from "next/head";
@@ -13,13 +13,18 @@ import CookieConsent, {
   getCookieConsentValue,
 } from "react-cookie-consent";
 import { initGA } from "../lib/ga";
+import { useState } from "react";
 
 export default function MyApp({ Component, pageProps }) {
+  const [showNoti, setShowNoti] = useState(false);
+
   const handleAcceptCookie = () => {
     if (process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS) {
       initGA(process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS);
-      console.log("cookies accepted");
     }
+    setTimeout(() => {
+      setShowNoti(true);
+    }, 1500);
   };
 
   const handleDeclineCookie = () => {
@@ -49,8 +54,12 @@ export default function MyApp({ Component, pageProps }) {
         <Head></Head>
         <CookieConsent
           enableDeclineButton
-          onAccept={handleAcceptCookie}
-          onDecline={handleDeclineCookie}
+          onAccept={() => {
+            handleAcceptCookie();
+          }}
+          onDecline={() => {
+            handleDeclineCookie();
+          }}
           disableStyles={true}
           flipButtons
           buttonText="that's cool with me"
@@ -60,9 +69,10 @@ export default function MyApp({ Component, pageProps }) {
           hideOnAccept={true}
           hideOnDecline={true}
         >
-          We use cookies to help improve your experience with analytics. Is this
+          We use cookies to help improve our website with analytics. Is this
           okay with you?
         </CookieConsent>
+        {showNoti && <Notification />}
         <Component {...pageProps} />
       </PrismicPreview>
     </PrismicProvider>

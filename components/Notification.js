@@ -17,7 +17,7 @@ const Notification = () => {
         ease: "power3.inOut",
         duration: 0.82,
       });
-    }, 1200);
+    }, 2000);
   }, []);
 
   const decline = () => {
@@ -50,10 +50,10 @@ const Notification = () => {
   return (
     <div className="notification" id="standardNotification" ref={notiRef}>
       <div>
-        <h3>Hey, want the latest sales tips?</h3>
+        <p>Hey, want the latest sales tips?</p>
         <div className="notificationButtons">
           <button onClick={accept}>sign me up!</button>
-          <button onClick={decline}>no, thanks</button>
+          <button onClick={decline}>no, thanks.</button>
         </div>
       </div>
     </div>
