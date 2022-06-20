@@ -8,7 +8,10 @@ import Head from "next/head";
 import ScrollToTop from "../components/ScrollTop";
 import { useRouter } from "next/router";
 import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
-import CookieConsent, { getCookieConsentValue } from "react-cookie-consent";
+import CookieConsent, {
+  Cookies,
+  getCookieConsentValue,
+} from "react-cookie-consent";
 import { initGA } from "../lib/ga";
 
 export default function MyApp({ Component, pageProps }) {
@@ -20,7 +23,6 @@ export default function MyApp({ Component, pageProps }) {
   };
 
   const handleDeclineCookie = () => {
-    //remove google analytics cookies
     Cookies.remove("_ga");
     Cookies.remove("_gat");
     Cookies.remove("_gid");

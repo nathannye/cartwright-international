@@ -25,7 +25,8 @@ export default function HeaderHome({ slice }) {
       });
 
       gsap.set(q(".imageContainer"), {
-        clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+        opacity: 0,
+        y: 40,
       });
       gsap.set(q("svg > g#solidText > g"), {
         x: -20,
@@ -88,12 +89,12 @@ export default function HeaderHome({ slice }) {
         .to(
           q(".imageContainer"),
           {
-            clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-            duration: 0.98,
-            delay: 0.5,
-            ease: "power4.inOut",
+            opacity: 1,
+            duration: 0.85,
+            y: 0,
+            ease: "power3.out",
           },
-          0.5
+          0.7
         );
     });
     return () => {
