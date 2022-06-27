@@ -20,7 +20,7 @@ export default function MyApp({ Component, pageProps }) {
   const [showNoti, setShowNoti] = useState(false);
 
   const handleAcceptCookie = () => {
-    ReactGA.initialize(process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS);
+    initGA("G-HTZD3HXCED");
     setTimeout(() => {
       setShowNoti(true);
     }, 1500);
