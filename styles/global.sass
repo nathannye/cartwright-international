@@ -323,6 +323,7 @@ body
 footer
     background: var(--maroon)
     padding: var(--gutter)
+    padding-top: calc(var(--gutter) *2)
 
     #socialIcons
         display: none
@@ -1156,6 +1157,7 @@ header#headerLarge
     display: flex
     position: fixed
     bottom: 0
+    flex-wrap: wrap
     background: var(--maroon)
     width: 100%
     z-index: 12
@@ -1176,6 +1178,7 @@ header#headerLarge
 
     button
         background: none
+        margin-top: var(--gutter)
         border: none
         font-weight: 500
         // letter-spacing: .05em
@@ -1204,7 +1207,7 @@ header#headerLarge
 
     & > div
         display: flex
-        justify-content: space-between
+        justify-content: center
         align-items: center
         flex-wrap: wrap
         max-width: 930px
@@ -1231,6 +1234,11 @@ header#headerLarge
 // Applies to anything above 768px
 @media only screen and (min-width: 700px)
 
+    .cookieNotification
+
+        button
+            margin-top: 0
+
     .shortFooter
         justify-content: space-between
 
@@ -1253,6 +1261,7 @@ header#headerLarge
             margin-bottom: 0
             width: unset
             text-align: left
+            margin-right: var(--gutter)
 
     section
         margin-bottom: 16rem

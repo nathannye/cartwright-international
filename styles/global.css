@@ -361,6 +361,7 @@ body.isLight div#navbar #hamburgerBtn svg path.hamburgerLine {
 footer {
   background: var(--maroon);
   padding: var(--gutter);
+  padding-top: calc(var(--gutter) *2);
 }
 
 footer #socialIcons {
@@ -1315,6 +1316,7 @@ header#headerLarge blockquote {
   display: flex;
   position: fixed;
   bottom: 0;
+  flex-wrap: wrap;
   background: var(--maroon);
   width: 100%;
   z-index: 12;
@@ -1337,6 +1339,7 @@ header#headerLarge blockquote {
 
 .cookieNotification button {
   background: none;
+  margin-top: var(--gutter);
   border: none;
   font-weight: 500;
   font-size: .9rem;
@@ -1365,7 +1368,7 @@ header#headerLarge blockquote {
 
 .notification > div {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   max-width: 930px;
@@ -1392,6 +1395,9 @@ header#headerLarge blockquote {
 }
 
 @media only screen and (min-width: 700px) {
+  .cookieNotification button {
+    margin-top: 0;
+  }
   .shortFooter {
     justify-content: space-between;
   }
@@ -1412,6 +1418,7 @@ header#headerLarge blockquote {
     margin-bottom: 0;
     width: unset;
     text-align: left;
+    margin-right: var(--gutter);
   }
   section {
     margin-bottom: 16rem;
