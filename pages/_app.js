@@ -14,14 +14,13 @@ import CookieConsent, {
 } from "react-cookie-consent";
 import { initGA } from "../lib/ga";
 import { useState } from "react";
+import ReactGA from "react-ga";
 
 export default function MyApp({ Component, pageProps }) {
   const [showNoti, setShowNoti] = useState(false);
 
   const handleAcceptCookie = () => {
-    if ("G-HTZD3HXCED") {
-      initGA("G-HTZD3HXCED");
-    }
+    ReactGA.initialize(process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS);
     setTimeout(() => {
       setShowNoti(true);
     }, 1500);
