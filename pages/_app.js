@@ -19,8 +19,8 @@ export default function MyApp({ Component, pageProps }) {
   const [showNoti, setShowNoti] = useState(false);
 
   const handleAcceptCookie = () => {
-    if (process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS) {
-      initGA(process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS);
+    if ("G-HTZD3HXCED") {
+      initGA("G-HTZD3HXCED");
     }
     setTimeout(() => {
       setShowNoti(true);
