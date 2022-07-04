@@ -1,7 +1,6 @@
 import { Layout } from "../components/Layout";
 import { components } from "../slices";
 import { SliceZone } from "@prismicio/react";
-import EventSlider from "../slices/EventSlider";
 import { createClient } from "../prismicio";
 
 const Events = ({ page, menu, footer }) => {
