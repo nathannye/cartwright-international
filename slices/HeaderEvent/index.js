@@ -6,7 +6,6 @@ import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
 const HeaderEvent = ({ slice }) => {
   const headerRef = useRef(null);
   const introRef = useRef(null);
-
   const outlineSplit = useRef(null);
   const tl = useRef(null);
   const solidSplit = useRef(null);
@@ -62,10 +61,10 @@ const HeaderEvent = ({ slice }) => {
 
       tl.current = gsap.timeline({
         delay: 0.96,
-        onComplete: () => {
-          outlineSplit.current.revert();
-          solidSplit.current.revert();
-        },
+        // onComplete: () => {
+        //   outlineSplit.current.revert();
+        //   solidSplit.current.revert();
+        // },
       });
 
       tl.current
