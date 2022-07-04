@@ -1,0 +1,55 @@
+{
+  "id": "upcoming_summit",
+  "type": "SharedSlice",
+  "name": "UpcomingSummit",
+  "description": "UpcomingSummit",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "UpcomingSummit",
+      "primary": {
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Heading",
+            "placeholder": ""
+          }
+        },
+        "summit-date": {
+          "type": "Text",
+          "config": {
+            "label": "Summit Date",
+            "placeholder": ""
+          }
+        },
+        "reveal-date": {
+          "type": "Timestamp",
+          "config": {
+            "label": "Reveal Date",
+            "placeholder": ""
+          }
+        },
+        "email-heading": {
+          "type": "Text",
+          "config": {
+            "label": "Email Heading",
+            "placeholder": ""
+          }
+        },
+        "background-image": {
+          "type": "Image",
+          "config": {
+            "label": "Background Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {},
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

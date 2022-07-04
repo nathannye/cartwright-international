@@ -10,7 +10,7 @@ import DrawSVGPlugin from "gsap/dist/DrawSVGPlugin";
 const HeaderStandard = ({ slice }) => {
   const colorTL = useRef(null);
   const el = useRef(null);
-  const tl = useRef();
+  const tl = useRef(null);
   const outlineSplit = useRef(null);
   const solidSplit = useRef(null);
 
@@ -177,26 +177,27 @@ const HeaderStandard = ({ slice }) => {
         viewBox="0 0 90 90"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        className="scrollIndicator"
       >
         <circle
           className="arrowCircle"
           cx="45.3371"
           cy="44.8619"
           r="43.1064"
-          stroke="#E6CCA6"
+          stroke="var(--tan)"
           strokeWidth="2.5"
           transform="rotate(-90 45 45)"
         />
         <path
           className="arrowStem"
           d="M45.311 30.4843L45.311 59.6402"
-          stroke="#E6CCA6"
+          stroke="var(--tan)"
           strokeWidth="2.5"
         />
         <path
           className="arrowHead"
           d="M34.134 50.0709C40.7697 50.0709 45.4264 59.4617 45.4264 59.4617C45.4264 59.4617 49.3695 50.0709 56.7186 50.0709"
-          stroke="#E6CCA6"
+          stroke="var(--tan)"
           strokeWidth="2.5"
         />
       </svg>

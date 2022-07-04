@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently \"npm run next:dev\" \"npm run slice:dev\"",
+    "next:dev": "next dev",
+    "slice:dev": "start-slicemachine",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "slicemachine": "start-slicemachine"
+    "lint": "next lint"
   },
   "dependencies": {
     "@prismicio/client": "^6.4.3",
@@ -34,9 +35,10 @@
     "use-isomorphic-layout-effect": "^1.1.2"
   },
   "devDependencies": {
+    "concurrently": "^7.2.2",
     "eslint": "8.16.0",
     "eslint-config-next": "12.1.6",
     "prettier": "^2.6.2",
-    "slice-machine-ui": "^0.3.8"
+    "slice-machine-ui": "^0.4.0"
   }
 }

@@ -1,0 +1,61 @@
+{
+  "id": "event-page",
+  "label": "Events Page",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "Uid",
+          "placeholder": ""
+        }
+      },
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "Title",
+          "placeholder": ""
+        }
+      },
+      "description": {
+        "type": "Text",
+        "config": {
+          "label": "Description",
+          "placeholder": ""
+        }
+      },
+      "contact-email": {
+        "type": "Text",
+        "config": {
+          "label": "Contact Email",
+          "placeholder": ""
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "header_event": {
+              "type": "SharedSlice"
+            },
+            "upcoming_summit": {
+              "type": "SharedSlice"
+            },
+            "vertical_list_small": {
+              "type": "SharedSlice"
+            },
+            "event_discount_popup": {
+              "type": "SharedSlice"
+            },
+            "event_slider": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}

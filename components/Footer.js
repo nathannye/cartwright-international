@@ -6,7 +6,11 @@ const Footer = ({ footer, slices }) => {
   const router = useRouter();
 
   return (
-    <footer className={router.asPath === "/meet-with-us" ? "noFooter" : ""}>
+    <footer
+      className={
+        router.asPath === ("/meet-with-us" || "/events") ? "noFooter" : ""
+      }
+    >
       <div className="topSplit">
         <div>
           <h1>{footer.data["footer-heading"]}</h1>
@@ -23,7 +27,7 @@ const Footer = ({ footer, slices }) => {
           </div>
         </div>
         <div>
-          <MailchimpForm />
+          <MailchimpForm heading={"get the latest tips and training"} />
           <div id="socialIcons">
             <h2>{footer.data["social-title"]}</h2>
             <div>

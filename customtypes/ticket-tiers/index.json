@@ -1,0 +1,45 @@
+{
+  "id": "ticket-tiers",
+  "label": "Ticket Tiers",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "group": {
+        "type": "Group",
+        "config": {
+          "label": "Group",
+          "fields": {
+            "tier-title": {
+              "type": "Text",
+              "config": {
+                "label": "Tier Title",
+                "placeholder": ""
+              }
+            },
+            "perks": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Perks",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,rtl,list-item"
+              }
+            }
+          }
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "header_event": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}

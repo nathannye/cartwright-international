@@ -40,7 +40,10 @@ const Navbar = ({ menu }) => {
         ease: "power3.inOut",
         stagger: -0.18,
         onComplete: () => {
-          if (document.body.classList.contains("isLight")) {
+          if (
+            document.body.classList.contains("isLight") &&
+            !router.pathname == "/events"
+          ) {
             document.body.classList.remove("isLight");
           }
         },

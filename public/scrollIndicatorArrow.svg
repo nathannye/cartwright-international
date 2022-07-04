@@ -1,5 +1,5 @@
 <svg width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle className="arrowCircle" cx="45.3371" cy="44.8619" r="43.1064" stroke="#E6CCA6" stroke-width="2.5" transform="rotate(-90 45 45)"/>
-<path className="arrowStem" d="M45.311 30.4843L45.311 59.6402" stroke="#E6CCA6" stroke-width="2.5"/>
-<path  className="arrowHead"d="M34.134 50.0709C40.7697 50.0709 45.4264 59.4617 45.4264 59.4617C45.4264 59.4617 49.3695 50.0709 56.7186 50.0709" stroke="#E6CCA6" stroke-width="2.5"/>
+<circle className="arrowCircle" cx="45.3371" cy="44.8619" r="43.1064" stroke="var(--tan)" stroke-width="2.5" transform="rotate(-90 45 45)"/>
+<path className="arrowStem" d="M45.311 30.4843L45.311 59.6402" stroke="var(--tan)" stroke-width="2.5"/>
+<path  className="arrowHead"d="M34.134 50.0709C40.7697 50.0709 45.4264 59.4617 45.4264 59.4617C45.4264 59.4617 49.3695 50.0709 56.7186 50.0709" stroke="var(--tan)" stroke-width="2.5"/>
 </svg>

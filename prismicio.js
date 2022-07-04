@@ -14,6 +14,8 @@ export const linkResolver = (doc) => {
       return "/meet-with-us";
     case "privacy-policy":
       return "/privacy-policy";
+    case "event-page":
+      return "/events";
     default:
       return null;
   }

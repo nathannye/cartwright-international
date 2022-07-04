@@ -30,6 +30,11 @@ html {
   overflow-x: hidden;
 }
 
+::selection {
+  background: var(--tan);
+  color: var(--maroon);
+}
+
 a {
   color: var(--maroon);
   font-family: "Roboto", sans-serif;
@@ -104,6 +109,38 @@ a.secondaryLink {
 a.secondaryLink:hover {
   opacity: .65;
   transition: var(--powerEase);
+}
+
+button {
+  background: var(--maroon);
+  border: none;
+  cursor: pointer;
+  color: var(--light);
+  padding: 1rem 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: .052em;
+  font-size: .8rem;
+  display: block;
+  font-variant-numeric: lining-nums;
+  font-weight: 500;
+  font-stretch: 93%;
+  font-family: "Roboto", sans-serif;
+}
+
+button.inverted {
+  color: var(--maroon) !important;
+  background: var(--light);
+}
+
+button.toggleDropdownButton {
+  background: none;
+  position: relative;
+  height: 24px;
+  width: 42px;
+  background-image: url("/dropdownIcon.svg");
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: center;
 }
 
 ul {
@@ -267,30 +304,30 @@ body.isLight {
   transition: var(--colorSwapEase);
 }
 
-body.isLight header {
+body.isLight header:not(#eventHeader) {
   transition: var(--colorSwapEase);
 }
 
-body.isLight header h2 {
+body.isLight header:not(#eventHeader) h2 {
   color: var(--dark);
   transition: var(--colorSwapEase);
 }
 
-body.isLight header h1.outlineHeading {
+body.isLight header:not(#eventHeader) h1.outlineHeading {
   -webkit-text-stroke-color: var(--maroon);
   transition: var(--colorSwapEase);
 }
 
-body.isLight header h1.outlineHeading > a {
+body.isLight header:not(#eventHeader) h1.outlineHeading > a {
   -webkit-text-stroke-color: var(--tan);
 }
 
-body.isLight header h1.solidHeading {
+body.isLight header:not(#eventHeader) h1.solidHeading {
   color: var(--maroon);
   transition: var(--colorSwapEase);
 }
 
-body.isLight header.headerStandard svg {
+body.isLight header:not(#eventHeader).headerStandard svg {
   stroke: var(--light);
   transition: var(--colorSwapEase);
 }
@@ -436,82 +473,6 @@ footer #privacy {
   margin-left: 0;
 }
 
-footer #emailFormContainer {
-  margin-top: calc(var(--gutter)*2);
-  width: 100%;
-  max-width: 520px;
-  margin-bottom: var(--gutter);
-}
-
-footer #emailFormContainer form {
-  position: relative;
-}
-
-footer #emailFormContainer form .invisiFields {
-  position: absolute;
-  top: 0;
-  left: -5000px;
-}
-
-footer #emailFormContainer form .formStatus p {
-  margin-bottom: 0 !important;
-}
-
-footer #emailFormContainer input#MERGE0 {
-  width: 100%;
-  background: transparent;
-  border: none;
-  outline: none;
-  overflow: visible;
-  margin-top: 1.25rem;
-  position: relative;
-  -moz-appearance: none;
-  display: block;
-  -webkit-appearance: none;
-  appearance: none;
-  transition: var(--powerEase);
-}
-
-footer #emailFormContainer input#MERGE0:after {
-  position: absolute;
-  left: 0;
-  bottom: 1rem;
-  width: 100%;
-  content: '';
-  height: 2px;
-  display: block;
-  background: var(--light);
-}
-
-footer #emailFormContainer input[type="submit"] {
-  background: url("/emailArrow.svg");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  border: none;
-  cursor: pointer;
-  position: absolute;
-  right: 0;
-  padding: 8px;
-  bottom: 2px;
-  width: auto;
-  background-position: 100% 100%;
-  transition: var(--powerEase);
-}
-
-footer #emailFormContainer input[type="submit"]:hover {
-  opacity: .5;
-  transition: var(--powerEase);
-}
-
-footer #emailFormContainer span.lineBottom {
-  height: 1px;
-  display: block;
-  width: 100%;
-  opacity: 1;
-  background: var(--light);
-  margin-top: .75rem;
-}
-
 footer .contactInfo span {
   margin: 0 1rem;
   display: inline-block;
@@ -545,6 +506,82 @@ footer .bottomSplit > div a, footer .bottomSplit > div p {
 
 footer .bottomSplit > div a {
   margin-bottom: 1rem;
+}
+
+#emailFormContainer {
+  margin-top: calc(var(--gutter)*2);
+  width: 100%;
+  max-width: 520px;
+  margin-bottom: var(--gutter);
+}
+
+#emailFormContainer form {
+  position: relative;
+}
+
+#emailFormContainer form .invisiFields {
+  position: absolute;
+  top: 0;
+  left: -5000px;
+}
+
+#emailFormContainer form .formStatus p {
+  margin-bottom: 0 !important;
+}
+
+#emailFormContainer input#MERGE0 {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  overflow: visible;
+  margin-top: 1.25rem;
+  position: relative;
+  -moz-appearance: none;
+  display: block;
+  -webkit-appearance: none;
+  appearance: none;
+  transition: var(--powerEase);
+}
+
+#emailFormContainer input#MERGE0:after {
+  position: absolute;
+  left: 0;
+  bottom: 1rem;
+  width: 100%;
+  content: '';
+  height: 2px;
+  display: block;
+  background: var(--light);
+}
+
+#emailFormContainer input[type="submit"] {
+  background: url("/emailArrow.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  padding: 8px;
+  bottom: 2px;
+  width: auto;
+  background-position: 100% 100%;
+  transition: var(--powerEase);
+}
+
+#emailFormContainer input[type="submit"]:hover {
+  opacity: .5;
+  transition: var(--powerEase);
+}
+
+#emailFormContainer span.lineBottom {
+  height: 1px;
+  display: block;
+  width: 100%;
+  opacity: 1;
+  background: var(--light);
+  margin-top: .75rem;
 }
 
 section {
@@ -717,6 +754,14 @@ span.lineTop {
   opacity: 1;
 }
 
+svg.scrollIndicator {
+  width: 85px;
+  position: absolute;
+  bottom: 8vh;
+  transition: var(--colorSwapEase);
+  right: var(--gutter);
+}
+
 header.headerStandard {
   padding: 10rem var(--gutter);
   display: flex;
@@ -727,14 +772,6 @@ header.headerStandard {
 
 header.headerStandard h2 {
   color: var(--tan);
-}
-
-header.headerStandard svg {
-  width: 85px;
-  position: absolute;
-  bottom: 8vh;
-  transition: var(--colorSwapEase);
-  right: var(--gutter);
 }
 
 header.headerStandard h1 > a {
@@ -983,6 +1020,25 @@ header#headerLarge blockquote {
   margin-bottom: calc(var(--gutter)*2);
 }
 
+.verticalListSmall.hasDropdown div.listEntry {
+  display: block !important;
+}
+
+.verticalListSmall.hasDropdown div.listEntry p {
+  margin-left: 0 !important;
+  max-width: 750px !important;
+}
+
+.verticalListSmall.hasDropdown div.listEntry .clipBox {
+  overflow: hidden;
+}
+
+.verticalListSmall.hasDropdown .dropdownContentContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .verticalListLarge {
   margin-left: var(--gutter);
   margin-right: var(--gutter);
@@ -1170,6 +1226,353 @@ header#headerLarge blockquote {
 #ourFramework .frameworkText {
   margin-top: 1rem;
   max-width: 250px;
+}
+
+div#eventIntroContainer {
+  height: 100vh;
+  width: 100vw;
+  display: none;
+  background: var(--maroon);
+  justify-content: center;
+  align-items: center;
+}
+
+div#eventIntroContainer #hubLogoContainer {
+  width: 40%;
+  overflow: hidden;
+  max-width: 450px;
+}
+
+div#eventIntroContainer #hubLogoContainer img {
+  width: 100%;
+}
+
+header#eventHeader {
+  position: relative;
+  overflow: hidden;
+  padding-top: 10rem;
+  padding-bottom: 20rem;
+  margin-bottom: 0;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+  background: #2e050e;
+}
+
+header#eventHeader #ticketTitle h1.outlineHeading {
+  -webkit-text-stroke-color: var(--tan);
+}
+
+header#eventHeader #ticketTitle h1.solidHeading {
+  color: var(--tan);
+}
+
+header#eventHeader img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  mix-blend-mode: exclusion;
+  opacity: .45;
+  height: 100%;
+  overflow: hidden;
+  transform: scale(1.1);
+  filter: blur(5px) saturate(0.6);
+  object-fit: cover;
+}
+
+section#upcomingSummit {
+  height: 119vh;
+  display: flex;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+section#upcomingSummit h2 {
+  color: var(--light);
+}
+
+section#upcomingSummit img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  object-fit: cover;
+  transform: scale(1.1);
+  filter: blur(6px) saturate(0.4) brightness(1.3);
+}
+
+section#upcomingSummit #summitDate {
+  color: var(--tan);
+  text-align: right;
+}
+
+section#upcomingSummit h1 {
+  text-shadow: rgba(0, 0, 0, 0.75) 0px 0px 27px;
+}
+
+ul.eventHeaderBullets li {
+  color: var(--light);
+  text-transform: uppercase;
+}
+
+ul.eventHeaderBullets li:before {
+  background: var(--light);
+}
+
+section#eventSlider {
+  background: var(--light);
+  height: 100vh;
+  position: relative;
+  margin-bottom: 0;
+  overflow-x: hidden;
+}
+
+section#eventSlider > div {
+  display: flex;
+  height: 100%;
+  flex-wrap: nowrap;
+  overflow-x: hidden;
+  padding-left: 2rem;
+}
+
+.eventEntryContentWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.eventEntry {
+  position: relative;
+  height: 100%;
+  padding: 0 calc(var(--gutter) * 2);
+  min-width: 100vw;
+  align-items: center;
+  display: flex;
+}
+
+.eventEntry:nth-child(1) {
+  margin-left: 4rem;
+}
+
+.eventEntry .eventMonthMarker {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  border-right: 1px solid var(--maroon);
+}
+
+.eventEntry .eventMonthMarker h2 {
+  position: absolute;
+  left: 0;
+  text-align: center;
+  height: 100%;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  transform: scale(-1, -1) translateX(0.25rem);
+  writing-mode: vertical-lr;
+}
+
+.eventEntry .eventInfo {
+  max-width: 700px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.eventEntry .eventInfo > div:not(.dateNumberContainer) {
+  flex-grow: 1;
+  width: 80%;
+}
+
+.eventEntry .eventInfo h1 {
+  margin-right: var(--gutter);
+  color: var(--maroon);
+}
+
+.eventEntry .eventButtons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+  justify-content: flex-end;
+}
+
+.eventEntry .eventButtons p {
+  margin-bottom: 0;
+  min-width: 150px;
+  text-align: right;
+  margin-right: 1rem;
+}
+
+.dateNumberContainer {
+  display: flex;
+  min-width: 105px;
+  flex-grow: 1;
+  padding-right: 1rem;
+}
+
+.dateNumberContainer h1 {
+  margin-right: 0rem !important;
+}
+
+.dateNumberContainer .firstDigit, .dateNumberContainer .secondDigit {
+  height: clamp(3rem, calc(3rem + ((1vw - 0.25rem) * 6.25)), 10rem);
+  overflow-y: hidden;
+  overflow-x: visible;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+#discountNotificationWrapper {
+  position: fixed;
+  height: 100vh;
+  top: -12%;
+  left: 0;
+  width: 100vw;
+  display: flex;
+  z-index: 10;
+  justify-content: center;
+  align-items: center;
+}
+
+#discountNotificationWrapper #discountNotification {
+  max-width: 950px;
+  width: 100%;
+  padding: var(--gutter);
+  background: var(--maroon);
+}
+
+#discountNotificationWrapper #discountNotification #emailFormContainer {
+  margin-bottom: 0;
+}
+
+#discountNotificationWrapper #discountNotification > div {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#discountNotificationWrapper * {
+  color: var(--light);
+}
+
+.popupWrapper {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  display: none;
+  z-index: 8;
+}
+
+.popupCoverBacker {
+  z-index: -1;
+  position: fixed;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--tan);
+  filter: brightness(0.1) saturate(0.5);
+  backdrop-filter: blur(5px);
+}
+
+.eventPopup {
+  height: 80vh;
+  background: var(--light);
+  width: calc(100% -(var(--gutter)*2));
+  max-width: 750px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 4rem;
+  overflow-y: scroll;
+}
+
+.eventPopup .popupInfoHeader {
+  margin-bottom: 3rem;
+  position: relative;
+  height: 80%;
+}
+
+.eventPopup .popupInfoHeader .headerText {
+  position: absolute;
+  bottom: 10%;
+}
+
+.eventPopup .popupInfoHeader .headerText h3 {
+  margin-right: var(--gutter);
+}
+
+.eventPopup .popupInfoHeader .headerText > div {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.seatType {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--maroon);
+  padding-top: .5rem;
+  margin-bottom: 4rem;
+}
+
+.seatType > * {
+  flex-grow: 1;
+}
+
+.seatType span {
+  display: flex;
+  align-items: flex-end;
+  margin-right: var(--gutter);
+  margin-bottom: .5rem;
+}
+
+.seatType span h3 {
+  margin-right: calc(var(--gutter)/4);
+}
+
+.seatType span * {
+  margin-bottom: 0;
+}
+
+.seatType > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.seatType > div > div {
+  display: flex;
+  align-items: flex-start;
+}
+
+.seatType > div ul {
+  margin-right: var(--gutter);
+  min-width: 200px;
+}
+
+.seatType > div button {
+  margin-right: calc(var(--gutter)/2);
+}
+
+.seatType > div h3 {
+  margin: 0;
 }
 
 .quoteLarge {

@@ -6,7 +6,7 @@ const id = "fcec88ebc1";
 
 const actionURL = `https://cartwrightintl.us18.list-manage.com/subscribe/post?u=${u}&id=${id}`;
 
-const MailchimpFormContainer = (props) => {
+const MailchimpFormContainer = ({ props, heading }) => {
   return (
     <MailchimpSubscribe
       url={actionURL}
@@ -14,6 +14,7 @@ const MailchimpFormContainer = (props) => {
         <CustomForm
           status={status}
           message={message}
+          heading={heading}
           onValidated={(formData) => subscribe(formData)}
         />
       )}

@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 
-const CustomForm = ({ status, message, onValidated }) => {
+const CustomForm = ({ status, message, onValidated, heading }) => {
   const [email, setEmail] = useState("");
   const [st, setStatus] = useState(status);
   const split = useRef(null);
@@ -21,7 +21,7 @@ const CustomForm = ({ status, message, onValidated }) => {
 
   return (
     <div id="emailFormContainer">
-      <h2>get the latest tips and training</h2>
+      <h2>{heading}</h2>
       <form onSubmit={(e) => handleSubmit(e)}>
         <label htmlFor="MERGE0">
           <input

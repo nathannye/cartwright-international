@@ -1,0 +1,47 @@
+{
+  "id": "event_discount_popup",
+  "type": "SharedSlice",
+  "name": "EventDiscountPopup",
+  "description": "EventDiscountPopup",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "EventDiscountPopup",
+      "primary": {
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Heading",
+            "placeholder": ""
+          }
+        },
+        "description": {
+          "type": "Text",
+          "config": {
+            "label": "Description",
+            "placeholder": ""
+          }
+        },
+        "form-heading": {
+          "type": "Text",
+          "config": {
+            "label": "Form Heading",
+            "placeholder": ""
+          }
+        },
+        "dismiss-button-text": {
+          "type": "Text",
+          "config": {
+            "label": "Dismiss Button Text",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {},
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}
