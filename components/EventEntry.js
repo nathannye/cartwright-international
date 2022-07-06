@@ -4,14 +4,12 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import SplitText from "gsap/dist/SplitText";
 
-const EventEntry = ({ st, index, item }) => {
-  const showEventPopup = (event) => {};
+const EventEntry = ({ st, index, item, clickHandler, showEventPopup }) => {
   const eventRef = useRef(null);
   const split = useRef(null);
   const paraSplit = useRef(null);
   gsap.registerPlugin(ScrollTrigger);
   const tl = useRef(null);
-
   const day = item["start-time"].substr(8, 2);
   const monthConversion = item["start-time"].substr(5, 2);
 
@@ -26,26 +24,6 @@ const EventEntry = ({ st, index, item }) => {
 
   const monthFinal = toMonthName(monthConversion);
 
-  const firstDigit = parseInt(day.charAt(0));
-  const secondDigit = parseInt(day.charAt(1));
-
-  // console.log(item["start-time"]);
-
-  const firstSlot = [
-    firstDigit,
-    firstDigit + 1,
-    firstDigit + 2,
-    firstDigit + 3,
-    firstDigit + 4,
-  ];
-
-  const secondSlot = [
-    secondDigit,
-    secondDigit + 1,
-    secondDigit + 2,
-    secondDigit + 3,
-    secondDigit + 4,
-  ];
   useIsomorphicLayoutEffect(() => {
     const q = gsap.utils.selector(eventRef.current);
 
@@ -67,19 +45,6 @@ const EventEntry = ({ st, index, item }) => {
       y: 7,
     });
 
-    split.current = new SplitText(q("h3"), {
-      type: "words, lines",
-      linesClass: "splitLineOverflow",
-    });
-
-    gsap.set(split.current.words, {
-      yPercent: -100,
-    });
-
-    gsap.set(q("h1"), {
-      autoAlpha: 0,
-    });
-
     tl.current
       .to(
         q("h1"),
@@ -94,38 +59,12 @@ const EventEntry = ({ st, index, item }) => {
         0
       )
       .to(
-        split.current.words,
-        {
-          yPercent: 0,
-          stagger: 0.06,
-          duration: 0.85,
-          ease: "power3.inOut",
-        },
-        0
-      )
-      .to(
         paraSplit.current.words,
         {
           opacity: 1,
           y: 0,
         },
         0
-      )
-      .to(
-        q(".firstDigit h1"),
-        {
-          yPercent: (firstSlot.length - 1) * 100,
-          autoAlpha: 1,
-        },
-        0.1
-      )
-      .to(
-        q(".secondDigit h1"),
-        {
-          yPercent: (secondSlot.length - 1) * 100,
-          autoAlpha: 1,
-        },
-        0.2
       );
   });
 
@@ -138,7 +77,7 @@ const EventEntry = ({ st, index, item }) => {
           </div>
           <div className="eventInfo">
             <div className="dateNumberContainer">
-              <div className="firstDigit">
+              {/* <div className="firstDigit">
                 <div>
                   {firstSlot.map((d, index) => {
                     return <h1 key={index}>{d}</h1>;
@@ -151,15 +90,22 @@ const EventEntry = ({ st, index, item }) => {
                     return <h1 key={index}>{d}</h1>;
                   })}
                 </div>
-              </div>
+              </div> */}
             </div>
             <div>
               <h5>{item["start-time"]}</h5>
-              <h3>{item["event-title"]}</h3>
+              <h1>{item["event-title"]}</h1>
               <p>{item["event-description"]}</p>
               <div className="eventButtons">
                 <p>50% sold out</p>
-                <button onClick={showEventPopup} onBlur={showEventPopup}>
+                <button
+                  onClick={() => {
+                    clickHandler(item);
+                  }}
+                  onBlur={() => {
+                    clickHandler(item);
+                  }}
+                >
                   Reserve a seat
                 </button>
               </div>

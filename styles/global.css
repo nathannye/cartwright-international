@@ -124,7 +124,13 @@ button {
   font-variant-numeric: lining-nums;
   font-weight: 500;
   font-stretch: 93%;
+  transition: var(--colorSwapEase);
   font-family: "Roboto", sans-serif;
+}
+
+button:hover {
+  opacity: .6;
+  transition: var(--colorSwapEase);
 }
 
 button.inverted {
@@ -1382,7 +1388,7 @@ section#eventSlider > div {
 }
 
 .eventEntry .eventInfo {
-  max-width: 700px;
+  max-width: 1050px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -1470,12 +1476,16 @@ section#eventSlider > div {
   height: 100vh;
   position: fixed;
   top: 0;
-  display: flex;
+  cursor-events: none;
   justify-content: center;
   align-items: center;
   left: 0;
   display: none;
   z-index: 8;
+}
+
+.popupWrapper.visible {
+  display: flex !important;
 }
 
 .popupCoverBacker {
@@ -1484,6 +1494,7 @@ section#eventSlider > div {
   cursor: pointer;
   top: 0;
   left: 0;
+  pointer-events: auto;
   width: 100vw;
   height: 100vh;
   background: var(--tan);
