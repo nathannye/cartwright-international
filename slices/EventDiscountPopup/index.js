@@ -57,8 +57,8 @@ const EventDiscountPopup = ({ slice }) => {
       );
 
     setTimeout(() => {
-      // tl.current.play();
-    }, 3000);
+      tl.current.play();
+    }, 7000);
 
     return () => {
       tl.current.kill;
