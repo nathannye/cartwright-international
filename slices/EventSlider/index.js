@@ -6,7 +6,9 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useRef, useState } from "react";
 import EventPopup from "../../components/EventPopup";
 
-const EventSlider = ({ slice }) => {
+const EventSlider = ({ slice, tickets }) => {
+  console.log(tickets);
+
   const [popupData, setPopupData] = useState("");
   const [showPopup, setShowPopup] = useState(false);
   const popupRef = useRef(null);
@@ -35,6 +37,7 @@ const EventSlider = ({ slice }) => {
     console.log(item);
     setPopupData(item);
   };
+
   gsap.registerPlugin(ScrollTrigger);
   const sliderRef = useRef(null);
   const scrollTween = useRef(null);
@@ -52,7 +55,7 @@ const EventSlider = ({ slice }) => {
         trigger: q("#eventSlider > div"),
       },
       ease: "none",
-      xPercent: (100 - 100 / panels) * -1,
+      xPercent: -100,
     });
 
     ScrollTrigger.refresh();
@@ -64,9 +67,11 @@ const EventSlider = ({ slice }) => {
         showEventPopup={showEventPopup}
         item={popupData}
         showPopup={showPopup}
+        tickets={tickets}
       />
       <section id="eventSlider" ref={sliderRef}>
-        <div style={{ width: (slice.items.length - 1) * 100 + "%" }}>
+        <a id="sliderLink"></a>
+        <div style={{ width: (slice.items.length + 1) * 100 + "%" }}>
           {slice.items.map((item, index) => {
             return (
               <EventEntry

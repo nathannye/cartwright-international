@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import gsap from "gsap";
 import SplitText from "gsap/dist/SplitText";
 import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
+import DrawSVGPlugin from "gsap/dist/DrawSVGPlugin";
 
 const HeaderEvent = ({ slice }) => {
   const headerRef = useRef(null);
@@ -16,7 +17,7 @@ const HeaderEvent = ({ slice }) => {
     const q = gsap.utils.selector(headerRef.current);
     const i = gsap.utils.selector(introRef.current);
 
-    gsap.registerPlugin(SplitText);
+    gsap.registerPlugin(SplitText, DrawSVGPlugin);
 
     document.fonts.ready.then(() => {
       outlineSplit.current = new SplitText(q(".outlineHeading"), {
@@ -25,6 +26,11 @@ const HeaderEvent = ({ slice }) => {
 
       solidSplit.current = new SplitText(q(".solidHeading"), {
         type: "lines",
+      });
+
+      gsap.set(q("li"), {
+        autoAlpha: 0,
+        y: 7,
       });
 
       gsap.set(q(".arrowCircle"), {
@@ -49,6 +55,11 @@ const HeaderEvent = ({ slice }) => {
         autoAlpha: 0,
         y: -24,
       });
+      gsap.set(i("img"), {
+        autoAlpha: 0,
+        y: -50,
+      });
+
       gsap.set(q(".arrowStem"), {
         autoAlpha: 0,
         y: -24,
@@ -77,14 +88,14 @@ const HeaderEvent = ({ slice }) => {
         //   },
         //   0
         // )
-        // .to(
-        //   i("img"),
-        //   {
-        //     yPercent: -110,
-        //     ease: "power4.inOut ",
-        //   },
-        //   0.8
-        // )
+        .to(
+          i("img"),
+          {
+            autoAlpha: 0,
+            y: 0,
+          },
+          0.4
+        )
         // .to(
         //   introRef.current,
         //   {
@@ -165,6 +176,16 @@ const HeaderEvent = ({ slice }) => {
             autoAlpha: 1,
           },
           "<"
+        )
+        .to(
+          q("li"),
+          {
+            stagger: 0.1,
+            y: 0,
+            autoAlpha: 1,
+            ease: "power3.out",
+          },
+          ">"
         );
     });
 
@@ -187,10 +208,9 @@ const HeaderEvent = ({ slice }) => {
           <h1 className="outlineHeading">{slice.primary["upper-title"]}</h1>
           <h1 className="solidHeading">{slice.primary["upper-title"]}</h1>
         </div>
-        <div className="headingOverlapContainer" id="ticketTitle">
-          <h1 className="outlineHeading">{slice.primary["ticket-title"]}</h1>
-          <h1 className="solidHeading">{slice.primary["ticket-title"]}</h1>
-        </div>
+        <a className="scrollDownHeaderEvent" href="#sliderLink">
+          {slice.primary["ticket-title"]}
+        </a>
         <ul className="eventHeaderBullets">
           {slice.items.map((item, index) => (
             <li key={index}>{item.bullet}</li>

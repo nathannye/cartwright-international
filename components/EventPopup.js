@@ -1,7 +1,7 @@
 import SeatType from "./SeatType";
 import gsap from "gsap";
 
-const EventPopup = ({ item, showEventPopup, showPopup }) => {
+const EventPopup = ({ item, showPopup, tickets }) => {
   return (
     <div className={`popupWrapper ${showPopup ? "visible" : ""}`}>
       <div className="eventPopup">
@@ -18,9 +18,6 @@ const EventPopup = ({ item, showEventPopup, showPopup }) => {
         </div>
         <div className="seatingList">
           <h2>seats are limited, reserve today!</h2>
-          <SeatType />
-          <SeatType />
-          <SeatType />
         </div>
       </div>
       <div

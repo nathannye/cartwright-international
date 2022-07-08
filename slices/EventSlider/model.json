@@ -26,26 +26,25 @@
             "placeholder": ""
           }
         },
-        "start-time": {
+        "event-date": {
           "type": "Timestamp",
           "config": {
-            "label": "Start Time",
+            "label": "Event Date",
             "placeholder": ""
+          }
+        },
+        "start-time": {
+          "type": "Text",
+          "config": {
+            "label": "Start Time",
+            "placeholder": "4:00 PM (SPACE AFTER TIME)"
           }
         },
         "end-time": {
-          "type": "Timestamp",
+          "type": "Text",
           "config": {
             "label": "End Time",
-            "placeholder": ""
-          }
-        },
-        "model": {
-          "type": "Link",
-          "config": {
-            "label": "Model",
-            "placeholder": "",
-            "select": "media"
+            "placeholder": "6:30 PM (SPACE AFTER TIME)"
           }
         }
       },
