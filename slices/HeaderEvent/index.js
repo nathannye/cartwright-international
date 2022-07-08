@@ -65,6 +65,10 @@ const HeaderEvent = ({ slice }) => {
         y: -24,
       });
 
+      gsap.set(q("a"), {
+        autoAlpha: 0,
+      });
+
       // Set intro anims
       gsap.set(i("img"), {
         yPercent: 110,
@@ -148,6 +152,13 @@ const HeaderEvent = ({ slice }) => {
             stagger: 0.09,
             autoAlpha: 1,
             ease: "power3.out",
+          },
+          1.3
+        )
+        .to(
+          q("a"),
+          {
+            autoAlpha: 1,
           },
           1.3
         )
