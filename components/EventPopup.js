@@ -1,7 +1,4 @@
-import SeatType from "./SeatType";
-import gsap from "gsap";
-
-const EventPopup = ({ item, showPopup, tickets }) => {
+const EventPopup = ({ item, showPopup, showEventPopup }) => {
   return (
     <div className={`popupWrapper ${showPopup ? "visible" : ""}`}>
       <div className="eventPopup">
@@ -11,19 +8,77 @@ const EventPopup = ({ item, showPopup, tickets }) => {
               {item["start-time"]}–{item["end-time"]}
             </h2>
             <div>
-              <h3>{item["event-title"]}</h3>
+              <h1>{item["event-title"]}</h1>
               <p>{item["event-description"]}</p>
             </div>
           </div>
         </div>
         <div className="seatingList">
           <h2>seats are limited, reserve today!</h2>
+          <div className="seatType">
+            <span>
+              <h3>Basic</h3>
+              {/* <p>15 left </p> */}
+            </span>
+            <div>
+              <ul className="ticketPerks">
+                <li>Access to virtual event</li>
+              </ul>
+              <a
+                href={item.link}
+                target="_blank"
+                rel="noreferrer"
+                className="ticketBuyLink"
+              >
+                <button>Reserve seat</button>
+                <h3>$399</h3>
+              </a>
+            </div>
+          </div>
+
+          <div className="seatType">
+            <span>
+              <h3>Executive</h3>
+              {/* <p>15 left </p> */}
+            </span>
+            <div>
+              <ul className="ticketPerks">
+                <li>Access to virtual event</li>
+                <li>Permanent access to event recording</li>
+              </ul>
+              <div>
+                <a href={item.link} target="_blank" rel="noreferrer">
+                  <button>Reserve seat</button>
+                  <h3>$599</h3>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="seatType">
+            <span>
+              <h3>VIP</h3>
+              {/* <p>15 left </p> */}
+            </span>
+            <div>
+              <ul className="ticketPerks">
+                <li>Access to virtual event</li>
+                <li>Permanent access to event recording</li>
+                <li>Join our 1 on 1 15-minute QA afterwards!</li>
+              </ul>
+              <div>
+                <a href={item.link} target="_blank" rel="noreferrer">
+                  <button>Reserve seat</button>
+                  <h3>$1099</h3>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div
         className="popupCoverBacker"
-        // onClick={showEventPopup}
-        // onBlur={showEventPopup}
+        onClick={showEventPopup}
+        onBlur={showEventPopup}
       ></div>
     </div>
   );

@@ -1132,11 +1132,14 @@ header#eventHeader
 
     .scrollDownHeaderEvent
         margin-top: 2rem
+        font-size: .8rem
+        text-align: center
         background: var(--maroon)
         color: var(--light)
         padding: 1.5rem 2rem
         margin-bottom: 2rem
         z-index: 5
+        width: 100%
 
     #ticketTitle 
 
@@ -1210,7 +1213,17 @@ section#eventSlider
     height: 100vh
     position: relative
     margin-bottom: 0
-    overflow-x: hidden
+    overflow: hidden
+
+    img
+        position: fixed
+        top: 0
+        left: 0
+        object-fit: cover
+        height: 100vh
+        width: 100%
+        filter: blur(3px) saturate(.5)
+        opacity: .25
 
     #sliderLink 
         position: absolute
@@ -1295,7 +1308,6 @@ section#eventSlider
 .dateNumberContainer
     display: flex
     min-width: 105px
-    // width: 20%
     flex-grow: 1
     padding-right: 1rem
 
@@ -1315,7 +1327,10 @@ section#eventSlider
     height: 100vh
     top: -12%
     left: 0
-    width: 100vw
+    right: 0
+    margin-right: auto
+    margin-left: auto
+    width: calc(100vw - (var(--gutter) )*2)
     display: flex
     z-index: 10
     justify-content: center
@@ -1344,7 +1359,6 @@ section#eventSlider
     height: 100vh
     position: fixed
     top: 0
-    cursor-events: none
     justify-content: center
     align-items: center
     left: 0
@@ -1370,8 +1384,8 @@ section#eventSlider
 .eventPopup
     height: 80vh
     background: var(--light)
-    width: calc(100% -(var(--gutter)*2))
-    max-width: 750px
+    // width: calc(100% -(var(--gutter)*2))
+    max-width: 950px
     padding-left: 2rem
     padding-right: 2rem
     padding-bottom: 4rem
@@ -1379,19 +1393,15 @@ section#eventSlider
 
     .popupInfoHeader
         margin-bottom: 3rem
-        position: relative
-        height: 80%
+        margin-top: 3rem
 
-        .headerText
-            position: absolute
-            bottom: 10%
-
-            h3
-                margin-right: var(--gutter)
-            
-            & > div
-                display: flex
-                flex-wrap: wrap
+        h1
+            margin-right: var(--gutter)
+            color: var(--maroon)
+        
+        & > div
+            display: flex
+            flex-wrap: wrap
 
 .seatType
     display: flex
@@ -1402,12 +1412,10 @@ section#eventSlider
     padding-top: .5rem
     margin-bottom: 4rem
 
-    & > *
-        flex-grow: 1
-
     span
         display: flex
         align-items: flex-end
+        width: 120px
         margin-right: var(--gutter)
         margin-bottom: .5rem
 
@@ -1420,16 +1428,27 @@ section#eventSlider
     & > div
         display: flex
         flex-wrap: wrap
+        width: 79%
         justify-content: space-between
 
-
         & > div
+            width: 250px
+            display: flex
+            justify-content: flex-start
+
+            a
+                display: inline-flex
+                flex-wrap: nowrap
+                align-items: center
+                justify-content: space-between
+
+        .ticketBuyLink
             display: flex
             align-items: flex-start
 
         ul
             margin-right: var(--gutter)
-            min-width: 200px
+            width: 290px
 
         button
             margin-right: calc(var(--gutter)/2)
@@ -1638,6 +1657,28 @@ section#eventSlider
 
 // Applies to anything above 768px
 @media only screen and (min-width: 700px)
+
+    .seatType
+
+        & > div
+
+            & > div
+
+                ul
+                    width: unset !important
+
+    header#eventHeader
+
+        .scrollDownHeaderEvent
+            margin-top: 2rem
+            font-size: .8rem
+            text-align: center
+            background: var(--maroon)
+            color: var(--light)
+            padding: 1.5rem 2rem
+            margin-bottom: 2rem
+            z-index: 5
+            width: unset !important
 
     .cookieNotification
 

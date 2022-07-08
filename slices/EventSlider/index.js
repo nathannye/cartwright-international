@@ -6,13 +6,12 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useRef, useState } from "react";
 import EventPopup from "../../components/EventPopup";
 
-const EventSlider = ({ slice, tickets }) => {
-  console.log(tickets);
-
+const EventSlider = ({ slice }) => {
   const [popupData, setPopupData] = useState("");
   const [showPopup, setShowPopup] = useState(false);
   const popupRef = useRef(null);
   const tl = useRef(null);
+  const sliderTL = useRef(null);
 
   useIsomorphicLayoutEffect(() => {
     const q = gsap.utils.selector(popupRef.current);
@@ -34,7 +33,6 @@ const EventSlider = ({ slice, tickets }) => {
 
   const showEventPopup = (item) => {
     setShowPopup(!showPopup);
-    console.log(item);
     setPopupData(item);
   };
 
@@ -46,7 +44,11 @@ const EventSlider = ({ slice, tickets }) => {
     const q = gsap.utils.selector(sliderRef.current);
     const panels = slice.items.length;
 
-    scrollTween.current = gsap.to(q("#eventSlider > div"), {
+    gsap.set(q("img"), {
+      x: -20,
+    });
+
+    sliderTL.current = gsap.timeline({
       scrollTrigger: {
         scrub: 1.25,
         pin: sliderRef.current,
@@ -54,9 +56,25 @@ const EventSlider = ({ slice, tickets }) => {
         end: "+=1500",
         trigger: q("#eventSlider > div"),
       },
-      ease: "none",
-      xPercent: -100,
     });
+
+    sliderTL.current
+      .to(
+        q("#eventSlider > div"),
+        {
+          ease: "none",
+          xPercent: -100,
+        },
+        0
+      )
+      .to(
+        q("img"),
+        {
+          x: 20,
+          ease: "none",
+        },
+        0
+      );
 
     ScrollTrigger.refresh();
   }, []);
@@ -67,9 +85,9 @@ const EventSlider = ({ slice, tickets }) => {
         showEventPopup={showEventPopup}
         item={popupData}
         showPopup={showPopup}
-        tickets={tickets}
       />
       <section id="eventSlider" ref={sliderRef}>
+        <img src="./globeImage.jpg" alt="Image of globe" />
         <a id="sliderLink"></a>
         <div style={{ width: (slice.items.length + 1) * 100 + "%" }}>
           {slice.items.map((item, index) => {
