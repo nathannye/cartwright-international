@@ -44,7 +44,7 @@ const EventSlider = ({ slice }) => {
     const q = gsap.utils.selector(sliderRef.current);
     const panels = slice.items.length;
 
-    gsap.set(q("img"), {
+    gsap.set(q("img#globe"), {
       x: -20,
     });
 
@@ -54,13 +54,13 @@ const EventSlider = ({ slice }) => {
         pin: sliderRef.current,
         start: "top top",
         end: "+=1500",
-        trigger: q("#eventSlider > div"),
+        trigger: q("#eventSlider > div:not(#sliderBacker"),
       },
     });
 
     sliderTL.current
       .to(
-        q("#eventSlider > div"),
+        q("#eventSlider > div:not(#sliderBacker)"),
         {
           ease: "none",
           xPercent: -100,
@@ -68,7 +68,7 @@ const EventSlider = ({ slice }) => {
         0
       )
       .to(
-        q("img"),
+        q("img#globe"),
         {
           x: 20,
           ease: "none",
@@ -87,9 +87,9 @@ const EventSlider = ({ slice }) => {
         showPopup={showPopup}
       />
       <section id="eventSlider" ref={sliderRef}>
-        <img src="./globeImage.jpg" alt="Image of globe" />
+        <img src="./globeImage.jpg" alt="Image of globe" id="globe" />
         <a id="sliderLink"></a>
-        <div style={{ width: (slice.items.length + 1) * 100 + "%" }}>
+        <div style={{ width: (slice.items.length + 1) * 83 + "%" }}>
           {slice.items.map((item, index) => {
             return (
               <EventEntry

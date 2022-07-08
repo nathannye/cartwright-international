@@ -75,10 +75,10 @@ const HeaderEvent = ({ slice }) => {
 
       tl.current = gsap.timeline({
         delay: 0.96,
-        onComplete: () => {
-          outlineSplit.current.revert();
-          solidSplit.current.revert();
-        },
+        // onComplete: () => {
+        //   outlineSplit.current.revert();
+        //   solidSplit.current.revert();
+        // },
       });
 
       tl.current
@@ -104,13 +104,6 @@ const HeaderEvent = ({ slice }) => {
           },
           1.9
         )
-        // .to(
-        //   introRef.current,
-        //   {
-        //     display: "none",
-        //   },
-        //   2
-        // )
         .to(
           q("h2"),
           {

@@ -7,18 +7,16 @@ const Events = ({ page, menu, footer, tickets }) => {
   // console.log(tickets);
 
   return (
-    <Layout footer={footer} menu={menu}>
-      <SliceZone
-        slices={page.data.slices}
-        components={components}
-        tickets={tickets}
-      />
-      <h3 id="moreQuestions">
-        <a href="mailto:info@cartwrightintl.net">
-          More questions? <u>info@cartwrightintl.net</u>
-        </a>
-      </h3>
-    </Layout>
+    <>
+      <Layout footer={footer} menu={menu}>
+        <SliceZone
+          slices={page.data.slices}
+          components={components}
+          tickets={tickets}
+        />
+      </Layout>
+      <img src="./sliderBacker.jpg" id="backerAll" />
+    </>
   );
 };
 

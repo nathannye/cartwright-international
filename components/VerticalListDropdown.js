@@ -17,6 +17,10 @@ const VerticalListDropdown = ({ slice }) => {
           })}
         </div>
       </div>
+      <h3>
+        More questions?{" "}
+        <a href="mailto:info@cartwrightintl.net">info@cartwrightintl.net</a>
+      </h3>
     </section>
   );
 };

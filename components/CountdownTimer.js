@@ -10,6 +10,18 @@ const calculateTimeLeft = () => {
       minutes: Math.floor((difference / 1000 / 60) % 60),
       seconds: Math.floor((difference / 1000) % 60),
     };
+
+    if (timeLeft.hours < 10) {
+      timeLeft.hours = `0${timeLeft.hours}`;
+    }
+
+    if (timeLeft.minutes < 10) {
+      timeLeft.hours = `0${timeLeft.minutes}`;
+    }
+
+    if (timeLeft.seconds < 10) {
+      timeLeft.seconds = `0${timeLeft.seconds}`;
+    }
   }
 
   return timeLeft;
