@@ -118,12 +118,12 @@ button
     font-variant-numeric: lining-nums
     font-weight: 500
     font-stretch: 93%
-    transition: var(--colorSwapEase)
+    transition: .2s ease-in-out
     font-family: $sans
 
     &:hover
-        opacity: .6
-        transition: var(--colorSwapEase)
+        transform: scale(.95)
+        transition: .2s ease-in-out
 
     &.inverted
         color: var(--maroon) !important
@@ -200,6 +200,13 @@ h2
     margin-bottom: calc(var(--gutter) / 2)
     text-transform: uppercase
     font-family: $sans
+
+u
+    transition: var(--colorSwapEase)
+
+    &:hover
+        transition: var(--colorSwapEase)
+        opacity: .5
 
 label
     letter-spacing: .032em
@@ -1108,7 +1115,12 @@ header#headerLarge
 div#eventIntroContainer
     height: 100vh
     width: 100vw
-    display: none
+    // display: none
+    z-index: 1
+    display: flex
+    position: fixed
+    top: 0
+    left: 0
     background: var(--maroon)
     justify-content: center
     align-items: center
@@ -1121,25 +1133,37 @@ div#eventIntroContainer
         img
             width: 100%
 
+#moreQuestions
+    margin-left: var(--colOne)
+    margin-top: -12rem
+    margin-bottom: 10rem
+
 header#eventHeader
     position: relative
     overflow: hidden
     padding-top: 10rem
     padding-bottom: 20rem
     margin-bottom: 0
+    z-index: 2
     padding-left: var(--gutter)
     padding-right: var(--gutter)
 
     .scrollDownHeaderEvent
         margin-top: 2rem
-        font-size: .8rem
+        font-size: 1rem !important
         text-align: center
         background: var(--maroon)
         color: var(--light)
         padding: 1.5rem 2rem
         margin-bottom: 2rem
         z-index: 5
+        transition: all .25s ease-in-out
         width: 100%
+
+        &:hover
+            transform: scale(.95)
+            transition: all .25s ease-in-out
+
 
     #ticketTitle 
 
@@ -1445,6 +1469,7 @@ section#eventSlider
         .ticketBuyLink
             display: flex
             align-items: flex-start
+            width: 250px
 
         ul
             margin-right: var(--gutter)

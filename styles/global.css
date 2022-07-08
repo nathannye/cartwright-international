@@ -125,13 +125,13 @@ button {
   font-variant-numeric: lining-nums;
   font-weight: 500;
   font-stretch: 93%;
-  transition: var(--colorSwapEase);
+  transition: .2s ease-in-out;
   font-family: "Roboto", sans-serif;
 }
 
 button:hover {
-  opacity: .6;
-  transition: var(--colorSwapEase);
+  transform: scale(0.95);
+  transition: .2s ease-in-out;
 }
 
 button.inverted {
@@ -215,6 +215,15 @@ h2 {
   margin-bottom: calc(var(--gutter) / 2);
   text-transform: uppercase;
   font-family: "Roboto", sans-serif;
+}
+
+u {
+  transition: var(--colorSwapEase);
+}
+
+u:hover {
+  transition: var(--colorSwapEase);
+  opacity: .5;
 }
 
 label {
@@ -1244,7 +1253,11 @@ header#headerLarge blockquote {
 div#eventIntroContainer {
   height: 100vh;
   width: 100vw;
-  display: none;
+  z-index: 1;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
   background: var(--maroon);
   justify-content: center;
   align-items: center;
@@ -1260,26 +1273,39 @@ div#eventIntroContainer #hubLogoContainer img {
   width: 100%;
 }
 
+#moreQuestions {
+  margin-left: var(--colOne);
+  margin-top: -12rem;
+  margin-bottom: 10rem;
+}
+
 header#eventHeader {
   position: relative;
   overflow: hidden;
   padding-top: 10rem;
   padding-bottom: 20rem;
   margin-bottom: 0;
+  z-index: 2;
   padding-left: var(--gutter);
   padding-right: var(--gutter);
 }
 
 header#eventHeader .scrollDownHeaderEvent {
   margin-top: 2rem;
-  font-size: .8rem;
+  font-size: 1rem !important;
   text-align: center;
   background: var(--maroon);
   color: var(--light);
   padding: 1.5rem 2rem;
   margin-bottom: 2rem;
   z-index: 5;
+  transition: all .25s ease-in-out;
   width: 100%;
+}
+
+header#eventHeader .scrollDownHeaderEvent:hover {
+  transform: scale(0.95);
+  transition: all .25s ease-in-out;
 }
 
 header#eventHeader #ticketTitle h1.outlineHeading {
@@ -1624,6 +1650,7 @@ section#eventSlider > div {
 .seatType > div .ticketBuyLink {
   display: flex;
   align-items: flex-start;
+  width: 250px;
 }
 
 .seatType > div ul {

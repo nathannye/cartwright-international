@@ -13,6 +13,11 @@ const Events = ({ page, menu, footer, tickets }) => {
         components={components}
         tickets={tickets}
       />
+      <h3 id="moreQuestions">
+        <a href="mailto:info@cartwrightintl.net">
+          More questions? <u>info@cartwrightintl.net</u>
+        </a>
+      </h3>
     </Layout>
   );
 };

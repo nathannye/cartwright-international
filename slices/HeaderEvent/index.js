@@ -55,14 +55,13 @@ const HeaderEvent = ({ slice }) => {
         autoAlpha: 0,
         y: -24,
       });
-      gsap.set(i("img"), {
-        autoAlpha: 0,
-        y: -50,
-      });
-
       gsap.set(q(".arrowStem"), {
         autoAlpha: 0,
         y: -24,
+      });
+
+      gsap.set(q("img"), {
+        autoAlpha: 0,
       });
 
       gsap.set(q("a"), {
@@ -76,44 +75,41 @@ const HeaderEvent = ({ slice }) => {
 
       tl.current = gsap.timeline({
         delay: 0.96,
-        // onComplete: () => {
-        //   outlineSplit.current.revert();
-        //   solidSplit.current.revert();
-        // },
+        onComplete: () => {
+          outlineSplit.current.revert();
+          solidSplit.current.revert();
+        },
       });
 
       tl.current
-        // .to(
-        //   i("img"),
-        //   {
-        //     yPercent: 0,
-        //     duration: 0.7,
-        //     ease: "power4.out",
-        //   },
-        //   0
-        // )
         .to(
           i("img"),
           {
-            autoAlpha: 0,
-            y: 0,
+            yPercent: 0,
           },
-          0.4
+          0
         )
-        // .to(
-        //   introRef.current,
-        //   {
-        //     autoAlpha: 0,
-        //     duration: 0.4,
-        //   },
-        //   0.8
-        // )
+        .to(
+          introRef.current,
+          {
+            autoAlpha: 0,
+            duration: 0.4,
+          },
+          1.65
+        )
+        .to(
+          q("img"),
+          {
+            autoAlpha: 1,
+          },
+          1.9
+        )
         // .to(
         //   introRef.current,
         //   {
         //     display: "none",
         //   },
-        //   "<"
+        //   2
         // )
         .to(
           q("h2"),
@@ -121,7 +117,7 @@ const HeaderEvent = ({ slice }) => {
             autoAlpha: 1,
             duration: 0.7,
           },
-          0.75
+          2.8
         )
         .to(
           outlineSplit.current.lines,
@@ -132,7 +128,7 @@ const HeaderEvent = ({ slice }) => {
             stagger: 0.09,
             ease: "power3.out",
           },
-          1.3
+          2.8
         )
         .to(
           solidSplit.current.lines,
@@ -142,7 +138,7 @@ const HeaderEvent = ({ slice }) => {
             ease: "power3.inOut",
             clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
           },
-          1.3
+          2.8
         )
         .to(
           solidSplit.current.lines,
@@ -153,14 +149,14 @@ const HeaderEvent = ({ slice }) => {
             autoAlpha: 1,
             ease: "power3.out",
           },
-          1.3
+          2.8
         )
         .to(
           q("a"),
           {
             autoAlpha: 1,
           },
-          1.3
+          2.8
         )
         .to(
           q(".arrowCircle"),
@@ -168,7 +164,7 @@ const HeaderEvent = ({ slice }) => {
             drawSVG: "100%",
             duration: 0.75,
           },
-          1.5
+          2.8
         )
         .to(
           q(".arrowHead"),
