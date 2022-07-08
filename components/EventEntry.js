@@ -8,9 +8,6 @@ import { format } from "date-fns-tz";
 
 const EventEntry = ({ st, index, item, handleClick }) => {
   const d = item["event-date"];
-  console.log(d);
-
-  console.log(new Date());
 
   const eventRef = useRef(null);
   const split = useRef(null);

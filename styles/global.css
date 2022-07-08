@@ -1289,9 +1289,10 @@ div#eventIntroContainer {
 }
 
 div#eventIntroContainer #hubLogoContainer {
-  width: 40%;
+  width: 90%;
   overflow: hidden;
   max-width: 450px;
+  min-width: 300px;
 }
 
 div#eventIntroContainer #hubLogoContainer img {

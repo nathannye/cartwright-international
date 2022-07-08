@@ -4,8 +4,6 @@ import { SliceZone } from "@prismicio/react";
 import { createClient } from "../prismicio";
 
 const Events = ({ page, menu, footer, tickets }) => {
-  // console.log(tickets);
-
   return (
     <>
       <Layout footer={footer} menu={menu}>
