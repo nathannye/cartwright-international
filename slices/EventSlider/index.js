@@ -89,7 +89,7 @@ const EventSlider = ({ slice }) => {
       <section id="eventSlider" ref={sliderRef}>
         <img src="./globeImage.jpg" alt="Image of globe" id="globe" />
         <a id="sliderLink"></a>
-        <div style={{ width: (slice.items.length + 1) * 83 + "%" }}>
+        <div style={{ width: (slice.items.length + 1) * 100 + "%" }}>
           {slice.items.map((item, index) => {
             return (
               <EventEntry
