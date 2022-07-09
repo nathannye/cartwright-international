@@ -41,7 +41,7 @@ const EventEntry = ({ st, index, item, handleClick }) => {
             <h1>{item["event-title"]}</h1>
             <p>{item["event-description"]}</p>
             <div className="eventButtons">
-              <p>{item["percentage-sold"]}% sold out</p>
+              {/* <p>{item["percentage-sold"]}% sold out</p> */}
               <button
                 onClick={() => {
                   handleClick(item);

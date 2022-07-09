@@ -320,7 +320,7 @@ export default function HeaderHome({ slice }) {
             </g>
           </g>
         </svg>
-        <h2>{slice.primary["small-paragraph"]}</h2>
+        <ul></ul>
       </div>
       <div className="imageContainer">
         <img

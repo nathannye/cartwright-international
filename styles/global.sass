@@ -193,7 +193,7 @@ h1
 
 h2
     letter-spacing: .052em
-    font-size: 1rem
+    font-size: 1.2rem
     font-variant-numeric: lining-nums
     font-weight: 700
     font-stretch: 93%
@@ -480,7 +480,7 @@ footer
 #emailFormContainer
     margin-top: calc(var(--gutter)*2)
     width: 100%
-    max-width: 520px
+    max-width: 720px
     margin-bottom: var(--gutter)
 
     form
@@ -1152,6 +1152,16 @@ div#eventIntroContainer
         img
             width: 100%
 
+@keyframes pulse
+
+    0%
+        transform: scale(1)
+
+    50%
+        transform: scale(1.05)
+
+    100%
+        transform: scale(1)
 
 #backerAll
     position: fixed
@@ -1178,13 +1188,14 @@ header#eventHeader
 
     .scrollDownHeaderEvent
         margin-top: 2rem
-        font-size: 1rem !important
+        font-size: 1.6rem !important
         text-align: center
         background: var(--maroon)
         color: var(--light)
-        padding: 1.5rem 2rem
+        padding: 1.5rem 2.25rem
         margin-bottom: 2rem
         z-index: 5
+        animation: pulse 1.5s infinite
         transition: all .25s ease-in-out
         width: 100%
 
@@ -1318,7 +1329,7 @@ section#eventSlider
     position: relative
     height: 100%
     padding: 0 calc(var(--gutter) * 2)
-    min-width: 100vw
+    min-width: 85vw
     margin-right: calc(var(--gutter)*2)
     align-items: center
     display: flex
@@ -1367,11 +1378,9 @@ section#eventSlider
         justify-content: flex-end
 
         button
-            // flex-grow: 1
 
         p
             margin-bottom: 0
-            // min-width: 150px
             text-align: right
             margin-right: 1rem
 
@@ -1397,6 +1406,7 @@ section#eventSlider
     height: 100vh
     top: -12%
     left: 0
+    display: none
     right: 0
     margin-right: auto
     margin-left: auto
