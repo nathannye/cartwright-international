@@ -828,17 +828,21 @@ header#headerLarge #companyNameContainer svg {
   min-width: 300px;
 }
 
-header#headerLarge #companyNameContainer h2 {
+header#headerLarge #companyNameContainer ul, header#headerLarge #companyNameContainer li {
   color: var(--tan);
   font-size: clamp(1rem, calc(1rem + ((1vw - 0.25rem) * 0.4464)), 1.5rem);
   line-height: 1.1;
   max-width: 450px;
   min-width: 250px;
+  text-transform: uppercase;
   font-weight: 400;
-  margin-bottom: 1.5rem;
   margin-left: 0;
-  width: 30%;
   flex-grow: 1;
+}
+
+header#headerLarge #companyNameContainer ul:before, header#headerLarge #companyNameContainer li:before {
+  background: var(--tan) !important;
+  top: calc(50% - 2px);
 }
 
 header#headerLarge #companyNameContainer span {

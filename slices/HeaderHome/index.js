@@ -320,7 +320,11 @@ export default function HeaderHome({ slice }) {
             </g>
           </g>
         </svg>
-        <ul></ul>
+        <ul>
+          {slice.primary["small-paragraph"].map((item, index) => {
+            return <li key={index}>{item.text}</li>;
+          })}
+        </ul>
       </div>
       <div className="imageContainer">
         <img
