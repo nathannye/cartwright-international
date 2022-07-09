@@ -37,11 +37,10 @@ const EventEntry = ({ st, index, item, handleClick }) => {
         <div className="eventInfo">
           <div className="dateNumberContainer"></div>
           <div>
-            <h2>{`${monthFinal} ${day} | ${item["start-time"]}–${item["start-time"]}`}</h2>
+            <h2>{`${monthFinal} ${day} | ${item["start-time"]}–${item["end-time"]}`}</h2>
             <h1>{item["event-title"]}</h1>
             <p>{item["event-description"]}</p>
             <div className="eventButtons">
-              {/* <p>{item["percentage-sold"]}% sold out</p> */}
               <button
                 onClick={() => {
                   handleClick(item);
