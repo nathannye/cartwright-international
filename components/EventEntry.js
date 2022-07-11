@@ -1,12 +1,8 @@
-import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
 import { useRef } from "react";
 import gsap from "gsap";
-import { Date as PrismicDate } from "@prismicio/react";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import SplitText from "gsap/dist/SplitText";
-import { format } from "date-fns-tz";
 
-const EventEntry = ({ st, index, item, handleClick }) => {
+const EventEntry = ({ item, showEventPopup }) => {
   const d = item["event-date"];
 
   const eventRef = useRef(null);
@@ -35,7 +31,6 @@ const EventEntry = ({ st, index, item, handleClick }) => {
           <h2>{monthFinal}</h2>
         </div>
         <div className="eventInfo">
-          <div className="dateNumberContainer"></div>
           <div>
             <h2>{`${monthFinal} ${day} | ${item["start-time"]}–${item["end-time"]}`}</h2>
             <h1>{item["event-title"]}</h1>
@@ -43,10 +38,7 @@ const EventEntry = ({ st, index, item, handleClick }) => {
             <div className="eventButtons">
               <button
                 onClick={() => {
-                  handleClick(item);
-                }}
-                onBlur={() => {
-                  handleClick(item);
+                  showEventPopup(item);
                 }}
               >
                 Reserve a seat

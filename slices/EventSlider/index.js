@@ -38,11 +38,9 @@ const EventSlider = ({ slice }) => {
 
   gsap.registerPlugin(ScrollTrigger);
   const sliderRef = useRef(null);
-  const scrollTween = useRef(null);
 
   useIsomorphicLayoutEffect(() => {
     const q = gsap.utils.selector(sliderRef.current);
-    const panels = slice.items.length;
 
     gsap.set(q("img#globe"), {
       x: -20,
@@ -82,9 +80,9 @@ const EventSlider = ({ slice }) => {
   return (
     <>
       <EventPopup
-        showEventPopup={showEventPopup}
         item={popupData}
         showPopup={showPopup}
+        showEventPopup={showEventPopup}
       />
       <section id="eventSlider" ref={sliderRef}>
         <img src="./globeImage.jpg" alt="Image of globe" id="globe" />
@@ -95,9 +93,8 @@ const EventSlider = ({ slice }) => {
               <EventEntry
                 key={index}
                 item={item}
+                // handleClick={showEventPopup}
                 showEventPopup={showEventPopup}
-                setShowPopup={setShowPopup}
-                handleClick={showEventPopup}
               />
             );
           })}

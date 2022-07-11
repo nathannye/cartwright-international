@@ -75,11 +75,7 @@ const EventPopup = ({ item, showPopup, showEventPopup }) => {
           </div>
         </div>
       </div>
-      <div
-        className="popupCoverBacker"
-        onClick={showEventPopup}
-        onBlur={showEventPopup}
-      ></div>
+      <div className="popupCoverBacker" onClick={showEventPopup}></div>
     </div>
   );
 };
