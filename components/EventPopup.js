@@ -31,7 +31,7 @@ const EventPopup = ({ item, showPopup, showEventPopup }) => {
                 className="ticketBuyLink"
               >
                 <button>Reserve seat</button>
-                <h3>$399</h3>
+                <h3>$99</h3>
               </a>
             </div>
           </div>
@@ -49,7 +49,7 @@ const EventPopup = ({ item, showPopup, showEventPopup }) => {
               <div>
                 <a href={item.link} target="_blank" rel="noreferrer">
                   <button>Reserve seat</button>
-                  <h3>$599</h3>
+                  <h3>$199</h3>
                 </a>
               </div>
             </div>
@@ -68,7 +68,7 @@ const EventPopup = ({ item, showPopup, showEventPopup }) => {
               <div>
                 <a href={item.link} target="_blank" rel="noreferrer">
                   <button>Reserve seat</button>
-                  <h3>$1099</h3>
+                  <h3>$499</h3>
                 </a>
               </div>
             </div>
